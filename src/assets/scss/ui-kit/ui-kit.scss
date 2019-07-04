@@ -1,0 +1,38 @@
+body {
+    background: #E5E5E5;
+}
+.ui-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    background: #fff;
+    margin-top: 160px;
+    position: relative;
+    padding-top: 145px;
+}
+.ui-container__header {
+    position: absolute;
+    top: -20px;
+
+}
+.ui-container__content {
+    display: flex;
+    flex-wrap: wrap;
+}
+.colors, .titles {
+    width: 50%;
+    padding-left: 120px;
+}
+.palette {
+    position: relative;
+    padding-left: 120px;
+    height: 70px;
+    margin-bottom: 19px;
+}
+.palette__color {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    left: 20px;
+    top: -10px;
+    border-radius: 6px;
+}

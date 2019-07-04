@@ -1,0 +1,23 @@
+//- extends ../../layout/ui-layout/ui-layout.pug
+extends ../layout/ui-layout/ui-layout.pug
+
+block variables
+	- var title = 'UI-kit';
+	- var pageClass = 'body--dashboard';
+
+block content
+
+	.ui-container
+		.ui-container__header Colors & Type
+		.ui-container__content
+			.colors 
+				+colors("Dark Shade 100%", "#1F2041", "#1F2041")
+				+colors("Dark Shade 75%", "#1F2041", "#575871")
+				+colors("Dark Shade 50%", "#1F2041", "#8F90A0")
+				+colors("Dark Shade 25%", "#1F2041", "#C7C7CF")
+				+colors("Dark Shade 5%", "#1F2041", "#F3F4F5")
+				+colors("Purple", "#BC9CFF", "#BC9CFF")
+				+colors("Green", "#6FCF97", "#6FCF97")
+			.titles
+				+titles("H1", "This one is the sub-section or widget title")
+		

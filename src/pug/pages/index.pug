@@ -1,0 +1,34 @@
+//- extends ../layout/main
+
+//- block variables
+//-   - var title = 'Toxin-Booking';
+//-   - var description = 'FSD-education-program. The-2nd-task';
+//-   - var pageClass = 'index-page';
+
+//- block content
+//-   section
+//-     .container
+//-       h1 hello world
+
+extends ../layout/page.pug
+
+block variables
+	- var title = 'Главная страница';
+	- var description = 'FSD-education-program. The-2nd-task';
+	- var pageClass= "index-page";
+
+block content
+	.container
+		.title-1.text-center.mb-55 Проект Toxin-Booking
+		.row
+			.col
+				.card.align-items-center.pb-35
+					.title-2 UI-Kit
+					a(href="ui-kit.html")="перейти"
+					//- +button("Перейти", "ui/ui-kit.html")
+			.col
+				.card.align-items-center.pb-35
+					.title-2 Главная страница
+					button перейти
+					//- +button("Перейти", "main.html")
+			
