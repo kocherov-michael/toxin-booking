@@ -36,3 +36,55 @@ body {
     top: -10px;
     border-radius: 6px;
 }
+.titles-block {
+    display: flex;
+    width: 420px;
+    margin-bottom: 50px;
+}
+.titles-block__name {
+    width: 65px;
+    text-align: right;
+    padding-right: 30px;
+
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    // font-size: 24px;
+    line-height: 29px;
+    color: rgba(31, 32, 65, 0.25);
+}
+.titles-block__text {
+    
+}
+h1 {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: #1F2041;
+}
+h2 {
+    font-family: Quicksand;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+    color: #1F2041;
+}
+h3 {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+}
+body {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: rgba(31, 32, 65, 0.75);
+}
