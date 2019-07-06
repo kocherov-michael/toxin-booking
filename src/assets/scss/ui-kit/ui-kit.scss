@@ -1,90 +1,55 @@
-body {
-    background: #E5E5E5;
-}
 .ui-container {
-    max-width: 1440px;
-    margin: 0 auto;
-    background: #fff;
-    margin-top: 160px;
-    position: relative;
-    padding-top: 145px;
+	max-width: 1440px;
+	margin: 0 auto;
+	background: #fff;
+	margin-top: 160px;
+	position: relative;
+	padding: 140px;
 }
 .ui-container__header {
-    position: absolute;
-    top: -20px;
-
+	position: absolute;
+	top: -20px;
+	left: 0;
 }
 .ui-container__content {
-    display: flex;
-    flex-wrap: wrap;
-}
-.colors, .titles {
-    width: 50%;
-    padding-left: 120px;
+	display: flex;
+	justify-content: space-between;
+	// padding: 140px;
 }
 .palette {
-    position: relative;
-    padding-left: 120px;
-    height: 70px;
-    margin-bottom: 19px;
+	position: relative;
+	padding-left: 120px;
+	height: 70px;
+	margin-bottom: 19px;
 }
 .palette__color {
-    position: absolute;
-    width: 70px;
-    height: 70px;
-    left: 20px;
-    top: -10px;
-    border-radius: 6px;
+	position: absolute;
+	width: 70px;
+	height: 70px;
+	left: 20px;
+	top: -10px;
+	border-radius: 6px;
 }
 .titles-block {
-    display: flex;
-    width: 420px;
-    margin-bottom: 50px;
+	display: flex;
+	width: 420px;
+	margin-bottom: 50px;
 }
 .titles-block__name {
-    width: 65px;
-    text-align: right;
-    padding-right: 30px;
+	width: 65px;
+	text-align: right;
+	padding-right: 30px;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 29px;
+	color: rgba(31, 32, 65, 0.25);
+}
+.column__inner-row {
+	display: flex;
+}
+.column__inner-column {
+	margin-right: 50px;
+}
 
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    // font-size: 24px;
-    line-height: 29px;
-    color: rgba(31, 32, 65, 0.25);
-}
-.titles-block__text {
-    
-}
-h1 {
-    font-family: Quicksand;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 30px;
-    color: #1F2041;
-}
-h2 {
-    font-family: Quicksand;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 19px;
-    line-height: 24px;
-    color: #1F2041;
-}
-h3 {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-}
-body {
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 24px;
-    color: rgba(31, 32, 65, 0.75);
-}
+

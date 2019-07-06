@@ -1,0 +1,127 @@
+.dropdown {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: 15px;
+	position: relative;
+}
+.dropdown__label {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	text-transform: uppercase;
+	color: $dark-shade;
+}
+.dropdown__label-state {
+	text-align: right;
+	font-weight: normal;
+	color: $dark-shade-50;
+}
+.dropdown__state{
+	font-weight: normal;
+	color: $dark-shade-50;
+}
+.dropdown__header {
+	width: 100%;
+	min-width: 150px;
+	background: $default-color;
+	border: 1px solid $dark-shade-25;
+	box-sizing: border-box;
+	border-radius: 4px 4px 0 0;
+	padding: 10px 15px;
+	margin-top: 5px;
+	position: relative;
+	&:after {
+		display: block;
+		content: "";
+		position: absolute;
+		right: 20px;
+		top: 17px;
+		width: 13px;
+		height: 8px;
+		background-image: url(../../assets/img/icons/expand_more.png);
+	}
+	&--active {
+		.dropdown__list{
+			display: block;
+		}
+		border-color: $dark-shade-50;
+		border-radius: 4px;
+		box-shadow: 0px 10px 20px $dark-shade-5;
+		padding-bottom: 0;
+	}
+	&--mask{
+		@extend .dropdown__header;
+		color: $dark-shade-25;
+		&:after {
+			display: none;
+		}
+	}
+}
+.dropdown__list {
+	display: none;
+	margin: 10px -15px 0 -15px;
+	border-top: 1px solid $dark-shade-50;
+	box-sizing: border-box;
+	border-radius: 0 0 4px 4px;
+	padding: 0 10px 5px;
+}
+.dropdown-item {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 5px;
+	font-weight: bold;
+	font-size: 12px;
+	color: $dark-shade;
+	text-transform: uppercase;
+}
+.dropdown-item__count {
+	display: flex;
+	justify-content: space-between;
+	width: 85px;
+	
+}
+.dropdown-item__count-item {
+	width: 27px;
+	height: 27px;
+	text-align: center;
+	border: 1px solid $dark-shade-25;
+	box-sizing: border-box;
+	border-radius: 50%;
+	color: $dark-shade-50;
+	
+	&--number {
+		border: none;
+		color: $dark-shade;
+	}
+}
+.dropdown-action{
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	// padding-top: 10px;
+	// padding-top: 15px;
+	font-weight: bold;
+}
+.dropdown-action__apply {
+	color: $purple;
+	padding-top: 15px;
+	&:hover {
+		cursor: pointer;
+		color: darken($purple, 20%);
+	}
+}
+.dropdown-action__clear {
+	// display: none;
+	color: $dark-shade-50;
+	padding-top: 15px;
+	padding-bottom: 5px;
+	&:hover {
+		cursor: pointer;
+		color: $dark-shade-75;
+	}
+}

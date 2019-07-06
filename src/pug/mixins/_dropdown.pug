@@ -1,0 +1,39 @@
+mixin dropdown(label, text, dataAttribute, list, apply, state)
+	//- - var listItems = list;
+
+	.dropdown
+		.dropdown__label
+			.dropdown__label-text #{label}
+			.dropdown__label-state #{state}
+		.dropdown__header(data-dropdown=dataAttribute)&attributes(attributes) #{text}
+			if list
+				.dropdown__list
+					each item in list
+						.dropdown-item 
+							.dropdown-item__text #{item}
+							.dropdown-item__count
+								.dropdown-item__count-item(data-count="minus") -
+								.dropdown-item__count-item.dropdown-item__count-item--number(data-count="number") 0
+								.dropdown-item__count-item(data-count="plus") +
+					if apply
+						.dropdown-action
+							.dropdown-action__apply(data-action="apply") применить
+							.dropdown-action__clear(data-action="clear") очистить
+
+
+
+
+
+mixin dateDropdown(label, text, state )
+	.dropdown
+		.dropdown__label
+			.dropdown__text #{label}
+			.dropdown__state #{state}
+		.dropdown__header&attributes(attributes) #{text}
+
+mixin filterDateDropdown(label, text)
+	.dropdown
+		.dropdown__label
+			.dropdown__text #{label}
+			//- .dropdown__state #{state}
+		.dropdown__header&attributes(attributes) #{text}
