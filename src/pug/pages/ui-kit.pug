@@ -60,6 +60,17 @@ block content
 					+ratebutton("5")
 			.column
 				+rangeslider("range slider", "5000", "10000")
+				.small-header.mb-15.mt-40 buttons
+				.column__inner-row.mb-30
+					+button-primary("click me", "link")
+					+button-primary("click me", "link").clicked-button
+				.column__inner-row.mb-30
+					+button-secondary("click me", "link")
+					+button-secondary("click me", "link").clicked-button
+				.column__inner-row.mb-30
+					+button-single("click me", "link")
+					+button-single("click me", "link").clicked-button-single
+				+button-wide("перейти к оплате", "link")
 		.ui-container__content
 			.column.pr-50
 				+dropdown("Dropdown", "2 спальни, 2 кровати...", "", "", "", "default")
