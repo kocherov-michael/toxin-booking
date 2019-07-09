@@ -4,8 +4,8 @@ mixin ratebutton(activeStars)
 	.ratebutton&attributes(attributes)
 		while i < starsCount
 			if i < activeStars
-				.ratebutton__star.ratebutton__star--active
+				.ratebutton__star.ratebutton__star--active(style="background-image: url(./assets/img/icons/star.png);")
 			else
-				.ratebutton__star
+				.ratebutton__star(style="background-image: url(./assets/img/icons/star_border.png);")
 			- i++
 		
