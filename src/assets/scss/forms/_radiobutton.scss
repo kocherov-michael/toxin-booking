@@ -41,6 +41,6 @@
 		border: 1px solid $purple;
 	}
 	&:checked + .label-radio:after {
-		background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+		background: linear-gradient($primary-gradient);
 	}
 }

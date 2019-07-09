@@ -32,7 +32,7 @@
 }
 /* Новый чекбокс при выборе */
 .label-check__input:checked + .label-check__new-input {
-	border: 1px solid #BC9CFF;
+	border-color: $purple;
 
 	.check-item {
 		display: block;
@@ -48,8 +48,8 @@
 	border-right: 2px solid transparent;
 	border-bottom: 2px solid transparent;
 	transform: rotate(45deg);
-	border-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-	-moz-border-image: -moz-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
-	-webkit-border-image: -webkit-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	border-image: linear-gradient($primary-gradient);
+	-moz-border-image: -moz-linear-gradient($primary-gradient);
+	-webkit-border-image: -webkit-linear-gradient($primary-gradient);
 	border-image-slice: 1;
 }

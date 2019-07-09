@@ -1,0 +1,139 @@
+.toggle {
+	padding-left: 50px;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 24px;
+	color: $dark-shade-75;
+	position: relative;
+
+	&:before {
+	}
+}
+
+.toggle-switch {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: block;
+	width: 40px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	height: 20px;
+	border: 1px solid $dark-shade-25;
+	box-sizing: border-box;
+	border-radius: 10px;
+	transition: all 1s ease;
+
+	&:before {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		width: 12px;
+		height: 12px;
+		bottom: 3px;
+		right: 23px;
+		background: $dark-shade-25;
+		border-radius: 10px;
+	}
+}
+.checked {
+	.toggle-switch {
+		border-color: $purple;
+		&:before {
+			background: linear-gradient($primary-gradient);
+			right: 3px;
+		}
+	}
+}
+///////////////////////
+.label-toggle {
+	display: block;
+	margin-bottom: 5px;
+	min-width: 200px;
+	cursor: pointer;
+	padding-left: 50px;
+	position: relative;
+}
+/* Cкрываем стандартный чекбокс */
+.label-toggle__input {
+	display: none;
+}
+/* Новый чекбокс */
+.label-toggle__new-input {
+	// position: absolute;
+	// left: -35px;
+	// top: 4px;
+	// font-family: Montserrat;
+	// font-style: normal;
+	// font-weight: normal;
+	// font-size: 14px;
+	// line-height: 18px;
+	// color: $dark-shade-50;
+	// width: 20px;
+	// height: 20px;
+
+	// background: #FFFFFF;
+
+	// border: 1px solid $dark-shade-25;
+	// box-sizing: border-box;
+	// border-radius: 4px;
+
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: block;
+	width: 40px;
+	box-sizing: border-box;
+	border-radius: 10px;
+	height: 20px;
+	border: 1px solid $dark-shade-25;
+	box-sizing: border-box;
+	border-radius: 10px;
+	transition: all 0.4s ease;
+
+	&:before {
+		content: "";
+		display: inline-block;
+		position: absolute;
+		width: 12px;
+		height: 12px;
+		bottom: 3px;
+		right: 23px;
+		background: $dark-shade-25;
+		border-radius: 10px;
+		transition: right 0.4s ease;
+	}
+}
+/* Новый чекбокс при выборе */
+.label-toggle__input:checked + .label-toggle__new-input {
+	// border: 1px solid $purple;
+
+	// .toggle-item {
+	// 	display: block;
+	// }
+	// .toggle-item {
+		border-color: $purple;
+		&:before {
+			background: linear-gradient($primary-gradient);
+			right: 3px;
+		}
+	// }
+
+}
+// .toggle-item {
+// 	display: none;
+// 	position: absolute;
+// 	top: 4px;
+// 	left: 6px;
+// 	width: 6px;
+// 	height: 8px;
+// 	border-right: 2px solid transparent;
+// 	border-bottom: 2px solid transparent;
+// 	transform: rotate(45deg);
+// 	border-image: linear-gradient($primary-gradient);
+// 	-moz-border-image: -moz-linear-gradient($primary-gradient);
+// 	-webkit-border-image: -webkit-linear-gradient($primary-gradient);
+// 	border-image-slice: 1;
+// }
