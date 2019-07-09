@@ -1,0 +1,19 @@
+//- mixin radio-buttons(headtext)
+//- 	fieldset
+//- 		p #{headtext}
+//- 		+radio-buttons__item('Выбор 1', 'option')
+//- 		+radio-buttons__item('Выбор 2', 'option')
+
+//- mixin radio-buttons__item(buttontext, group_id)
+//- 	label(class="form__label-radio")
+//- 		input(class='form__input-radio' type='radio' name= group_id)
+//- 		span(class="form__radio")
+//- 		| #{buttontext}
+mixin radiobutton(text, id, value, group, checked)
+	if checked
+		input.input-radio(type="radio" id=id name=group value=value checked)
+		label.label-radio(for=id)&attributes(attributes) #{text}
+	else
+		input.input-radio(type="radio" id=id name=group value=value)
+		label.label-radio(for=id)&attributes(attributes) #{text}
+

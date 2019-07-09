@@ -1,0 +1,14 @@
+mixin checkbox(text, checked)
+
+	if checked
+		label.label-check
+			input(type="checkbox" name="checkbox" checked).label-check__input
+			span.label-check__new-input 
+				.check-item
+			|#{text}
+	else
+		label.label-check
+			input(type="checkbox" name="checkbox").label-check__input
+			span.label-check__new-input 
+				.check-item
+			|#{text}

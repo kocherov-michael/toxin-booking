@@ -34,7 +34,7 @@
 	height: 44px;
 	right: 1px;
 	top: 21px;
-	background: no-repeat 60% url(../../assets/img/icons/arrow_forward.png);
+	background: no-repeat 60%;
 }
 .label {
 	display: flex;
@@ -59,11 +59,11 @@
 	line-height: 15px;
 	color: $dark-shade-50;
 }
-  .textfield-hover-focus:before {
+.textfield-hover-focus:before {
 	@extend .textfield-default:before;
 	content: "hover / focus";
 }
-  .textfield-hover-focus .input-text {
+.textfield-hover-focus .input-text {
 	border: 1px solid $dark-shade-50;
 	&::-webkit-input-placeholder, &:-moz-placeholder {
 		color: $dark-shade-75;

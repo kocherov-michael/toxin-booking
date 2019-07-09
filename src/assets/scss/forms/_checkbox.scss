@@ -1,0 +1,55 @@
+.label-check {
+	display: block;
+	margin-bottom: 5px;
+	min-width: 200px;
+	cursor: pointer;
+	margin-left: 35px;
+	position: relative;
+}
+/* Cкрываем стандартный чекбокс */
+.label-check__input {
+	display: none;
+}
+/* Новый чекбокс */
+.label-check__new-input {
+	position: absolute;
+	left: -35px;
+	top: 4px;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 18px;
+	color: $dark-shade-50;
+	width: 20px;
+	height: 20px;
+
+	background: #FFFFFF;
+
+	border: 1px solid $dark-shade-25;
+	box-sizing: border-box;
+	border-radius: 4px;
+}
+/* Новый чекбокс при выборе */
+.label-check__input:checked + .label-check__new-input {
+	border: 1px solid #BC9CFF;
+
+	.check-item {
+		display: block;
+	}
+}
+.check-item {
+	display: none;
+	position: absolute;
+	top: 4px;
+	left: 6px;
+	width: 6px;
+	height: 8px;
+	border-right: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	transform: rotate(45deg);
+	border-image: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	-moz-border-image: -moz-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	-webkit-border-image: -webkit-linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+	border-image-slice: 1;
+}

@@ -1,6 +1,4 @@
 mixin dropdown(label, text, dataAttribute, list, apply, state)
-	//- - var listItems = list;
-
 	.dropdown
 		.dropdown__label
 			.dropdown__label-text #{label}
@@ -19,21 +17,24 @@ mixin dropdown(label, text, dataAttribute, list, apply, state)
 						.dropdown-action
 							.dropdown-action__apply(data-action="apply") применить
 							.dropdown-action__clear(data-action="clear") очистить
+		.dropdown__header-arrow(style="background-image: url(./assets/img/icons/expand_more.png);")
 
 
 
 
 
 mixin dateDropdown(label, text, state )
-	.dropdown
+	.dropdown&attributes(attributes)
 		.dropdown__label
 			.dropdown__text #{label}
 			.dropdown__state #{state}
-		.dropdown__header&attributes(attributes) #{text}
+		.dropdown__header #{text}
+		.dropdown__header-arrow(style="background-image: url(./assets/img/icons/expand_more.png);")
 
 mixin filterDateDropdown(label, text)
-	.dropdown
+	.dropdown&attributes(attributes)
 		.dropdown__label
 			.dropdown__text #{label}
 			//- .dropdown__state #{state}
-		.dropdown__header&attributes(attributes) #{text}
+		.dropdown__header #{text}
+		.dropdown__header-arrow(style="background-image: url(./assets/img/icons/expand_more.png);")
