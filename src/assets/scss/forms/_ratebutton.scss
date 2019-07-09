@@ -1,0 +1,15 @@
+.ratebutton {
+	display: inline-block;
+	width: 115px;
+	display: flex;
+}
+.ratebutton__star {
+	width: 24px;
+	height: 24px;
+	background-image: url(../../assets/img/icons/star_border.png);
+	background-repeat: no-repeat;
+	background-position: center;
+}
+.ratebutton__star--active {
+	background-image: url(../../assets/img/icons/star.png);
+}

@@ -1,0 +1,24 @@
+.likebutton {
+	display: inline-block;
+	width: 40px;
+	height: 20px;
+	background: $default-color;
+	border: 1px solid $dark-shade-25;
+	box-sizing: border-box;
+	border-radius: 10px;
+	padding: 3px 5px 3px 15px;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 10px;
+	line-height: 12px;
+	text-align: center;
+	color: $dark-shade-25;
+	background: no-repeat 5px url(../../assets/img/icons/favorite_border.png);
+}
+.likebutton--clicked {
+	border-color: $purple;
+	color: $purple;
+	background-image: url(../../assets/img/icons/favorite.png);
+}

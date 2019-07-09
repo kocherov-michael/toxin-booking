@@ -1,0 +1,5 @@
+mixin likebutton(number, checked)
+	if checked
+		.likebutton.likebutton--clicked(style="background-image: url(./assets/img/icons/favorite.png);")&attributes(attributes) #{number}
+	else
+		.likebutton(style="background-image: url(./assets/img/icons/favorite_border.png);")&attributes(attributes) #{number}
