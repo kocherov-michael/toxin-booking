@@ -1,0 +1,62 @@
+.button {
+	display: inline-block;
+	border-radius: 22px;
+	cursor: pointer;
+
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 15px;
+	text-transform: uppercase;
+	transition: all 0.4s ease;
+}
+.clicked-button {
+	opacity: 0.5;
+	margin-left: 18px;
+}
+.button-primary {
+	background: linear-gradient($primary-gradient);
+	color: $default-color;
+	padding: 15px 18px;
+	&:hover {
+		opacity: 0.5;
+	}
+}
+.button-secondary {
+	color: $purple;
+	border: 2px solid $purple;
+	padding: 13px 18px;
+	&:hover {
+		opacity: 0.5;
+	}
+}
+.button-single {
+	color: $purple;
+	
+	&:hover {
+		color: $dark-shade-50;
+	}
+}
+.clicked-button-single {
+	margin-left: 21px;
+	color: $dark-shade-50;
+}
+.button-wide {
+	@extend .button-primary;
+	display: block;
+	text-align: center;
+	position: relative;
+	&__arrow {
+		content: "";
+		display: block;
+		position: absolute;
+		right: 12px;
+		top: 13px;
+		width: 18px;
+		height: 18px;
+		// background-image: url(../../assets/img/icons/arrow_forward-white.png);
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+}

@@ -1,0 +1,8 @@
+mixin labelInputText(label, placeholder, state)
+	label.label(class=state) #{label}
+		input.input-text(type='text' placeholder= placeholder)&attributes(attributes)
+
+mixin subscriptionField(label, placeholder)
+	label.label(class="label--arrow") #{label}
+		.label__arrow(style="background-image: url(./assets/img/icons/arrow_forward.png);")
+		input.input-text(type='text' placeholder= placeholder)&attributes(attributes)

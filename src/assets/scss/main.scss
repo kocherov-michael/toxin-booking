@@ -1,8 +1,26 @@
+//Utils
 @import "utils/libs";
 @import "utils/vars";
 @import "utils/mixins";
 @import "utils/fonts";
 @import "utils/reset";
+@import "utils/paddings";
+@import "utils/margins";
+
+//Base
+@import "base/_base";
+
+//Forms
+@import "forms/_textfields";
+@import "forms/_dropdowns";
+@import "forms/_toggle";
+@import "forms/_buttons";
+@import "forms/_checkbox";
+@import "forms/_radiobutton";
+@import "forms/_likebutton";
+@import "forms/_ratebutton";
+@import "forms/_rangeslider";
+@import "forms/_pagination";
 
 //UI-KIT
 @import "ui-kit/ui-kit";

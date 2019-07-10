@@ -1,0 +1,10 @@
+mixin pagination(maxpage, description)
+	.pagination
+		.pagination__pages
+			.pagination__pages-item.pagination__pages-item--active 1
+			.pagination__pages-item 2
+			.pagination__pages-item 3
+			.pagination__pages-item ...
+			.pagination__pages-item #{maxpage}
+			.pagination__pages-item.pagination__pages-item--arrow(style="background-image: url(./assets/img/icons/arrow_forward-white.png);")
+		.pagination__description #{description}

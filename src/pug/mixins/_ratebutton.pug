@@ -1,0 +1,11 @@
+mixin ratebutton(activeStars)
+	- var starsCount = 5
+	- var i = 0
+	.ratebutton&attributes(attributes)
+		while i < starsCount
+			if i < activeStars
+				.ratebutton__star.ratebutton__star--active(style="background-image: url(./assets/img/icons/star.png);")
+			else
+				.ratebutton__star(style="background-image: url(./assets/img/icons/star_border.png);")
+			- i++
+		
