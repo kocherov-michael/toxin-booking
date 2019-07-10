@@ -15,10 +15,12 @@
 	line-height: 12px;
 	text-align: center;
 	color: $dark-shade-25;
-	background: no-repeat 5px url(../../assets/img/icons/favorite_border.png);
+	background-repeat: no-repeat;
+	background-position: 5px;
+	// background-image: url(../../assets/img/icons/favorite_border.png);
 }
 .likebutton--clicked {
 	border-color: $purple;
 	color: $purple;
-	background-image: url(../../assets/img/icons/favorite.png);
+	// background-image: url(../../assets/img/icons/favorite.png);
 }
