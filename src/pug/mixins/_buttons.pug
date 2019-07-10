@@ -1,0 +1,27 @@
+mixin button-primary(text, link)
+	if link
+		a.button.button-primary(href= link)&attributes(attributes) #{text}
+	else
+		a.button.button-primary(href= "#")&attributes(attributes) #{text}
+mixin button-secondary(text, link)
+	if link
+		a.button.button-secondary(href= link)&attributes(attributes) #{text}
+	else
+		a.button.button-secondary(href= "#")&attributes(attributes) #{text}
+	
+
+mixin button-single(text, link)
+	if link
+		a.button.button-single(href= link)&attributes(attributes) #{text}
+	else
+		a.button.button-single(href= "#")&attributes(attributes) #{text}
+	
+
+mixin button-wide(text, link)
+	if link
+		a.button.button-wide(href= link)&attributes(attributes) #{text}
+			.button-wide__arrow(style="background-image: url(./assets/img/icons/arrow_forward-white.png);")
+
+	else
+		a.button.button-wide(href= "#")&attributes(attributes) #{text}
+	
