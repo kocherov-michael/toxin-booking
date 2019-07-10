@@ -20,7 +20,7 @@ mixin button-single(text, link)
 mixin button-wide(text, link)
 	if link
 		a.button.button-wide(href= link)&attributes(attributes) #{text}
-			.button-wide__arrow
+			.button-wide__arrow(style="background-image: url(./assets/img/icons/arrow_forward-white.png);")
 
 	else
 		a.button.button-wide(href= "#")&attributes(attributes) #{text}
