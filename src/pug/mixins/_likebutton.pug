@@ -1,5 +1,7 @@
 mixin likebutton(number, checked)
 	if checked
-		.likebutton.likebutton--clicked(style="background-image: url(./assets/img/icons/favorite.png);")&attributes(attributes) #{number}
+		.likebutton.likebutton--clicked&attributes(attributes) #{number}
+			i.heart(class="zmdi zmdi-favorite")
 	else
-		.likebutton(style="background-image: url(./assets/img/icons/favorite_border.png);")&attributes(attributes) #{number}
+		.likebutton&attributes(attributes) #{number}
+			i.heart(class="zmdi zmdi-favorite-outline")

@@ -60,4 +60,38 @@
 	text-transform: uppercase;
 	color: $dark-shade;
 }
-
+.textfield-default:before {
+	content: "default";
+	position: absolute;
+	right: 0px;
+	font-family: Montserrat;
+	font-style: normal;
+	font-weight: normal;
+	text-transform: uppercase;
+	font-size: 12px;
+	line-height: 15px;
+	color: $dark-shade-50;
+}
+.textfield-hover-focus:before {
+	@extend .textfield-default:before;
+	content: "hover / focus";
+}
+.textfield-expanded:before {
+	@extend .textfield-default:before;
+	content: "expanded";
+}
+.montserrat {
+	font-family: 'Montserrat';
+	&-bold{
+		font-weight: normal;
+	}
+	&-normal{
+		font-weight: bold;
+	}
+	&-500{
+		font-weight: 500;
+	}
+	&-700{
+		font-weight: 700;
+	}
+}

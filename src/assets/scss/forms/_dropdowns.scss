@@ -3,6 +3,20 @@
 	flex-wrap: wrap;
 	margin-bottom: 15px;
 	position: relative;
+	&--mask{
+		color: $dark-shade-25;
+	}
+	&--active {
+		.dropdown-list{
+			display: block;
+		}
+		.dropdown__text {
+			border-color: $dark-shade-50;
+			border-radius: 4px;
+			box-shadow: 0px 10px 20px $dark-shade-5;
+			padding-bottom: 0;
+		}
+	}
 }
 .dropdown__label {
 	display: flex;
@@ -25,7 +39,7 @@
 	font-weight: normal;
 	color: $dark-shade-50;
 }
-.dropdown__header {
+.dropdown__text {
 	width: 100%;
 	min-width: 150px;
 	background: $default-color;
@@ -35,28 +49,16 @@
 	padding: 10px 15px;
 	margin-top: 5px;
 	position: relative;
-	&--active {
-		.dropdown__list{
-			display: block;
-		}
-		border-color: $dark-shade-50;
-		border-radius: 4px;
-		box-shadow: 0px 10px 20px $dark-shade-5;
-		padding-bottom: 0;
-	}
-	&--mask{
-		color: $dark-shade-25;
-	}
+	
 }
-.dropdown__header-arrow {
+.dropdown__text-arrow {
 	position: absolute;
-	right: 20px;
-	top: 40px;
-	width: 13px;
-	height: 8px;
-	// background-image: url(../../assets/img/icons/expand_more.png);
+	right: 15px;
+	top: 32px;
+	font-size: 24px;
+	line-height: 24px;
 }
-.dropdown__list {
+.dropdown-list {
 	display: none;
 	margin: 10px -15px 0 -15px;
 	border-top: 1px solid $dark-shade-50;
@@ -64,7 +66,7 @@
 	border-radius: 0 0 4px 4px;
 	padding: 0 10px 5px;
 }
-.dropdown-item {
+.dropdown-list__item {
 	display: flex;
 	justify-content: space-between;
 	margin-top: 5px;
@@ -73,13 +75,15 @@
 	color: $dark-shade;
 	text-transform: uppercase;
 }
-.dropdown-item__count {
+.dropdown-list__item-count {
 	display: flex;
 	justify-content: space-between;
 	width: 85px;
 	
 }
-.dropdown-item__count-item {
+.dropdown-list__item-minus,
+.dropdown-list__item-minus,
+.dropdown-list__item-number {
 	width: 27px;
 	height: 27px;
 	text-align: center;
@@ -87,19 +91,18 @@
 	box-sizing: border-box;
 	border-radius: 50%;
 	color: $dark-shade-50;
-	
-	&--number {
-		border: none;
-		color: $dark-shade;
-	}
 }
-.dropdown-action{
+.dropdown-list__item-number {
+	border: none;
+	color: $dark-shade;
+}
+.dropdown-list__action{
 	display: flex;
 	flex-direction: row-reverse;
 	justify-content: space-between;
 	font-weight: bold;
 }
-.dropdown-action__apply {
+.dropdown-list__action-apply {
 	color: $purple;
 	padding-top: 15px;
 	&:hover {
@@ -107,7 +110,7 @@
 		color: darken($purple, 20%);
 	}
 }
-.dropdown-action__clear {
+.dropdown-list__action-clear {
 	// display: none;
 	color: $dark-shade-50;
 	padding-top: 15px;

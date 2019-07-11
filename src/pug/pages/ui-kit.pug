@@ -27,10 +27,10 @@ block content
 		.ui-container__header Form Elements
 		.ui-container__content
 			.column.mr-25
-				+labelInputText("text field", "Email", "textfield-default")
-				+labelInputText("text field", "This is pretty awesome", "textfield-hover-focus")
-				+dropdown("dropdown", "Сколько гостей", "", "", "", "default")
-				+dateDropdown("masked text field", "ДД.ММ.ГГГГ", "default" ).dropdown__header--mask
+				+labelInputText("text field", "Email", "textfield-default").textfield-default
+				+labelInputText("text field", "This is pretty awesome").textfield-hover-focus
+				+dropdown("dropdown", "Сколько гостей", "", "", "").textfield-default
+				+dateDropdown("masked text field", "ДД.ММ.ГГГГ").dropdown--mask.textfield-default
 				.column__inner-row
 					+dateDropdown("date Dropdown", "ДД.ММ.ГГГГ").mr-20
 					+dateDropdown("date Dropdown", "19.08.2019")
@@ -71,11 +71,13 @@ block content
 					+button-single("click me", "link")
 					+button-single("click me", "link").clicked-button-single
 				+button-wide("перейти к оплате", "link")
+				.small-header.mb-15.mt-40 pagination
+				+pagination("1 – 12 из 100+ вариантов аренды")
 		.ui-container__content
 			.column.pr-50
-				+dropdown("Dropdown", "2 спальни, 2 кровати...", "", "", "", "default")
-				+dropdown("Dropdown", "2 спальни, 2 кровати...", "room", ['спальни', 'кровати', 'ванные комнаты'], "", "expanded")(class="dropdown__header--active")
+				+dropdown("Dropdown", "2 спальни, 2 кровати...", "", "", "").textfield-default
+				+dropdown("Dropdown", "2 спальни, 2 кровати...", "room", ['спальни', 'кровати', 'ванные комнаты'], "").dropdown--active.textfield-expanded
 			.column
-				+dropdown("Dropdown", "Сколько гостей", "room", ['взрослые', 'дети', 'младенцы'],"apply" , "")(class="dropdown__header--active")
+				+dropdown("Dropdown", "Сколько гостей", "room", ['взрослые', 'дети', 'младенцы'],"apply" , "").dropdown--active
 			.column
-				+dropdown("Dropdown", "3 гостя", "room", ['взрослые', 'дети', 'младенцы'],"apply" , "")(class="dropdown__header--active")
+				+dropdown("Dropdown", "3 гостя", "room", ['взрослые', 'дети', 'младенцы'],"apply" , "").dropdown--active

@@ -1,8 +1,8 @@
-mixin labelInputText(label, placeholder, state)
-	label.label(class=state) #{label}
-		input.input-text(type='text' placeholder= placeholder)&attributes(attributes)
+mixin labelInputText(label, placeholder)
+	label.label&attributes(attributes) #{label}
+		input.input-text(type='text' placeholder= placeholder)
 
 mixin subscriptionField(label, placeholder)
 	label.label(class="label--arrow") #{label}
-		.label__arrow(style="background-image: url(./assets/img/icons/arrow_forward.png);")
+		.label__arrow <i class="zmdi zmdi-arrow-right zmdi-hc-2x"></i>
 		input.input-text(type='text' placeholder= placeholder)&attributes(attributes)

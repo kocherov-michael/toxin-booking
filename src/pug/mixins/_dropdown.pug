@@ -1,40 +1,30 @@
-mixin dropdown(label, text, dataAttribute, list, apply, state)
-	.dropdown
-		.dropdown__label
-			.dropdown__label-text #{label}
-			.dropdown__label-state #{state}
-		.dropdown__header(data-dropdown=dataAttribute)&attributes(attributes) #{text}
-			if list
-				.dropdown__list
-					each item in list
-						.dropdown-item 
-							.dropdown-item__text #{item}
-							.dropdown-item__count
-								.dropdown-item__count-item(data-count="minus") -
-								.dropdown-item__count-item.dropdown-item__count-item--number(data-count="number") 0
-								.dropdown-item__count-item(data-count="plus") +
-					if apply
-						.dropdown-action
-							.dropdown-action__apply(data-action="apply") применить
-							.dropdown-action__clear(data-action="clear") очистить
-		.dropdown__header-arrow(style="background-image: url(./assets/img/icons/expand_more.png);")
-
-
-
-
-
-mixin dateDropdown(label, text, state )
+mixin dropdown(label, text, dataAttribute, list, apply)
 	.dropdown&attributes(attributes)
-		.dropdown__label
-			.dropdown__text #{label}
-			.dropdown__state #{state}
-		.dropdown__header #{text}
-		.dropdown__header-arrow(style="background-image: url(./assets/img/icons/expand_more.png);")
+		.dropdown__label #{label}
+		.dropdown__text(data-dropdown=dataAttribute) #{text}
+			if list
+				.dropdown-list
+					each item in list
+						.dropdown-list__item 
+							.dropdown-list__item-text #{item}
+							.dropdown-list__item-count
+								.dropdown-list__item-minus(data-count="minus") <i class="zmdi zmdi-minus"></i>
+								.dropdown-list__item-number(data-count="number") 0
+								.dropdown-list__item-minus(data-count="plus") <i class="zmdi zmdi-plus"></i>
+					if apply
+						.dropdown-list__action
+							.dropdown-list__action-apply(data-action="apply") применить
+							.dropdown-list__action-clear(data-action="clear") очистить
+		.dropdown__text-arrow <i class="zmdi zmdi-chevron-down"></i>
+
+mixin dateDropdown(label, text )
+	.dropdown&attributes(attributes)
+		.dropdown__label #{label}
+		.dropdown__text #{text}
+		.dropdown__text-arrow <i class="zmdi zmdi-chevron-down"></i>
 
 mixin filterDateDropdown(label, text)
 	.dropdown&attributes(attributes)
-		.dropdown__label
-			.dropdown__text #{label}
-			//- .dropdown__state #{state}
-		.dropdown__header #{text}
-		.dropdown__header-arrow(style="background-image: url(./assets/img/icons/expand_more.png);")
+		.dropdown__label #{label}
+		.dropdown__text #{text}
+		.dropdown__text-arrow <i class="zmdi zmdi-chevron-down"></i>

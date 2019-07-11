@@ -30,11 +30,9 @@
 .label__arrow{
 	display: block;
 	position: absolute;
-	width: 44px;
-	height: 44px;
-	right: 1px;
-	top: 21px;
-	background: no-repeat 60%;
+	color: $purple;
+	right: 10px;
+	top: 30px;
 }
 .label {
 	display: flex;
@@ -49,20 +47,7 @@
 	position: relative;
 	padding-bottom: 20px;
 }
-.textfield-default:before {
-	content: "default";
-	position: absolute;
-	right: 0px;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 12px;
-	line-height: 15px;
-	color: $dark-shade-50;
-}
-.textfield-hover-focus:before {
-	@extend .textfield-default:before;
-	content: "hover / focus";
-}
+
 .textfield-hover-focus .input-text {
 	border: 1px solid $dark-shade-50;
 	&::-webkit-input-placeholder, &:-moz-placeholder {
