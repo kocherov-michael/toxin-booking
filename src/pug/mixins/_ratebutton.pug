@@ -4,8 +4,10 @@ mixin ratebutton(activeStars)
 	.ratebutton&attributes(attributes)
 		while i < starsCount
 			if i < activeStars
-				.ratebutton__star.ratebutton__star--active <i class="zmdi zmdi-star"></i>
+				.ratebutton__star.ratebutton__star--active
+					i.zmdi.zmdi-star.icon-color
 			else
-				.ratebutton__star <i class="zmdi zmdi-star-outline"></i>
+				.ratebutton__star
+					i.zmdi.zmdi-star-outline.icon-color
 			- i++
 		

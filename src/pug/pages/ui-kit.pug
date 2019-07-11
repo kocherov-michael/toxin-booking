@@ -73,7 +73,7 @@ block content
 				+button-wide("перейти к оплате", "link")
 				.small-header.mb-15.mt-40 pagination
 				+pagination("1 – 12 из 100+ вариантов аренды")
-		.ui-container__content
+		.ui-container__content.mt-55
 			.column.pr-50
 				+dropdown("Dropdown", "2 спальни, 2 кровати...", "", "", "").textfield-default
 				+dropdown("Dropdown", "2 спальни, 2 кровати...", "room", ['спальни', 'кровати', 'ванные комнаты'], "").dropdown--active.textfield-expanded
@@ -81,3 +81,18 @@ block content
 				+dropdown("Dropdown", "Сколько гостей", "room", ['взрослые', 'дети', 'младенцы'],"apply" , "").dropdown--active
 			.column
 				+dropdown("Dropdown", "3 гостя", "room", ['взрослые', 'дети', 'младенцы'],"apply" , "").dropdown--active
+		.ui-container__content.mt-55
+			.column.pr-50
+				+checkboxList("expandable checkbox list")
+				+checkboxList("expandable checkbox list", [['Завтрак', '0'],['Письменный стол', '1'],['Стул для кормления', '1'],['Кроватка', '1'],['Телевизор', '0'],['Шампунь', '0'],['Телевизор', '0'],['Шампунь', '0']]).expandable-checbox--active
+			.column
+				.small-header.mb-15 rich checkbox buttons
+				+checkboxRich('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
+				+checkboxRich('Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.')
+			.column
+				.small-header.mb-15 bullet list
+				+bulletList(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
+		.ui-container__content.mt-55
+			.column
+				+advantage("Комфорт", "Шумопоглощающие стены", "zmdi zmdi-mood").mb-20
+				+advantage("Удобство", "Окно в каждой из спален", "zmdi zmdi-city")

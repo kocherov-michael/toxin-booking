@@ -80,18 +80,3 @@
 	@extend .textfield-default:before;
 	content: "expanded";
 }
-.montserrat {
-	font-family: 'Montserrat';
-	&-bold{
-		font-weight: normal;
-	}
-	&-normal{
-		font-weight: bold;
-	}
-	&-500{
-		font-weight: 500;
-	}
-	&-700{
-		font-weight: 700;
-	}
-}

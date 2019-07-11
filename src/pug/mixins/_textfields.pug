@@ -4,5 +4,6 @@ mixin labelInputText(label, placeholder)
 
 mixin subscriptionField(label, placeholder)
 	label.label(class="label--arrow") #{label}
-		.label__arrow <i class="zmdi zmdi-arrow-right zmdi-hc-2x"></i>
+		.label__arrow
+			i.zmdi.zmdi-arrow-right.icon-color
 		input.input-text(type='text' placeholder= placeholder)&attributes(attributes)

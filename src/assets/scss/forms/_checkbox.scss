@@ -5,6 +5,9 @@
 	cursor: pointer;
 	margin-left: 35px;
 	position: relative;
+	font-weight: normal;
+	font-size: 14px;
+	line-height: 18px;
 }
 /* Cкрываем стандартный чекбокс */
 .label-check__input {
@@ -14,7 +17,7 @@
 .label-check__new-input {
 	position: absolute;
 	left: -35px;
-	top: 4px;
+	top: -1px;
 	font-family: Montserrat;
 	font-style: normal;
 	font-weight: normal;
@@ -52,4 +55,62 @@
 	-moz-border-image: -moz-linear-gradient($primary-gradient);
 	-webkit-border-image: -webkit-linear-gradient($primary-gradient);
 	border-image-slice: 1;
+}
+.expandable-checbox {
+	position: relative;
+	width: 100%;
+	min-width: 250px;
+	&__header {
+		margin-bottom: 20px;
+		font-weight: bold;
+		font-size: 12px;
+		line-height: 15px;
+		text-transform: uppercase;
+		color: $dark-shade;
+
+	}
+	&__list {
+		display: none;
+	}
+	&__arrow {
+		position: absolute;
+		top: -5px;
+		right: 0;
+		font-weight: normal;
+		font-size: 24px;
+		line-height: 24px;
+		color: $dark-shade-50;
+	}
+	&__list-item {
+		margin-bottom: 10px;
+	}
+	&--active {
+		.expandable-checbox__list {
+			display: block;
+		}
+		.expandable-checbox__arrow {
+			transform: rotate(180deg);
+		}
+	}
+}
+
+.label-check-rich {
+	@extend .label-check;
+	font-weight: bold;
+	margin-bottom: 10px;
+
+	&__input {
+		@extend .label-check__input;
+	}
+	&__new-input {
+		@extend .label-check__new-input;
+	}
+
+	&__description {
+		font-weight: normal;
+		font-size: 12px;
+		line-height: 14px;
+		color: $dark-shade-50;
+		margin-top: 5px;
+	}
 }
