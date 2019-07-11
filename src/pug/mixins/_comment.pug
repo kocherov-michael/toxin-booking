@@ -1,0 +1,7 @@
+mixin comment(author, time, text, likeCount, likeCheck)
+	.comment&attributes(attributes)
+		.comment__author #{author}
+		.comment__time #{time}
+		.comment__text-wrapper
+			.comment__text #{text}
+			+likebutton(likeCount, likeCheck).comment__like

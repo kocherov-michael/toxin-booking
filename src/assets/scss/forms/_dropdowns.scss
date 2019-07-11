@@ -5,6 +5,9 @@
 	position: relative;
 	&--mask{
 		color: $dark-shade-25;
+		.dropdown__text-arrow {
+			display: none;
+		}
 	}
 	&--active {
 		.dropdown-list{
@@ -82,7 +85,7 @@
 	
 }
 .dropdown-list__item-minus,
-.dropdown-list__item-minus,
+.dropdown-list__item-plus,
 .dropdown-list__item-number {
 	width: 27px;
 	height: 27px;
@@ -92,6 +95,11 @@
 	border-radius: 50%;
 	color: $dark-shade-50;
 }
+.dropdown-list__item-minus,
+.dropdown-list__item-plus {
+	padding-top: 7px;
+}
+
 .dropdown-list__item-number {
 	border: none;
 	color: $dark-shade;
