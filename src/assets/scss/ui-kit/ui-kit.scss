@@ -80,3 +80,6 @@
 	@extend .textfield-default:before;
 	content: "expanded";
 }
+.ui-container--dark {
+	background-color: #F4F4F6;
+}

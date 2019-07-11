@@ -1,5 +1,5 @@
-mixin labelInputText(label, placeholder)
-	label.label&attributes(attributes) #{label}
+mixin labelInputText(placeholder)
+	label.label&attributes(attributes)
 		input.input-text(type='text' placeholder= placeholder)
 
 mixin subscriptionField(label, placeholder)

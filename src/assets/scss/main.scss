@@ -28,8 +28,13 @@
 //UI-KIT
 @import "ui-kit/ui-kit";
 
+//Sections
+@import "sections/_find-room";
+@import "sections/_registration-card";
+
 //Pages
 @import "pages/index";
+
 
 // html {
 //   line-height: $mainLineHeight;

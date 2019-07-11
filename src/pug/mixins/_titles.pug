@@ -1,8 +1,7 @@
 mixin titles(name, text, fontsize)
-    .titles-block
-        .titles-block__name(style={"font-size": fontsize}) #{name}
-        if name == "body"
-            .titles-block__text #{text}
-        else
-            #{name}.titles-block__text #{text}
-        
+	.titles-block
+		.titles-block__name(style={"font-size": fontsize}) #{name}
+		if name == "body"
+			.titles-block__text #{text}
+		else
+			#{name}.titles-block__text #{text}
