@@ -10,6 +10,7 @@
 	line-height: 15px;
 	text-transform: uppercase;
 	transition: all 0.4s ease;
+	background-color: transparent;
 }
 .clicked-button {
 	opacity: 0.5;
@@ -44,19 +45,14 @@
 }
 .button-wide {
 	@extend .button-primary;
+	width: 100%;
 	display: block;
 	text-align: center;
 	position: relative;
 	&__arrow {
-		content: "";
 		display: block;
 		position: absolute;
 		right: 12px;
-		top: 13px;
-		width: 18px;
-		height: 18px;
-		// background-image: url(../../assets/img/icons/arrow_forward-white.png);
-		background-repeat: no-repeat;
-		background-position: center;
+		top: 10px;
 	}
 }

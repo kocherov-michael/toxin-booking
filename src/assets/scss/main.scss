@@ -21,12 +21,20 @@
 @import "forms/_ratebutton";
 @import "forms/_rangeslider";
 @import "forms/_pagination";
+@import "forms/_bulletlist";
+@import "forms/_advantage";
+@import "forms/_comment";
 
 //UI-KIT
 @import "ui-kit/ui-kit";
 
+//Sections
+@import "sections/_find-room";
+@import "sections/_registration-card";
+
 //Pages
 @import "pages/index";
+
 
 // html {
 //   line-height: $mainLineHeight;

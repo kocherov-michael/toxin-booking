@@ -17,10 +17,14 @@
 	color: $dark-shade-25;
 	background-repeat: no-repeat;
 	background-position: 5px;
-	// background-image: url(../../assets/img/icons/favorite_border.png);
+	position: relative;
 }
 .likebutton--clicked {
 	border-color: $purple;
 	color: $purple;
-	// background-image: url(../../assets/img/icons/favorite.png);
+}
+.heart {
+	position: absolute;
+	top: 3px;
+	left: 5px;
 }

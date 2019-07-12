@@ -12,3 +12,25 @@ mixin checkbox(text, checked)
 			span.label-check__new-input 
 				.check-item
 			|#{text}
+
+mixin checkboxList(header, list)
+	.expandable-checbox&attributes(attributes)
+		.expandable-checbox__header #{header}
+		if list
+			.expandable-checbox__list
+				each item in list
+					.expandable-checbox__list-item
+						if item[1] === "0"
+							+checkbox(item[0])
+						else
+							+checkbox(item[0], "checked")
+		.expandable-checbox__arrow
+			i.zmdi.zmdi-chevron-down
+
+mixin checkboxRich(text, desc)
+	label.label-check-rich
+		input(type="checkbox" name="checkbox").label-check-rich__input
+		span.label-check-rich__new-input 
+			.check-item
+		|#{text}
+		.label-check-rich__description #{desc}

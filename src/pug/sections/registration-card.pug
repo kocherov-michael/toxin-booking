@@ -1,0 +1,21 @@
+.registration
+	.registration__title 
+		h1 Регистрация аккаунта
+	.registration__name
+		+labelInputText("Имя")
+	.registration__secondname
+		+labelInputText("Фамилия")
+	.registration__male
+		+radiobutton("Мужчина", "man", "man", "male", "checked").mr-20
+		+radiobutton("Женщина", "woman", "woman", "male")
+	.registration__burthday
+		+dateDropdown("Дата рождения", "ДД.ММ.ГГГГ")
+	.registration__login
+		h3 Данные для входа на сервис
+		+labelInputText("Email")
+	.registration__password
+		+labelInputText("Email")
+	.registration__toggle
+		+toggle("Получать спецпредложения")
+	.find-room__button
+		+button-wide("Перейти к оплате", "#")
