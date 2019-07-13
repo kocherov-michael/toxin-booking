@@ -7,3 +7,12 @@
 	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
 }
+
+.registration__account-login {
+	display: flex;
+	justify-content: space-between;
+}
+.registration__account-login-text {
+	display: inline-block;
+	padding-top: 12px;
+}

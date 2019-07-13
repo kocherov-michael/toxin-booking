@@ -9,7 +9,8 @@
 		+radiobutton("Мужчина", "man", "man", "male", "checked").mr-20
 		+radiobutton("Женщина", "woman", "woman", "male")
 	.registration__burthday
-		+dateDropdown("Дата рождения", "ДД.ММ.ГГГГ")
+		h3 Дата рождения
+		+dateDropdown("ДД.ММ.ГГГГ")
 	.registration__login
 		h3 Данные для входа на сервис
 		+labelInputText("Email")
@@ -17,5 +18,7 @@
 		+labelInputText("Email")
 	.registration__toggle
 		+toggle("Получать спецпредложения")
-	.find-room__button
-		+button-wide("Перейти к оплате", "#")
+	.registration__account-login
+		.registration__account-login-text Уже есть аккаунт на Toxin
+		+button-secondary("Войти", "#")
+	
