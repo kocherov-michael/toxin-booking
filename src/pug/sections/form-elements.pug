@@ -6,14 +6,22 @@
 			+labelInputText("Email").textfield-default
 			.small-header text field
 			+labelInputText("This is pretty awesome").textfield-hover-focus
-			+dropdown("dropdown", "Сколько гостей", "", "", "").textfield-default
+			.small-header dropdown
+			+dropdown("Сколько гостей", "", "", "").textfield-default
+			.small-header masked text field
 			+dateDropdown("masked text field", "ДД.ММ.ГГГГ").dropdown--mask.textfield-default
 			.column__inner-row
-				+dateDropdown("date Dropdown", "ДД.ММ.ГГГГ").mr-20
-				+dateDropdown("date Dropdown", "19.08.2019")
+				.column
+					.small-header date Dropdown
+					+dateDropdown("ДД.ММ.ГГГГ").mr-20
+				.column
+					.small-header date Dropdown
+					+dateDropdown("19.08.2019")
 			.column.mr-50
-				+filterDateDropdown("filter date dropdown", "19 авг - 23 авг")
-				+subscriptionField("subscription text field", "Email")
+				.small-header filter date dropdown
+				+filterDateDropdown("19 авг - 23 авг")
+				.small-header subscription text field
+				+subscriptionField("Email")
 				
 		.column.ml-100
 			.small-header.mb-15 checkbox buttons
@@ -52,12 +60,16 @@
 			+pagination("1 – 12 из 100+ вариантов аренды")
 	.ui-container__content.mt-55
 		.column.pr-50
-			+dropdown("Dropdown", "2 спальни, 2 кровати...", "", "", "").textfield-default
-			+dropdown("Dropdown", "2 спальни, 2 кровати...", "room", ['спальни', 'кровати', 'ванные комнаты'], "").dropdown--active.textfield-expanded
+			.small-header dropdown
+			+dropdown("2 спальни, 2 кровати...", "", "", "").textfield-default
+			.small-header dropdown
+			+dropdown("2 спальни, 2 кровати...", "room", ['спальни', 'кровати', 'ванные комнаты'], "").dropdown--active.textfield-expanded
 		.column
-			+dropdown("Dropdown", "Сколько гостей", "room", ['взрослые', 'дети', 'младенцы'],"apply" , "").dropdown--active
+			.small-header dropdown
+			+dropdown("Сколько гостей", "room", ['взрослые', 'дети', 'младенцы'],"apply" , "").dropdown--active
 		.column
-			+dropdown("Dropdown", "3 гостя", "room", ['взрослые', 'дети', 'младенцы'],"apply" , "").dropdown--active
+			.small-header dropdown
+			+dropdown("3 гостя", "room", ['взрослые', 'дети', 'младенцы'],"apply" , "").dropdown--active
 	.ui-container__content.mt-55
 		.column.pr-50
 			+checkboxList("expandable checkbox list")
