@@ -1,0 +1,50 @@
+.calendar
+	.calendar__header 
+		.calendar__header-left
+			i.zmdi.zmdi-arrow-left
+		h2.calendar__header-date Август 2019
+		.calendar__header-right
+			i.zmdi.zmdi-arrow-right
+	
+	.calendar__week
+		each val in ["Пн", "Вт", "Ср", "Чт", "Пт", "Сб", "Вс"]
+			.calendar__week-item #{val}
+				
+	- var day = 29;
+	- var x = 0;
+	- var pale = "pale";
+	- var activeDay = 8;
+	- var active = "";
+	- var periodBegin = 19;
+	- var periodEnd = 23;
+	- var period = "";
+	.calendar__date
+		while x < 5 
+			.calendar__date-row
+				- x++
+				- var y = 0
+				while y < 7 
+					if day == 1
+						if pale == "pale"
+							- pale = ""
+						else
+							- pale = "pale"
+					if day == activeDay
+						- active = "calendar__day--active"
+					if day == periodBegin
+						- period = "calendar__day--period-begin"
+					if day == periodEnd
+						- period = "calendar__day--period-end"
+					.calendar__day(class=active class=pale class=period) #{day}
+					- active = ""
+					if day == periodBegin
+						- period = "calendar__day--period"
+					if day == periodEnd
+						- period = ""
+					- day += 1
+					- y++
+					if day > 31
+						- day = 1
+	.calendar__action
+		.calendar__action-apply(data-action="apply") применить
+		.calendar__action-clear(data-action="clear") очистить

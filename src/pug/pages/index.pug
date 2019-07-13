@@ -18,12 +18,15 @@ block variables
 	- var pageClass= "index-page";
 
 block content
+	//- .ui-container
+	//- 	.ui-container__content
 	.container
 		.title-1.text-center.mb-55 Проект Toxin-Booking
 		.row
 			.col
 				.card.align-items-center.pb-35
 					.title-2 UI-Kit
+					//- +button-secondary("перейти", "ui-kit.html")
 					a(href="ui-kit.html")="перейти"
 					//- +button("Перейти", "ui/ui-kit.html")
 			.col
