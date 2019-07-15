@@ -63,7 +63,8 @@
 		border-radius: 22px;
 		color: $default-color;
 		position: relative;
-		&:after {
+		z-index: 1;
+		&:before {
 			position: absolute;
 			content: '';
 			width: 20px;
@@ -72,26 +73,18 @@
 			right: 0;
 			background: linear-gradient($primary-gradient);
 			opacity: 0.25;
+			z-index: -1;
 		}
 	}
 	&--period-end {
-		&:after {
+		&:before {
 			right: auto;
 			left: 0;
 		}
 	}
 	&--period {
 		position: relative;
-		&:after {
-			position: absolute;
-			content: '';
-			width: 40px;
-			height: 40px;
-			top: 0;
-			right: 0;
-			background: linear-gradient($primary-gradient);
-			opacity: 0.25;
-		}
+		background: linear-gradient($primary-gradient-transp);
 	}
 }
 .calendar__action {

@@ -1,6 +1,6 @@
 // Font
 $mainFont                : 'Montserrat', Arial, sans-serif;
-$secondaryFont           : 'Quicksand', "Open Sans", sans-serif;
+$secondaryFont           : 'Quicksand', 'Montserrat', sans-serif;
 
 // Size
 $mainFontColor           : #101010;
@@ -47,5 +47,6 @@ $green                   : #6FCF97;
 
 // gradient
 $primary-gradient        : 180deg, #BC9CFF 0%, #8BA4F9 100%;
+$primary-gradient-transp : 180deg, #BC9CFF40 0%, #8BA4F940 100%;
 $secondary-gradient      : 180deg, #6FCF97 0%, #66D2EA 100%;
 

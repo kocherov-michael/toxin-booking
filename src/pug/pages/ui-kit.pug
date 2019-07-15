@@ -20,5 +20,12 @@ block content
 				include ../sections/login-card.pug
 			.column
 				include ../sections/calendar.pug
-				include ../sections/room-card.pug
-	
+				+roomCard("./assets/img/images/image_888.png", "888", "9990", "5", "145", "люкс", "arrows")
+				+roomCard("./assets/img/images/image_840.png", "840", "9900", "4", "65")
+	.ui-container.ui-container--dark.ui-container--header
+		.header-wrapper
+			.container
+				include ../sections/header-guest.pug
+		.header-wrapper
+			.container
+				include ../sections/header-user.pug
