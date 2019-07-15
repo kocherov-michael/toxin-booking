@@ -1,49 +1,102 @@
+.ui-wrapper {
+	width: 100%;
+	background-color: #fff;
+}
 .ui-container {
 	max-width: 1440px;
+	// max-width: 1920px;
+	min-width: 320px;
 	margin: 0 auto;
-	background: #fff;
-	margin-top: 160px;
-	position: relative;
-	padding: 140px;
+	// background: #fff;
+	// margin-top: 160px;
+	// position: relative;
+	padding: 140px 140px 50px;
 }
-.ui-container__header {
-	position: absolute;
-	top: -20px;
-	left: 0;
-}
+// .ui-container__header {
+// 	position: absolute;
+// 	top: -20px;
+// 	left: 0;
+// }
 .ui-container__content {
 	display: flex;
 	justify-content: space-between;
 	// padding: 140px;
 }
+.colors {
+	padding-top: 7px;
+}
 .palette {
 	position: relative;
-	padding-left: 120px;
+	padding-left: 130px;
 	height: 70px;
-	margin-bottom: 19px;
+	margin-bottom: 20px;
 }
 .palette__color {
 	position: absolute;
 	width: 70px;
 	height: 70px;
 	left: 20px;
-	top: -10px;
+	top: -7px;
 	border-radius: 6px;
+}
+.palette__name {
+	font-family: Quicksand;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 19px;
+	line-height: 28px;
+}
+.palette__text {
+	font-size: 18px;
+	padding-top: 2px;
 }
 .titles-block {
 	display: flex;
-	width: 420px;
+	width: 355px;
 	margin-bottom: 50px;
-}
-.titles-block__name {
-	width: 65px;
-	text-align: right;
-	padding-right: 30px;
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: normal;
-	line-height: 29px;
-	color: rgba(31, 32, 65, 0.25);
+	position: relative;
+	p {
+		padding-right: 40px;
+	}
+	&--h1:before,
+	&--h2:before,
+	&--h3:before,
+	&--body:before {
+		position: absolute;
+		content: "H1";
+		top: 0;
+		left: -58px;
+		color: $dark-shade-25;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 24px;
+		line-height: 29px;
+	}
+	&--h2:before {
+		content: "H2";
+		left: -56px;
+		font-family: Montserrat;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 19px;
+		line-height: 23px;
+	}
+	&--h3 {
+		margin-bottom: 47px;
+	}
+	&--h3:before {
+		content: "H3";
+		left: -47px;
+		font-size: 12px;
+		line-height: 15px;
+	}
+	&--body:before {
+		content: "Body";
+		left: -67px;
+		font-size: 14px;
+		line-height: 24px;
+	}
 }
 .column__inner-row {
 	display: flex;
@@ -84,14 +137,15 @@
 .ui-container--dark {
 	background-color: #F4F4F6;
 }
-.ui-container--header {
-	padding-left: 0;
-	padding-right: 0;
-}
+// .ui-container--header {
+// 	padding-left: 0;
+// 	padding-right: 0;
+// }
 .section-wrapper {
 	width: 100%;
 	background-color: $default-color;
 	box-shadow: 0px 10px 20px $dark-shade-5;
 	margin-bottom: 40px;
 }
+
 
