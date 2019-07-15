@@ -9,14 +9,22 @@
 }
 .navigation {
 	display: flex;
-
+	margin-top: 10px;
 	&__item {
 		margin-right: 30px;
-		margin-top: 10px;
 		font-weight: normal;
 		font-size: 14px;
 		line-height: 17px;
 		color: $dark-shade-50;
+		&--active {
+			font-weight: bold;
+			color: $dark-shade-75;
+		}
+		&--chevron {
+			position: relative;
+			margin-right: 25px;
+			padding-right: 17px;
+		}
 	}
 }
 .header__nav {
@@ -53,4 +61,12 @@
 		min-height: 30px;
 
 	}
+}
+.navigation-chevron {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 24px;
+	line-height: 20px;
+	color: $dark-shade-50;
 }

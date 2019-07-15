@@ -11,9 +11,6 @@
 	text-transform: uppercase;
 	transition: all 0.4s ease;
 	background-color: transparent;
-	// &--small {
-	// 	padding: 10px;
-	// }
 }
 .clicked-button {
 	opacity: 0.5;
@@ -21,7 +18,6 @@
 }
 .button-primary {
 	background: linear-gradient($primary-gradient);
-	// border: 2px solid $purple;
 	color: $default-color;
 	padding: 15px 18px;
 	&:hover {
@@ -36,8 +32,6 @@
 	color: $purple;
 	border: 2px solid $purple;
 	padding: 13px 18px;
-	// padding: 15px 18px;
-	// background: linear-gradient($primary-gradient);
 	position: relative;
 	
 	&:hover {
