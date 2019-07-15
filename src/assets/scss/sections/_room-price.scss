@@ -1,0 +1,84 @@
+.room-price {
+	width: 380px;
+	padding: 45px 30px 30px;
+	background: $default-color;
+	border: 1px solid rgba(0, 0, 0, 0.12);
+	box-sizing: border-box;
+	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+	border-radius: 4px;
+	margin-bottom: 40px;
+}
+.room-price__title {
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 17px;
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 20px;
+}
+.room-number__number {
+	font-size: 24px;
+	padding-left: 4px;
+	padding-right: 4px;
+}
+.room-number__type {
+	color: $purple;
+}
+.price-per-day {
+	color: $dark-shade-50;
+}
+.price-per-day__text {
+	font-weight: normal;
+	font-size: 12px;
+	line-height: 18px;
+	margin-left: 8px;
+}
+.room-price-list__item {
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 15px;
+}
+.room-price-list__item-type {
+	display: flex;
+	justify-content: space-between;
+	width: 240px;
+	display: flex;
+}
+.service-info {
+	width: 20px;
+	height: 20px;
+	border: 1px solid $dark-shade-25;
+	box-sizing: border-box;
+	border-radius: 10px;
+	text-align: center;
+	padding-bottom: 3px;
+	color: $dark-shade-25;
+	font-weight: bold;
+	font-size: 12px;
+	line-height: 20px;
+}
+.room-price__total {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px dotted $dark-shade-25;
+	position: relative;
+	margin-bottom: 25px;
+	height: 18px;
+
+}
+.room-price__total-text {
+	font-family: $mainFont;
+	position: absolute;
+	top: 0px;
+	left: 0;
+	background-color: #fff;
+	padding-right: 5px;
+}
+.room-price__total-price {
+	font-family: $mainFont;
+	position: absolute;
+	top: 0px;
+	right: 0;
+	background-color: #fff;
+	padding-left: 5px;
+}

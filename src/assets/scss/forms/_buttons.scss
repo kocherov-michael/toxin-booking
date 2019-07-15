@@ -23,13 +23,23 @@
 	&:hover {
 		opacity: 0.5;
 	}
+	&--small {
+		padding-top: 10px;
+		padding-bottom: 9px;
+	}
 }
 .button-secondary {
 	color: $purple;
 	border: 2px solid $purple;
 	padding: 13px 18px;
+	position: relative;
+	
 	&:hover {
 		opacity: 0.5;
+	}
+	&--small {
+		padding-top: 8px;
+		padding-bottom: 7px;
 	}
 }
 .button-single {

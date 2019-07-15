@@ -1,26 +1,20 @@
-mixin button-primary(text, link)
-	if link
-		button.button.button-primary(href= link)&attributes(attributes) #{text}
+mixin button-primary(text, link, small)
+	if small
+		button.button.button-primary.button-primary--small(href=link)&attributes(attributes) #{text}
 	else
-		button.button.button-primary(href= "#")&attributes(attributes) #{text}
-mixin button-secondary(text, link)
-	if link
-		button.button.button-secondary(href= link)&attributes(attributes) #{text}
+		button.button.button-primary(href=link)&attributes(attributes) #{text}
+
+mixin button-secondary(text, link, small)
+	if small
+		button.button.button-secondary.button-secondary--small(href=link)&attributes(attributes) #{text}
 	else
-		button.button.button-secondary(href= "#")&attributes(attributes) #{text}
-	
+		button.button.button-secondary(href=link)&attributes(attributes) #{text}
 
 mixin button-single(text, link)
-	if link
-		button.button.button-single(href= link)&attributes(attributes) #{text}
-	else
-		button.button.button-single(href= "#")&attributes(attributes) #{text}
+		button.button.button-single(href=link)&attributes(attributes) #{text}
 	
 
 mixin button-wide(text, link)
-	if link
-		button.button.button-wide(href= link)&attributes(attributes) #{text}
-			.button-wide__arrow <i class="zmdi zmdi-arrow-right zmdi-hc-2x"></i>
-	else
-		button.button.button-wide(href= "#")&attributes(attributes) #{text}
-	
+		button.button.button-wide(href=link)&attributes(attributes) #{text}
+			.button-wide__arrow
+				i.zmdi.zmdi-arrow-right.zmdi-hc-2x

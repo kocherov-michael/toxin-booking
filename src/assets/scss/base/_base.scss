@@ -8,7 +8,7 @@ body {
 	color: rgba(31, 32, 65, 0.75);
 }
 h1 {
-	font-family: Quicksand, Montserrat;
+	font-family: $secondaryFont;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 24px;
@@ -16,7 +16,7 @@ h1 {
 	color: $dark-shade;
 }
 h2 {
-	font-family: Quicksand, Montserrat;
+	font-family: $secondaryFont;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 19px;
@@ -24,7 +24,7 @@ h2 {
 	color: $dark-shade;
 }
 h3 {
-	font-family: Montserrat;
+	font-family: $mainFont;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 12px;

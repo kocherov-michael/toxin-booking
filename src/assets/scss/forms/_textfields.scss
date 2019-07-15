@@ -18,7 +18,7 @@
 		color: $dark-shade-75;
 		border: 1px solid $dark-shade-50;
 	}
-	&::-webkit-input-placeholder, &:-moz-placeholder {
+	&::placeholder {
 		font-family: Montserrat;
 		font-style: normal;
 		font-weight: normal;
@@ -31,7 +31,7 @@
 	display: block;
 	position: absolute;
 	right: 10px;
-	top: 30px;
+	top: 15px;
 	font-weight: normal;
 	font-size: 24px;
 	line-height: 24px;
@@ -47,12 +47,11 @@
 	text-transform: uppercase;
 	color: $dark-shade;
 	position: relative;
-	padding-bottom: 20px;
 }
 
 .textfield-hover-focus .input-text {
 	border: 1px solid $dark-shade-50;
-	&::-webkit-input-placeholder, &:-moz-placeholder {
+	&::placeholder {
 		color: $dark-shade-75;
 	}
 }
