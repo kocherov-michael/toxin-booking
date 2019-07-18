@@ -6,9 +6,13 @@ mixin button-primary(text, link, small)
 
 mixin button-secondary(text, link, small)
 	if small
-		button.button.button-secondary.button-secondary--small(href=link)&attributes(attributes) #{text}
+		button.button.button-secondary(href=link)&attributes(attributes)
+			.button-secondary__inner.button-secondary__inner--small #{text}
+			.button-secondary__outer
 	else
-		button.button.button-secondary(href=link)&attributes(attributes) #{text}
+		button.button.button-secondary(href=link)&attributes(attributes)
+			.button-secondary__inner #{text}
+			.button-secondary__outer
 
 mixin button-single(text, link)
 		button.button.button-single(href=link)&attributes(attributes) #{text}

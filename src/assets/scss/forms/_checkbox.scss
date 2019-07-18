@@ -1,9 +1,9 @@
 .label-check {
 	display: block;
-	margin-bottom: 5px;
+	margin-bottom: 13px;
 	min-width: 200px;
 	cursor: pointer;
-	margin-left: 35px;
+	margin-left: 30px;
 	position: relative;
 	font-weight: normal;
 	font-size: 14px;
@@ -16,7 +16,7 @@
 /* Новый чекбокс */
 .label-check__new-input {
 	position: absolute;
-	left: -35px;
+	left: -30px;
 	top: -1px;
 	font-family: Montserrat;
 	font-style: normal;

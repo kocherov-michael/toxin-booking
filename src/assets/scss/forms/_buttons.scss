@@ -11,7 +11,9 @@
 	text-transform: uppercase;
 	transition: all 0.4s ease;
 	background-color: transparent;
+	padding: 0;
 }
+
 .clicked-button {
 	opacity: 0.5;
 	margin-left: 18px;
@@ -19,7 +21,7 @@
 .button-primary {
 	background: linear-gradient($primary-gradient);
 	color: $default-color;
-	padding: 15px 18px;
+	padding: 15px 20px;
 	&:hover {
 		opacity: 0.5;
 	}
@@ -30,16 +32,41 @@
 }
 .button-secondary {
 	color: $purple;
-	border: 2px solid $purple;
-	padding: 13px 18px;
+	border-radius: 50px;
+	padding: 1px;
 	position: relative;
+	background-color: #fff;
+	z-index: 1;
 	
 	&:hover {
-		opacity: 0.5;
+		.button-secondary__outer {
+			opacity: 0.5;
+		}
 	}
 	&--small {
 		padding-top: 8px;
 		padding-bottom: 7px;
+	}
+	&__inner {
+		padding: 12px 18px;
+		margin: 1px;
+		border-radius: 22px;
+		background-color: #fff;
+		&--small {
+			padding-top: 8px;
+			padding-bottom: 7px;
+		}
+	}
+	&__outer {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		border-radius: 50px;
+		background: linear-gradient($primary-gradient);
+		transition: all 0.4s ease;
 	}
 }
 .button-single {

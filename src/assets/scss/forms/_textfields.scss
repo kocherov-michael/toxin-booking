@@ -3,20 +3,19 @@
 	box-sizing: border-box;
 	border-radius: 4px;
 	width: 100%;
-	padding: 10px 15px;
+	padding: 9px 15px 9px;
 	margin-top: 5px;
-  
 	font-family: Montserrat;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 14px;
 	line-height: 24px;
 	color: $dark-shade-75;
-  
 	&:hover,
 	&:focus {
 		color: $dark-shade-75;
 		border: 1px solid $dark-shade-50;
+		// padding: 9px 15px 9px;
 	}
 	&::placeholder {
 		font-family: Montserrat;
@@ -30,7 +29,7 @@
 .label__arrow{
 	display: block;
 	position: absolute;
-	right: 10px;
+	right: 13px;
 	top: 15px;
 	font-weight: normal;
 	font-size: 24px;
@@ -52,6 +51,7 @@
 .textfield-hover-focus .input-text {
 	border: 1px solid $dark-shade-50;
 	&::placeholder {
+		// padding: 9px 15px 9px;
 		color: $dark-shade-75;
 	}
 }
