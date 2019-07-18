@@ -10,20 +10,11 @@
 	// max-width: 1920px;
 	min-width: 320px;
 	margin: 0 auto;
-	// background: #fff;
-	// margin-top: 160px;
-	// position: relative;
 	padding: 140px 140px 50px;
 }
-// .ui-container__header {
-// 	position: absolute;
-// 	top: -20px;
-// 	left: 0;
-// }
 .ui-container__content {
 	display: flex;
 	justify-content: space-between;
-	// padding: 140px;
 }
 .colors {
 	padding-top: 7px;
@@ -107,20 +98,11 @@
 .column__inner-column {
 	margin-right: 50px;
 }
-// .small-header {
-// 	font-family: Montserrat;
-// 	font-style: normal;
-// 	font-weight: bold;
-// 	font-size: 12px;
-// 	line-height: 15px;
-// 	text-transform: uppercase;
-// 	color: $dark-shade;
-// }
 .textfield-default:before {
 	content: "default";
 	position: absolute;
 	right: 0px;
-	top: -17px;
+	top: -20px;
 	font-family: Montserrat;
 	font-style: normal;
 	font-weight: normal;
@@ -132,19 +114,16 @@
 .textfield-hover-focus:before {
 	@extend .textfield-default:before;
 	content: "hover / focus";
-	top: -15px;
+	top: -20px;
 }
 .textfield-expanded:before {
 	@extend .textfield-default:before;
 	content: "expanded";
+	top: -20px;
 }
 .ui-container--dark {
 	background-color: #F4F4F6;
 }
-// .ui-container--header {
-// 	padding-left: 0;
-// 	padding-right: 0;
-// }
 .section-wrapper {
 	width: 100%;
 	background-color: $default-color;
@@ -152,23 +131,19 @@
 	margin-bottom: 40px;
 }
 .column {
-	// width: 33.3%;
-	// flex-shrink: 1;
 	width: 320px;
 	&-left {
 		margin-right: 125px;
 	}
 	&-center {
 		margin-right: 70px;
-		// margin-left: 125px;
 	}
 	&-narrow {
-		// width: auto;
-		padding-right: 54px;
+		padding-right: 55px;
 	}
 	&-wide {
-		// max-width: 712px;
-		width: 61.3%;
+		width: 61.5%;
+		padding-top: 10px;
 	}
 }
 .date-dropdown-wrapper {
@@ -182,6 +157,7 @@
 .checkbox-column {
 	margin-top: 17px;
 	width: 225px;
+	margin-bottom: 43px;
 }
 .radio-button-wrapper {
 	margin-top: 13px;
@@ -211,4 +187,19 @@
 .single-button-wrapper {
 	margin-top: 32px;
 	margin-bottom: 29px;
+}
+.dropdown-expanded-wrapper {
+	margin-top: 20px;
+	height: 181px;
+}
+.expandable-checkbox-list-wrapper{
+	margin-bottom: 49px;
+}
+.checkbox-rich-wrapper{
+	margin-top: 17px;
+	padding-right: 85px;
+}
+.bullet-list-wrapper{
+	margin-top: 13px;
+	padding-right: 60px;
 }

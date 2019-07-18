@@ -1,13 +1,13 @@
 mixin checkbox(text, checked)
 
 	if checked
-		label.label-check
+		label.label-check&attributes(attributes)
 			input(type="checkbox" name="checkbox" checked).label-check__input
 			span.label-check__new-input 
 				.check-item
 			|#{text}
 	else
-		label.label-check
+		label.label-check&attributes(attributes)
 			input(type="checkbox" name="checkbox").label-check__input
 			span.label-check__new-input 
 				.check-item
@@ -28,7 +28,7 @@ mixin checkboxList(header, list)
 			i.zmdi.zmdi-chevron-down
 
 mixin checkboxRich(text, desc)
-	label.label-check-rich
+	label.label-check-rich&attributes(attributes)
 		input(type="checkbox" name="checkbox").label-check-rich__input
 		span.label-check-rich__new-input 
 			.check-item
