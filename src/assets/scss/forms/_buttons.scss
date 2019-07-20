@@ -26,8 +26,9 @@
 		opacity: 0.5;
 	}
 	&--small {
-		padding-top: 9px;
-		padding-bottom: 9px;
+		padding: 9px 19px;
+		// padding-top: 9px;
+		// padding-bottom: 9px;
 	}
 }
 .button-secondary {
@@ -52,8 +53,9 @@
 		border-radius: inherit;
 		background-color: $default-color;
 		&--small {
-			padding-top: 7px;
-			padding-bottom: 7px;
+			padding: 7px 17px;
+			// padding-top: 7px;
+			// padding-bottom: 7px;
 		}
 	}
 	&__outer {
@@ -86,10 +88,6 @@
 		color: $dark-shade-75;
 	}
 }
-// .clicked-button-single {
-// 	margin-left: 21px;
-// 	color: $dark-shade-50;
-// }
 .button-wide {
 	@extend .button-primary;
 	width: 100%;
@@ -99,7 +97,7 @@
 	&__arrow {
 		display: block;
 		position: absolute;
-		right: 12px;
+		right: 14px;
 		top: 10px;
 	}
 }

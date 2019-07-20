@@ -22,6 +22,27 @@
 		margin-top: 20px;
 		margin-bottom: 19px;
 	}
+	&__total {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 30px;
+		margin-bottom: 24px;
+		height: 19px;
+	
+	}
+	&__total-text {
+		font-family: $secondaryFont;
+		background-color: #fff;
+	}
+	&__total-price {
+		font-family: $secondaryFont;
+		background-color: #fff;
+	}
+	&__total-between {
+		flex-grow: 1;
+		margin: 0 5px;
+		border-bottom: 1px dotted $dark-shade-25;
+	}
 }
 .room-number {
 	font-family: $secondaryFont;
@@ -51,7 +72,7 @@
 .room-price-list {
 	margin-left: 1px;
 	&__item-price {
-		min-width: 78px;
+		min-width: 80px;
 		text-align: right;
 	}
 	&__item {
@@ -85,27 +106,4 @@
 	font-weight: bold;
 	font-size: 12px;
 	line-height: 20px;
-}
-.room-price__total {
-	display: flex;
-	justify-content: space-between;
-	// border-bottom: 1px dotted $dark-shade-25;
-	// position: relative;
-	margin-top: 31px;
-	margin-bottom: 24px;
-	height: 18px;
-
-}
-.room-price__total-text {
-	font-family: $secondaryFont;
-	background-color: #fff;
-}
-.room-price__total-price {
-	font-family: $secondaryFont;
-	background-color: #fff;
-}
-.room-price__total-between {
-	flex-grow: 1;
-	margin: 0 5px;
-	border-bottom: 1px dotted $dark-shade-25;
 }

@@ -17,6 +17,12 @@
 		line-height: 20px;
 		color: $purple;
 	}
+	&-right {
+		margin-right: 5px;
+	}
+	&-left {
+		margin-left: 2px;
+	}
 }
 .calendar__week {
 	width: 100%;
