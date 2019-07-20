@@ -30,15 +30,15 @@
 						else
 							- pale = "pale"
 					if day == activeDay
-						- active = "calendar__day--active"
+						- active = "calendar__day--today"
 					if day == periodBegin
-						- period = "calendar__day--period-begin"
+						- period = "calendar__day--period calendar__day--period-begin"
 					if day == periodEnd
-						- period = "calendar__day--period-end"
+						- period = "calendar__day--period calendar__day--period-end"
 					.calendar__day(class=active class=pale class=period) #{day}
 					- active = ""
 					if day == periodBegin
-						- period = "calendar__day--period"
+						- period = "calendar__day--period-between"
 					if day == periodEnd
 						- period = ""
 					- day += 1
@@ -46,5 +46,7 @@
 					if day > 31
 						- day = 1
 	.calendar__action
-		.calendar__action-apply(data-action="apply") применить
-		.calendar__action-clear(data-action="clear") очистить
+		.calendar__action-apply(data-action="apply")
+			+button-single("применить", "#")
+		.calendar__action-clear(data-action="clear")
+			+button-single-dark("очистить", "#")

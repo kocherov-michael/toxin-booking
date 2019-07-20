@@ -13,8 +13,10 @@ mixin dropdown(text, dataAttribute, list, apply)
 								.dropdown-list__item-plus(data-count="plus") +
 					if apply
 						.dropdown-list__action
-							.dropdown-list__action-apply(data-action="apply") применить
-							.dropdown-list__action-clear(data-action="clear") очистить
+							.dropdown-list__action-apply
+								+button-single("применить", "#")
+							.dropdown-list__action-clear
+								+button-single-dark("очистить", "#")
 			.dropdown__text-arrow
 				i.zmdi.zmdi-chevron-down
 
