@@ -1,18 +1,36 @@
 .registration {
 	width: 380px;
-	padding: 45px 30px 30px;
+	padding: 39px 29px 29px;
 	background: $default-color;
 	border: 1px solid rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
 	box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
 	border-radius: 4px;
-}
-
-.registration__account-login {
-	display: flex;
-	justify-content: space-between;
-}
-.registration__account-login-text {
-	display: inline-block;
-	padding-top: 12px;
+	&__title {
+		margin-bottom: 20px;
+	}
+	&__secondname {
+		margin-top: 10px;
+		margin-bottom: 8px;
+	}
+	&__burthday {
+		margin-top: 22px;
+		margin-bottom: 20px;
+	}
+	&__password {
+		margin-top: 10px;
+		margin-bottom: 8px;
+	}
+	&__pay {
+		margin-top: 21px;
+		margin-bottom: 30px;
+	}
+	&__account-login {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__account-login-text {
+		display: inline-block;
+		padding-top: 9px;
+	}
 }

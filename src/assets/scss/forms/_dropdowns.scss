@@ -8,7 +8,7 @@
 	position: relative;
 	border-color: $dark-shade-50;
 	border-radius: 4px 4px 0 0;
-	box-shadow: 0px 10px 20px $dark-shade-5;
+	
 	&--mask{
 		color: $dark-shade-25;
 		.dropdown__text-arrow {
@@ -16,6 +16,7 @@
 		}
 	}
 	&--active {
+		box-shadow: 0px 10px 20px $dark-shade-5;
 		position: absolute;
 		.dropdown-list{
 			display: block;

@@ -1,6 +1,6 @@
 .calendar {
 	width: 320px;
-	padding: 20px;
+	padding: 19px 22px;
 	background: $default-color;
 	border: 1px solid rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
@@ -11,7 +11,7 @@
 .calendar__header {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 40px;
+	margin-bottom: 42px;
 	&-left, &-right {
 		font-size: 24px;
 		line-height: 20px;
