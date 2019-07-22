@@ -7,10 +7,8 @@
 }
 .navigation {
 	display: flex;
-	// margin-top: 8px;
 	margin-right: 29px;
 	&__item {
-		// display: inline-block;
 		padding-top: 8px;
 		margin-right: 30px;
 		font-weight: normal;
@@ -34,7 +32,6 @@
 }
 .header__nav {
 	display: flex;
-	// margin-top: 3px;
 }
 .container {
 	max-width: 1160px;
@@ -61,6 +58,7 @@
 		padding-bottom: 3px;
 		padding-top: 3px;
 		border-left: 1px solid $dark-shade-10;
+		color: $dark-shade-50;
 	}
 	&__guest {
 		display: flex;
