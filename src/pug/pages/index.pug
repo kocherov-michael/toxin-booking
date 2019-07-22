@@ -15,7 +15,7 @@ extends ../layout/page.pug
 block variables
 	- var title = 'Главная страница';
 	- var description = 'FSD-education-program. The-2nd-task';
-	- var pageClass= "index-page";
+	//- - var pageClass= "index-page";
 
 block content
 	//- .ui-container
@@ -26,12 +26,13 @@ block content
 			.col
 				.card.align-items-center.pb-35
 					.title-2 UI-Kit
-					//- +button-secondary("перейти", "ui-kit.html")
-					a(href="ui-kit.html")="перейти"
+					+button-secondary("перейти", "ui-kit.html")
+					//- a(href="ui-kit.html")="перейти2"
 					//- +button("Перейти", "ui/ui-kit.html")
 			.col
 				.card.align-items-center.pb-35
 					.title-2 Главная страница
-					button перейти
-					//- +button("Перейти", "main.html")
+					//- button перейти
+					+button-primary("Регистрация", "registration.html")
+					+button-primary("Логин", "sign-in.html")
 			
