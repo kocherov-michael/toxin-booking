@@ -174,8 +174,11 @@ function chooseDate(event){
 	// const calendarDay = document.querySelectorAll("[data-calendar-day]")
 	// const currentMonth = getMonthInfo(month, year)
 
-	const notAllowedDate = (parseInt(this.innerText) <= parseInt(dateNow.getDate()) && (nowMonthDisplay <= dateNow.getMonth()))
-	
+	const notAllowedDate = (
+		parseInt(this.innerText) < parseInt(dateNow.getDate()) 
+		&& (nowMonthDisplay <= dateNow.getMonth()) 
+		|| (nowMonthDisplay < dateNow.getMonth()) )
+
 	if (choosenDate.beginDay === '') {
 
 		if (!notAllowedDate) {
@@ -213,7 +216,11 @@ function showChoosenDates(){
 	let between = false
 		for (let i = 0; i < calendarDay.length; i++) {
 
-			if ((parseInt(calendarDay[i].innerText) === parseInt(choosenDate.endDay)) && (parseInt(choosenDate.beginDay) != parseInt(choosenDate.endDay)) && (choosenDate.endMonth === nowMonthDisplay) && (choosenDate.endYear === nowYearDisplay)) {
+			if ((parseInt(calendarDay[i].innerText) === parseInt(choosenDate.endDay)) 
+				&& (parseInt(choosenDate.beginDay) != parseInt(choosenDate.endDay)) 
+				&& (choosenDate.endMonth === nowMonthDisplay) 
+				&& (choosenDate.endYear === nowYearDisplay)
+				) {
 				calendarDay[i].classList.add("calendar__day--period")
 				calendarDay[i].classList.add("calendar__day--period-end")
 				between = false
@@ -221,7 +228,11 @@ function showChoosenDates(){
 			if ((between === true) && (choosenDate.beginDay != choosenDate.endDay) && (choosenDate.endDay !== '') ) {
 				calendarDay[i].classList.add("calendar__day--period-between")
 			}
-			if ((calendarDay[i].innerText === choosenDate.beginDay) && (choosenDate.beginDay != choosenDate.endDay) && (choosenDate.beginMonth === nowMonthDisplay) && (choosenDate.beginYear === nowYearDisplay)) {
+			if ((calendarDay[i].innerText === choosenDate.beginDay) 
+				&& (choosenDate.beginDay != choosenDate.endDay) 
+				&& (choosenDate.beginMonth === nowMonthDisplay) 
+				&& (choosenDate.beginYear === nowYearDisplay)
+				) {
 				calendarDay[i].classList.add("calendar__day--period")
 				if(choosenDate.endDay !== ''){
 					calendarDay[i].classList.add("calendar__day--period-begin")
