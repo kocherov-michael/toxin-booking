@@ -1,7 +1,3 @@
-// let now = Date.now()
-// let nowDay = now.getDate()
-// console.log(nowDay)
-// console.log("fired")
 const days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг","Пятница", "Суббота"];
 const months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь","Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
 const dateNow = new Date();
@@ -11,29 +7,20 @@ const dateNow = new Date();
 // console.log("Месяц: " + months[dateNow.getMonth()]); // Месяц
 // console.log("Год: " + dateNow.getFullYear()); // Год
 
-// var febr = new Date(2019, 1, 29)
-// var mar = new Date(2019, 1, 29)
-// console.log(febr)
-// console.log(mar)
-
-for (let i=0; i<11; i++) {
-	const month31 = new Date(2019, i, 31)
-	const month1 = new Date(2019, i+1, 1)
-	// console.log(month31)
-	// console.log(Date.parse(month31))
-	// console.log(month1)
-	// console.log(Date.parse(month1))
-	// console.log(Date.parse(month31)==Date.parse(month1))
-
-	if (Date.parse(month31)==Date.parse(month1)) {
-		// const result = months[i] + ' имеет 30 дней'
-		// console.log(result)
-	}
-}
 const headerCalenderElement = document.querySelector(".calendar__header-date")
 const arrowLeftElement = document.querySelector(".calendar__header-left")
 const arrowRightElement = document.querySelector(".calendar__header-right")
 const dateFieldElement = document.querySelector(".calendar__date")
+const clearFieldElement = document.querySelector(".calendar__action-clear")
+
+const choosenDate = {
+	beginDay: '',
+	endDay: '',
+	beginMonth: '',
+	endMonth: '',
+	beginYear: '',
+	endYear: ''
+}
 // const calendarDay = document.querySelectorAll("[data-calendar-day]")
 
 // console.log(headerCalenderElement.innerHTML)
@@ -43,8 +30,10 @@ const nowYear = dateNow.getFullYear()
 let nowYearDisplay = dateNow.getFullYear()
 headerCalenderElement.innerHTML = `${nowMonth} ${nowYear}`
 
+clearFieldElement.style.display = "none"
 
 
+clearFieldElement.addEventListener('click', clearCalendarField)
 arrowLeftElement.addEventListener('click', decreaseHeaderDate)
 arrowRightElement.addEventListener('click', increaseHeaderDate)
 function decreaseHeaderDate() {
@@ -68,6 +57,11 @@ function increaseHeaderDate() {
 	createDateField()
 }
 createDateField()
+
+// const currentGlobalDate = {
+// 	currentMonth: '',
+// 	currentYear: ''
+// }
 function createDateField() {
 	let monthInHeader = nowMonthDisplay
 	let yearInHeader = nowYearDisplay
@@ -129,8 +123,8 @@ function createDateField() {
 		}
 	}
 	const calendarDay = document.querySelectorAll("[data-calendar-day]")
-	
 	displayToday()
+	showChoosenDates()
 
 	for (let i = 0; i < calendarDay.length; i++){
 		calendarDay[i].addEventListener('click', chooseDate)
@@ -173,63 +167,86 @@ function getDaysCount(month, year){
 		}
 	}
 }
-const choosenDate = {
-	beginDay: '',
-	endDay: ''
-}
+
 function chooseDate(event){
 	event.preventDefault()
-	const calendarDay = document.querySelectorAll("[data-calendar-day]")
+	event.stopPropagation()
+	// const calendarDay = document.querySelectorAll("[data-calendar-day]")
+	// const currentMonth = getMonthInfo(month, year)
+
+	const notAllowedDate = (parseInt(this.innerText) <= parseInt(dateNow.getDate()) && (nowMonthDisplay <= dateNow.getMonth()))
 	
 	if (choosenDate.beginDay === '') {
-		const beginDay = this
-		beginDay.classList.add("calendar__day--period")
-		choosenDate.beginDay = this.innerText
+
+		if (!notAllowedDate) {
+			choosenDate.beginDay = this.innerText
+			choosenDate.beginMonth = nowMonthDisplay
+			choosenDate.beginYear = nowYearDisplay
+		}
 	}
 	else if (choosenDate.endDay === '') {
-		const endDay = this
-		endDay.classList.add("calendar__day--period")
-		choosenDate.endDay = this.innerText
+
+		if (!notAllowedDate) {
+			choosenDate.endDay = this.innerText
+			choosenDate.endMonth = nowMonthDisplay
+			choosenDate.endYear = nowYearDisplay
+		}
 		
-		if (parseInt(choosenDate.beginDay) > parseInt(choosenDate.endDay)) {
+		if ((parseInt(choosenDate.beginDay) > parseInt(choosenDate.endDay)) && (choosenDate.beginMonth === choosenDate.endMonth)) {
 			const toggleDate = choosenDate.endDay
 			choosenDate.endDay = choosenDate.beginDay
 			choosenDate.beginDay = toggleDate
-		}
 			
-		let between = false
+		}
+
+
+	}
+	showChoosenDates()
+	if ((choosenDate.beginDay !== '') || (choosenDate.endDay !== '')) {
+		clearFieldElement.style.display = "block"
+	}
+
+	console.log(choosenDate)
+}
+function showChoosenDates(){
+	const calendarDay = document.querySelectorAll("[data-calendar-day]")
+	let between = false
 		for (let i = 0; i < calendarDay.length; i++) {
-			if (calendarDay[i].innerText === choosenDate.endDay) {
+
+			if ((parseInt(calendarDay[i].innerText) === parseInt(choosenDate.endDay)) && (parseInt(choosenDate.beginDay) != parseInt(choosenDate.endDay)) && (choosenDate.endMonth === nowMonthDisplay) && (choosenDate.endYear === nowYearDisplay)) {
+				calendarDay[i].classList.add("calendar__day--period")
 				calendarDay[i].classList.add("calendar__day--period-end")
 				between = false
 			}
-			if (between === true) {
+			if ((between === true) && (choosenDate.beginDay != choosenDate.endDay) && (choosenDate.endDay !== '') ) {
 				calendarDay[i].classList.add("calendar__day--period-between")
 			}
-			if (calendarDay[i].innerText === choosenDate.beginDay) {
-				calendarDay[i].classList.add("calendar__day--period-begin")
+			if ((calendarDay[i].innerText === choosenDate.beginDay) && (choosenDate.beginDay != choosenDate.endDay) && (choosenDate.beginMonth === nowMonthDisplay) && (choosenDate.beginYear === nowYearDisplay)) {
+				calendarDay[i].classList.add("calendar__day--period")
+				if(choosenDate.endDay !== ''){
+					calendarDay[i].classList.add("calendar__day--period-begin")
+				}
 				between = true
 			}
 
 		}
 
-
-	} else {
-		for (let i = 0; i < calendarDay.length; i++){
-			if (calendarDay[i].classList.contains("calendar__day--period") ) {
-				calendarDay[i].classList.remove("calendar__day--period")
-				calendarDay[i].classList.remove("calendar__day--period-begin")
-				calendarDay[i].classList.remove("calendar__day--period-end")
-				calendarDay[i].classList.remove("calendar__day--period-between")
-			}
-			if (calendarDay[i].classList.contains("calendar__day--period-between") ) {
-				
-				calendarDay[i].classList.remove("calendar__day--period-between")
-			}
+}
+function clearCalendarField(event){
+	event.preventDefault()
+	const calendarDay = document.querySelectorAll("[data-calendar-day]")
+	for (let i = 0; i < calendarDay.length; i++){
+		if (calendarDay[i].classList.contains("calendar__day--period") ) {
+			calendarDay[i].classList.remove("calendar__day--period")
+			calendarDay[i].classList.remove("calendar__day--period-begin")
+			calendarDay[i].classList.remove("calendar__day--period-end")
 		}
-		choosenDate.beginDay = ''
-		choosenDate.endDay = ''
+		if (calendarDay[i].classList.contains("calendar__day--period-between") ) {
+			
+			calendarDay[i].classList.remove("calendar__day--period-between")
+		}
 	}
-	
-	console.log(choosenDate)
+	choosenDate.beginDay = ''
+	choosenDate.endDay = ''
+	clearFieldElement.style.display = "none"
 }
