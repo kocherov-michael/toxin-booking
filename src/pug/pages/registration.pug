@@ -1,0 +1,16 @@
+extends ../layout/page.pug
+
+block variables
+	- var title = 'Регистрация';
+	//- - var pageClass = 'content-page';
+
+block content
+	.ui-wrapper
+		.section-wrapper
+			.container
+				include ../sections/header-guest.pug
+			.main-content
+				.registration-page(style="background-image: url(./assets/img/big-images/registration-room.jpg);")
+					.registration-page__card
+						include ../sections/registration-card.pug
+				include ../sections/footer.pug

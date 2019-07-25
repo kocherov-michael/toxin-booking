@@ -1,7 +1,10 @@
-mixin comment(author, time, text, likeCount, likeCheck)
+mixin comment(author, avatarLink, time, text, likeCount, likeCheck)
 	.comment&attributes(attributes)
-		.comment__author #{author}
-		.comment__time #{time}
-		.comment__text-wrapper
+		.comment__left-side
+			.comment__avatar(style={"background-image": "url(" + avatarLink +")"})
+			.comment__likebutton
+				+likebutton(likeCount, likeCheck)
+		.comment__rigth-side
+			.comment__author #{author}
+			.comment__time #{time}
 			.comment__text #{text}
-			+likebutton(likeCount, likeCheck).comment__like

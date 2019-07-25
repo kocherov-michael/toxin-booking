@@ -1,9 +1,7 @@
 .pagination {
-	font-family: Montserrat;
-	font-style: normal;
-	font-weight: normal;
 	font-size: 14px;
 	line-height: 24px;
+	width: 240px;
 }
 .pagination__pages{
 	display: flex;
@@ -31,5 +29,6 @@
 	}
 }
 .pagination__description {
+	margin-top: 8px;
 	text-align: center;
 }

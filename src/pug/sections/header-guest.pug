@@ -8,10 +8,12 @@
 			li.navigation__item About us
 			li.navigation__item.navigation__item--chevron Services 
 				i.zmdi.zmdi-chevron-down.navigation-chevron
-			li.navigation__item Carrers
+			li.navigation__item Careers
 			li.navigation__item News
 			li.navigation__item Documentation
 		.header-login
 			.header-login__guest
-				+button-secondary("login", "#", "small").mr-20
-				+button-primary("register", "#", "small").button--small
+				.header-login__guest-login
+					+button-secondary("login", "#", "small")
+				.header-login__guest-register
+					+button-primary("register", "#", "small")

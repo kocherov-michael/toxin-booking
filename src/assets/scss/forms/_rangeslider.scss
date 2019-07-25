@@ -4,7 +4,7 @@
 .range-slider__header-wrapper {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 25px;
+	margin-bottom: 23px;
 }
 .range-slider__header {
 	display: inline-block;
@@ -27,6 +27,7 @@
 	text-align: right;
 	text-transform: uppercase;
 	color: $dark-shade-50;
+	padding-right: 4px;
 }
 .rub {
 	line-height: 5px;
@@ -50,15 +51,14 @@
 	height: 16px;
 	bottom: -6px;
 	background: linear-gradient($secondary-gradient);
-	// background-color: red;
 	border: 2px solid $default-color;
 	border-radius: 10px;
 	z-index: 2;
 	&--left {
-		left: 70px;
+		left: 74px;
 	}
 	&--right {
-		left: 150px;
+		left: 159px;
 	}
 }
 .range-slider__slider-line {
@@ -66,6 +66,6 @@
 	height: 6px;
 	background: linear-gradient($secondary-gradient);
 	z-index: 1;
-	left: calc(70px + 8px);
-	width: calc(150px - 70px + 8px);
+	left: calc(74px + 8px);
+	width: calc(159px - 74px);
 }

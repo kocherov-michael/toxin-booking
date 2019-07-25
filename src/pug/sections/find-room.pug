@@ -1,13 +1,13 @@
 .find-room
 	.find-room__title 
 		h1 Найдём номера под ваши пожелания
-	.find-room__date.mb-5
+	.find-room__date
 		.column
 			h3 Прибытие
 			+dateDropdown("ДД.ММ.ГГГГ").mr-20
 		.column
 			h3 Выезд
-			+dateDropdown("Выезд", "ДД.ММ.ГГГГ")
+			+dateDropdown("ДД.ММ.ГГГГ")
 	.find-room__men.mb-30
 		h3 Гости
 		+dropdown("Сколько гостей")

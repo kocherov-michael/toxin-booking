@@ -1,6 +1,6 @@
 .calendar {
 	width: 320px;
-	padding: 20px;
+	padding: 19px 19px 10px 21px;
 	background: $default-color;
 	border: 1px solid rgba(0, 0, 0, 0.12);
 	box-sizing: border-box;
@@ -11,17 +11,25 @@
 .calendar__header {
 	display: flex;
 	justify-content: space-between;
-	margin-bottom: 40px;
+	margin-bottom: 42px;
 	&-left, &-right {
 		font-size: 24px;
 		line-height: 20px;
 		color: $purple;
+		cursor: pointer;
+	}
+	&-right {
+		margin-right: 5px;
+	}
+	&-left {
+		margin-left: 2px;
 	}
 }
 .calendar__week {
 	width: 100%;
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 13px;
 }
 .calendar__date {
 	display: flex;
@@ -41,9 +49,7 @@
 	font-size: 12px;
 	line-height: 15px;
 }
-.pale {
-	color: $dark-shade-25;
-}
+
 .calendar__day {
 	display: inline-block;
 	text-align: center;
@@ -52,18 +58,21 @@
 	padding-top: 12px;
 	font-size: 12px;
 	line-height: 15px;
-	&--active {
+	cursor: pointer;
+	&--today {
 		background: linear-gradient($secondary-gradient);
 		border-radius: 22px;
 		color: $default-color;
 	}
-	&--period-begin,
-	&--period-end {
+	&--period {
 		background: linear-gradient($primary-gradient);
 		border-radius: 22px;
 		color: $default-color;
 		position: relative;
-		z-index: 1;
+		z-index: 2;
+	}
+	&--period-begin, 
+	&--period-end {
 		&:before {
 			position: absolute;
 			content: '';
@@ -82,17 +91,18 @@
 			left: 0;
 		}
 	}
-	&--period {
+	&--period-between {
 		position: relative;
 		background: linear-gradient($primary-gradient-transp);
 	}
 }
+.pale {
+	color: $dark-shade-25;
+	cursor: inherit;
+}
 .calendar__action {
-	@extend .dropdown-list__action;
-	&-apply {
-		@extend .dropdown-list__action-apply;
-	}
-	&-clear {
-		@extend .dropdown-list__action-clear;
-	}
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-between;
+	margin: 15px 0 5px -2px;
 }

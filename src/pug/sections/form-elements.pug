@@ -1,90 +1,107 @@
 .ui-wrapper
 	.ui-container
-		.ui-container__header Form Elements
 		.ui-container__content
-			.column.mr-25
-				.small-header text field
-				+labelInputText("Email").textfield-default
-				.small-header text field
-				+labelInputText("This is pretty awesome").textfield-hover-focus
-				.small-header dropdown
+			.column.column-left
+				h3 text field
+				+labelInputText("Email").textfield-default.mb-20
+				h3 text field
+				+labelInputText("This is pretty awesome").textfield-hover-focus.mb-20
+				h3 dropdown
 				+dropdown("Сколько гостей", "", "", "").textfield-default
-				.small-header masked text field
-				+dateDropdown("masked text field", "ДД.ММ.ГГГГ").dropdown--mask.textfield-default
+				.date-dropdown-wrapper
+					h3 masked text field
+					+labelInputText("ДД.ММ.ГГГГ").textfield-default
 				.column__inner-row
 					.column
-						.small-header date Dropdown
+						h3 date Dropdown
 						+dateDropdown("ДД.ММ.ГГГГ").mr-20
 					.column
-						.small-header date Dropdown
+						h3 date Dropdown
 						+dateDropdown("19.08.2019")
-				.column.mr-50
-					.small-header filter date dropdown
-					+filterDateDropdown("19 авг - 23 авг")
-					.small-header subscription text field
+				.column.column-narrow
+					.filter-date-dropdown-wrapper
+						h3 filter date dropdown
+						+filterDateDropdown("19 авг - 23 авг")
+					h3 subscription text field
 					+subscriptionField("Email")
 					
-			.column.ml-100
-				.small-header.mb-15 checkbox buttons
-				+checkbox("Можно курить")
-				+checkbox("Можно с питомцами", "Check")
-				+checkbox("Можно пригласить гостей (до 10 человек)", "Check")
-				.small-header.mb-15.mt-40 radio buttons
+			.column.column-center
+				h3 checkbox buttons
+				.checkbox-column
+					+checkbox("Можно курить")
+					+checkbox("Можно с питомцами", "Check")
+					+checkbox("Можно пригласить гостей (до 10 человек)", "Check")
+				h3 radio buttons
 				.column__inner-row
-					+radiobutton("Мужчина", "man", "man", "male", "checked").mr-20
-					+radiobutton("Женщина", "woman", "woman", "male")
-				.small-header.mb-15.mt-40 toggle
-				+toggle("Получать спецпредложения", "checked")
-				+toggle("Получать спецпредложения")
-				.small-header.mb-15.mt-40 like button
+					.radio-button-wrapper
+						+radiobutton("Мужчина", "man", "man", "male", "checked")
+					.radio-button-wrapper
+						+radiobutton("Женщина", "woman", "woman", "male")
+				h3 toggle
+				.toggle-top-element
+					+toggle("Получать спецпредложения", "checked")
+				.toggle-lower-element
+					+toggle("Получать спецпредложения")
+				h3 like button
 				.column__inner-row
-					+likebutton("2").mr-10
-					+likebutton("12", "checked")
-				.small-header.mb-15.mt-40 rate button
+					.like-button-element
+						+likebutton("2")
+					.like-button-element
+						+likebutton("12", "checked")
+				h3.mb-15 rate button
 				.column__inner-row
-					+ratebutton("4").mr-20
+					.ratebutton-element
+						+ratebutton("4")
 					+ratebutton("5")
 			.column
-				+rangeslider("range slider", "5000", "10000")
-				.small-header.mb-15.mt-40 buttons
+				.rangeslider-wrapper
+					+rangeslider("range slider", "5 000", "10 000")
+				h3.mb-15 buttons
 				.column__inner-row.mb-30
 					+button-primary("click me", "#")
 					+button-primary("click me", "#").clicked-button
-				.column__inner-row.mb-30
+				.column__inner-row
 					+button-secondary("click me", "#")
 					+button-secondary("click me", "#").clicked-button
-				.column__inner-row.mb-30
-					+button-single("click me", "#")
-					+button-single("click me", "#").clicked-button-single
+				.column__inner-row.single-button-wrapper
+					.single-left-button-wrapper
+						+button-single("click me", "#")
+					.single-dark-button-wrapper
+						+button-single-dark("click me", "#")
 				+button-wide("перейти к оплате", "#")
-				.small-header.mb-15.mt-40 pagination
+				h3.mb-15.mt-40 pagination
 				+pagination("1 – 12 из 100+ вариантов аренды")
-		.ui-container__content.mt-55
-			.column.pr-50
-				.small-header dropdown
+		.ui-container__content.mt-100
+			.column.column-narrow.column-left
+				h3 dropdown
 				+dropdown("2 спальни, 2 кровати...", "", "", "").textfield-default
-				.small-header dropdown
-				+dropdown("2 спальни, 2 кровати...", "room", ['спальни', 'кровати', 'ванные комнаты'], "").dropdown--active.textfield-expanded
+				.dropdown-expanded-wrapper
+					h3 dropdown
+					+dropdown("2 спальни, 2 кровати...", "room", ['спальни', 'кровати', 'ванные комнаты'], "").dropdown--active.textfield-expanded
+			.column.column-center
+				h3 dropdown
+				+dropdown("Сколько гостей", "room", ['взрослые', 'дети', 'младенцы'],"apply").dropdown--active
 			.column
-				.small-header dropdown
-				+dropdown("Сколько гостей", "room", ['взрослые', 'дети', 'младенцы'],"apply" , "").dropdown--active
-			.column
-				.small-header dropdown
-				+dropdown("3 гостя", "room", ['взрослые', 'дети', 'младенцы'],"apply" , "").dropdown--active
+				h3 dropdown
+				+dropdown("3 гостя", "room", ['взрослые', 'дети', 'младенцы'],"apply").dropdown--active
 		.ui-container__content.mt-55
-			.column.pr-50
-				+checkboxList("expandable checkbox list")
+			.column.column-narrow.column-left
+				.expandable-checkbox-list-wrapper
+					+checkboxList("expandable checkbox list")
 				+checkboxList("expandable checkbox list", [['Завтрак', '0'],['Письменный стол', '1'],['Стул для кормления', '1'],['Кроватка', '1'],['Телевизор', '0'],['Шампунь', '0'],['Телевизор', '0'],['Шампунь', '0']]).expandable-checbox--active
+			.column.column-center
+				h3 rich checkbox buttons
+				.checkbox-rich-wrapper
+					+checkboxRich('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
+				
+				+checkboxRich('Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.').mr-60
 			.column
-				.small-header.mb-15 rich checkbox buttons
-				+checkboxRich('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
-				+checkboxRich('Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.')
+				h3 bullet list
+				.bullet-list-wrapper
+					+bulletList(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
+		.ui-container__content.mt-30
 			.column
-				.small-header.mb-15 bullet list
-				+bulletList(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
-		.ui-container__content.mt-55
-			.column
-				+advantage("Комфорт", "Шумопоглощающие стены", "zmdi zmdi-mood").mb-20
-				+advantage("Удобство", "Окно в каждой из спален", "zmdi zmdi-city")
-			.column
-				+comment("Мурад Сарафанов", "5 дней назад", "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", "12", "check")
+				+comfort("Комфорт", "Шумопоглощающие стены", "zmdi zmdi-mood").mb-20
+				+comfort("Удобство", "Окно в каждой из спален", "zmdi zmdi-city")
+			.column-wide
+				+comment("Мурад Сарафанов", "./assets/img/avatar/avatar.png", "5 дней назад", "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", "12", "check")

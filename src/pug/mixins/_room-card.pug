@@ -16,9 +16,9 @@ mixin roomCard(img, num, price, stars, comment, lux, arrows )
 		.room-card__title
 			h3.room-number
 				span.room-number__symbol №
-				span.room-number__number #{num}
+				span.room-number__number.room-number__number--small #{num}
 				span.room-number__type #{lux}
-			.price-per-day
+			.price-per-day.price-per-day--lh-17
 				span.price-per-day__price #{price}
 				span.price-per-day__rub.rub P
 				span.price-per-day__text в сутки
