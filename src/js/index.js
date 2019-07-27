@@ -7,7 +7,9 @@ const dateNow = new Date();
 // console.log("Месяц: " + months[dateNow.getMonth()]); // Месяц
 // console.log("Год: " + dateNow.getFullYear()); // Год
 
-const headerCalenderElement = document.querySelector(".calendar__header-date")
+
+// const headerCalenderElement = document.querySelector(".calendar__header-date")
+
 const arrowLeftElement = document.querySelector(".calendar__header-left")
 const arrowRightElement = document.querySelector(".calendar__header-right")
 const dateFieldElement = document.querySelector(".calendar__date")

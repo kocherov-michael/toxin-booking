@@ -1,0 +1,20 @@
+extends ../layout/page.pug
+
+block variables
+	- var title = 'Регистрация';
+	//- - var pageClass = 'content-page';
+
+block content
+	.ui-wrapper
+		.section-wrapper
+			.container
+				include ../sections/header-guest.pug
+			.main-content
+				.landing-page-background(style="background-image: url(./assets/img/big-images/landing.jpg);")
+					.container
+						.landing-page
+							.landing-page__card
+								include ../sections/find-room.pug
+							.landing-page__promo
+								| Лучшие номера для вашей работы, отдыха и просто вдохновения
+				include ../sections/footer.pug

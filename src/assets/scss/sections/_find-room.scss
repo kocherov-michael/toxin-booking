@@ -20,5 +20,12 @@
 	&__date {
 		display: flex;
 		margin-bottom: 21px;
+		position: relative;
 	}
+}
+.calendar-wrapper {
+	display: none;
+	position: absolute;
+	z-index: 1;
+	top: 70px;
 }
