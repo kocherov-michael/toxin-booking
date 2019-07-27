@@ -1,5 +1,5 @@
 mixin roomCard(img, num, price, stars, comment, lux, arrows )
-	.room-card
+	.room-card&attributes(attributes)
 		.room-card__header
 			img(src=img alt="room photo" class="room-card__header-img")
 			if arrows
