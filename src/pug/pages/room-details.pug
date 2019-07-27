@@ -1,0 +1,49 @@
+extends ../layout/page.pug
+
+block variables
+	- var title = 'Поиск номера';
+	//- - var pageClass = 'content-page';
+
+block content
+	.ui-wrapper
+		.section-wrapper
+			.container
+				include ../sections/header-guest.pug
+		.main-content
+			.collage
+				.collage__main(style="background-image: url(./assets/img/big-images/landing.jpg);")
+				.collage__secondary(style="background-image: url(./assets/img/big-images/landing.jpg);")
+				.collage__secondary(style="background-image: url(./assets/img/big-images/landing.jpg);")
+		.container
+			.room-info
+				.room-info__desc
+					.room-comfort
+						.room-comfort__info
+							h2.mb-25 Сведения о номере
+							+comfort("Комфорт", "Шумопоглощающие стены", "zmdi zmdi-mood").mb-20
+							+comfort("Удобство", "Окно в каждой из спален", "zmdi zmdi-city").mb-20
+							+comfort("Уют", "Номер оснащён камином", "zmdi zmdi-fire").border-none
+						.room-comfort__voites
+							h2 Впечатления от номера
+					.room-comments
+						.room-comments__header
+							h2 Отзывы посетителей номера
+							.comments-count 2 отзыва
+						.room-comments__comment
+							+comment("Мурад Сарафанов", "./assets/img/avatar/avatar.png", "5 дней назад", "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", "12", "check")
+						.room-comments__comment
+							+comment("Патрисия Стёклышкова", "./assets/img/avatar/avatar.png", "Неделю назад", "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент", "2", "")
+					.room-rules
+						.room-rules__rules
+							h2.room-rules__rules-header Правила
+							+bulletList(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
+						.room-rules__cancel
+							h2.room-rules__rules-header Отмена
+							| Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
+				.room-info__room-price-card
+					include ../sections/room-price.pug
+
+
+		.footer_border_top
+			include ../sections/footer.pug
