@@ -54,9 +54,7 @@ const nowMonth = months[dateNow.getMonth()]
 let nowMonthDisplay = dateNow.getMonth()
 const nowYear = dateNow.getFullYear()
 let nowYearDisplay = dateNow.getFullYear()
-if (headerCalenderElement) {
-	headerCalenderElement.innerHTML = `${nowMonth} ${nowYear}`
-}
+headerCalenderElement.innerHTML = `${nowMonth} ${nowYear}`
 
 clearFieldElement.style.display = "none"
 
