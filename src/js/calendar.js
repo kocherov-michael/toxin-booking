@@ -1,3 +1,6 @@
+if (window.location.pathname === '/landing.html') {
+
+
 const days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг","Пятница", "Суббота"];
 const months = ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь","Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"];
 const dateNow = new Date();
@@ -51,7 +54,9 @@ const nowMonth = months[dateNow.getMonth()]
 let nowMonthDisplay = dateNow.getMonth()
 const nowYear = dateNow.getFullYear()
 let nowYearDisplay = dateNow.getFullYear()
-headerCalenderElement.innerHTML = `${nowMonth} ${nowYear}`
+if (headerCalenderElement) {
+	headerCalenderElement.innerHTML = `${nowMonth} ${nowYear}`
+}
 
 clearFieldElement.style.display = "none"
 
@@ -236,8 +241,8 @@ function chooseDate(event){
 		}
 	}
 	else if (choosenDate.endDay === '') {
-		console.log(parseInt(this.innerText))
-		console.log(parseInt(choosenDate.beginDay))
+		// console.log(parseInt(this.innerText))
+		// console.log(parseInt(choosenDate.beginDay))
 		if (!notAllowedEndDate) {
 			choosenDate.endDay = parseInt(this.innerText)
 			choosenDate.endMonth = nowMonthDisplay
@@ -262,7 +267,7 @@ function chooseDate(event){
 		clearFieldElement.style.display = "block"
 	}
 
-	console.log(choosenDate)
+	// console.log(choosenDate)
 }
 
 // Отображаем дату прибытия и выезда в элементах форм
@@ -378,4 +383,10 @@ function calendarToggle() {
 	} else {
 		dropdownArrivalElement.firstElementChild.classList.add("form-focus")
 	}
+	if (calendarWrapperElement.classList.contains("hide")) {
+		dropdownArrivalElement.firstElementChild.classList.remove("form-focus")
+		dropdownDepartureElement.firstElementChild.classList.remove("form-focus")
+	}
+}
+
 }
