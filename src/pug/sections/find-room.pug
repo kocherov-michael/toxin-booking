@@ -4,11 +4,11 @@
 	.find-room__date
 		.column
 			h3 Прибытие
-			+dateDropdown("ДД.ММ.ГГГГ").mr-20
+			+dateDropdown("ДД.ММ.ГГГГ").mr-20(id="arrival")
 		.column
 			h3 Выезд
-			+dateDropdown("ДД.ММ.ГГГГ")
-		.calendar-wrapper
+			+dateDropdown("ДД.ММ.ГГГГ")(id="departure")
+		.calendar-wrapper.hide
 			include calendar.pug
 	.find-room__men.mb-30
 		h3 Гости

@@ -1,5 +1,8 @@
+console.log("index.js подключен")
 // JS
-import './js/'
+// import './js/'
+import './js/calendar'
+import './js/dropdown'
 
 // SCSS
 import './assets/scss/main.scss'
