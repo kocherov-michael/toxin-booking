@@ -28,9 +28,11 @@
 			margin-right: 25px;
 			padding-right: 17px;
 			cursor: pointer;
+			position: relative;
 		}
 	}
 }
+
 .header__nav {
 	display: flex;
 }
@@ -74,4 +76,21 @@
 	line-height: 20px;
 	color: $dark-shade-50;
 	cursor: pointer;
+}
+.inner-list {
+	position: absolute;
+	margin-top: 26px;
+	background-color: #fff;
+	border: 1px solid $dark-shade-25;
+	min-width: 120px;
+	z-index: 5;
+	&__item {
+		padding: 10px;
+		border-bottom: 1px solid $dark-shade-25;
+		background-color: #fff;
+		&:last-child {
+			border-bottom: none;
+		}
+	}
+	
 }
