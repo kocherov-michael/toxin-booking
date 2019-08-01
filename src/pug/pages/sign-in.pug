@@ -4,7 +4,16 @@ block variables
 	- var title = 'Регистрация';
 	- var register = 'Зарегистрироваться';
 	- var login = 'Войти';
-	- var headerMenu = {"О нас":"", "Услуги":["first", "second", "third"], "Вакансии":"", "Новости":"", "Соглашения":["first", "second", "third"]};
+	//- - var headerMenu = {"О нас":"", "Услуги":["first", "second", "third"], "Вакансии":"", "Новости":"", "Соглашения":["first", "second", "third"]};
+	- var Services = ["first", "second", "third"];
+	-
+		var headerMenu = [
+			{title: "О нас", url: "#", submenu: ""},
+			{title: "Услуги", url: "#", submenu: Services},
+			{title: "Вакансии", url: "#", submenu: ""},
+			{title: "Новости", url: "#", submenu: ""},
+			{title: "Соглашения", url: "#", submenu: Services}
+		];
 
 block content
 	.ui-wrapper
