@@ -18,8 +18,6 @@ block variables
 	//- - var pageClass= "index-page";
 
 block content
-	//- .ui-container
-	//- 	.ui-container__content
 	.container
 		.title-1.text-center.mb-55 Проект Toxin-Booking
 		.row
@@ -27,12 +25,11 @@ block content
 				.card.align-items-center.pb-35
 					.title-2 UI-Kit
 					+button-secondary("перейти", "ui-kit.html")
-					//- a(href="ui-kit.html")="перейти2"
-					//- +button("Перейти", "ui/ui-kit.html")
+					+button-secondary("colors and types", "colors-and-types.html")
+					+button-secondary("Form elements", "form-elements.html")
 			.col
 				.card.align-items-center.pb-35
 					.title-2 Главная страница
-					//- button перейти
 					+button-primary("Регистрация", "registration.html")
 					+button-primary("Логин", "sign-in.html")
 					+button-primary("Главная", "landing.html")

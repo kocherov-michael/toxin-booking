@@ -25,10 +25,12 @@ module.exports = {
   externals: {
     paths: PATHS
   },
-  entry: {
-    app: PATHS.src,
+  entry: PATHS.src
+//   {
+    // app: PATHS.src,
     // module: `${PATHS.src}/your-module.js`,
-  },
+//   }
+  ,
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
     // path: PATHS.dist,

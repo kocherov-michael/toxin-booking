@@ -3,7 +3,7 @@
 @import "utils/vars";
 @import "utils/mixins";
 @import "utils/fonts";
-@import "utils/reset";
+// @import "utils/reset";
 @import "utils/paddings";
 @import "utils/margins";
 
@@ -25,8 +25,11 @@
 @import "forms/_comfort";
 @import "forms/_comment";
 
+//Blocks
+@import "../../blocks/palette/palette";
+
 //UI-KIT
-@import "ui-kit/ui-kit";
+// @import "ui-kit/ui-kit";
 
 //Sections
 @import "sections/_find-room";
@@ -45,6 +48,7 @@
 @import "pages/landing";
 @import "pages/search-room";
 @import "pages/room-details";
+@import "pages/colors-and-types";
 
 
 // html {

@@ -1,13 +1,13 @@
 body {
-	background: #e5e5e5;
-	font-family: Montserrat;
+	// background: #e5e5e5;
+	font-family: $mainFont;
 	font-style: normal;
 	font-weight: normal;
 	font-size: 14px;
 	line-height: 24px;
 	color: rgba(31, 32, 65, 0.75);
 }
-h1 {
+h1, .title-1 {
 	font-family: $secondaryFont;
 	font-style: normal;
 	font-weight: bold;
@@ -15,7 +15,7 @@ h1 {
 	line-height: 30px;
 	color: $dark-shade;
 }
-h2 {
+h2, .title-2 {
 	font-family: $secondaryFont;
 	font-style: normal;
 	font-weight: bold;
@@ -23,7 +23,7 @@ h2 {
 	line-height: 24px;
 	color: $dark-shade;
 }
-h3 {
+h3, .title-3 {
 	font-family: $mainFont;
 	font-style: normal;
 	font-weight: bold;

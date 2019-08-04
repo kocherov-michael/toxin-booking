@@ -1,0 +1,100 @@
+// @import "../../../blocks/palette/palette.scss";
+body {
+  padding: 0;
+  margin: 0;
+}
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
+.page {
+  background-color: $default-color;
+  position: relative;
+}
+
+.page-icon {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.container {
+  max-width: 1160px;
+}
+
+.colors-and-types {
+  // padding: 150px;
+  padding-top: 145px;
+  padding-bottom: 145px;
+  display: flex;
+  // justify-content: space-between;
+}
+
+.colors-and-types__colors {
+  width: 60%;
+}
+
+.colors-and-types__titles {
+  width: 40%;
+}
+
+.colors-and-types__colors-item {
+  margin-bottom: 20px;
+}
+
+.colors-and-types__titles-item {
+  display: flex;
+  width: 355px;
+  margin-bottom: 50px;
+  margin-left: 65px;
+  position: relative;
+
+  p {
+    padding-right: 40px;
+  }
+
+  &_size_h1:before,
+  &_size_h2:before,
+  &_size_h3:before,
+  &_size_body:before {
+    position: absolute;
+    content: "H1";
+    top: 0;
+    left: -58px;
+    color: $dark-shade-25;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+  }
+
+  &_size_h2:before {
+    content: "H2";
+    left: -56px;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 23px;
+  }
+
+  &_size_h3 {
+    margin-bottom: 47px;
+  }
+
+  &_size_h3:before {
+    content: "H3";
+    left: -47px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+  
+  &_size_body:before {
+    content: "Body";
+    left: -67px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
