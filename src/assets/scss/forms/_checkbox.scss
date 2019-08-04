@@ -56,10 +56,11 @@
 	-webkit-border-image: -webkit-linear-gradient($primary-gradient);
 	border-image-slice: 1;
 }
-.expandable-checbox {
+.expandable-checkbox {
 	position: relative;
 	width: 100%;
 	min-width: 250px;
+	cursor: pointer;
 	&__header {
 		margin-bottom: 18px;
 		font-weight: bold;
@@ -85,10 +86,10 @@
 		margin-bottom: 10px;
 	}
 	&--active {
-		.expandable-checbox__list {
+		.expandable-checkbox__list {
 			display: block;
 		}
-		.expandable-checbox__arrow {
+		.expandable-checkbox__arrow {
 			transform: rotate(180deg);
 		}
 	}

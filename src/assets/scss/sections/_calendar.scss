@@ -95,6 +95,11 @@
 		position: relative;
 		background: linear-gradient($primary-gradient-transp);
 	}
+	&--error {
+		background: $danger-color;
+		border-radius: 22px;
+		color: $default-color;
+	}
 }
 .pale {
 	color: $dark-shade-25;

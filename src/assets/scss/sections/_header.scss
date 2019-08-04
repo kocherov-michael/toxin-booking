@@ -16,8 +16,13 @@
 		font-size: 14px;
 		line-height: 17px;
 		color: $dark-shade-50;
+		cursor: pointer;
 		&:last-child {
 			margin-right: 0;
+		}
+		&:hover {
+			// font-weight: bold;
+			color: $dark-shade-75;
 		}
 		&--active {
 			font-weight: bold;
@@ -28,16 +33,21 @@
 			margin-right: 25px;
 			padding-right: 17px;
 			cursor: pointer;
+			position: relative;
+			// border: 1px solid red;
+			&:hover {
+				.inner-list {
+					display: block;
+				}
+			}
 		}
 	}
 }
+
 .header__nav {
 	display: flex;
 }
-.container {
-	max-width: 1140px;
-	margin: 0 auto;
-}
+
 .logo {
 	display: flex;
 	&__icon {
@@ -77,4 +87,27 @@
 	line-height: 20px;
 	color: $dark-shade-50;
 	cursor: pointer;
+}
+.inner-list {
+	display: none;
+	position: absolute;
+	// margin-top: 26px;
+	padding-top: 26px;
+	background-color: #fff;
+	// border: 1px solid $dark-shade-25;
+	min-width: 120px;
+	z-index: 5;
+	&__item {
+		padding: 10px;
+		border: 1px solid $dark-shade-25;
+		border-bottom: none;
+		background-color: #fff;
+		&:last-child {
+			border-bottom: 1px solid $dark-shade-25;
+		}
+		&:hover {
+			background-color: $dark-shade-5;
+		}
+	}
+	
 }
