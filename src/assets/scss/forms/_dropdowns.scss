@@ -38,6 +38,11 @@
 	top: 10px;
 	font-size: 24px;
 	line-height: 24px;
+	&:after {
+		display: block;
+		content: '';
+		font-family: 'Material-Design-Iconic-Font';
+	}
 }
 .dropdown-list {
 	top: 44px;

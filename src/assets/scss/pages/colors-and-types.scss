@@ -11,13 +11,23 @@ h1, h2, h3, p {
 .page {
   background-color: $default-color;
   position: relative;
+  &:before {
+    display: block;
+    content: '';
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-image: url(../img/icons/logo-page.png);
+  }
 }
 
-.page-icon {
-  position: absolute;
-  top: 30px;
-  left: 30px;
-}
+// .page-icon {
+//   position: absolute;
+//   top: 30px;
+//   left: 30px;
+// }
 
 .container {
   max-width: 1160px;

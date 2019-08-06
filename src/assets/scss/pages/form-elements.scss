@@ -1,0 +1,71 @@
+.page {
+  background-color: $default-color;
+  position: relative;
+
+  &:before {
+    display: block;
+    content: '';
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-image: url(../img/icons/logo-page.png);
+  }
+}
+
+.border {
+  border: 1px solid red;
+  box-sizing: border-box;
+}
+.inputs-and-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.dropdowns {
+  display: flex;
+}
+
+.row { 
+  display: flex;
+  justify-content: space-between;
+}
+.col {
+  // width: 27.6%;
+  width: 320px;
+  // height: 300px;
+  background-color: #B5D3D6;
+}
+.col-small {
+  width: 82.8%;
+  // width: 265px;
+  min-height: 30px;
+  background-color: #C3E0D6;
+}
+
+.col-wide {
+  width: 61.4%;
+  height: 300px;
+  background-color: #D4C4D6;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.date-dropdown-inputs {
+  display: flex;
+  &__end {
+    margin-left: 20px;
+  }
+}
+
+.like-button-wrapper {
+  display: flex;
+}
+.rate-button-wrapper {
+  display: flex;
+}

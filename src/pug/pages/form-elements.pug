@@ -1,5 +1,8 @@
 extends ../layout/ui-layout/ui-layout.pug
-include ../../blocks/palette/palette.pug
+include ../../blocks/textfield/textfield.pug
+include ../../blocks/dropdown/dropdown.pug
+include ../../blocks/date-dropdown/date-dropdown.pug
+include ../../blocks/radiobutton/radiobutton.pug
 
 block variables
   - var title = 'Form elements';
@@ -8,7 +11,124 @@ block variables
 block content
 
   .page
-    img.page-icon(src="./assets/img/icons/logo-page.png" alt="logo")
     .container
-      .colors-and-types
-        .colors-and-types__colors 
+      .row.textfields-and-buttons
+        .col.textfields-and-buttons__textfields
+          .form-header
+            .title-3 Text field
+            .form-state Default
+          +inputText("Email")
+          .form-header
+            .title-3 Text field
+            .form-state Hover / Focus
+          +inputText("Email")
+          .form-header
+            .title-3 Dropdown
+            .form-state Default
+          +dropdown("text", "dataAttribute", "list", "apply")
+          .form-header
+            .title-3 Masked text field
+            .form-state Default
+          +inputText("ДД.ММ.ГГГГ")
+          .date-dropdown-inputs
+            .date-dropdown-inputs__begin
+              .title-3 Date dropdown
+              +dateDropdown("ДД.ММ.ГГГГ")
+            .date-dropdown-inputs__end
+              .title-3 Date dropdown
+              +dateDropdown("19.08.2019")
+          .col-small
+            .title-3 Filter date dropdown
+            +dateDropdown("19 авг - 23 авг")
+            .title-3 Subscription text field
+            +inputText("Email", "arrow")
+          
+        .col-wide
+          .col
+            .col-small
+              .title-3 Checkbox buttons
+              +checkbox("Можно курить")
+              +checkbox("Можно с питомцами", "checked")
+              +checkbox("Можно пригласить гостей (до 10 человек)", "checked")
+              .title-3 Radio buttons
+              .radiobutton-wrapper
+                +radiobutton("Мужчина", "man", "man", "male", "checked")
+                +radiobutton("Женщина", "woman", "woman", "male")
+            .title-3 Toggle
+            +toggle("Получать спецпредложения", "checked")
+            +toggle("Получать спецпредложения")
+            .title-3 Like button
+            .like-button-wrapper
+              +likebutton("2")
+              +likebutton("12", "checked")
+            .title-3 Rate button
+            .rate-button-wrapper
+                .ratebutton-element
+                  +ratebutton("4")
+                +ratebutton("5")
+          .col
+            .col
+              .col-small
+                +rangeslider("range slider", "5 000", "10 000")
+              .title-3 Buttons
+              .primary-buttons
+                +button-primary("click me", "#")
+                +button-primary("click me", "#").clicked-button
+              .secondary-buttons
+                +button-secondary("click me", "#")
+                +button-secondary("click me", "#").clicked-button
+              .single-buttons
+                +button-single("click me", "#")
+                +button-single-dark("click me", "#")
+              +button-wide("перейти к оплате", "#")
+              .title-3 pagination
+              +pagination("1 – 12 из 100+ вариантов аренды")
+      .row
+        .col
+          .col-small
+            .form-header
+              .title-3 Dropdown
+              .form-state Default
+            +dropdown("2 спальни, 2 кровати...", "", "", "")
+            .form-header
+              .title-3 Dropdown
+              .form-state Expanded
+            +dropdown("2 спальни, 2 кровати...", "room", ['спальни', 'кровати', 'ванные комнаты'], "").dropdown--active
+        .col-wide
+          .col
+            .title-3 Dropdown
+            +dropdown("Сколько гостей", "room", ['взрослые', 'дети', 'младенцы'],"apply").dropdown--active
+          .col
+            .title-3 Dropdown
+            +dropdown("3 гостя", "room", ['взрослые', 'дети', 'младенцы'],"apply").dropdown--active
+      .row
+        .col
+          .col-small
+            +checkboxList("expandable checkbox list")
+            +checkboxList("expandable checkbox list", [['Завтрак', '0'],['Письменный стол', '1'],['Стул для кормления', '1'],['Кроватка', '1'],['Телевизор', '0'],['Шампунь', '0'],['Телевизор', '0'],['Шампунь', '0']]).expandable-checbox--active
+        .col-wide
+          .col
+            .col-small
+              .title-3 rich checkbox buttons
+              .col-small
+                +checkboxRich('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
+              +checkboxRich('Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.')
+          .col
+            .col-small
+              .title-3 bullet list
+              +bulletList(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
+      .row
+        .col
+          .col-small
+            +comfort("Комфорт", "Шумопоглощающие стены", "zmdi zmdi-mood")
+            +comfort("Удобство", "Окно в каждой из спален", "zmdi zmdi-city")
+        .col-wide
+          +comment("Мурад Сарафанов", "./assets/img/avatar/avatar.png", "5 дней назад", "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", "12", "check")
+
+
+//- 		.ui-container__content.mt-30
+//- 			.column
+//- 				+comfort("Комфорт", "Шумопоглощающие стены", "zmdi zmdi-mood").mb-20
+//- 				+comfort("Удобство", "Окно в каждой из спален", "zmdi zmdi-city")
+//- 			.column-wide
+//- 				+comment("Мурад Сарафанов", "./assets/img/avatar/avatar.png", "5 дней назад", "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.", "12", "check")

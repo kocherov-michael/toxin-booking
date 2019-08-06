@@ -1,0 +1,7 @@
+mixin likebutton(number, checked)
+  if checked
+    .likebutton.likebutton--clicked&attributes(attributes) #{number}
+      i.heart(class="zmdi zmdi-favorite")
+  else
+    .likebutton&attributes(attributes) #{number}
+      i.heart(class="zmdi zmdi-favorite-outline")

@@ -1,0 +1,15 @@
+mixin inputText(placeholder, arrow)
+  if arrow
+    input.input-text(type='text' placeholder= placeholder)&attributes(attributes)
+  else
+    input.input-text.subscribe-input(type='text' placeholder= placeholder)&attributes(attributes)
+    .label__arrow
+      i.zmdi.zmdi-arrow-right.icon-color
+
+//- mixin subscriptionField(placeholder)
+//-     //- label.label(class="label--arrow")
+//-     //-   .label__arrow
+//-     //-     i.zmdi.zmdi-arrow-right.icon-color
+//-   input.input-text.subscribe-input(type='text' placeholder= placeholder)&attributes(attributes)
+//-     .label__arrow
+//-     i.zmdi.zmdi-arrow-right.icon-color
