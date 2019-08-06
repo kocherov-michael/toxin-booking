@@ -4,7 +4,7 @@
 .dropdown {
 	display: flex;
 	flex-wrap: wrap;
-	margin-top: 5px;
+	// margin-top: 5px;
 	position: relative;
 	border-color: $dark-shade-50;
 	border-radius: 4px 4px 0 0;
@@ -38,11 +38,11 @@
 	top: 10px;
 	font-size: 24px;
 	line-height: 24px;
-	&:after {
-		display: block;
-		content: '';
-		font-family: 'Material-Design-Iconic-Font';
-	}
+	// &:after {
+	// 	display: block;
+	// 	content: '';
+	// 	font-family: 'Material-Design-Iconic-Font';
+	// }
 }
 .dropdown-list {
 	top: 44px;

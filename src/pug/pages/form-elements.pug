@@ -11,24 +11,24 @@ block variables
 block content
 
   .page
-    .container
+    .container.form-elements
       .row.textfields-and-buttons
         .col.textfields-and-buttons__textfields
           .form-header
             .title-3 Text field
-            .form-state Default
+            .form-header__state Default
           +inputText("Email")
-          .form-header
+          .form-header.textfields-and-buttons__focused-textfield
             .title-3 Text field
-            .form-state Hover / Focus
-          +inputText("Email")
+            .form-header__state Hover / Focus
+          +inputText("This is pretty awesome")
           .form-header
             .title-3 Dropdown
-            .form-state Default
-          +dropdown("text", "dataAttribute", "list", "apply")
-          .form-header
+            .form-header__state Default
+          +dropdown("сколько гостей", "dataAttribute", "list", "apply")
+          .form-header.textfields-and-buttons__masked-textfield
             .title-3 Masked text field
-            .form-state Default
+            .form-header__state Default
           +inputText("ДД.ММ.ГГГГ")
           .date-dropdown-inputs
             .date-dropdown-inputs__begin
@@ -88,11 +88,11 @@ block content
           .col-small
             .form-header
               .title-3 Dropdown
-              .form-state Default
+              .form-header__state Default
             +dropdown("2 спальни, 2 кровати...", "", "", "")
             .form-header
               .title-3 Dropdown
-              .form-state Expanded
+              .form-header__state Expanded
             +dropdown("2 спальни, 2 кровати...", "room", ['спальни', 'кровати', 'ванные комнаты'], "").dropdown--active
         .col-wide
           .col
