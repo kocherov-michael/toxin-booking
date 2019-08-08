@@ -24,12 +24,12 @@
   border-radius: 10px;
   background: transparent;
 }
-.radio-button-input {
+.radio-button__input {
   display: none;
-  &:checked + .radio-button .radio-button__check-outer {
+  &:checked + .radio-button__check-outer {
     border: 1px solid $purple;
   }
-  &:checked + .radio-button .radio-button__check-inner {
+  &:checked + .radio-button__check-outer .radio-button__check-inner {
     background: linear-gradient($primary-gradient);
   }
 }

@@ -1,13 +1,13 @@
-mixin radiobutton(text, id, value, group, checked)
+mixin radiobutton(text, value, group, checked)
   if checked
-    input.radio-button-input(type="radio" id=id name=group value=value checked)
-    label.radio-button(for=id)&attributes(attributes) 
+    label.radio-button&attributes(attributes) 
+      input.radio-button__input(type="radio" name=group value=value checked)
       .radio-button__check-outer
         .radio-button__check-inner
       .radio-button__text #{text}
   else
-    input.radio-button-input(type="radio" id=id name=group value=value)
-    label.radio-button(for=id)&attributes(attributes)
+    label.radio-button&attributes(attributes)
+      input.radio-button__input(type="radio" name=group value=value)
       .radio-button__check-outer
         .radio-button__check-inner
       .radio-button__text #{text}
