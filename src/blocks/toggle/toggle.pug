@@ -1,14 +1,14 @@
 mixin toggle(text, checked)
 
   if checked
-    label.toggle
+    label.toggle&attributes(attributes)
       input(type="checkbox" name="checkbox" checked).toggle__input
-      .toggle__input-outer 
-        .toggle__input-inner 
+      .toggle__input-outer
+        .toggle__input-inner
       .toggle__text #{text}
   else
-    label.toggle
+    label.toggle&attributes(attributes)
       input(type="checkbox" name="checkbox").toggle__input
-      .toggle__input-outer 
-        .toggle__input-inner 
+      .toggle__input-outer
+        .toggle__input-inner
       .toggle__text #{text}
