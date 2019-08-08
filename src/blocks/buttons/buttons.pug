@@ -15,7 +15,7 @@ mixin button-secondary(text, link, small)
       .button-secondary__outer
 
 mixin button-single(text, link)
-    a.button.button-single(href=link)&attributes(attributes) #{text}
+  a.button.button-single(href=link)&attributes(attributes) #{text}
   
 mixin button-single-dark(text, link)
   a.button.button-single-dark(href=link)&attributes(attributes) #{text}
@@ -25,3 +25,73 @@ mixin button-wide(text, link)
     a.button.button-wide(href=link)&attributes(attributes) #{text}
       .button-wide__arrow
         i.zmdi.zmdi-arrow-right.zmdi-hc-2x
+
+//- mixin button-primary-options(options)
+//-   -
+//-     const text = options.text ? options.text : "button"
+//-     const sizeClass = options.small ? "button-primary_size_small" : ""
+//-     const typeClass = options.type ? "button-primary" : "button-secondary"
+//-     const name = options.name ? options.name : ""
+//-     const link = options.link?options.link:"#"
+
+
+
+//-   if options.submit === true
+//-     input.button.button-primary(type="submit" value=text name=name)&attributes(attributes)
+//-   else
+//-     a.button(class=(sizeClass+" "+typeClass) href=link)&attributes(attributes) #{text}
+
+mixin button-link-primary(options)
+  -
+    const text = options.text ? options.text : "button"
+    const sizeClass = options.small ? "button-primary_size_small" : ""
+    const link = options.link?options.link:"404.hmtl"
+  
+  a.button.button-primary(class=sizeClass href=link)&attributes(attributes) #{text}
+
+mixin button-form-primary(options)
+  -
+    const text = options.text ? options.text : "button"
+    const sizeClass = options.small ? "button-primary_size_small" : ""
+    const buttonName = options.name ? options.name : "name"
+    const buttonType = options.type ? options.type : "button"
+  
+  button.button.button-primary(class=sizeClass type=buttonType name=buttonName)&attributes(attributes) #{text}
+
+mixin button-link-secondary(options)
+  -
+    const text = options.text ? options.text : "button"
+    const sizeClass = options.small ? "button-secondary__inner_size_small" : ""
+    const link = options.link?options.link:"404.hmtl"
+
+  a.button.button-secondary(href=link)&attributes(attributes)
+    .button-secondary__inner(class=sizeClass) #{text}
+    .button-secondary__outer
+
+mixin button-form-secondary(options)
+  -
+    const text = options.text ? options.text : "button"
+    const sizeClass = options.small ? "button-primary_size_small" : ""
+    const buttonName = options.name ? options.name : "name"
+    const buttonType = options.type ? options.type : "button"
+
+  button.button.button-secondary(type=buttonType name=buttonName)&attributes(attributes)
+    .button-secondary__inner(class=sizeClass) #{text}
+    .button-secondary__outer
+
+mixin button-link-single(options)
+  -
+    const text = options.text ? options.text : "button"
+    const colorClass = options.small ? "button-single-dark" : "button-single"
+    const link = options.link?options.link:"404.hmtl"
+
+  a.button(class=colorClass href=link)&attributes(attributes) #{text}
+
+mixin button-form-single(options)
+  -
+    const text = options.text ? options.text : "button"
+    const colorClass = options.small ? "button-single-dark" : "button-single"
+    const buttonName = options.name ? options.name : "name"
+    const buttonType = options.type ? options.type : "button"
+
+  button.button(class=colorClass type=buttonType name=buttonName)&attributes(attributes) #{text}

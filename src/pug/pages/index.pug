@@ -13,26 +13,28 @@
 extends ../layout/page.pug
 
 block variables
-	- var title = 'Главная страница';
-	- var description = 'FSD-education-program. The-2nd-task';
-	//- - var pageClass= "index-page";
+  - var title = 'Главная страница';
+  - var description = 'FSD-education-program. The-2nd-task';
+  //- - var pageClass= "index-page";
 
 block content
-	.container
-		.title-1.text-center.mb-55 Проект Toxin-Booking
-		.row
-			.col
-				.card.align-items-center.pb-35
-					.title-2 UI-Kit
-					+button-secondary("перейти", "ui-kit.html")
-					+button-secondary("colors and types", "colors-and-types.html")
-					+button-secondary("Form elements", "form-elements.html")
-			.col
-				.card.align-items-center.pb-35
-					.title-2 Главная страница
-					+button-primary("Регистрация", "registration.html")
-					+button-primary("Логин", "sign-in.html")
-					+button-primary("Главная", "landing.html")
-					+button-primary("Поиск номера", "search-room.html")
-					+button-primary("Номер подробно", "room-details.html")
-			
+  .container
+    .title-1.text-center.mb-55 Проект Toxin-Booking
+    .row
+      .col
+        .card.align-items-center.pb-35
+          .title-2 UI-Kit
+          +button-secondary("перейти", "ui-kit.html")
+          +button-secondary("colors and types", "colors-and-types.html")
+          +button-secondary("Form elements", "form-elements.html")
+      .col
+        .card.align-items-center.pb-35
+          .title-2 Главная страница
+          +button-primary("Регистрация", "registration.html")
+          +button-primary("Логин", "sign-in.html")
+          +button-primary("Главная", "landing.html")
+          +button-primary("Поиск номера", "search-room.html")
+          +button-primary("Номер подробно", "room-details.html")
+          //- +button-primary-options({text:"кнопка", link: "404.html", small: true, submit: false, name:"", type: true})
+          +button-link-primary({text:"кнопка2", link: "405.html", small: true})
+          +button-form-primary({text:"кнопка3", small: true, name:"gena", type: ""})
