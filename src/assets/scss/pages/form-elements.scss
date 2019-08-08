@@ -146,8 +146,18 @@
   display: inline-block;
   margin-right: 10px;
 }
-.rate-button-wrapper {
-  display: flex;
+
+.textfields-and-buttons__rate-button-title {
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+.textfields-and-buttons__rate-button-element {
+  display: inline-block;
+  margin-left: 2px;
+  &:last-child {
+    margin-left: 18px;
+  }
 }
 
 .dropdowns {

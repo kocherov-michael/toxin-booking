@@ -24,7 +24,7 @@
 }
 .like-button__heart:before {
   width: 9px;
-  content: "";
+  content: "\f15e";
   display: block;
   font-family: $iconicFont;
 }
@@ -33,6 +33,6 @@
   border-color: $purple;
   color: $purple;
   .like-button__heart:before {
-    content: "";
+    content: "\f15f";
   }
 }
