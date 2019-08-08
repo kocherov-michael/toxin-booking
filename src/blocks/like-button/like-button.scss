@@ -1,0 +1,38 @@
+.like-button {
+  display: inline-block;
+  display: flex;
+  width: 40px;
+  height: 20px;
+  background: $default-color;
+  border: 1px solid $dark-shade-25;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 3px 5px;
+  cursor: pointer;
+
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: $dark-shade-25;
+}
+
+.like-button__number {
+  flex-grow: 1;
+  text-align: center;
+}
+.like-button__heart:before {
+  width: 9px;
+  content: "";
+  display: block;
+  font-family: $iconicFont;
+}
+
+.like-button_checked {
+  border-color: $purple;
+  color: $purple;
+  .like-button__heart:before {
+    content: "";
+  }
+}

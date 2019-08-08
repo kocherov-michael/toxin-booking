@@ -61,10 +61,11 @@ block content
               +toggle("Получать спецпредложения", "checked")
             .textfields-and-buttons__togle-item
               +toggle("Получать спецпредложения")
-            .title-3 Like button
-            .like-button-wrapper
+            .title-3.textfields-and-buttons__like-button-title Like button
+            .textfields-and-buttons__like-button-item
               +likebutton("2")
-              +likebutton("12", "checked")
+            .textfields-and-buttons__like-button-item
+              +likebutton("12").like-button_checked
             .title-3 Rate button
             .rate-button-wrapper
                 .ratebutton-element

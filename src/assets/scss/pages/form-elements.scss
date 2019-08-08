@@ -136,8 +136,15 @@
 .textfields-and-buttons__togle-item {
   margin-bottom: 10px;
 }
-.like-button-wrapper {
-  display: flex;
+
+.textfields-and-buttons__like-button-title {
+  margin-top: 43px;
+  margin-bottom: 12px;
+}
+
+.textfields-and-buttons__like-button-item {
+  display: inline-block;
+  margin-right: 10px;
 }
 .rate-button-wrapper {
   display: flex;

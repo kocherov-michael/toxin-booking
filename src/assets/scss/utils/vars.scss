@@ -1,12 +1,13 @@
 // Font
 // @import url(http://allfont.ru/allfont.css?fonts=open-sans);
-$mainFont                : 'Montserrat', sans-serif;
+$mainFont                : 'Montserrat', 'Open Sans', sans-serif;
 $secondaryFont           : 'Quicksand', 'Open Sans', sans-serif;
+$iconicFont              : 'Material-Design-Iconic-Font';
 
 // Size
 $mainFontColor           : #101010;
 $mainFontSize            : 18px;
-$mainFontWeight          : 400;
+$mainFontWeight          : normal;
 $mainLineHeight          : 1.4;
 
 $desktopWidth            : 1280px;
