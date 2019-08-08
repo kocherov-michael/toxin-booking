@@ -110,9 +110,32 @@
   margin-bottom: 17px;
 }
 
+.textfields-and-buttons__checkbox-col {
+  max-width: 230px;
+}
 
+.textfields-and-buttons__radio-title {
+  margin-bottom: 13px;
+  margin-top: 42px;
+}
 
+.textfields-and-buttons__radiobutton-first {
+  display: inline-block;
+  margin-right: 20px;
+}
 
+.textfields-and-buttons__radiobutton-second {
+  display: inline-block;
+}
+
+.textfields-and-buttons__togle-title {
+  margin-top: 40px;
+  margin-bottom: 13px;
+}
+
+.textfields-and-buttons__togle-first {
+  margin-bottom: 10px;
+}
 .like-button-wrapper {
   display: flex;
 }

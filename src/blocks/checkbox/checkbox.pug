@@ -1,17 +1,18 @@
 mixin checkbox(text, checked)
 
   if checked
-    label.label-check&attributes(attributes)
-      input(type="checkbox" name="checkbox" checked).label-check__input
-      span.label-check__new-input 
-        .check-item
-      |#{text}
+    label.checkbox&attributes(attributes)
+      input(type="checkbox" name="checkbox" checked).checkbox__input
+      span.checkbox__new-input 
+        .checkbox__check-item
+      //- |#{text}
+      .checkbox__text #{text}
   else
-    label.label-check&attributes(attributes)
-      input(type="checkbox" name="checkbox").label-check__input
-      span.label-check__new-input 
-        .check-item
-      |#{text}
+    label.checkbox&attributes(attributes)
+      input(type="checkbox" name="checkbox").checkbox__input
+      span.checkbox__new-input 
+        .checkbox__check-item
+      .checkbox__text #{text}
 
 mixin checkboxList(header, list)
   .expandable-checkbox&attributes(attributes)
@@ -31,6 +32,6 @@ mixin checkboxRich(text, desc)
   label.label-check-rich&attributes(attributes)
     input(type="checkbox" name="checkbox").label-check-rich__input
     span.label-check-rich__new-input 
-      .check-item
+      .checkbox__check-item
     |#{text}
     .label-check-rich__description #{desc}
