@@ -11,11 +11,11 @@
 @import "base/_base";
 
 //Forms
-@import "forms/_textfields";
-@import "forms/_dropdowns";
+// @import "forms/_textfields";
+// @import "forms/_dropdowns";
 @import "forms/_toggle";
 @import "forms/_buttons";
-@import "forms/_checkbox";
+// @import "forms/_checkbox";
 @import "forms/_radiobutton";
 @import "forms/_likebutton";
 @import "forms/_ratebutton";
@@ -27,6 +27,11 @@
 
 //Blocks
 @import "../../blocks/palette/palette";
+@import "../../blocks/dropdown/dropdown";
+@import "../../blocks/date-dropdown/date-dropdown";
+@import "../../blocks/textfield/textfield";
+@import "../../blocks/subscribe/subscribe";
+@import "../../blocks/checkbox/checkbox";
 
 //UI-KIT
 // @import "ui-kit/ui-kit";

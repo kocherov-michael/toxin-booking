@@ -81,16 +81,45 @@
 }
 
 
-.date-dropdown-inputs {
+.textfields-and-buttons__date-dropdown-inputs {
   display: flex;
-  &__end {
+  margin-top: 40px;
+  // margin-bottom: 40px;
+  &-begin-title {
+    margin-bottom: 5px;
+  }
+  &-end {
     margin-left: 20px;
+    &-title {
+      margin-bottom: 5px;
+    }
   }
 }
+
+.textfields-and-buttons__filter-date-dropdown-title {
+  margin-top: 40px;
+  margin-bottom: 4px;
+}
+
+.textfields-and-buttons__subscribe-title {
+  margin-top: 42px;
+  margin-bottom: 4px;
+}
+
+.textfields-and-buttons__checkbox-buttons-title {
+  margin-bottom: 17px;
+}
+
+
+
 
 .like-button-wrapper {
   display: flex;
 }
 .rate-button-wrapper {
   display: flex;
+}
+
+.dropdowns {
+  margin-top: 100px;
 }
