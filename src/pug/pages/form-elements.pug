@@ -75,17 +75,21 @@ block content
               .col-small
                 +rangeslider("range slider", "5 000", "10 000")
               .title-3.textfields-and-buttons__buttons-title Buttons
-              .primary-buttons
-                +button-primary("click me", "#")
-                +button-primary("click me", "#").clicked-button
-              .secondary-buttons
-                +button-secondary("click me", "#")
-                +button-secondary("click me", "#").clicked-button
-              .single-buttons
-                +button-single("click me", "#")
-                +button-single-dark("click me", "#")
-              +button-wide("перейти к оплате", "#")
-              .title-3 pagination
+              .textfields-and-buttons__primary-buttons
+                .textfields-and-buttons__primary-buttons-item
+                  +button-form-primary({text: "click me", small: false, name: "name", type: "button"})
+                +button-form-primary({text: "click me", small: false, name: "name", type: "button"}).button-primary_clicked
+              .textfields-and-buttons__secondary-buttons
+                .textfields-and-buttons__secondary-buttons-item
+                  +button-form-secondary({text: "click me", small: false, name: "name", type: "button"})
+                +button-form-secondary({text: "click me", small: false, name: "name", type: "button"}).button-secondary_clicked
+              .textfields-and-buttons__single-buttons
+                .textfields-and-buttons__single-buttons-item
+                  +button-form-single({text: "click me", colorBlue: true, name: "name", type: "button"})
+                +button-form-single({text: "click me", colorBlue: false, name: "name", type: "button"})
+              .textfields-and-buttons__wide-button
+                +button-form-wide({text: "Перейти к оплате", name: "name", type: "button"})
+              .title-3.textfields-and-buttons__pagination-title pagination
               +pagination("1 – 12 из 100+ вариантов аренды")
       .row.dropdowns
         .col

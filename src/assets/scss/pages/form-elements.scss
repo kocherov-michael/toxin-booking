@@ -162,7 +162,39 @@
 
 .textfields-and-buttons__buttons-title {
   margin-top: 44px;
-  margin-bottom: 13px;
+  margin-bottom: 16px;
+}
+
+.textfields-and-buttons__primary-buttons {
+  margin-bottom: 30px;
+}
+
+.textfields-and-buttons__primary-buttons-item {
+  margin-right: 18px;
+  display: inline-block;
+}
+
+.textfields-and-buttons__secondary-buttons {
+  margin-bottom: 26px;
+}
+
+.textfields-and-buttons__secondary-buttons-item {
+  margin-right: 18px;
+  display: inline-block;
+}
+
+.textfields-and-buttons__single-buttons {
+  margin-bottom: 26px;
+}
+
+.textfields-and-buttons__single-buttons-item {
+  display: inline-block;
+  margin-right: 22px;
+}
+
+.textfields-and-buttons__pagination-title {
+  margin-top: 40px;
+  margin-bottom: 15px;
 }
 .dropdowns {
   margin-top: 100px;
