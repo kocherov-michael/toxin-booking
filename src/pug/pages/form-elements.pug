@@ -66,9 +66,8 @@ block content
             .textfields-and-buttons__like-button-item
               +likebutton("12").like-button_checked
             .title-3.textfields-and-buttons__rate-button-title Rate button
-            .textfields-and-buttons__rate-button-element
+            .textfields-and-buttons__rate-button-elements
               +ratebutton("4")
-            .textfields-and-buttons__rate-button-element
               +ratebutton("5")
           .col
             .col
@@ -90,7 +89,8 @@ block content
               .textfields-and-buttons__wide-button
                 +button-form-wide({text: "Перейти к оплате", name: "name", type: "button"})
               .title-3.textfields-and-buttons__pagination-title pagination
-              +pagination("1 – 12 из 100+ вариантов аренды")
+              .textfields-and-buttons__pagination
+                +pagination("1 – 12 из 100+ вариантов аренды")
       .row.dropdowns
         .col
           .col-small

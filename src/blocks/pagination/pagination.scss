@@ -1,0 +1,38 @@
+.pagination {
+  font-size: 14px;
+  line-height: 24px;
+  // width: 240px;
+}
+.pagination__pages{
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  line-height: 15px;
+  &-item {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    height: 40px;
+    text-align: center;
+    padding-top: 13px;
+    &_active {
+      color: $default-color;
+      font-weight: bold;
+      background: linear-gradient($primary-gradient);
+      border-radius: 22px;
+    }
+    &_arrow {
+      color: $default-color;
+      padding-top: 8px;
+      background: linear-gradient($secondary-gradient);
+      border-radius: 22px;
+      font-size: 24px;
+      line-height: 20px;
+    }
+  }
+}
+.pagination__description {
+  margin-top: 9px;
+  text-align: center;
+}

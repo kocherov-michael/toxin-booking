@@ -152,12 +152,10 @@
   margin-bottom: 16px;
 }
 
-.textfields-and-buttons__rate-button-element {
-  display: inline-block;
-  margin-left: 2px;
-  &:last-child {
-    margin-left: 18px;
-  }
+.textfields-and-buttons__rate-button-elements {
+  display: flex;
+  justify-content: space-between;
+  max-width: 262px;
 }
 
 .textfields-and-buttons__buttons-title {
@@ -195,6 +193,10 @@
 .textfields-and-buttons__pagination-title {
   margin-top: 40px;
   margin-bottom: 15px;
+}
+
+.textfields-and-buttons__pagination {
+  width: 240px;
 }
 .dropdowns {
   margin-top: 100px;
