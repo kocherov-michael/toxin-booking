@@ -5,15 +5,20 @@
   display: flex;
   flex-wrap: wrap;
   // margin-top: 5px;
-  // position: relative;
+  position: relative;
   border-color: $dark-shade-50;
   border-radius: 4px 4px 0 0;
-  
+  min-width: 260px;
+
   &--active {
-    box-shadow: 0px 10px 20px $dark-shade-5;
-    position: absolute;
+    // box-shadow: 0px 10px 20px $dark-shade-5;
+    // box-shadow: 0px 10px 20px $dark-shade;
+    // position: absolute;
+    position: relative;
     .dropdown-list{
       display: block;
+      // position: absolute;
+      
     }
     .dropdown__text {
       border-color: $dark-shade-50;
@@ -21,6 +26,15 @@
     }
   }
 }
+
+// .dropdown__container {
+//   position: absolute;
+//   box-shadow: 0px 10px 20px $dark-shade;
+//   width: 100%;
+//   border-color: $dark-shade-50;
+//   border-radius: 4px;
+// }
+
 .dropdown__textfield {
   position: relative;
   width: 100%;
@@ -54,24 +68,19 @@
   height: 100%;
   display: flex;
   align-items: center;
-  // right: 16px;
-  // top: 10px;
   font-size: 24px;
   line-height: 24px;
   cursor: pointer;
-  // &:after {
-  // 	display: block;
-  // 	content: '';
-  // 	font-family: 'Material-Design-Iconic-Font';
-  // }
 }
 .dropdown-list {
+  position: absolute;
   top: 44px;
   left: 0;
+  right: 0;
   display: none;
   background-color: #fff;
+  box-shadow: 0px 10px 20px $dark-shade-5;
   z-index: 1;
-  width: 100%;
   border: 1px solid $dark-shade-50;
   border-top: none;
   border-radius: 0 0 4px 4px;
@@ -111,13 +120,23 @@
 }
 .dropdown-list__item-minus,
 .dropdown-list__item-plus {
-  padding-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1px;
+  font-weight: normal;
   font-size: 18px;
   line-height: 22px;
   cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  &:active {
+    background-color: $dark-shade-5;
+  }
 }
-.dropdown-list__item-minus--unavailable {
+.dropdown-list__item-minus_unavailable {
   opacity: 0.5;
+  cursor: default;
 }
 
 .dropdown-list__item-number {
@@ -138,4 +157,7 @@
 }
 .form-focus {
   border-color: $dark-shade-50;
+}
+.hide {
+  display: none;
 }

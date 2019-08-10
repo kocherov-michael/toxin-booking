@@ -101,7 +101,8 @@ block content
             .form-header
               .title-3 Dropdown
               .form-header__state Expanded
-            +dropdown("2 спальни, 2 кровати...", "room", ['спальни', 'кровати', 'ванные комнаты'], "").dropdown--active
+            .dropdowns__expanded-dropdown
+              +dropdown("2 спальни, 2 кровати...", "room", ['спальни', 'кровати', 'ванные комнаты'], "apply").dropdown--active(data-dropdown id="dropdown")
         .col-wide
           .col
             .title-3 Dropdown
@@ -109,7 +110,7 @@ block content
           .col
             .title-3 Dropdown
             +dropdown("3 гостя", "room", ['взрослые', 'дети', 'младенцы'],"apply").dropdown--active
-      .row
+      .row.checkboxes
         .col
           .col-small
             +checkboxList("expandable checkbox list")

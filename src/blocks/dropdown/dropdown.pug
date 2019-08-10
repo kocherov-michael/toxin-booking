@@ -37,21 +37,21 @@ mixin filterDateDropdown(text)
 mixin dropdown(text, dataAttribute, list, apply)
   .dropdown&attributes(attributes)
     label.dropdown__textfield
-      input.dropdown__text(type='text' placeholder= placeholder value=text)
+      input.dropdown__text(type='text' placeholder= placeholder value=text data-dropdown-input id="input")
       .dropdown__text-arrow
         i.zmdi.zmdi-chevron-down
     if list
       .dropdown-list
         each item in list
           .dropdown-list__item
-            .dropdown-list__item-text #{item}
+            .dropdown-list__item-text(data-dropdown-text) #{item}
             .dropdown-list__item-count
-              .dropdown-list__item-minus.dropdown-list__item-minus--unavailable(data-count="minus") -
-              .dropdown-list__item-number(data-count="number") 0
-              .dropdown-list__item-plus(data-count="plus") +
+              .dropdown-list__item-minus.dropdown-list__item-minus_unavailable(data-dropdown-minus) -
+              .dropdown-list__item-number(data-dropdown-count) 0
+              .dropdown-list__item-plus(data-dropdown-plus) +
         if apply
           .dropdown-list__action
             .dropdown-list__action-apply
               +button-single("применить", "#")
-            .dropdown-list__action-clear
+            .dropdown-list__action-clear.hide(data-dropdown-clear)
               +button-single-dark("очистить", "#")
