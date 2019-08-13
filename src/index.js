@@ -5,6 +5,7 @@ console.log("index.js подключен")
 import './js/calendar'
 import './js/checkbox'
 import './js/dropdown'
+// import './blocks/comment/comment.js'
 
 // SCSS
 import './assets/scss/main.scss'

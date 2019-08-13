@@ -111,7 +111,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '~': PATHS.src,
+      '~': PATHS.src
       // 'vue$': 'vue/dist/vue.js',
     }
   },

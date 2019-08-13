@@ -1,0 +1,20 @@
+mixin comment(options)
+  -
+    if (!options) {
+      options = {author: "John Doe", avatarLink: require('../../blocks/comment/no-photo.png'), time: "5 лет назад", text: "text", likeCount: "4", likeCheck: false}
+    }
+  
+    const likeCheck = options.likeCheck ? "checked" : ""
+    const imgClass = options.avatarLink?"":"hide"
+
+
+  .comment&attributes(attributes)
+    .comment__left-side
+      .comment__avatar
+        img.comment__img(src=options.avatarLink class=imgClass alt="avatar")
+      .comment__likebutton
+        +likebutton(options.likeCount, likeCheck)
+    .comment__rigth-side
+      .comment__author #{options.author}
+      .comment__time #{options.time}
+      .comment__text #{options.text}
