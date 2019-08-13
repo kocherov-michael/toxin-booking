@@ -25,7 +25,7 @@ block content
           .form-header
             .title-3 Dropdown
             .form-header__state Default
-          +dropdown("Сколько гостей", "dataAttribute", "list", "apply")
+          +dropdown("Сколько гостей", "list", "apply")
           .form-header.textfields-and-buttons__masked-textfield
             .title-3 Masked text field
             .form-header__state Default
@@ -97,19 +97,19 @@ block content
             .form-header
               .title-3 Dropdown
               .form-header__state Default
-            +dropdown("2 спальни, 2 кровати...", "", "", "")
+            +dropdown("2 спальни, 2 кровати...", "", "")
             .form-header
               .title-3 Dropdown
               .form-header__state Expanded
             .dropdowns__expanded-dropdown
-              +dropdown("2 спальни, 2 кровати...", "room", ['спальни', 'кровати', 'ванные комнаты'], "apply").dropdown--active(data-dropdown id="dropdown")
+              +dropdown("2 спальни, 2 кровати...", ['спальни', 'кровати', 'ванные комнаты']).dropdown--active(data-dropdown id="dropdown-rooms")
         .col-wide
           .col
             .title-3 Dropdown
-            +dropdown("Сколько гостей", "room", ['взрослые', 'дети', 'младенцы'],"apply").dropdown--active
+            +dropdown("Сколько гостей", ['взрослые', 'дети', 'младенцы'],"apply").dropdown--active
           .col
             .title-3 Dropdown
-            +dropdown("3 гостя", "room", ['взрослые', 'дети', 'младенцы'],"apply").dropdown--active
+            +dropdown("3 гостя", ['взрослые', 'дети', 'младенцы'],"apply").dropdown--active(id="dropdown-guests")
       .row.checkboxes
         .col
           .col-small
