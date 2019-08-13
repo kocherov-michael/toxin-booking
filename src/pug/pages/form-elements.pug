@@ -47,9 +47,12 @@ block content
           .col
             .textfields-and-buttons__checkbox-col
               .title-3.textfields-and-buttons__checkbox-buttons-title Checkbox buttons
-              +checkbox("Можно курить")
-              +checkbox("Можно с питомцами", "checked")
-              +checkbox("Можно пригласить гостей (до 10 человек)", "checked")
+              .textfields-and-buttons__checkbox-item
+                +checkbox("Можно курить", "checkboxName")
+              .textfields-and-buttons__checkbox-item
+                +checkbox("Можно с питомцами", "checkboxName", "checked")
+              .textfields-and-buttons__checkbox-item
+                +checkbox("Можно пригласить гостей (до 10 человек)", "checkboxName", "checked")
               .title-3.textfields-and-buttons__radio-title Radio buttons
               .textfields-and-buttons__radiobutton-first
                 +radiobutton("Мужчина", "man", "male", "checked")
@@ -95,36 +98,48 @@ block content
         .col
           .col-small
             .form-header
-              .title-3 Dropdown
+              .title-3.form-header__title Dropdown
               .form-header__state Default
             +dropdown("2 спальни, 2 кровати...", "", "")
             .form-header
-              .title-3 Dropdown
+              .title-3.form-header__title Dropdown
               .form-header__state Expanded
             .dropdowns__expanded-dropdown
-              +dropdown("2 спальни, 2 кровати...", ['спальни', 'кровати', 'ванные комнаты']).dropdown--active(data-dropdown id="dropdown-rooms")
+              +dropdown("2 спальни, 2 кровати...", ['спальни', 'кровати', 'ванные комнаты']).dropdown--active(id="dropdown-rooms")
         .col-wide
           .col
-            .title-3 Dropdown
+            .title-3.dropdowns__title Dropdown
             +dropdown("Сколько гостей", ['взрослые', 'дети', 'младенцы'],"apply").dropdown--active
           .col
-            .title-3 Dropdown
+            .title-3.dropdowns__title Dropdown
             +dropdown("3 гостя", ['взрослые', 'дети', 'младенцы'],"apply").dropdown--active(id="dropdown-guests")
       .row.checkboxes
         .col
           .col-small
-            +checkboxList("expandable checkbox list")
-            +checkboxList("expandable checkbox list", [['Завтрак', '0'],['Письменный стол', '1'],['Стул для кормления', '1'],['Кроватка', '1'],['Телевизор', '0'],['Шампунь', '0'],['Телевизор', '0'],['Шампунь', '0']]).expandable-checbox--active
-        .col-wide
+            .checkboxes__expandable-close
+              +checkboxList("expandable checkbox list")
+            .checkboxes__expandable-open
+              +checkboxList("expandable checkbox list", "checkboxListName", [
+                {itemName: 'Завтрак', checked: false, value:"breakfast"}, 
+                {itemName: 'Письменный стол', checked: true, value:"desc"},
+                {itemName: 'Стул для кормления', checked: true, value:"chair"},
+                {itemName: 'Кроватка', checked: true, value:"bed"},
+                {itemName: 'Телевизор', checked: false, value:"tv"},
+                {itemName: 'Шампунь', checked: false, value:"shampoo"},
+                {itemName: 'Телевизор', checked: false, value:"tv"},
+                {itemName: 'Шампунь', checked: false, value:"shampoo"}
+                ]).expandable-checbox_active
+        .col-wide.checkboxes__col-wide
           .col
             .col-small
-              .title-3 rich checkbox buttons
-              .col-small
-                +checkboxRich('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
-              +checkboxRich('Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.')
+              .title-3.checkboxes__rich-title rich checkbox buttons
+              .checkboxes__rich-narrow
+                +checkboxRich('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.', "wide-corridor", "wide-corridor")
+              .checkboxes__rich-middle
+                +checkboxRich('Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.', "disable-assistant", "disable-assistant")
           .col
             .col-small
-              .title-3 bullet list
+              .title-3.checkboxes__bullet-title bullet list
               +bulletList(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
       .row
         .col

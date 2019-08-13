@@ -1,5 +1,5 @@
 .checkbox {
-  margin-bottom: 10px;
+  // margin-bottom: 10px;
   min-width: 200px;
   cursor: pointer;
   position: relative;
@@ -66,26 +66,30 @@
 }
 
 .expandable-checkbox {
-  position: relative;
+  // position: relative;
+  
   width: 100%;
   min-width: 250px;
   cursor: pointer;
   &__header {
-    margin-bottom: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__header-text {
     font-weight: bold;
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
     color: $dark-shade;
-
   }
   &__list {
+    margin-top: 13px;
     display: none;
   }
-  &__arrow {
-    position: absolute;
-    top: -5px;
-    right: 16px;
+  &__header-arrow {
+    padding-right: 15px;
+    padding-left: 15px;
     font-weight: normal;
     font-size: 24px;
     line-height: 24px;
@@ -94,28 +98,31 @@
   &__list-item {
     margin-bottom: 10px;
   }
-  // &--active {
-  // 	.expandable-checkbox__list {
-  // 		display: block;
-  // 	}
-  // 	.expandable-checkbox__arrow {
-  // 		transform: rotate(180deg);
-  // 	}
-  // }
 }
-.expandable-checbox--active {
+.expandable-checbox_active {
   .expandable-checkbox__list {
     display: block;
   }
-  .expandable-checkbox__arrow {
+  .expandable-checkbox__header-arrow {
     transform: rotate(180deg);
   }
 }
-.label-check-rich {
-  @extend .checkbox;
-  font-weight: bold;
-  margin-bottom: 10px;
-
+.checkbox-rich {
+  // min-width: 200px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  &__text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    padding-top: 1px;
+  }
   &__input {
     @extend .checkbox__input;
   }
@@ -123,7 +130,7 @@
     @extend .checkbox__new-input;
   }
 
-  &__description {
+  &__text-description {
     font-weight: normal;
     font-size: 12px;
     line-height: 14px;
