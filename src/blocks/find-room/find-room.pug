@@ -1,0 +1,18 @@
+form.find-room
+  .title-1.find-room__header-title Найдём номера под ваши пожелания
+  .find-room__date
+    .find-room__date-arrival
+      .title-3.find-room__title Прибытие
+      .find-room__date-input
+        +dateDropdown("ДД.ММ.ГГГГ")(id="arrival")
+    .find-room__date-departure
+      .title-3.find-room__title Выезд
+      .find-room__date-input
+        +dateDropdown("ДД.ММ.ГГГГ")(id="departure")
+    //- .calendar-wrapper.hide
+    //-   include ../calendar/calendar.pug
+  .find-room__men.mb-30
+    .title-3.find-room__title Гости
+    +dropdown("Сколько гостей", ['взрослые', 'дети', 'младенцы'],"apply")(id="dropdown-guests")
+  .find-room__button
+    +button-form-wide({text: "Подобрать номер", name: "find-room", type: "submit"})

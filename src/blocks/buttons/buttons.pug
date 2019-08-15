@@ -135,6 +135,6 @@ mixin button-form-wide(options)
     const buttonName = options.name ? options.name : "name"
     const buttonType = options.type ? options.type : "button"
 
-  button.button.button-wide(type=buttonType name=buttonName)&attributes(attributes) #{text}
+  button.button.button-wide(type=buttonType name="name" value=buttonName)&attributes(attributes) #{text}
     .button-wide__arrow
       i.zmdi.zmdi-arrow-right

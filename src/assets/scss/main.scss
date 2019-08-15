@@ -8,7 +8,7 @@
 @import "utils/margins";
 
 //Base
-@import "base/_base";
+@import "base/base";
 
 //Forms
 // @import "forms/_textfields";
@@ -42,13 +42,15 @@
 @import "../../blocks/bullet-list/bullet-list";
 @import "../../blocks/comfort/comfort";
 @import "../../blocks/comment/comment";
+@import "../../blocks/find-room/find-room";
+@import "../../blocks/calendar/calendar";
 
 
 //UI-KIT
 // @import "ui-kit/ui-kit";
 
 //Sections
-@import "sections/_find-room";
+// @import "sections/_find-room";
 @import "sections/_registration-card";
 @import "sections/_room-price";
 @import "sections/_login-card";
@@ -66,6 +68,7 @@
 @import "pages/room-details";
 @import "pages/colors-and-types";
 @import "pages/form-elements";
+@import "pages/cards";
 
 
 // html {

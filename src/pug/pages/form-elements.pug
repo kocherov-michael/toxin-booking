@@ -105,14 +105,14 @@ block content
               .title-3.form-header__title Dropdown
               .form-header__state Expanded
             .dropdowns__expanded-dropdown
-              +dropdown("2 спальни, 2 кровати...", ['спальни', 'кровати', 'ванные комнаты']).dropdown--active(id="dropdown-rooms")
+              +dropdown("2 спальни, 2 кровати...", ['спальни', 'кровати', 'ванные комнаты']).dropdown_active(id="dropdown-rooms")
         .col-wide
           .col
             .title-3.dropdowns__title Dropdown
-            +dropdown("Сколько гостей", ['взрослые', 'дети', 'младенцы'],"apply").dropdown--active
+            +dropdown("Сколько гостей", ['взрослые', 'дети', 'младенцы'],"apply").dropdown_active
           .col
             .title-3.dropdowns__title Dropdown
-            +dropdown("3 гостя", ['взрослые', 'дети', 'младенцы'],"apply").dropdown--active(id="dropdown-guests")
+            +dropdown("3 гостя", ['взрослые', 'дети', 'младенцы'],"apply").dropdown_active(id="dropdown-guests")
       .row.checkboxes
         .col
           .col-small

@@ -1,0 +1,45 @@
+extends ../layout/ui-layout/ui-layout.pug
+
+block variables
+  - var title = 'Cards';
+  //- - var pageClass = 'body--dashboard';
+
+block content
+
+  .page.page_theme_dark
+    .container
+      .cards
+        .cards__col
+          .cards__find-room-card
+            include ../../blocks/find-room/find-room.pug
+          include ../sections/registration-card.pug
+        .cards__col
+          include ../sections/room-price.pug
+          include ../sections/login-card.pug
+        .cards__col-narrow
+          include ../sections/calendar.pug
+          +roomCard("./assets/img/images/image_888.png", "888", "9 990", "5", "145", "люкс", "arrows")
+          +roomCard("./assets/img/images/image_840.png", "840", "9 900", "4", "65")
+
+
+
+
+
+
+
+
+
+    //- .ui-wrapper.ui-container--dark
+    //-     .ui-container
+    //-       .ui-container__content
+    //-         .column
+    //-           .find-room-wrapper
+    //-             include ../sections/find-room.pug
+    //-           include ../sections/registration-card.pug
+    //-         .column
+    //-           include ../sections/room-price.pug
+    //-           include ../sections/login-card.pug
+    //-         .column
+    //-           include ../sections/calendar.pug
+    //-           +roomCard("./assets/img/images/image_888.png", "888", "9 990", "5", "145", "люкс", "arrows")
+    //-           +roomCard("./assets/img/images/image_840.png", "840", "9 900", "4", "65")

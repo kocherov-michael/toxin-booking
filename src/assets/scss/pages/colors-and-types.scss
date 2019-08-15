@@ -8,20 +8,20 @@ h1, h2, h3, p {
   margin: 0;
 }
 
-.page {
-  background-color: $default-color;
-  position: relative;
-  &:before {
-    display: block;
-    content: '';
-    width: 48px;
-    height: 48px;
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    background-image: url(../img/icons/logo-page.png);
-  }
-}
+// .page {
+//   background-color: $default-color;
+//   position: relative;
+//   &:before {
+//     display: block;
+//     content: '';
+//     width: 48px;
+//     height: 48px;
+//     position: absolute;
+//     top: 30px;
+//     left: 30px;
+//     background-image: url(../img/icons/logo-page.png);
+//   }
+// }
 
 // .page-icon {
 //   position: absolute;
@@ -29,9 +29,9 @@ h1, h2, h3, p {
 //   left: 30px;
 // }
 
-.container {
-  max-width: 1160px;
-}
+// .container {
+//   max-width: 1160px;
+// }
 
 .colors-and-types {
   // padding: 150px;
