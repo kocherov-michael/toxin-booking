@@ -4,7 +4,7 @@
 
   dropdown("#dropdown-rooms")
   dropdown("#dropdown-guests")
-  dropdown("#dropdown-guests2")
+  dropdown("#dropdown-calculator")
   
   function dropdown(elementSelector) {
 
@@ -114,9 +114,9 @@
       }
     
       //оформление дропдауна "гости" в ui-kit
-      if (window.location.pathname === '/form-elements.html') {
+      if (elementSelector === "#dropdown-calculator") {
     
-        const dropdownGuestElement = document.querySelector("#dropdown-guests")
+        const dropdownGuestElement = document.querySelector(elementSelector)
         const dropdownListTextElement = dropdownGuestElement.querySelectorAll(".dropdown-list__item")
         const clearButtonElement = dropdownGuestElement.querySelector("[data-dropdown-clear]")
         const inputElement = dropdownGuestElement.querySelector("[data-dropdown-input]")

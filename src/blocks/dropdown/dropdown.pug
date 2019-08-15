@@ -4,10 +4,10 @@ mixin filterDateDropdown(text)
     .dropdown__text-arrow
       i.zmdi.zmdi-chevron-down
 
-mixin dropdown(placeholder, list, apply)
+mixin dropdown(placeholder, list, apply, dropdownValue)
   .dropdown&attributes(attributes)
     label.dropdown__textfield
-      input.dropdown__text(type='text' placeholder= placeholder data-dropdown-input name="dropdown")
+      input.dropdown__text(type='text' placeholder=placeholder data-dropdown-input name="dropdown" value=dropdownValue)
       .dropdown__text-arrow
         i.zmdi.zmdi-chevron-down
     if list

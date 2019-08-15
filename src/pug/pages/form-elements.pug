@@ -100,19 +100,19 @@ block content
             .form-header
               .title-3.form-header__title Dropdown
               .form-header__state Default
-            +dropdown("2 спальни, 2 кровати...", "", "")
+            +dropdown("Удобства в номере", "", "", "2 спальни, 2 кровати...")
             .form-header
               .title-3.form-header__title Dropdown
               .form-header__state Expanded
             .dropdowns__expanded-dropdown
-              +dropdown("2 спальни, 2 кровати...", ['спальни', 'кровати', 'ванные комнаты']).dropdown_active(id="dropdown-rooms")
+              +dropdown("Удобства в номере", ['спальни', 'кровати', 'ванные комнаты'], "", "2 спальни, 2 кровати...").dropdown_active(id="dropdown-rooms")
         .col-wide
           .col
             .title-3.dropdowns__title Dropdown
             +dropdown("Сколько гостей", ['взрослые', 'дети', 'младенцы'],"apply").dropdown_active
           .col
             .title-3.dropdowns__title Dropdown
-            +dropdown("3 гостя", ['взрослые', 'дети', 'младенцы'],"apply").dropdown_active(id="dropdown-guests")
+            +dropdown("Сколько гостей", ['взрослые', 'дети', 'младенцы'],"apply", "3 гостя").dropdown_active(id="dropdown-calculator")
       .row.checkboxes
         .col
           .col-small
