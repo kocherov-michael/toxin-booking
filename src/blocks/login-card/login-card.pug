@@ -1,6 +1,6 @@
 form.login-card
   .login-card__title 
-    h1 Войти
+    .title-1 Войти
   .login-card__name
     +inputText("Email", "email", "email")
   .login-card__secondname
@@ -10,4 +10,4 @@ form.login-card
   .login-card__account-login
     .login-card__account-login-text Hет аккаунта на Toxin?
     .login-card__account-registration-button
-      +button-link-secondary({text: "Создать", small: false, link: "sign-in.html"}).button-secondary_wide_custom
+      +button-link-secondary({text: "Создать", small: false, link: "sign-in.html"}).button-secondary_width_custom
