@@ -124,6 +124,9 @@
 .dropdown-list__item-minus_unavailable {
   opacity: 0.5;
   cursor: default;
+  &:active {
+    background-color: inherit;
+  }
 }
 
 .dropdown-list__item-number {
