@@ -85,10 +85,10 @@
     background: linear-gradient($primary-gradient);
     transition: all 0.4s ease;
   }
-  &--wider {
+  &_wide {
+    width: 100%;
     .button-secondary__inner {
-      padding-left: 24px;
-      padding-right: 24px;
+      text-align: center;
     }
   }
 }

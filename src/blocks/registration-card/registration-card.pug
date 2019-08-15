@@ -1,0 +1,28 @@
+form.registration-card
+  .title-1.registration-card__header-title Регистрация аккаунта
+  .registration-card__name
+    +inputText("Имя", "text", "user-name")
+  .registration-card__secondname
+    +inputText("Фамилия", "text", "user-secondname")
+  .registration-card__male
+    .registration-card__male-item
+      +radiobutton("Мужчина", "man", "male", "checked")
+    .registration-card__male-item
+      +radiobutton("Женщина", "woman", "male")
+  .registration-card__burthday
+    .title-3.registration-card__title Дата рождения
+    +inputText("ДД.ММ.ГГГГ", "text")
+  .registration-card__login
+    .title-3.registration-card__title Данные для входа в сервис
+    +inputText("Email", "email", "email")
+  .registration-card__password
+    +inputText("Пароль", "password", "password")
+  .registration-card__toggle
+    +toggle("Получать спецпредложения")
+  .registration-card__pay
+    +button-form-wide({text: "Перейти к оплате", name: "regisration-form", type: "submit"})
+  .registration-card__account-login
+    .registration-card__account-login-text Уже есть аккаунт на Toxin
+    .registration-card__account-login-button
+      +button-link-secondary({text: "Войти", small: false, link: "sign-in.html"}).button-secondary_wide
+  
