@@ -8,6 +8,7 @@
   border-radius: 4px;
   margin-bottom: 40px;
 }
+
 .calendar__header {
   display: flex;
   justify-content: space-between;
@@ -25,23 +26,21 @@
     margin-left: 2px;
   }
 }
+
 .calendar__week {
   width: 100%;
   display: flex;
   justify-content: space-between;
   margin-bottom: 13px;
 }
+
 .calendar__date {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
 }
-.calendar__date-row {
-  display: flex;
 
-}
 .calendar__week-item {
   width: 40px;
-  // align-items: center;
   display: inline-block;
   text-align: center;
   color: $purple;
@@ -51,28 +50,30 @@
 }
 
 .calendar__day {
+  
+  box-sizing: border-box;
   display: inline-block;
   text-align: center;
-  width: 40px;
+  width: 14.28571%;
   height: 40px;
   padding-top: 12px;
   font-size: 12px;
   line-height: 15px;
   cursor: pointer;
-  &--today {
+  &_today {
     background: linear-gradient($secondary-gradient);
     border-radius: 22px;
     color: $default-color;
   }
-  &--period {
+  &_period {
     background: linear-gradient($primary-gradient);
     border-radius: 22px;
     color: $default-color;
     position: relative;
     z-index: 2;
   }
-  &--period-begin, 
-  &--period-end {
+  &_period_begin, 
+  &_period_end {
     &:before {
       position: absolute;
       content: '';
@@ -85,26 +86,26 @@
       z-index: -1;
     }
   }
-  &--period-end {
+  &_period_end {
     &:before {
       right: auto;
       left: 0;
     }
   }
-  &--period-between {
+  &_period_between {
     position: relative;
     background: linear-gradient($primary-gradient-transp);
   }
-  &--error {
+  &_error {
     background: $danger-color;
     border-radius: 22px;
     color: $default-color;
   }
+  &_another-month {
+    color: $dark-shade-25;
+  }
 }
-.pale {
-  color: $dark-shade-25;
-  cursor: inherit;
-}
+
 .calendar__action {
   display: flex;
   flex-direction: row-reverse;

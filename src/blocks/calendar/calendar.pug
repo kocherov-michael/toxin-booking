@@ -19,34 +19,25 @@
   - var periodEnd = 23;
   - var period = "";
   .calendar__date
-    while x < 5 
-      .calendar__date-row
-        - x++
-        - var y = 0
-        while y < 7 
-          if day == 1
-            if pale == "pale"
-              - pale = ""
-            else
-              - pale = "pale"
-          if day == activeDay
-            - active = "calendar__day--today"
-          if day == periodBegin
-            - period = "calendar__day--period calendar__day--period-begin"
-          if day == periodEnd
-            - period = "calendar__day--period calendar__day--period-end"
-          .calendar__day(class=active class=pale class=period) #{day}
-          - active = ""
-          if day == periodBegin
-            - period = "calendar__day--period-between"
-          if day == periodEnd
-            - period = ""
-          - day += 1
-          - y++
-          if day > 31
-            - day = 1
+    while day <= 31
+      .calendar__day.calendar__day_another-month #{day}
+        - day++
+    - day = 1
+    while day <= 31
+      .calendar__day(class=className) #{day}
+        - day++
+        - className = ""
+        if day == 8
+          - className = "calendar__day_today"
+        if day == 19
+          - className = "calendar__day_period calendar__day_period_begin"
+        if day == 23
+          - className = "calendar__day_period calendar__day_period_end"
+        if day > 19 && day < 23
+          - className = "calendar__day_period_between"
+    .calendar__day.calendar__day_another-month 1
   .calendar__action
     .calendar__action-apply(data-action="apply")
-      +button-single("применить", "#")
+      +button-form-single({text: "применить", colorBlue: true, name: "name", type: "button"})
     .calendar__action-clear(data-action="clear")
-      +button-single-dark("очистить", "#")
+      +button-form-single({text: "очистить", colorBlue: false, name: "name", type: "button"})
