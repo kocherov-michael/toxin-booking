@@ -1,13 +1,10 @@
 form.room-price-card
   .room-price-card__header-title
-    .title-3.room-number
-      span.room-number__symbol №
-      span.room-number__number 888
-      span.room-number__type Люкс
-    .price-per-day
-      span.price-per-day__price 9 990
-      span.price-per-day__rub.rub P
-      span.price-per-day__text в сутки
+    +roomInfo({
+          num: "888", 
+          price: "9 990", 
+          lux: true,
+        })
     
   .room-price-card__date
     .room-price-card__date-arrival

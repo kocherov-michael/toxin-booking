@@ -1,0 +1,42 @@
+mixin roomCard(options)
+
+  -
+    if (!options) {
+      options = {
+        imgLink: "require('../../blocks/room-card/no-photo.jpg')",
+        num: "123", 
+        price: "9 990", 
+        stars: "5",
+        comments: "10",
+        lux: false,
+        arrows: false
+      }
+    }
+    options.imgLink = options.imgLink ? options.imgLink : require('../../blocks/room-card/no-photo.jpg')
+
+  .room-card&attributes(attributes)
+    .room-card__header
+      img(src=options.imgLink alt="room photo" class="room-card__header-img")
+      if options.arrows
+        .room-card__header-shadow
+        .room-card__header-arrow-left
+          i.zmdi.zmdi-chevron-left
+        .room-card__header-arrow-right
+          i.zmdi.zmdi-chevron-right
+      .room-card__header-pagination
+        .room-card-pagination-item.room-card-pagination-item_active
+        .room-card-pagination-item
+        .room-card-pagination-item
+        .room-card-pagination-item
+    .room-card__title
+      +roomInfo({
+        num: options.num, 
+        price: options.price, 
+        lux: options.lux,
+      }).room-heading-info_num-size_small
+    .room-card__feedback
+      .room-card__feedback-stars
+        +ratebutton(options.stars)
+      .room-card__feedback-comments 
+        span #{options.comments}
+        |  Отзывов

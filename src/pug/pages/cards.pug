@@ -19,6 +19,24 @@ block content
           include ../../blocks/login-card/login-card.pug
         .cards__col-narrow
           include ../../blocks/calendar/calendar.pug
-          +roomCard("./assets/img/images/image_888.png", "888", "9 990", "5", "145", "люкс", "arrows")
-          +roomCard("./assets/img/images/image_840.png", "840", "9 900", "4", "65")
+          .cards__col-inner
+            .cards__room-card-wrapper
+              +roomCard({
+                imgLink: "./assets/img/images/image_888.jpg", 
+                num: "888",
+                price: "9 990", 
+                stars: "5",
+                comments: "145",
+                lux: true,
+                arrows: true
+              })
+            +roomCard({
+              imgLink: "./assets/img/images/image_840.jpg", 
+              num: "840",
+              price: "9 900", 
+              stars: "4",
+              comments: "65",
+              lux: false,
+              arrows: true
+            })
 
