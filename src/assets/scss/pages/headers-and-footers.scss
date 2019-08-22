@@ -1,4 +1,18 @@
 .headers-and-footers {
   padding-top: 150px;
   padding-bottom: 130px;
+
+  &__guest-header {
+    margin-bottom: 40px;
+  }
+
+  &__user-header {
+    margin-bottom: 40px;
+    .header__user-login_logged-user {
+      display: flex;
+    }
+    .header__button-login_logged-user {
+      display: none;
+    }
+  }
 }

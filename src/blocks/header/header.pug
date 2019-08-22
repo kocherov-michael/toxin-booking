@@ -1,9 +1,7 @@
 - if (!login) var login = "login"
 - if (!register) var register = "register"
-//- - if (!headerMenu) var headerMenu = [{itemName:"Home"}, "About us", "Services", "Careers", " News", "Documentation"];
-//- - if (!headerMenu) var headerMenu = {"Home":"0", "About us":"1", "Services":["first", "second", "third"], "Careers":"3", "News":"4", "Documentation":"5"};
+- if (userName) var loggedUser = "header_logged-user" 
 - var Services = ["first", "second", "third"]
-//- - if (!itemNumberList) var itemNumberList = "2";
 - if (!itemNumberActive) var itemNumberActive = "0";
 
 -
@@ -17,7 +15,7 @@
   ]
 
 
-.header
+.header(class=loggedUser)
   .header__container
     .header__logo.logo
       .logo__icon(style="background-image: url(./assets/img/icons/logo.png);")
@@ -37,9 +35,10 @@
           else
             li.navigation__item
               a.navigation__link(href=val.url title=val.title) #{val.title}
-      .header-login
-        .header-login__guest
-          .header-login__guest-login
-            +button-link-secondary({text: "login", small: true, link: "sign-in.html"})
-          .header-login__guest-register
-            +button-link-primary({text: "register", small: true, link: "registration.html"})
+      .header__login
+        .header__button-login.header__button-login_logged-user
+          +button-link-secondary({text: login, small: true, link: "sign-in.html"})
+        .header__button-register.header__button-login_logged-user
+          +button-link-primary({text: register, small: true, link: "registration.html"})
+        .header__user.header__user-login_logged-user
+          .header__user-name Cosmin Negoita
