@@ -1,0 +1,127 @@
+.header {
+  background-color: #fff;
+  display: flex;
+  &__container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    height: 70px;
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+}
+.navigation {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+
+  &__item {
+    display: flex;
+    margin: 0 26px 0 0;
+    padding: 0;
+    font-family: $mainFont;
+    font-weight: normal;
+    font-size: 14px;
+    color: $dark-shade-50;
+    cursor: pointer;
+  }
+  &__item:hover {
+    .navigation__link {
+      color: $dark-shade-75;
+      font-weight: bold;
+    }
+    .inner-list {
+      display: block;
+    }
+  }
+  &__item_active {
+    font-weight: bold;
+    color: $dark-shade-75;
+  }
+  &__item_chevron {
+    cursor: pointer;
+  }
+  &__link {
+    align-self: center;
+    text-decoration: none;
+    color: $dark-shade-50;
+  }
+  &__link:after {
+    display: block;
+    content: attr(title);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+}
+
+.header__nav {
+  display: flex;
+}
+
+.logo {
+  display: flex;
+  &__icon {
+    align-self: center;
+    width: 40px;
+    height: 40px;
+  }
+  &__text {
+    align-self: center;
+    width: 54px;
+    height: 14px;
+    margin-left: 12px;
+  }
+}
+.header-login {
+  display: flex;
+  &__user {
+    margin-top: 1px;
+    padding-left: 31px;
+    padding-bottom: 3px;
+    padding-top: 3px;
+    border-left: 1px solid $dark-shade-10;
+    color: $dark-shade-50;
+  }
+  &__guest {
+    display: flex;
+    align-self: center;
+  }
+  &__guest-login {
+    margin-right: 21px;
+  }
+}
+.navigation-chevron {
+  align-self: center;
+  padding-left: 2px;
+  font-size: 24px;
+  line-height: 20px;
+  color: $dark-shade-50;
+  cursor: pointer;
+}
+.inner-list {
+  display: none;
+  position: absolute;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 70px;
+  background-color: #fff;
+  min-width: 120px;
+  z-index: 5;
+  &__link {
+    font-weight: normal;
+    background-color: #fff;
+    display: block;
+    padding: 10px;
+    color: $dark-shade-50;
+    text-decoration: none;
+    &:hover {
+      color: $dark-shade-75;
+      font-weight: bold;
+    }
+  }
+  
+}

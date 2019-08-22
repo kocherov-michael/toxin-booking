@@ -1,11 +1,26 @@
 extends ../layout/ui-layout/ui-layout.pug
 
 block variables
-  - var title = 'Cards';
-  //- - var pageClass = 'body--dashboard';
+  - var title = 'Headers and footers';
 
 block content
 
   .page.page_theme_dark
-    .container
-      .cards
+    .headers-and-footers
+      include ../../blocks/header/header.pug
+
+
+
+      //- .container
+
+
+    //-   .ui-wrapper.ui-container--dark.ui-container--header
+    //- .section-wrapper.mb-40
+    //- 	.container
+    //- 		include ../sections/header-guest.pug
+    //- .section-wrapper.mb-40
+    //- 	.container
+    //- 		include ../sections/header-user.pug
+    //- include ../sections/footer.pug
+    //- include ../sections/footer-single.pug
+//- include ../../blocks/find-room/find-room.pug

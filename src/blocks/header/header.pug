@@ -1,0 +1,45 @@
+- if (!login) var login = "login"
+- if (!register) var register = "register"
+//- - if (!headerMenu) var headerMenu = [{itemName:"Home"}, "About us", "Services", "Careers", " News", "Documentation"];
+//- - if (!headerMenu) var headerMenu = {"Home":"0", "About us":"1", "Services":["first", "second", "third"], "Careers":"3", "News":"4", "Documentation":"5"};
+- var Services = ["first", "second", "third"]
+//- - if (!itemNumberList) var itemNumberList = "2";
+- if (!itemNumberActive) var itemNumberActive = "0";
+
+-
+  if (!headerMenu) var headerMenu = [
+    {title: "Home", url: "#", submenu: ""},
+    {title: "About Us", url: "#", submenu: ""},
+    {title: "Services", url: "#", submenu: Services},
+    {title: "Careers", url: "#", submenu: ""},
+    {title: "News", url: "#", submenu: ""},
+    {title: "Documentation", url: "#", submenu: ""}
+  ]
+
+
+.header
+  .header__container
+    .header__logo.logo
+      .logo__icon(style="background-image: url(./assets/img/icons/logo.png);")
+      .logo__text(style="background-image: url(./assets/img/icons/toxin.png);")
+    .header__nav
+      ul.navigation
+        each val in headerMenu
+          if (val.submenu != "")
+            li.navigation__item.navigation__item_chevron 
+              span.navigation__link(title=val.title) #{val.title}
+              i.zmdi.zmdi-chevron-down.navigation-chevron
+              ul.inner-list
+                each elem in val.submenu
+                  li.inner-list__item
+                    a.inner-list__link(href="404.html") #{elem}
+
+          else
+            li.navigation__item
+              a.navigation__link(href=val.url title=val.title) #{val.title}
+      .header-login
+        .header-login__guest
+          .header-login__guest-login
+            +button-link-secondary({text: "login", small: true, link: "sign-in.html"})
+          .header-login__guest-register
+            +button-link-primary({text: "register", small: true, link: "registration.html"})
