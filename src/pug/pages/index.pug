@@ -1,38 +1,33 @@
-//- extends ../layout/main
-
-//- block variables
-//-   - var title = 'Toxin-Booking';
-//-   - var description = 'FSD-education-program. The-2nd-task';
-//-   - var pageClass = 'index-page';
-
-//- block content
-//-   section
-//-     .container
-//-       h1 hello world
-
 extends ../layout/page.pug
 
 block variables
   - var title = 'Главная страница';
   - var description = 'FSD-education-program. The-2nd-task';
-  //- - var pageClass= "index-page";
 
 block content
   .container
-    .title-1.text-center.mb-55 Проект Toxin-Booking
-    .row
-      .col
-        .card.align-items-center.pb-35
-          .title-2 UI-Kit
-          +button-secondary("перейти", "ui-kit.html")
-          +button-secondary("colors and types", "colors-and-types.html")
-          +button-secondary("Form elements", "form-elements.html")
-          +button-secondary("Cards", "cards.html")
-      .col
-        .card.align-items-center.pb-35
-          .title-2 Главная страница
-          +button-primary("Регистрация", "registration.html")
-          +button-primary("Логин", "sign-in.html")
-          +button-primary("Главная", "landing.html")
-          +button-primary("Поиск номера", "search-room.html")
-          +button-primary("Номер подробно", "room-details.html")
+    .index-page
+      .title-1.index-page__title Progect Toxin-Booking
+      .index-page__content
+        .index-page__col
+          .title-2.index-page__subtitle UI-Kit
+          .index-page__col-item
+            +button-link-secondary({text: "colors and types", small: false, link: "colors-and-types.html"}).button-secondary_width_custom
+          .index-page__col-item
+            +button-link-secondary({text: "Form elements", small: false, link: "form-elements.html"}).button-secondary_width_custom
+          .index-page__col-item
+            +button-link-secondary({text: "Cards", small: false, link: "cards.html"}).button-secondary_width_custom
+          .index-page__col-item
+            +button-link-secondary({text: "headers and footers", small: false, link: "headers-and-footers.html"}).button-secondary_width_custom
+        .index-page__col
+          .title-2.index-page__subtitle Progect
+          .index-page__col-item
+            +button-link-primary({text: "Registration", small: false, link: "registration.html"}).button-primary_width_custom
+          .index-page__col-item
+            +button-link-primary({text: "Login", small: false, link: "sign-in.html"}).button-primary_width_custom
+          .index-page__col-item
+            +button-link-primary({text: "main", small: false, link: "landing.html"}).button-primary_width_custom
+          .index-page__col-item
+            +button-link-primary({text: "Search room", small: false, link: "search-room.html"}).button-primary_width_custom
+          .index-page__col-item
+            +button-link-primary({text: "Room details", small: false, link: "room-details.html"}).button-primary_width_custom
