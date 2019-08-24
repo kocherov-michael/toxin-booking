@@ -17,9 +17,8 @@
 
 .header(class=loggedUser)
   .header__container
-    .header__logo.logo
-      img.logo__icon(src=require('../../blocks/header/logo.png'))
-      img.logo__text(src=require('../../blocks/header/toxin.png'))
+    .header__logo
+      include ../../blocks/logo/logo.pug
     .header__nav
       ul.navigation
         each val in headerMenu

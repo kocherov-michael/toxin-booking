@@ -1,0 +1,45 @@
+.footer
+  .footer__container
+    .footer__main
+      .footer__desc
+        .footer__desc-logo
+          include ../../blocks/logo/logo.pug
+        .footer__desc-text
+          | Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+      .footer__navigation
+        .footer__navigation-col
+          .title-3.footer__navigation-col-header Navigation
+          .footer__navigation-col-item About Us
+          .footer__navigation-col-item News
+          .footer__navigation-col-item Support
+          .footer__navigation-col-item Products
+        .footer__navigation-col
+          .title-3.footer__navigation-col-header ABOUT US
+          .footer__navigation-col-item Who we are
+          .footer__navigation-col-item Our team
+          .footer__navigation-col-item Careers
+          .footer__navigation-col-item Investors
+        .footer__navigation-col
+          .title-3.footer__navigation-col-header Support
+          .footer__navigation-col-item Documentation
+          .footer__navigation-col-item Community
+          .footer__navigation-col-item Get in Touch
+      .footer__subscribe
+        .title-3.footer__subscribe-header
+          | Subscribe to our newsletter
+        .footer__subscribe-text
+          | Receive our latest news and promotions in your inbox!
+        .footer__subscribe-input
+          +subscribe("Your email address")
+  .footer__bottom-wrapper
+    .footer__container
+      .footer__bottom
+        .footer__bottom-copyright
+          | Copyright © 2018 Toxin UI Kit. All rights reserved.
+        .footer__bottom-socials
+          a.footer__social-link(link="#")
+            i.fa.fa-twitter.icon-color(aria-hidden="true")
+          a.footer__social-link(link="#")
+            i.fa.fa-facebook-square.icon-color(aria-hidden="true")
+          a.footer__social-link(link="#")
+            i.fa.fa-instagram.icon-color(aria-hidden="true")

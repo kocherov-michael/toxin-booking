@@ -15,4 +15,45 @@
       display: none;
     }
   }
+
+  &__footer-desctop {
+    margin-bottom: 40px;
+  }
+
+  &__footer-mobile {
+    .footer {
+      padding-bottom: 110px;
+    }
+    .footer__main {
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 0;
+    }
+    .footer__desc {
+      width: 100%;
+      max-width: 540px;
+      text-align: center;
+    }
+    .footer__desc-logo {
+      display: flex;
+      justify-content: center;
+    }
+    .footer__navigation {
+      display: none;
+    }
+    .footer__subscribe {
+      display: none;
+    }
+    .footer__bottom-wrapper {
+      border: none;
+    }
+    .footer__bottom {
+      justify-content: center;
+      padding-bottom: 0;
+      padding-top: 27px;
+    }
+    .footer__bottom-copyright {
+      display: none;
+    }
+  }
 }
