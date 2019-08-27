@@ -1,27 +1,27 @@
 extends ../layout/page.pug
 
 block variables
-	- var title = 'Регистрация';
-	- var register = 'Зарегистрироваться';
-	- var login = 'Войти';
-	//- - var headerMenu = {"О нас":"", "Услуги":["first", "second", "third"], "Вакансии":"", "Новости":"", "Соглашения":["first", "second", "third"]};
-	- var Services = ["first", "second", "third"];
-	-
-		var headerMenu = [
-			{title: "О нас", url: "#", submenu: ""},
-			{title: "Услуги", url: "#", submenu: Services},
-			{title: "Вакансии", url: "#", submenu: ""},
-			{title: "Новости", url: "#", submenu: ""},
-			{title: "Соглашения", url: "#", submenu: Services}
-		];
+  - var title = 'Регистрация';
+  - var register = 'Зарегистрироваться';
+  - var login = 'Войти';
+  //- - var headerMenu = {"О нас":"", "Услуги":["first", "second", "third"], "Вакансии":"", "Новости":"", "Соглашения":["first", "second", "third"]};
+  - var Services = ["first", "second", "third"];
+  -
+    var headerMenu = [
+      {title: "О нас", url: "#", submenu: ""},
+      {title: "Услуги", url: "#", submenu: Services},
+      {title: "Вакансии", url: "#", submenu: ""},
+      {title: "Новости", url: "#", submenu: ""},
+      {title: "Соглашения", url: "#", submenu: Services}
+    ];
 
 block content
-	.ui-wrapper
-		.section-wrapper
-			.container
-				include ../sections/header-guest.pug
-			.main-content
-				.registration-page(style="background-image: url(./assets/img/big-images/registration-room.jpg);")
-					.registration-page__card
-						include ../sections/registration-card.pug
-				include ../sections/footer.pug
+  .ui-wrapper
+    .section-wrapper
+      .container
+        include ../../blocks/header/header.pug
+      .main-content
+        .registration-page(style="background-image: url(./assets/img/big-images/registration-room.jpg);")
+          .registration-page__card
+            include ../../blocks/registration-card/registration-card.pug
+        include ../../blocks/footer/footer.pug
