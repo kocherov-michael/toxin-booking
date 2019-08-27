@@ -1,11 +1,11 @@
-console.log("index.js подключен")
+// console.log("index.js подключен")
 // JS
 // import './js/'
 
 import './js/calendar'
 import './js/checkbox'
 import './js/dropdown'
-// import './blocks/comment/comment.js'
+import './blocks/header/header.js'
 
 // SCSS
 import './assets/scss/main.scss'

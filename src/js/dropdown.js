@@ -117,23 +117,26 @@
       if (elementSelector === "#dropdown-calculator") {
     
         const dropdownGuestElement = document.querySelector(elementSelector)
-        const dropdownListTextElement = dropdownGuestElement.querySelectorAll(".dropdown-list__item")
-        const clearButtonElement = dropdownGuestElement.querySelector("[data-dropdown-clear]")
-        const inputElement = dropdownGuestElement.querySelector("[data-dropdown-input]")
-        
-        for (let item of dropdownListTextElement) {
-          const textElement = item.querySelector("[data-dropdown-text]")
-          const countElement = item.querySelector("[data-dropdown-count]")
-          const minusElement = item.querySelector("[data-dropdown-minus]")
+        if (dropdownGuestElement) {
+
+          const dropdownListTextElement = dropdownGuestElement.querySelectorAll(".dropdown-list__item")
+          const clearButtonElement = dropdownGuestElement.querySelector("[data-dropdown-clear]")
+          const inputElement = dropdownGuestElement.querySelector("[data-dropdown-input]")
           
-          if (textElement.innerHTML === "взрослые") {
-            countElement.innerHTML = "2"
-            minusElement.classList.remove("dropdown-list__item-minus_unavailable")
-            clearButtonElement.classList.remove("hide")
-          } 
-          if (textElement.innerHTML === "дети") {
-            countElement.innerHTML = "1"
-            minusElement.classList.remove("dropdown-list__item-minus_unavailable")
+          for (let item of dropdownListTextElement) {
+            const textElement = item.querySelector("[data-dropdown-text]")
+            const countElement = item.querySelector("[data-dropdown-count]")
+            const minusElement = item.querySelector("[data-dropdown-minus]")
+            
+            if (textElement.innerHTML === "взрослые") {
+              countElement.innerHTML = "2"
+              minusElement.classList.remove("dropdown-list__item-minus_unavailable")
+              clearButtonElement.classList.remove("hide")
+            } 
+            if (textElement.innerHTML === "дети") {
+              countElement.innerHTML = "1"
+              minusElement.classList.remove("dropdown-list__item-minus_unavailable")
+            }
           }
         }
       }

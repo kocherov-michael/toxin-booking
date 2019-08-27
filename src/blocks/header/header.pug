@@ -1,6 +1,5 @@
 - if (!login) var login = "login"
 - if (!register) var register = "register"
-- if (!navigation) var navigation = "Navigation"
 - if (userName) var loggedUser = "header_logged-user" 
 - var Services = ["first", "second", "third"]
 - if (!itemNumberActive) var itemNumberActive = "0";
@@ -22,9 +21,9 @@
       include ../../blocks/logo/logo.pug
     .header__nav
       .navigation
-        .navigation__menu-bar
+        .navigation__menu-bar(data-menu-bar)
           i.fa.fa-bars(aria-hidden="true")
-        ul.navigation__list
+        ul.navigation__list.navigation__list_hide(data-header-navigation)
           each val in headerMenu
             if (val.submenu != "")
               li.navigation__item.navigation__item_chevron 
