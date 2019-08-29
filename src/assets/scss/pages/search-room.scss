@@ -108,8 +108,7 @@
   &__main-rooms {
     display: flex;
     flex-wrap: wrap;
-    // justify-content: space-between;
-    // box-sizing: border-box;
+    
     @media (max-width: 599px) {
       flex-direction: column;
       align-items: center;
@@ -121,14 +120,6 @@
     margin-bottom: 20px;
     width: 270px;
     box-sizing: border-box;
-
-    // @media (min-width: 870px) and (max-width: 1199px) {
-    //   // width: 50%;
-    // }
-
-    // @media (max-width: 869px) {
-    //   // width: 100%;
-    // }
   }
 
   &__main-pagination {
