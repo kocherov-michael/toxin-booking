@@ -8,6 +8,7 @@
     headerNavBarElement.addEventListener('click', () => {
   
         headerNavElement.classList.toggle('navigation__list_hide')
+        headerNavBarElement.classList.toggle('navigation__menu-bar_position_top-left')
     })
   }
 })()

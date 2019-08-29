@@ -2,11 +2,16 @@
   background-color: $default-color;
   display: flex;
   box-shadow: 0px 10px 20px $dark-shade-5;
+  min-height: 70px;
 
   &__logo {
     display: flex;
     margin-top: 15px;
     margin-bottom: 15px;
+
+    @media (max-width: 575px) {
+      display: none;
+    }
   }
   &__container {
     flex-grow: 1;
@@ -20,12 +25,12 @@
       padding-right: 15px;
     }
 
-    @media (min-width: 576px) and (max-width: 960px) {
-      flex-wrap: wrap;
-    }
-    @media (max-width: 575px) {
-      flex-wrap: wrap;
-    }
+    // @media (min-width: 576px) and (max-width: 960px) {
+    //   flex-wrap: wrap;
+    // } 960
+    // @media (max-width: 575px) {
+    //   flex-wrap: wrap;
+    // }
   }
 
   &__nav {
@@ -34,9 +39,10 @@
     flex-grow: 1;
 
     @media (max-width: 575px) {
-      order: 0;
-      flex-grow: 0;
-      width: auto;
+      // order: 0;
+      // flex-grow: 0;
+      // width: auto;
+      justify-content: flex-start;
     }
   }
 
@@ -45,10 +51,16 @@
     padding-top: 15px;
     padding-bottom: 15px;
 
-    @media (max-width: 960px) {
-      width: 100%;
-      justify-content: flex-end;
-      padding-top: 0;
+    // @media (max-width: 960px) {
+    //   width: 100%;
+    //   justify-content: flex-end;
+    //   padding-top: 0;
+    // }
+
+    @media (max-width: 400px) {
+      .button {
+        font-size: 10px;
+      }
     }
   }
   &__button-login {
@@ -56,7 +68,7 @@
     margin-right: 21px;
 
     @media (max-width: 350px) {
-      margin-right: 0;
+      margin-right: 2px;
     }
   }
   &__button-register {
@@ -88,7 +100,7 @@
   &__menu-bar {
     display: flex;
     align-items: center;
-    padding-right: 10px;
+    padding-right: 24px;
     padding-left: 10px;
     color: $dark-shade-50;
     font-size: 24px;
@@ -96,17 +108,29 @@
     position: relative;
     z-index: 30;
 
-    @media (min-width: 576px) {
+    @media (min-width: 961px) {
       display: none;
     }
+
+    @media (max-width: 400px) {
+      padding: 0;
+    }
+
+    &_position_top-left {
+      position: absolute;
+      top: 23px;
+      left: 15px;
+    }
   }
+
+  
   &__list {
     list-style-type: none;
     padding: 0;
     margin: 0;
     display: flex;
 
-    @media (max-width: 575px) {
+    @media (max-width: 960px) {
       padding-top: 70px;
       position: absolute;
       flex-direction: column;
@@ -121,7 +145,8 @@
   }
 
   &__list_hide {
-    @media (max-width: 575px) {
+
+    @media (max-width: 960px) {
       display: none;
     }
   }
@@ -136,7 +161,7 @@
     color: $dark-shade-50;
     cursor: pointer;
 
-    @media (max-width: 575px) {
+    @media (max-width: 960px) {
       padding-top: 20px;
       font-size: 24px;
     }
@@ -167,7 +192,7 @@
   }
   &__item_chevron {
     cursor: pointer;
-    @media (max-width: 575px) {
+    @media (max-width: 960px) {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -188,9 +213,9 @@
   }
 }
 
-.header__nav {
-  display: flex;
-}
+// .header__nav {
+//   display: flex;
+// }
 
 .navigation-chevron {
   align-self: center;
@@ -210,7 +235,7 @@
   min-width: 120px;
   z-index: 15;
 
-  @media (max-width: 575px) {
+  @media (max-width: 960px) {
     position: static;
     width: 100%;
     margin-top: 30px;
