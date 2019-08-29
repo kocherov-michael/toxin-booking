@@ -32,10 +32,6 @@
     display: flex;
     justify-content: flex-end;
     flex-grow: 1;
-
-    @media (max-width: 575px) {
-      // justify-content: flex-start;
-    }
   }
 
   &__login {
@@ -104,10 +100,6 @@
       display: none;
     }
 
-    @media (max-width: 400px) {
-      // padding-right: 10px;
-    }
-
     &_position_top-left {
       position: absolute;
       top: 23px;
@@ -115,7 +107,6 @@
     }
   }
 
-  
   &__list {
     list-style-type: none;
     padding: 0;

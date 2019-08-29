@@ -1,36 +1,138 @@
-.search-room-wrapper {
-	display: flex;
-	justify-content: space-between;
-	padding-bottom: 75px;
-}
-.search-room-filter {
-	width: 265px;
-	margin-right: 60px;
-}
-.search-room-main{
-	flex-grow: 1;
-	&__rooms {
-		display: flex;
-		flex-wrap: wrap;
-		// justify-content: flex-end;
-		justify-content: space-between;
-	}
-	&__rooms-item {
-		float: left;
-		// margin-left: 10px;
-	}
-}
-.search-room-main__pagination {
-	display: flex;
-	justify-content: space-around;
-}
-.search-room-main__header {
-	margin-bottom: 20px;
-}
-.slider-description{
-	font-size: 12px;
-	line-height: 14px;
-	color: $dark-shade-50;
-	margin-top: 10px;
-	margin-bottom: 30px;
+.search-room {
+  background-color: $default-color;
+  flex-grow: 1;
+  z-index: 1;
+  border-bottom: 1px solid $dark-shade-25;
+
+  &__container {
+    max-width: 1160px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+    padding-bottom: 75px;
+
+    @media (min-width: 401px) and (max-width: 1200px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    @media (max-width: 599px) {
+      flex-direction: column;
+      align-items: center;
+    }
+
+  }
+
+  &__filter {
+    width: 265px;
+    margin-right: 50px;
+    @media (min-width: 600px) and (max-width: 650px) {
+      margin-right: 20px;
+    }
+
+    @media (max-width: 599px) {
+      margin-right: 0;
+    }
+  }
+
+  &__filter-header {
+    margin-bottom: 5px;
+  }
+
+  &__filter-date-dropdown {
+    margin-bottom: 20px;
+  }
+
+  &__filter-guests-dropdown {
+    margin-bottom: 20px;
+  }
+
+  &__filter-slider-description {
+    font-size: 12px;
+    line-height: 14px;
+    color: $dark-shade-50;
+    margin-top: 10px;
+    margin-bottom: 30px;
+  }
+
+  &__filter-checkbox {
+    margin-bottom: 20px;
+  }
+
+  &__filter-checkbox-title {
+    margin-bottom: 17px;
+  }
+
+  &__filter-checkbox-item {
+    margin-bottom: 10px;
+  }
+
+  &__filter-checkbox-rich-title {
+    margin-bottom: 16px;
+  }
+
+  &__filter-checkbox-rich-item {
+    margin-bottom: 9px;
+
+    &_narrow {
+      max-width: 220px;
+    }
+  }
+
+  &__filter-room-dropdown {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+
+    @media (max-width: 599px) {
+      align-items: center;
+    }
+  }
+
+  &__main-header {
+    margin-bottom: 20px;
+    padding-left: 10px;
+    @media (max-width: 599px) {
+      padding-left: 0;
+      margin-top: 30px;
+      text-align: center;
+    }
+  }
+
+  &__main-rooms {
+    display: flex;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+    // box-sizing: border-box;
+    @media (max-width: 599px) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__main-rooms-item {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    width: 270px;
+    box-sizing: border-box;
+
+    // @media (min-width: 870px) and (max-width: 1199px) {
+    //   // width: 50%;
+    // }
+
+    // @media (max-width: 869px) {
+    //   // width: 100%;
+    // }
+  }
+
+  &__main-pagination {
+    margin-top: 40px;
+    align-self: center;
+  }
 }
