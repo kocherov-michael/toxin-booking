@@ -2,7 +2,7 @@ extends ../layout/page.pug
 
 block variables
   - var pageClass = 'body'
-  - var title = 'Вход';
+  - var title = 'Главная';
   - var register = 'Зарегистрироваться';
   - var login = 'Войти';
   - var Services = ["first", "second", "third"];
@@ -18,7 +18,10 @@ block variables
 block content
 
   include ../../blocks/header/header.pug
-  main.login-page(style="background-image: url(./assets/img/big-images/registration-room.jpg);")
-    .login-page__card
-      include ../../blocks/login-card/login-card.pug
+  main.main-page(style="background-image: url(./assets/img/big-images/landing.jpg);")
+    .main-page__container
+      .main-page__card
+        include ../../blocks/find-room-card/find-room-card.pug
+      .main-page__promo
+        | Лучшие номера для вашей работы, отдыха и просто вдохновения
   include ../../blocks/footer/footer.pug

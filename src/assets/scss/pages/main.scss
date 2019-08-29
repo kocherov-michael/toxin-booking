@@ -1,0 +1,79 @@
+.body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-page {
+  flex-grow: 1;
+  display: flex;
+  // justify-content: space-between;
+  width: 100%;
+  
+  background-size: cover;
+  background-position: center;
+  height: 830px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 1;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding-top: 70px;
+    padding-bottom: 18px;
+
+    @media (min-width: 401px) and (max-width: 1200px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+
+    @media (max-width: 400px) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  &__card {
+    flex-grow: 1;
+    max-width: 380px;
+  }
+
+  &__promo {
+    align-self: flex-end;
+    width: 297px;
+    text-align: right;
+
+    @media (max-width: 400px) {
+      align-self: center;
+      text-align: center;
+    }
+  }
+
+}
+
+
+
+.landing-page {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  padding-top: 70px;
+  padding-bottom: 18px;
+  // background-size: cover;
+  // background-position: center;
+  &__promo {
+    align-self: flex-end;
+    width: 297px;
+    text-align: right;
+  }
+}
+.landing-page-background {
+  width: 100%;
+  height: 830px;
+  background-size: cover;
+  background-position: center;
+}
