@@ -5,6 +5,7 @@
 import './js/calendar'
 import './js/checkbox'
 import './js/dropdown'
+import './js/search-room'
 import './blocks/header/header.js'
 
 // SCSS
