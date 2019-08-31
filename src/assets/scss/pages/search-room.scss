@@ -10,7 +10,7 @@
     display: flex;
     justify-content: space-between;
     padding-top: 30px;
-    padding-bottom: 75px;
+    padding-bottom: 71px;
 
     @media (min-width: 401px) and (max-width: 1200px) {
       padding-left: 15px;
@@ -26,17 +26,30 @@
   &__filter-wrapper {
     display: flex;
     align-self: flex-start;
+
+    @media (max-width: 615px) {
+      position: absolute;
+      left: -500px;
+    }
   }
 
   &__filter-container {
+    min-width: 266px;
+    margin-right: 50px;
     display: flex;
     flex-direction: column;
     align-items: stretch;
+
+    @media (min-width: 616px) and (max-width: 923px) {
+      position: absolute;
+      left: -500px;
+    }
   }
+
 
   &__filter-wrapper_show {
     @media (max-width: 923px) {
-      position: relative;
+      position: absolute;
       display: flex;
       position: fixed;
       overflow: auto;
@@ -46,9 +59,18 @@
       left: 0;
       right: 0;
       bottom: 0;
-      z-index: 10;
       background-color: $dark-shade-75;
       z-index: 50;
+      transition: all 0.4s ease;
+
+      .search-room__filter-container {
+        transition: all 0.4s ease;
+        left: 0;
+        bottom: 0;
+        top: 0;
+        margin-right: 0;
+      }
+
     }
     
     @media (min-width: 616px) and (max-width: 923px) {
@@ -58,6 +80,10 @@
     @media (max-width: 615px) {
       background-color: $default-color;
       align-items: center;
+      left: 0;
+      bottom: 0;
+      top: 0;
+      right: 0;
     }
   }
 
@@ -72,7 +98,6 @@
         padding: 15px;
         justify-content: space-between;
         background-color: $default-color;
-        flex-grow: 1;
         align-self: stretch;
       }
     }
@@ -90,16 +115,11 @@
 
   &__filter-button-wrapper {
     display: none;
-    align-self: flex-start;
-    margin-bottom: 15px;
     
     @media (max-width: 923px) {
       display: block;
       z-index: 60;
       background-color: $default-color;
-    }
-    
-    &_position {
       max-width: 295px;
       padding: 15px;
       margin-bottom: 0;
@@ -107,6 +127,10 @@
       text-align: right;
       align-self: stretch;
       z-index: 60;
+      flex-grow: 1;
+    }
+    
+    &_position {
     }
   }
 
@@ -115,8 +139,6 @@
   }
 
   &__filter {
-    max-width: 265px;
-    margin-right: 50px;
 
     @media (max-width: 615px) {
       margin-right: 0;
@@ -139,7 +161,7 @@
   
   &__filter_hide{
     @media (max-width: 923px) {
-      display: none;
+      // display: none;
     }
     
   }
@@ -153,19 +175,20 @@
   }
 
   &__filter-guests-dropdown {
-    margin-bottom: 20px;
+    margin-bottom: 31px;
   }
 
   &__filter-slider-description {
     font-size: 12px;
     line-height: 14px;
     color: $dark-shade-50;
-    margin-top: 10px;
-    margin-bottom: 30px;
+    margin-top: 15px;
+    margin-bottom: 28px;
   }
 
   &__filter-checkbox {
-    margin-bottom: 20px;
+    margin-bottom: 32px;
+    max-width: 240px;
   }
 
   &__filter-checkbox-title {
@@ -174,6 +197,10 @@
 
   &__filter-checkbox-item {
     margin-bottom: 10px;
+  }
+
+  &__filter-checkbox-rich {
+    margin-bottom: 30px;
   }
 
   &__filter-checkbox-rich-title {
@@ -189,8 +216,8 @@
   }
 
   &__filter-room-dropdown {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    // margin-top: 20px;
+    margin-bottom: 24px;
   }
 
   &__main {
@@ -203,9 +230,16 @@
     }
   }
 
+  &__main-button-wrapper {
+    margin-bottom: 20px;
+    @media (min-width: 924px) {
+      display: none;
+    }
+  }
+
   &__main-header {
     margin-bottom: 20px;
-    padding-left: 10px;
+    padding-left: 9px;
     @media (max-width: 615px) {
       padding-left: 0;
       text-align: center;
@@ -234,7 +268,7 @@
   }
 
   &__main-pagination {
-    margin-top: 40px;
+    margin-top: 20px;
     align-self: center;
   }
 }

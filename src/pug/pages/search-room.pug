@@ -22,13 +22,12 @@ block content
     include ../../blocks/header/header.pug
     .search-room__container
       .search-room__filter-wrapper(data-filter-wrapper)
-        .search-room__filter-container
+        .search-room__filter-container(data-filter-container)
           .search-room__filter-text(data-filter-text)
             .title-2 Подбор номера
             .search-room__filter-close(data-filter-close)
               i.fa.fa-times(aria-hidden="true")
-          .search-room__filter-button-wrapper(data-filter-button-wrapper)
-            +button-form-secondary({text: "Фильтр", small: false, name: "filter", type: "button"})(data-filter-button)
+          
           .search-room__filter.search-room__filter_hide(data-filter)
             .search-room__filter-header
               .title-3 Даты пребывания в отеле
@@ -69,7 +68,11 @@ block content
                 {itemName: 'Телевизор', checked: false, value:"tv"},
                 {itemName: 'Шампунь', checked: false, value:"shampoo"}
               ])(data-search-room-expand)
+          .search-room__filter-button-wrapper(data-filter-button-wrapper)
+            +button-form-secondary({text: "Применить", small: false, name: "filter", type: "button"})(data-filter-button)
       .search-room__main
+        .search-room__main-button-wrapper(data-main-button-wrapper)
+            +button-form-secondary({text: "Фильтр", small: false, name: "filter", type: "button"})(data-main-button)
         .title-1.search-room__main-header Номера, которые мы для вас подобрали
         .search-room__main-rooms
           .search-room__main-rooms-item
