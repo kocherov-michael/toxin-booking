@@ -40,11 +40,14 @@
 
   }
 
-  filterButtonElement.addEventListener('click', (event)=> {
-    event.stopImmediatePropagation()
-    toggleMenu()
+  if(filterButtonElement) {
+    filterButtonElement.addEventListener('click', (event)=> {
+      event.stopImmediatePropagation()
+      toggleMenu()
+  
+    })
+  }
 
-  })
 
   function toggleMenu () {
     filterWrapperElement.classList.toggle('search-room__filter-wrapper_show')
