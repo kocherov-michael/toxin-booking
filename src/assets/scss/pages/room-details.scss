@@ -84,64 +84,9 @@
 .room-comfort__voites-diagramm {
   display: flex;
   margin-top: 21px;
+  flex-wrap: wrap;
 }
-.diagramm-circle {
-  width: 120px;
-  height: 120px;
-  // border: 2px solid red;
-  // border-radius: 50%;
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-}
-.acceptable {
-  position: absolute;
-  top: 0;
-  right: 0;
-  border-radius: 0 100% 0 0;
-  border-top: 10px solid #B19EFE;
-  border-right: 10px solid #B19EFE;
-  width: 59px;
-  height: 59px;
-  box-sizing: border-box;
-}
-.good {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  border-radius: 0 0 100% 0;
-  border-bottom: 4px solid #6FD0A0;
-  border-right: 4px solid #6FD0A0;
-  width: 59px;
-  height: 59px;
-  box-sizing: border-box;
-}
-.great {
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 100% 0 0 100% / 50% 0 0 50%;
-  border-top: 4px solid #FFCE9C;
-  border-left: 4px solid #FFCE9C;
-  border-bottom: 4px solid #FFCE9C;
-  width: 59px;
-  height: 120px;
-  box-sizing: border-box;
-}
-.text {
-  // position: absolute;
-  color: #BC9CFF;
-  font-weight: bold;
-  font-size: 12px;
-  line-height: 15px;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  h1 {
-    color: #BC9CFF;
-  }
-}
+
 .diagramm-types {
   margin-top: 27px;
   margin-left: 45px;
