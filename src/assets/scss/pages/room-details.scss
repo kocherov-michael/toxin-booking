@@ -48,7 +48,7 @@
     width: 280px;
   }
   &__voites {
-    width: 50%;
+    width: 49%;
     padding-left: 15px;
   }
 }
@@ -85,11 +85,13 @@
   display: flex;
   margin-top: 21px;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .diagramm-types {
-  margin-top: 27px;
-  margin-left: 45px;
+  padding-top: 13px;
+  width: 52.5%;
+
   &__item {
     position: relative;
 
@@ -106,7 +108,7 @@
   }
 }
 .diagramm-types__item_color_orange:before {
-  background: linear-gradient(180deg, #FFE29C 0%, #FFBA9C 100%);
+  background: linear-gradient($beautiful-gradient);
 }
 .diagramm-types__item_color_green:before {
   background: linear-gradient($secondary-gradient);
@@ -115,5 +117,5 @@
   background: linear-gradient($primary-gradient);
 }
 .diagramm-types__item_color_dark:before {
-  background: linear-gradient(180deg, #8A8B8F 0%, #434E76 100%);
+  background: linear-gradient($dark-gradient);
 }

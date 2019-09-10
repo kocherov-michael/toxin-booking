@@ -20,15 +20,15 @@ block content
   .room-details
     include ../../blocks/header/header.pug
     .room-details__collage
-      .room-details__collage-main(style="background-image: url(./assets/img/big-images/landing.jpg);")
-      .room-details__collage-secondary(style="background-image: url(./assets/img/big-images/landing.jpg);")
-      .room-details__collage-secondary(style="background-image: url(./assets/img/big-images/landing.jpg);")
+      .room-details__collage-main(style="background-image: url(./assets/img/big-images/room-888-big.jpg);")
+      .room-details__collage-secondary(style="background-image: url(./assets/img/big-images/room-888-medium.jpg);")
+      .room-details__collage-secondary(style="background-image: url(./assets/img/big-images/room-888-medium-2.jpg);")
     .room-details__container
       .room-details__info
         .room-details__desc
           .room-comfort
             .room-comfort__info
-              .title-2.mb-25 Сведения о номере
+              .title-2.mb-20 Сведения о номере
               +comfort("Комфорт", "Шумопоглощающие стены", "zmdi zmdi-mood").mb-20
               +comfort("Удобство", "Окно в каждой из спален", "zmdi zmdi-city").mb-20
               +comfort("Уют", "Номер оснащён камином", "zmdi zmdi-fire").border-none
@@ -57,7 +57,7 @@ block content
             .room-comments__comment
               +comment({
                 author: "Патрисия Стёклышкова", 
-                avatarLink: "./assets/img/avatar/avatar.png", 
+                avatarLink: "./assets/img/avatar/patricia.png", 
                 time: "Неделю назад", 
                 text: "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент", 
                 likeCount: "2", 
