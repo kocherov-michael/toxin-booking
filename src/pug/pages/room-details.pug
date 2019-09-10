@@ -25,25 +25,25 @@ block content
       .room-details__collage-secondary(style="background-image: url(./assets/img/big-images/room-888-medium-2.jpg);")
     .room-details__container
       .room-details__info
-        .room-details__desc
+        .room-details__comfort
           .room-comfort
-            .room-comfort__info
-              .title-2.room-comfort__info-title Сведения о номере
-              .room-comfort__info-item
-                +comfort("Комфорт", "Шумопоглощающие стены", "zmdi zmdi-mood")
-              .room-comfort__info-item
-                +comfort("Удобство", "Окно в каждой из спален", "zmdi zmdi-city")
-              .room-comfort__info-item
-                +comfort("Уют", "Номер оснащён камином", "zmdi zmdi-fire")
-            .room-comfort__voites
-              .title-2 Впечатления от номера
-              .room-comfort__voites-diagramm
-                include ../../blocks/diagramm/diagramm.pug
-                ul.diagramm-types
-                  li.diagramm-types__item.diagramm-types__item_color_orange Великолепно
-                  li.diagramm-types__item.diagramm-types__item_color_green Хорошо
-                  li.diagramm-types__item.diagramm-types__item_color_violet Удовлетворительно
-                  li.diagramm-types__item.diagramm-types__item_color_dark Разочарован
+            .title-2.room-comfort__title Сведения о номере
+            .room-comfort__item
+              +comfort("Комфорт", "Шумопоглощающие стены", "zmdi zmdi-mood")
+            .room-comfort__item
+              +comfort("Удобство", "Окно в каждой из спален", "zmdi zmdi-city")
+            .room-comfort__item
+              +comfort("Уют", "Номер оснащён камином", "zmdi zmdi-fire")
+          .room-voites
+            .title-2 Впечатления от номера
+            .room-voites__diagramm
+              include ../../blocks/diagramm/diagramm.pug
+              ul.diagramm-types
+                li.diagramm-types__item.diagramm-types__item_color_orange Великолепно
+                li.diagramm-types__item.diagramm-types__item_color_green Хорошо
+                li.diagramm-types__item.diagramm-types__item_color_violet Удовлетворительно
+                li.diagramm-types__item.diagramm-types__item_color_dark Разочарован
+        .room-details__comments
           .room-comments
             .room-comments__header
               .title-2 Отзывы посетителей номера
@@ -74,8 +74,8 @@ block content
               .title-2.room-rules__cancel-header Отмена
               | Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
-        .room-details__room-price-card
-          include ../../blocks/room-price-card/room-price-card.pug
+      .room-details__room-price-card
+        include ../../blocks/room-price-card/room-price-card.pug
 
 
   include ../../blocks/footer/footer.pug
