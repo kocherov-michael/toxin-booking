@@ -43,27 +43,48 @@
 .room-comfort {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
+  padding-bottom: 13px;
+
+  .room-comfort__info-item:last-child > .comfort {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  
   &__info {
     width: 280px;
   }
+
+  &__info-title {
+    margin-bottom: 20px;
+  }
+
+  &__info-item {
+    margin-bottom: 20px;
+  }
+
   &__voites {
     width: 49%;
     padding-left: 15px;
   }
 }
 .room-comments {
-  margin-bottom: 40px;
-}
-.room-comments__header {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 34px;
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  &__comment {
+    margin-bottom: 23px;
+  }
+
 }
 .comments-count {
   font-size: 14px;
   line-height: 14px;
   color: $dark-shade-50;
+  padding-top: 7px;
 }
 .room-rules {
   display: flex;
@@ -71,16 +92,21 @@
   &__rules {
     width: 260px;
   }
-  &__cancel {
-    width: 50%;
-  }
   &__rules-header {
-    margin-bottom: 20px;
+    padding-left: 20px;
+    margin-bottom: 17px;
   }
+  &__cancel {
+    width: 49%;
+    padding-right: 5px;
+    box-sizing: border-box;
+  }
+  &__cancel-header {
+    margin-bottom: 17px;
+  }
+  
 }
-.border-none {
-  border: none;
-}
+
 .room-comfort__voites-diagramm {
   display: flex;
   margin-top: 21px;

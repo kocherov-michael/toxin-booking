@@ -28,10 +28,13 @@ block content
         .room-details__desc
           .room-comfort
             .room-comfort__info
-              .title-2.mb-20 Сведения о номере
-              +comfort("Комфорт", "Шумопоглощающие стены", "zmdi zmdi-mood").mb-20
-              +comfort("Удобство", "Окно в каждой из спален", "zmdi zmdi-city").mb-20
-              +comfort("Уют", "Номер оснащён камином", "zmdi zmdi-fire").border-none
+              .title-2.room-comfort__info-title Сведения о номере
+              .room-comfort__info-item
+                +comfort("Комфорт", "Шумопоглощающие стены", "zmdi zmdi-mood")
+              .room-comfort__info-item
+                +comfort("Удобство", "Окно в каждой из спален", "zmdi zmdi-city")
+              .room-comfort__info-item
+                +comfort("Уют", "Номер оснащён камином", "zmdi zmdi-fire")
             .room-comfort__voites
               .title-2 Впечатления от номера
               .room-comfort__voites-diagramm
@@ -68,7 +71,7 @@ block content
               .title-2.room-rules__rules-header Правила
               +bulletList(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])
             .room-rules__cancel
-              .title-2.room-rules__rules-header Отмена
+              .title-2.room-rules__cancel-header Отмена
               | Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
 
         .room-details__room-price-card
