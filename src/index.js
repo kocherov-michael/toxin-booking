@@ -6,7 +6,7 @@ import './js/calendar'
 import './js/checkbox'
 import './js/dropdown'
 import './js/search-room'
-import './js/room-details'
+// import './js/room-details'
 import './blocks/header/header.js'
 
 // SCSS
