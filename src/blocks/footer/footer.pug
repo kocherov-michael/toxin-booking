@@ -1,41 +1,56 @@
+- if (!footerDescText) var footerDescText = "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis." 
+
+- if (!footerSubscribeHeader) var footerSubscribeHeader = "Subscribe to our newsletter" 
+
+- if (!footerSubscribeText) var footerSubscribeText = "Receive our latest news and promotions in your inbox!" 
+
+- if (!emailPlaceholder) var emailPlaceholder = "Your email address" 
+
+- if (!copyRights) var copyRights = "Copyright © 2018 Toxin UI Kit. All rights reserved." 
+
+-
+  if (!footerMenu) var footerMenu = [
+    {title: "Home", submenu: [
+      {title: "About Us", link: "#"},
+      {title: "News", link: "#"},
+      {title: "Support", link: "#"},
+      {title: "Products", link: "#"}
+    ]},
+    {title: "About Us", submenu: [
+      {title: "Who we are", link: "#"},
+      {title: "Our team", link: "#"},
+      {title: "Careers", link: "#"},
+      {title: "Investors", link: "#"}
+    ]},
+    {title: "Support", submenu: [
+      {title: "Documentation", link: "#"},
+      {title: "Community", link: "#"},
+      {title: "Get in Touch", link: "#"}
+    ]}
+  ]
+
 footer.footer
   .footer__container
     .footer__main
       .footer__desc
         .footer__desc-logo
           include ../../blocks/logo/logo.pug
-        .footer__desc-text
-          | Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis.
+        .footer__desc-text #{footerDescText}
       .footer__navigation
-        .footer__navigation-col
-          .title-3.footer__navigation-col-header Navigation
-          .footer__navigation-col-item About Us
-          .footer__navigation-col-item News
-          .footer__navigation-col-item Support
-          .footer__navigation-col-item Products
-        .footer__navigation-col
-          .title-3.footer__navigation-col-header ABOUT US
-          .footer__navigation-col-item Who we are
-          .footer__navigation-col-item Our team
-          .footer__navigation-col-item Careers
-          .footer__navigation-col-item Investors
-        .footer__navigation-col
-          .title-3.footer__navigation-col-header Support
-          .footer__navigation-col-item Documentation
-          .footer__navigation-col-item Community
-          .footer__navigation-col-item Get in Touch
+        each val in footerMenu
+          .footer__navigation-col
+            .title-3.footer__navigation-col-header #{val.title}
+            each subItem in val.submenu
+              a.footer__navigation-col-item(href=subItem.link) #{subItem.title}
       .footer__subscribe
-        .title-3.footer__subscribe-header
-          | Subscribe to our newsletter
-        .footer__subscribe-text
-          | Receive our latest news and promotions in your inbox!
+        .title-3.footer__subscribe-header #{footerSubscribeHeader}
+        .footer__subscribe-text #{footerSubscribeText}
         .footer__subscribe-input
-          +subscribe("Your email address")
+          +subscribe(emailPlaceholder)
   .footer__bottom-wrapper
     .footer__container
       .footer__bottom
-        .footer__bottom-copyright
-          | Copyright © 2018 Toxin UI Kit. All rights reserved.
+        .footer__bottom-copyright #{copyRights}
         .footer__bottom-socials
           a.footer__social-link(link="#")
             i.fa.fa-twitter.icon-color(aria-hidden="true")

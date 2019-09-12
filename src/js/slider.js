@@ -1,6 +1,7 @@
 function slider(element) {
 
-  const sliderElement = document.querySelector(element)
+  // const sliderElement = document.querySelector(element)
+  const sliderElement = element
   if (sliderElement) {
 
   

@@ -76,6 +76,8 @@
   }
 
   &__navigation-col-item {
+    display: block;
+    text-decoration: none;
     margin-bottom: 14px;
     color: $dark-shade-50;
   }
