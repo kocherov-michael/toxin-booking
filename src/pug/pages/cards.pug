@@ -2,7 +2,6 @@ extends ../layout/ui-layout/ui-layout.pug
 
 block variables
   - var title = 'Cards';
-  //- - var pageClass = 'body--dashboard';
 
 block content
 
@@ -22,21 +21,29 @@ block content
           .cards__col-inner
             .cards__room-card-wrapper
               +roomCard({
-                imgLink: "./assets/img/images/image_888.jpg", 
-                num: "888",
-                price: "9 990", 
-                stars: "5",
-                comments: "145",
-                lux: true,
-                arrows: true
-              })
+                  imgLink: [
+                    require('../../assets/img/images/image_888.jpg'),
+                    require('../../assets/img/images/image_888.jpg'),
+                    require('../../assets/img/images/image_888.jpg'),
+                    require('../../assets/img/images/image_888.jpg')
+                    ],
+                  num: "888", 
+                  price: "9 990", 
+                  stars: "5",
+                  comments: "145",
+                  lux: true
+                })
             +roomCard({
-              imgLink: "./assets/img/images/image_840.jpg", 
+              imgLink: [
+                require('../../assets/img/images/image_840.jpg'),
+                require('../../assets/img/images/image_840.jpg'),
+                require('../../assets/img/images/image_840.jpg'),
+                require('../../assets/img/images/image_840.jpg')
+                ], 
               num: "840",
               price: "9 900", 
               stars: "4",
               comments: "65",
-              lux: false,
-              arrows: true
+              lux: false
             })
 

@@ -24,6 +24,7 @@ function slider(element) {
     })
 
     function addPagination () {
+      paginationElement.innerHTML = ''
       for (let i = 0; i < sliderItems.length; i++) {
         const paginationItemElement = document.createElement('div')
         paginationItemElement.classList.add('slider-pagination__item')
