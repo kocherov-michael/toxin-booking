@@ -13,17 +13,35 @@
   @media (max-width: 767px) {
     flex-direction: row;
   }
+
+  @media (max-width: 575px) {
+    flex-direction: row;
+    // flex-wrap: nowrap;
+    overflow: hidden;
+    display: block;
+    height: 243px;
+    width: auto;
+    position: relative;
+  }
+}
+.hide {
+  display: none;
 }
 .room-details__collage-main {
   height: 100%;
   width: 68%;
   background-position: center;
   background-size: cover;
-  @media (max-width: 767px) {
+
+  @media (min-width: 576px) and (max-width: 767px) {
     width: 100%;
-    // height: 300px;
     height: 68%;
-    // height: auto;
+  }
+
+  @media (max-width: 575px) {
+    width: 100%;
+    position: absolute;
+    left: -500px;
   }
 }
 .room-details__collage-secondary {
@@ -31,11 +49,20 @@
   width: 32%;
   background-position: center;
   background-size: cover;
-  @media (max-width: 767px) {
-    // display: none;
+  @media (min-width: 576px) and (max-width: 767px) {
     width: 50%;
-    // height: auto;
     height: 32%;
+  }
+
+  @media (max-width: 575px) {
+    height: 100%;
+    width: 100%;
+  }
+}
+.room-details__arrows {
+  display: none;
+  @media (max-width: 575px) {
+    display: block;
   }
 }
 .room-details__container {
@@ -45,10 +72,6 @@
   display: flex;
   padding-bottom: 60px;
   padding-top: 70px;
-
-  @media (max-width: 1199px) {
-    // flex-direction: column;
-  }
 
   @media (min-width: 401px) and (max-width: 1199px) {
     padding-left: 15px;
@@ -75,8 +98,6 @@
   min-width: 380px;
 
   @media (min-width: 768px) and (max-width: 1199px) {
-    // order: -1;
-    // margin: 0 auto;
     position: absolute;
     right: 15px;
     width: 380px;
@@ -113,7 +134,6 @@
   }
 
   @media (min-width: 576px) and (max-width: 767px) {
-    // align-items: center;
     flex-direction: row;
   }
 
@@ -122,12 +142,17 @@
     align-items: center;
   }
 }
+
 .room-comfort {
   max-width: 280px;
 }
 
 .room-comfort__title {
   margin-bottom: 20px;
+
+  @media (max-width: 575px) {
+    text-align: center;
+  }
 }
 
 .room-comfort__item {
@@ -138,15 +163,8 @@
   width: 49%;
   padding-left: 15px;
 
-
-  @media (max-width: 1200px) {
-    // width: 100%;
-  }
   @media (max-width: 767px) {
     width: auto;
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
   }
 }
 
@@ -154,7 +172,7 @@
   display: flex;
   margin-top: 21px;
   flex-wrap: wrap;
-  // justify-content: space-between;
+
   @media (max-width: 767px) {
     flex-direction: column;
     align-items: center;
@@ -162,19 +180,29 @@
   
   @media (min-width: 401px) and (max-width: 767px) {
     flex-wrap: nowrap;
-    // flex-direction: column;
-    // align-items: center;
-    // align-items: stretch;
+  }
+}
+
+.room-details__comments {
+  @media (max-width: 400px) {
+    padding-left: 15px;
+    padding-right: 15px;
   }
 }
 
 .room-comments {
   margin-bottom: 34px;
 
+  
   &__header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 20px;
+
+    @media (max-width: 575px) {
+      flex-direction: column;
+      text-align: center;
+    }
   }
   &__comment {
     margin-bottom: 23px;
@@ -189,20 +217,42 @@
 .room-rules {
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 575px) {
+    flex-direction: column;
+  }
+  
   &__rules {
     width: 260px;
+
+    @media (max-width: 575px) {
+      width: auto;
+    }
   }
   &__rules-header {
     padding-left: 20px;
     margin-bottom: 17px;
+
+    @media (max-width: 575px) {
+      text-align: center;
+    }
   }
   &__cancel {
     width: 49%;
     padding-right: 5px;
     box-sizing: border-box;
+
+    @media (max-width: 575px) {
+      width: auto;
+    }
   }
   &__cancel-header {
     margin-bottom: 17px;
+
+    @media (max-width: 575px) {
+      margin-top: 20px;
+      text-align: center;
+    }
   }
 }
 
@@ -237,3 +287,4 @@
 .diagramm-types__item_color_dark:before {
   background: linear-gradient($dark-gradient);
 }
+

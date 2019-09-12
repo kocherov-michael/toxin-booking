@@ -1,6 +1,6 @@
-.room-price__title {
-  font-size: 30px;// убрать
-}
+// .room-price__title {
+//   font-size: 30px;
+// }
 .room-price-card {
   padding: 44px 29px 29px;
   background: $default-color;
@@ -8,6 +8,12 @@
   box-sizing: border-box;
   box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+
+  @media (max-width: 350px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
   &__header-title {
     font-weight: bold;
     font-size: 14px;
@@ -91,13 +97,17 @@
   &__item-text {
     position: relative;
     padding-right: 22px;
-    display: flex;
     flex-grow: 1;
-    &--lower {
-      line-height: 18px;
-      margin-top: 2px;
-    }
+    line-height: 18px;
+    margin-top: 2px;
   }
+   &__days {
+    padding-left: 4px;
+    padding-right: 4px;
+   }
+   &__discount {
+    white-space: nowrap;
+   }
 }
 .service-info {
   position: absolute;

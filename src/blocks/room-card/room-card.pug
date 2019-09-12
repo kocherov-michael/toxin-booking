@@ -18,11 +18,12 @@ mixin roomCard(options)
     .room-card__header
       img(src=options.imgLink alt="room photo" class="room-card__header-img")
       if options.arrows
-        .room-card__header-shadow
-        .room-card__header-arrow-left
-          i.zmdi.zmdi-chevron-left
-        .room-card__header-arrow-right
-          i.zmdi.zmdi-chevron-right
+        .arrows
+          .arrows__shadow
+          .arrows__arrow-left
+            i.zmdi.zmdi-chevron-left
+          .arrows__arrow-right
+            i.zmdi.zmdi-chevron-right
       .room-card__header-pagination
         .room-card-pagination-item.room-card-pagination-item_active
         .room-card-pagination-item
