@@ -19,17 +19,19 @@ block content
 
   .room-details
     include ../../blocks/header/header.pug
-    .room-details__collage-wrapper(data-slider)
-      .room-details__collage(data-slider-container)
+    .room-details__collage(data-slider)
+      .room-details__collage-wrapper(data-slider-container)
         .room-details__collage-main(style="background-image: url(./assets/img/big-images/room-888-big.jpg);" data-slider-item)
         .room-details__collage-secondary(style="background-image: url(./assets/img/big-images/room-888-medium.jpg);" data-slider-item)
         .room-details__collage-secondary(style="background-image: url(./assets/img/big-images/room-888-medium-2.jpg);" data-slider-item)
-      .arrows.room-details__arrows
-        .arrows__shadow
-        .arrows__arrow-left(data-slider-left-arrow)
-          i.zmdi.zmdi-chevron-left
-        .arrows__arrow-right(data-slider-right-arrow)
-          i.zmdi.zmdi-chevron-right
+      .room-details__pagination
+        .arrows
+          .arrows__shadow
+          .arrows__arrow-left(data-slider-left-arrow)
+            i.zmdi.zmdi-chevron-left
+          .arrows__arrow-right(data-slider-right-arrow)
+            i.zmdi.zmdi-chevron-right
+        .slider-pagination(data-slider-pagination)
     .room-details__container
       .room-details__info
         .room-details__comfort

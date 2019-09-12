@@ -5,12 +5,12 @@
   border-bottom: 1px solid $dark-shade-25;
 }
 
-.room-details__collage-wrapper {
+.room-details__collage {
   overflow: hidden;
   position: relative;
 }
 
-.room-details__collage {
+.room-details__collage-wrapper {
   height: 485px;
   display: flex;
   flex-direction: column;
@@ -22,14 +22,8 @@
   }
 
   @media (max-width: 575px) {
-    flex-direction: row;
     flex-wrap: nowrap;
-    // overflow: hidden;
-    // display: block;
     height: 243px;
-    // width: auto;
-    // width: 1500px;
-    // position: relative;
   }
 }
 .hide {
@@ -48,10 +42,6 @@
   
   @media (max-width: 575px) {
     height: 100%;
-    // width: 100vw;
-    // width: auto;
-    // position: absolute;
-    // left: 0px;
     flex: 0 0 100%;
     max-width: 100%;
   }
@@ -74,7 +64,7 @@
     max-width: 100%;
   }
 }
-.room-details__arrows {
+.room-details__pagination {
   display: none;
   @media (max-width: 575px) {
     display: block;

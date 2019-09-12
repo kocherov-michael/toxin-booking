@@ -46,11 +46,11 @@
   //   left: auto;
   //   right: 0px;
   // }
-  &__header-pagination {
-    position: absolute;
-    right: 16px;
-    bottom: 7px;
-  }
+  // &__header-pagination {
+  //   position: absolute;
+  //   right: 16px;
+  //   bottom: 7px;
+  // }
   &__title {
     margin-bottom: 20px;
     border-bottom: 1px solid $dark-shade-10;
@@ -113,15 +113,34 @@
 .price-per-day--lh-17 {
   line-height: 17px;
 }
-.room-card-pagination-item {
-  display: inline-block;
-  width: 5px;
-  height: 5px;
-  border-radius: 4px;
-  border: 1px solid $default-color;
-  margin-left: 4px;
-  cursor: pointer;
-  &_active {
-    background-color: $default-color;
+// .room-card-pagination-item {
+//   display: inline-block;
+//   width: 5px;
+//   height: 5px;
+//   border-radius: 4px;
+//   border: 1px solid $default-color;
+//   margin-left: 4px;
+//   cursor: pointer;
+//   &_active {
+//     background-color: $default-color;
+//   }
+// }
+.slider-pagination {
+  position: absolute;
+  right: 16px;
+  bottom: 7px;
+
+  &__item {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-radius: 4px;
+    border: 1px solid $default-color;
+    margin-left: 4px;
+    // cursor: pointer;
+
+    &_active {
+      background-color: $default-color;
+    }
   }
 }
