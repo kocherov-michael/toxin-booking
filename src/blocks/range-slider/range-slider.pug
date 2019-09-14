@@ -1,9 +1,9 @@
 mixin rangeslider(header, min, max)
-  .range-slider&attributes(attributes)
+  .range-slider(data-range-slider)&attributes(attributes)
     .range-slider__header-wrapper
       .range-slider__header #{header}
       .range-slider__range #{min}<span class="rub">Р</span>&nbsp; - #{max}<span class="rub">Р</span>
-    .range-slider__slider
-      .range-slider__slider-circle.range-slider__slider-circle--left
-      .range-slider__slider-line
-      .range-slider__slider-circle.range-slider__slider-circle--right
+    .range-slider__slider(data-range-slider-field)
+      .range-slider__slider-circle.range-slider__slider-circle--left(data-range-slider-left-item)
+      .range-slider__slider-line(data-range-slider-line)
+      .range-slider__slider-circle.range-slider__slider-circle--right(data-range-slider-right-item)

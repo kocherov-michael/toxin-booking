@@ -8,6 +8,7 @@ import './js/dropdown'
 import './js/search-room'
 import './js/room-details'
 import './blocks/header/header.js'
+import './blocks/range-slider/range-slider.js'
 
 // SCSS
 import './assets/scss/main.scss'
