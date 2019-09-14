@@ -44,13 +44,13 @@ if (rangeSliderList.length > 0) {
     let leftItemPosition = leftElement.offsetLeft
     leftElement.style.left = `${leftItemPosition}px`
 
-    let move = false
+    let move = true
 
     
     
     function mousedownListener(event) {
       event.stopPropagation()
-      move = true
+      // move = true
       console.log('move = true')
       // console.log(event.pageX)
       // console.log(leftElement.style)
@@ -79,22 +79,25 @@ if (rangeSliderList.length > 0) {
         leftElement.addEventListener('mouseup', mouseupListener)
         leftElement.addEventListener('mouseover', mouseoverListener)
         leftElement.removeEventListener('mousemove', mousemoveListener)
-
+        // console.log('this: ', this)
+        // console.log('event.type: ', event.type)
+        // console.log('arguments.callee: ', arguments.callee)
+        // leftElement.removeEventListener(event.type, arguments.callee, event.eventPhase)
       }
     }
 
     function mouseupListener () {
-      console.log('mouseUP')
-      console.log('move = false')
-      move = false
+      // console.log('mouseUP')
+      // console.log('move = false')
+      // move = false
       leftElement.removeEventListener('mousemove', mousemoveListener)
       leftElement.removeEventListener('mouseup', mouseupListener)
     }
 
     function mouseoverListener () {
-      console.log('mouseOVER')
-      console.log('move = false')
-      move = false
+      // console.log('mouseOVER')
+      // console.log('move = false')
+      // move = false
       leftElement.removeEventListener('mousemove', mousemoveListener)
       leftElement.removeEventListener('mouseup', mouseupListener)
       leftElement.removeEventListener('mouseover', mouseoverListener)
