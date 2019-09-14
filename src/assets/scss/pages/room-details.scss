@@ -58,7 +58,6 @@
 
   @media (max-width: 575px) {
     height: 100%;
-    // width: 100vw;
     width: auto;
     flex: 0 0 100%;
     max-width: 100%;
@@ -73,7 +72,6 @@
 .room-details__container {
   max-width: 1160px;
   margin: 0 auto;
-  height: 100%;
   display: flex;
   padding-bottom: 60px;
   padding-top: 70px;
