@@ -53,7 +53,10 @@ module.exports = {
   module: {
     rules: [{
       test: /\.pug$/,
-      loader: 'pug-loader'
+      loader: 'pug-loader',
+      options: {
+        pretty: true // для читабельности (отменяет минификацию)
+      }
     }, {
       test: /\.js$/,
       loader: 'babel-loader',

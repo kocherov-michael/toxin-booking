@@ -1,9 +1,17 @@
+//- mixin rangeslider(header, min, max)
+//-   .range-slider(data-range-slider)&attributes(attributes)
+//-     .range-slider__header-wrapper
+//-       .range-slider__header #{header}
+//-       .range-slider__range #{min}<span class="rub">Р</span>&nbsp; - #{max}<span class="rub">Р</span>
+//-     .range-slider__slider(data-range-slider-field)
+//-       .range-slider__slider-circle.range-slider__slider-circle--left(data-range-slider-left-item)
+//-       .range-slider__slider-line(data-range-slider-line)
+//-       .range-slider__slider-circle.range-slider__slider-circle--right(data-range-slider-right-item)
+
+
 mixin rangeslider(header, min, max)
   .range-slider(data-range-slider)&attributes(attributes)
     .range-slider__header-wrapper
       .range-slider__header #{header}
       .range-slider__range #{min}<span class="rub">Р</span>&nbsp; - #{max}<span class="rub">Р</span>
-    .range-slider__slider(data-range-slider-field)
-      .range-slider__slider-circle.range-slider__slider-circle--left(data-range-slider-left-item)
-      .range-slider__slider-line(data-range-slider-line)
-      .range-slider__slider-circle.range-slider__slider-circle--right(data-range-slider-right-item)
+    input(type="range" multiple min="2000" step="1" max="13000" data-range-slider-input data-values-min="5000" data-values-max="10000")
