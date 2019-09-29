@@ -5,8 +5,6 @@ const values = [
   elm.getAttribute('data-values-min'),
   elm.getAttribute('data-values-max')
 ]
-const maxValue = elm.getAttribute('max')
-const minValue = elm.getAttribute('min')
 
 const sliderContainer = document.createElement('div')
 sliderContainer.classList.add('range-slider')
@@ -14,6 +12,13 @@ container.insertBefore(sliderContainer, elm)
 
 //ширина слайдера
 const containerWidth = container.offsetWidth
+
+//отступ от края
+const margin = ((parseInt(elm.getAttribute('max')) - parseInt(elm.getAttribute('min'))) * (100 * 6)/containerWidth) / 100
+// console.log('margin ' , margin)
+
+const maxValue = parseInt(elm.getAttribute('max')) + margin
+const minValue = parseInt(elm.getAttribute('min')) - margin
 
 //линия между точками
 const sliderLine = document.createElement('div')
@@ -30,8 +35,8 @@ for (let i = 0; i < values.length; i++) {
   rangeItemContainer.classList.add(rangeItemContainerClassName)
   if ( i === 0) {
     rangeItemContainer.style.width = `${ (values[i+1]/elm.getAttribute('max'))*containerWidth}px`
-    console.log(values[i+1])
-    console.log(rangeItemContainer.style.width)
+    // console.log(values[i+1])
+    // console.log(rangeItemContainer.style.width)
     rangeItem.style.width =  `${containerWidth}px`
   }
   sliderContainer.append(rangeItemContainer)
@@ -56,10 +61,10 @@ setLinePosition()
 
 const showRangeValue = function () {
   if (parseInt(rangeMinInput.value) >= (parseInt(rangeMaxInput.value) - 1) ) {
-    rangeMaxInput.value = String(parseInt(rangeMinInput.value) + 1)
+    rangeMaxInput.value = String(parseInt(rangeMinInput.value))
   }
-  console.log('max =', rangeMaxInput.value)
-  console.log('min =', rangeMinInput.value)
+  // console.log('max =', rangeMaxInput.value)
+  // console.log('min =', rangeMinInput.value)
   setLinePosition()
 }
 const mouseDownListener = function () {
@@ -72,10 +77,10 @@ rangeMinInput.addEventListener('mouseup', () => {
 
 const showRangeValue2 = function () {
   if (parseInt(rangeMaxInput.value) < parseInt(rangeMinInput.value)) {
-    rangeMinInput.value = String(parseInt(rangeMaxInput.value) - 1)
+    rangeMinInput.value = String(parseInt(rangeMaxInput.value))
   }
-  console.log('max =', rangeMaxInput.value)
-  console.log('min =', rangeMinInput.value)
+  // console.log('max =', rangeMaxInput.value)
+  // console.log('min =', rangeMinInput.value)
   setLinePosition()
 }
 const mouseDownListener2 = function () {
@@ -85,9 +90,13 @@ rangeMaxInput.addEventListener('mousedown', mouseDownListener2)
 rangeMaxInput.addEventListener('mouseup', () => {
   rangeMaxInput.removeEventListener('mousemove', showRangeValue2)
 })
+
 function setLinePosition(){
-  sliderLine.style.width = `${parseInt(((rangeMaxInput.value/maxValue)*containerWidth) - (rangeMinInput.value/maxValue)*containerWidth - 5)}px`
-  sliderLine.style.left = `${ parseInt((rangeMinInput.value/maxValue)*containerWidth)}px`
+  sliderLine.style.width = `${parseInt(((rangeMaxInput.value/(maxValue - minValue))*containerWidth) - (rangeMinInput.value/(maxValue - minValue))*containerWidth )}px`
+  sliderLine.style.left = `${ parseInt(((rangeMinInput.value - minValue)/(maxValue - minValue))*containerWidth)}px`
+  console.log('left =', parseInt(sliderLine.style.left) )
+  console.log('right =', parseInt(sliderLine.style.width) + parseInt(sliderLine.style.left) )
+  console.log('Ширина:', containerWidth)
 }
 
 
