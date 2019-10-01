@@ -18,7 +18,6 @@ function rangeSlider () {
     const minValue = removeSpaces(minValueElement.innerHTML)
     const maxValue = removeSpaces(maxValueElement.innerHTML)
 
-    // const valueRange = maxRange - minRange
     const mainProportion = (maxRange - minRange)/parseInt(sliderWidth)
     const leftPointToLeft = (minValue - minRange) / mainProportion
     const rightPointToLeft = (maxValue - minRange) / mainProportion
@@ -141,7 +140,6 @@ function rangeSlider () {
   }
 
   function setInputValue (inputElement, inputValues) {
-    console.log(inputValues)
     const obj = [inputValues.minValue, inputValues.maxValue]
     const string = obj.join(';')
     inputElement.value = string
