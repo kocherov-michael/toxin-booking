@@ -1,103 +1,106 @@
-const elm = document.querySelector('[data-range-slider-input]');
-const container = elm.parentNode;
-
-const values = [
-  elm.getAttribute('data-values-min'),
-  elm.getAttribute('data-values-max')
-]
-
-const sliderContainer = document.createElement('div')
-sliderContainer.classList.add('range-slider')
-container.insertBefore(sliderContainer, elm)
-
-//ширина слайдера
-const containerWidth = container.offsetWidth
-
-//отступ от края
-const margin = ((parseInt(elm.getAttribute('max')) - parseInt(elm.getAttribute('min'))) * (100 * 6)/containerWidth) / 100
-// console.log('margin ' , margin)
-
-const maxValue = parseInt(elm.getAttribute('max')) + margin
-const minValue = parseInt(elm.getAttribute('min')) - margin
-
-//линия между точками
-const sliderLine = document.createElement('div')
-sliderLine.classList.add('range-slider__slider-line')
-sliderContainer.append(sliderLine)
-
-for (let i = 0; i < values.length; i++) {
-  const rangeItem = elm.cloneNode();
-
-  let rangeItemContainerClassName = "range-slider__item-container-" + i
-  let rangeItemClassName = "range-slider__item-" + i
-
-  const rangeItemContainer = document.createElement('div')
-  rangeItemContainer.classList.add(rangeItemContainerClassName)
-  if ( i === 0) {
-    rangeItemContainer.style.width = `${ (values[i+1]/elm.getAttribute('max'))*containerWidth}px`
-    // console.log(values[i+1])
-    // console.log(rangeItemContainer.style.width)
-    rangeItem.style.width =  `${containerWidth}px`
-  }
-  sliderContainer.append(rangeItemContainer)
-
-  rangeItem.classList.add(rangeItemClassName)
-  rangeItem.type = 'range';
-  rangeItem.removeAttribute('data-values-min');
-  rangeItem.removeAttribute('data-values-max');
-  rangeItem.value = values[i];
-  rangeItemContainer.append(rangeItem)
-}
 
 
-elm.remove();
 
-const rangeMinItem = sliderContainer.querySelector('.range-slider__item-container-0')
-const rangeMinInput = rangeMinItem.querySelector('input')
-const rangeMaxItem = sliderContainer.querySelector('.range-slider__item-container-1')
-const rangeMaxInput = rangeMaxItem.querySelector('input')
+// const elm = document.querySelector('[data-range-slider-input]');
+// const container = elm.parentNode;
 
-setLinePosition()
+// const values = [
+//   elm.getAttribute('data-values-min'),
+//   elm.getAttribute('data-values-max')
+// ]
 
-const showRangeValue = function () {
-  if (parseInt(rangeMinInput.value) >= (parseInt(rangeMaxInput.value) - 1) ) {
-    rangeMaxInput.value = String(parseInt(rangeMinInput.value))
-  }
-  // console.log('max =', rangeMaxInput.value)
-  // console.log('min =', rangeMinInput.value)
-  setLinePosition()
-}
-const mouseDownListener = function () {
-  rangeMinItem.addEventListener('mousemove', showRangeValue)
-}
-rangeMinInput.addEventListener('mousedown', mouseDownListener)
-rangeMinInput.addEventListener('mouseup', () => {
-  rangeMinItem.removeEventListener('mousemove', showRangeValue)
-})
+// const sliderContainer = document.createElement('div')
+// sliderContainer.classList.add('range-slider')
+// container.insertBefore(sliderContainer, elm)
 
-const showRangeValue2 = function () {
-  if (parseInt(rangeMaxInput.value) < parseInt(rangeMinInput.value)) {
-    rangeMinInput.value = String(parseInt(rangeMaxInput.value))
-  }
-  // console.log('max =', rangeMaxInput.value)
-  // console.log('min =', rangeMinInput.value)
-  setLinePosition()
-}
-const mouseDownListener2 = function () {
-  rangeMaxInput.addEventListener('mousemove', showRangeValue2)
-}
-rangeMaxInput.addEventListener('mousedown', mouseDownListener2)
-rangeMaxInput.addEventListener('mouseup', () => {
-  rangeMaxInput.removeEventListener('mousemove', showRangeValue2)
-})
+// //ширина слайдера
+// const containerWidth = container.offsetWidth
 
-function setLinePosition(){
-  sliderLine.style.width = `${parseInt(((rangeMaxInput.value/(maxValue - minValue))*containerWidth) - (rangeMinInput.value/(maxValue - minValue))*containerWidth )}px`
-  sliderLine.style.left = `${ parseInt(((rangeMinInput.value - minValue)/(maxValue - minValue))*containerWidth)}px`
-  console.log('left =', parseInt(sliderLine.style.left) )
-  console.log('right =', parseInt(sliderLine.style.width) + parseInt(sliderLine.style.left) )
-  console.log('Ширина:', containerWidth)
-}
+// //отступ от края
+// const margin = ((parseInt(elm.getAttribute('max')) - parseInt(elm.getAttribute('min'))) * (100 * 6)/containerWidth) / 100
+// // console.log('margin ' , margin)
+
+// const maxValue = parseInt(elm.getAttribute('max')) + margin
+// const minValue = parseInt(elm.getAttribute('min')) - margin
+
+// //линия между точками
+// const sliderLine = document.createElement('div')
+// sliderLine.classList.add('range-slider__slider-line')
+// sliderContainer.append(sliderLine)
+
+// for (let i = 0; i < values.length; i++) {
+//   const rangeItem = elm.cloneNode();
+
+//   let rangeItemContainerClassName = "range-slider__item-container-" + i
+//   let rangeItemClassName = "range-slider__item-" + i
+
+//   const rangeItemContainer = document.createElement('div')
+//   rangeItemContainer.classList.add(rangeItemContainerClassName)
+//   if ( i === 0) {
+//     // rangeItemContainer.style.width = `${ (values[i+1]/elm.getAttribute('max'))*containerWidth}px`
+//     // console.log(values[i+1])
+//     // console.log(rangeItemContainer.style.width)
+//     rangeItem.style.width =  `${containerWidth}px`
+//   }
+//   sliderContainer.append(rangeItemContainer)
+
+//   rangeItem.classList.add(rangeItemClassName)
+//   rangeItem.type = 'range';
+//   rangeItem.removeAttribute('data-values-min');
+//   rangeItem.removeAttribute('data-values-max');
+//   rangeItem.value = values[i];
+//   rangeItemContainer.append(rangeItem)
+// }
+
+
+// elm.remove();
+
+// const rangeMinItem = sliderContainer.querySelector('.range-slider__item-container-0')
+// const rangeMinInput = rangeMinItem.querySelector('input')
+// const rangeMaxItem = sliderContainer.querySelector('.range-slider__item-container-1')
+// const rangeMaxInput = rangeMaxItem.querySelector('input')
+
+// setLinePosition()
+
+// const showRangeValue = function () {
+//   if (parseInt(rangeMinInput.value) >= (parseInt(rangeMaxInput.value) - 1) ) {
+//     rangeMaxInput.value = String(parseInt(rangeMinInput.value))
+//   }
+//   // console.log('max =', rangeMaxInput.value)
+//   // console.log('min =', rangeMinInput.value)
+//   setLinePosition()
+// }
+// const mouseDownListener = function () {
+//   rangeMinItem.addEventListener('mousemove', showRangeValue)
+// }
+// rangeMinInput.addEventListener('mousedown', mouseDownListener)
+// rangeMinInput.addEventListener('mouseup', () => {
+//   rangeMinItem.removeEventListener('mousemove', showRangeValue)
+// })
+
+// const showRangeValue2 = function () {
+//   if (parseInt(rangeMaxInput.value) < parseInt(rangeMinInput.value)) {
+//     rangeMinInput.value = String(parseInt(rangeMaxInput.value))
+//   }
+//   // console.log('max =', rangeMaxInput.value)
+//   // console.log('min =', rangeMinInput.value)
+//   setLinePosition()
+// }
+// const mouseDownListener2 = function () {
+//   rangeMaxInput.addEventListener('mousemove', showRangeValue2)
+// }
+// rangeMaxInput.addEventListener('mousedown', mouseDownListener2)
+// rangeMaxInput.addEventListener('mouseup', () => {
+//   rangeMaxInput.removeEventListener('mousemove', showRangeValue2)
+// })
+
+// function setLinePosition(){
+//   sliderLine.style.width = `${parseInt(((rangeMaxInput.value/(maxValue - minValue))*containerWidth) - (rangeMinInput.value/(maxValue - minValue))*containerWidth )}px`
+//   sliderLine.style.left = `${ parseInt(((rangeMinInput.value - minValue)/(maxValue - minValue))*containerWidth)}px`
+//   console.log('left =', parseInt(sliderLine.style.left) )
+//   console.log('right =', parseInt(sliderLine.style.width) + parseInt(sliderLine.style.left) )
+//   console.log('Ширина:', containerWidth)
+// }
 
 
 
@@ -194,7 +197,7 @@ function setLinePosition(){
     
 //     function mousedownListener(event) {
 //       event.stopPropagation()
-//       // move = true
+//       move = true
 //       console.log('move = true')
 //       // console.log(event.pageX)
 //       // console.log(leftElement.style)
@@ -231,17 +234,17 @@ function setLinePosition(){
 //     }
 
 //     function mouseupListener () {
-//       // console.log('mouseUP')
+//       console.log('mouseUP')
 //       // console.log('move = false')
-//       // move = false
+//       move = false
 //       leftElement.removeEventListener('mousemove', mousemoveListener)
 //       leftElement.removeEventListener('mouseup', mouseupListener)
 //     }
 
 //     function mouseoverListener () {
-//       // console.log('mouseOVER')
+//       console.log('mouseOVER')
 //       // console.log('move = false')
-//       // move = false
+//       move = false
 //       leftElement.removeEventListener('mousemove', mousemoveListener)
 //       leftElement.removeEventListener('mouseup', mouseupListener)
 //       leftElement.removeEventListener('mouseover', mouseoverListener)
@@ -259,3 +262,103 @@ function setLinePosition(){
 
 //   }
 // }
+
+function rangeSlider () {
+  console.log('run')
+  const rangeSliderList = document.querySelectorAll('[data-range-slider]')
+  for( let i = 0; i < rangeSliderList.length; i++) {
+    const sliderFieldElement = rangeSliderList[i].querySelector('[data-range-slider-field]')
+    const leftElement = rangeSliderList[i].querySelector('[data-range-slider-left-item]')
+    const rightElement = rangeSliderList[i].querySelector('[data-range-slider-right-item]')
+    const lineElement = rangeSliderList[i].querySelector('[data-range-slider-line]')
+
+    const sliderWidth = sliderFieldElement.getBoundingClientRect().width
+    const sliderLeftSidePosition = sliderFieldElement.getBoundingClientRect().left
+    const sliderRightSidePosition = sliderFieldElement.getBoundingClientRect().right
+
+    let minRange = parseInt(rangeSliderList[i].getAttribute('data-min-range'))
+    let maxRange = parseInt(rangeSliderList[i].getAttribute('data-max-range'))
+
+    // левая точка
+    //параметры
+    const leftItemParams = leftElement.getBoundingClientRect()
+    //абсолютная позиция
+    const leftItemPosition = leftItemParams.left + leftItemParams.width/2
+    //расстояние до левого края слайдера
+    const leftPointToLeft = parseInt(leftElement.getBoundingClientRect().left) - parseInt(sliderFieldElement.getBoundingClientRect().left)
+
+    // правая точка
+    const rightItemParams = rightElement.getBoundingClientRect()
+    const rightItemPosition = rightItemParams.left + rightItemParams.width/2
+    const rightPointToLeft = parseInt(rightElement.getBoundingClientRect().left) - parseInt(sliderFieldElement.getBoundingClientRect().left)
+
+    // линия
+    const lineParams = lineElement.getBoundingClientRect()
+    // console.log(lineParams)
+
+    const position = {
+      mouseX: 0, // точка нажатия мышкой
+      leftPointPosition: leftPointToLeft,
+      rightPointPosition: rightPointToLeft
+    }
+    console.log({position})
+
+    function mousedownListener(event) {
+      event.stopPropagation()
+      leftElement.classList.add('onmove')
+      document.addEventListener('mousemove', mousemoveListener)
+      position.mouseX = event.pageX
+    }
+
+    function mousemoveListener (event) {
+      event.stopPropagation()
+      event.preventDefault()
+      if( leftElement.classList.contains('onmove')) {
+
+        //получаем путь, пройденный мышкой
+        let delta = event.pageX - position.mouseX
+
+        console.log('delta = ', delta)
+        console.log('event.pageX = ', event.pageX)
+        console.log('position.mouseX = ', position.mouseX)
+
+        //задаём позицию тьочки относительно слайдера
+        let newleftItemPosition = position.leftPointPosition + delta
+        let result = newleftItemPosition + leftItemParams.width/2
+        if ((result >= 0) && (result < position.rightPointPosition)) {
+
+          leftElement.style.left = `${newleftItemPosition}px`
+        }
+
+        document.addEventListener('mouseup', mouseupListener)
+      }
+    }
+
+    function mouseupListener () {
+      console.log('mouseUP')
+      position.mouseX = leftElement.getBoundingClientRect().x 
+      position.leftPointPosition = parseInt(leftElement.getBoundingClientRect().left) - parseInt(sliderFieldElement.getBoundingClientRect().left)
+      console.log({position})
+      document.removeEventListener('mousemove', mousemoveListener)
+      document.removeEventListener('mouseup', mouseupListener)
+    }
+
+
+    leftElement.addEventListener('mousedown', mousedownListener)
+
+
+
+
+
+
+
+
+
+
+  }
+
+
+
+}
+
+export default rangeSlider
