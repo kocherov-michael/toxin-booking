@@ -294,6 +294,9 @@ function rangeSlider () {
 
     // линия
     const lineParams = lineElement.getBoundingClientRect()
+    lineElement.style.left = `${leftPointToLeft}px`
+    lineElement.style.width = `${rightPointToLeft - leftPointToLeft}px`
+
     // console.log(lineParams)
 
     const position = {
@@ -332,13 +335,16 @@ function rangeSlider () {
           let newleftItemPosition = position.leftPointPosition + delta
           if ((newleftItemPosition >= (0 - leftItemParams.width/2)) && (newleftItemPosition < position.rightPointPosition)){
             leftElement.style.left = `${newleftItemPosition}px`
+            lineElement.style.left = `${newleftItemPosition}px`
+            lineElement.style.width = `${position.rightPointPosition - newleftItemPosition}px`
           }
         }
         else if (position.currentElement === rightElement) {
 
           let newRightItemPosition = position.rightPointPosition + delta
-          if ((newRightItemPosition > position.leftPointPosition) && (newRightItemPosition < (sliderWidth - rightItemParams.width/2))){
+          if ((newRightItemPosition > position.leftPointPosition -2 ) && (newRightItemPosition < (sliderWidth - rightItemParams.width/2))){
             rightElement.style.left = `${newRightItemPosition}px`
+            lineElement.style.width = `${newRightItemPosition - parseInt(lineElement.style.left)}px`
           }
         }
 
@@ -369,7 +375,6 @@ function rangeSlider () {
     // rightElement.addEventListener('mousedown', mousedownRightListener)
     leftElement.addEventListener('mousedown', {handleEvent: mousedownListener, element: leftElement})
     rightElement.addEventListener('mousedown', {handleEvent: mousedownListener, element: rightElement})
-    console.log(leftElement)
 
 
 
