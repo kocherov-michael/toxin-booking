@@ -301,50 +301,75 @@ function rangeSlider () {
       leftPointPosition: leftPointToLeft,
       rightPointPosition: rightPointToLeft
     }
-    console.log({position})
+    // console.log({position})
 
     function mousedownListener(event) {
       event.stopPropagation()
-      leftElement.classList.add('onmove')
+      // leftElement.classList.add('onmove')
+      // const currentElement = this.element
+      // console.log(currentElement)
       document.addEventListener('mousemove', mousemoveListener)
+      // document.addEventListener('mousemove', {handleEvent: mousemoveListener, element: currentElement})
       position.mouseX = event.pageX
+      position.currentElement = this.element
     }
 
     function mousemoveListener (event) {
       event.stopPropagation()
       event.preventDefault()
-      if( leftElement.classList.contains('onmove')) {
+      // if( leftElement.classList.contains('onmove')) {
 
         //получаем путь, пройденный мышкой
         let delta = event.pageX - position.mouseX
 
-        console.log('delta = ', delta)
-        console.log('event.pageX = ', event.pageX)
-        console.log('position.mouseX = ', position.mouseX)
+        // console.log('delta = ', delta)
+        // console.log('event.pageX = ', event.pageX)
+        // console.log('position.mouseX = ', position.mouseX)
 
-        //задаём позицию тьочки относительно слайдера
-        let newleftItemPosition = position.leftPointPosition + delta
-        let result = newleftItemPosition + leftItemParams.width/2
-        if ((result >= 0) && (result < position.rightPointPosition)) {
+        //задаём позицию точки относительно слайдера
+        if (position.currentElement === leftElement) {
 
-          leftElement.style.left = `${newleftItemPosition}px`
+          let newleftItemPosition = position.leftPointPosition + delta
+          if ((newleftItemPosition >= (0 - leftItemParams.width/2)) && (newleftItemPosition < position.rightPointPosition)){
+            leftElement.style.left = `${newleftItemPosition}px`
+          }
+        }
+        else if (position.currentElement === rightElement) {
+
+          let newRightItemPosition = position.rightPointPosition + delta
+          if ((newRightItemPosition > position.leftPointPosition) && (newRightItemPosition < (sliderWidth - rightItemParams.width/2))){
+            rightElement.style.left = `${newRightItemPosition}px`
+          }
         }
 
+
         document.addEventListener('mouseup', mouseupListener)
-      }
+        // document.addEventListener('mouseup', {handleEvent: mouseupListener, element: this.element})
+      // }
     }
 
     function mouseupListener () {
-      console.log('mouseUP')
-      position.mouseX = leftElement.getBoundingClientRect().x 
-      position.leftPointPosition = parseInt(leftElement.getBoundingClientRect().left) - parseInt(sliderFieldElement.getBoundingClientRect().left)
-      console.log({position})
+      // console.log('mouseUP')
+      if (position.currentElement === leftElement) {
+        position.mouseX = leftElement.getBoundingClientRect().x 
+        position.leftPointPosition = parseInt(leftElement.getBoundingClientRect().left) - parseInt(sliderFieldElement.getBoundingClientRect().left)
+      }
+      else if (position.currentElement === rightElement) {
+        position.mouseX = rightElement.getBoundingClientRect().x 
+        position.rightPointPosition = parseInt(rightElement.getBoundingClientRect().left) - parseInt(sliderFieldElement.getBoundingClientRect().left)
+      }
+      // console.log({position})
       document.removeEventListener('mousemove', mousemoveListener)
+      // document.removeEventListener('mousemove', {handleEvent: mousemoveListener, element: this.element})
       document.removeEventListener('mouseup', mouseupListener)
     }
 
 
-    leftElement.addEventListener('mousedown', mousedownListener)
+    // leftElement.addEventListener('mousedown', mousedownLeftListener)
+    // rightElement.addEventListener('mousedown', mousedownRightListener)
+    leftElement.addEventListener('mousedown', {handleEvent: mousedownListener, element: leftElement})
+    rightElement.addEventListener('mousedown', {handleEvent: mousedownListener, element: rightElement})
+    console.log(leftElement)
 
 
 
