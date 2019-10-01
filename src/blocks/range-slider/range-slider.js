@@ -262,11 +262,12 @@
 
 //   }
 // }
+import formatPrice from './../../js/format-price.js'
 
 function rangeSlider () {
-  console.log('run')
   const rangeSliderList = document.querySelectorAll('[data-range-slider]')
   for( let i = 0; i < rangeSliderList.length; i++) {
+
     const sliderFieldElement = rangeSliderList[i].querySelector('[data-range-slider-field]')
     const leftElement = rangeSliderList[i].querySelector('[data-range-slider-left-item]')
     const rightElement = rangeSliderList[i].querySelector('[data-range-slider-right-item]')
@@ -276,8 +277,27 @@ function rangeSlider () {
     const sliderLeftSidePosition = sliderFieldElement.getBoundingClientRect().left
     const sliderRightSidePosition = sliderFieldElement.getBoundingClientRect().right
 
-    let minRange = parseInt(rangeSliderList[i].getAttribute('data-min-range'))
-    let maxRange = parseInt(rangeSliderList[i].getAttribute('data-max-range'))
+    const minValueElement = rangeSliderList[i].querySelector('[data-min-value]')
+    const maxValueElement = rangeSliderList[i].querySelector('[data-max-value]')
+
+    const minRange = parseInt(rangeSliderList[i].getAttribute('data-min-range'))
+    const maxRange = parseInt(rangeSliderList[i].getAttribute('data-max-range'))
+    const minValue = removeSpaces(minValueElement.innerHTML)
+    const maxValue = removeSpaces(maxValueElement.innerHTML)
+
+    
+    const valueRange = maxRange - minRange
+    const mainProportion = valueRange/parseInt(sliderWidth)
+    console.log(mainProportion)
+    const leftPointPosition = (minValue - minRange) / mainProportion
+    const rightPointPosition = (maxValue - minRange) / mainProportion
+    console.log(leftPointPosition)
+    console.log(rightPointPosition)
+
+    const leftPointToLeft = leftPointPosition
+    const rightPointToLeft = rightPointPosition
+
+    // const proportions = {}
 
     // левая точка
     //параметры
@@ -285,22 +305,24 @@ function rangeSlider () {
     //абсолютная позиция
     const leftItemPosition = leftItemParams.left + leftItemParams.width/2
     //расстояние до левого края слайдера
-    const leftPointToLeft = parseInt(leftElement.getBoundingClientRect().left) - parseInt(sliderFieldElement.getBoundingClientRect().left)
+    // const leftPointToLeft = parseInt(leftElement.getBoundingClientRect().left) - parseInt(sliderFieldElement.getBoundingClientRect().left)
 
     // правая точка
     const rightItemParams = rightElement.getBoundingClientRect()
     const rightItemPosition = rightItemParams.left + rightItemParams.width/2
-    const rightPointToLeft = parseInt(rightElement.getBoundingClientRect().left) - parseInt(sliderFieldElement.getBoundingClientRect().left)
+    // const rightPointToLeft = parseInt(rightElement.getBoundingClientRect().left) - parseInt(sliderFieldElement.getBoundingClientRect().left)
 
     // линия
     const lineParams = lineElement.getBoundingClientRect()
     lineElement.style.left = `${leftPointToLeft}px`
     lineElement.style.width = `${rightPointToLeft - leftPointToLeft}px`
+    leftElement.style.left = `${leftPointToLeft}px`
+    rightElement.style.left = `${rightPointToLeft}px`
 
     // console.log(lineParams)
 
     const position = {
-      mouseX: 0, // точка нажатия мышкой
+      // mouseX: 0, // точка нажатия мышкой
       leftPointPosition: leftPointToLeft,
       rightPointPosition: rightPointToLeft
     }
@@ -386,7 +408,17 @@ function rangeSlider () {
 
 
   }
+  function removeSpaces (string) {
+    const price = [...string]
 
+    for( let i = 0; i < price.length; i++) {
+      if (price[i] === ' ') {
+        price.splice(i, 1)
+      }
+    }
+    
+    return parseInt(price.join(''))
+  }
 
 
 }
