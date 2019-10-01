@@ -57,6 +57,7 @@
   border: 2px solid $default-color;
   border-radius: 10px;
   z-index: 2;
+  transform: translateX(-50%);
   cursor: pointer;
   &_left {
     left: 74px;

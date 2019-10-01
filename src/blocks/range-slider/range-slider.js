@@ -262,7 +262,7 @@
 
 //   }
 // }
-import formatPrice from './../../js/format-price.js'
+// import formatPrice from './../../js/format-price.js'
 
 function rangeSlider () {
   const rangeSliderList = document.querySelectorAll('[data-range-slider]')
@@ -288,36 +288,37 @@ function rangeSlider () {
     
     const valueRange = maxRange - minRange
     const mainProportion = valueRange/parseInt(sliderWidth)
-    console.log(mainProportion)
     const leftPointPosition = (minValue - minRange) / mainProportion
     const rightPointPosition = (maxValue - minRange) / mainProportion
-    console.log(leftPointPosition)
-    console.log(rightPointPosition)
+    // console.log(leftPointPosition)
+    // console.log(rightPointPosition)
 
     const leftPointToLeft = leftPointPosition
     const rightPointToLeft = rightPointPosition
 
-    // const proportions = {}
+    const proportions = {valueRange, minRange, mainProportion}
 
     // левая точка
     //параметры
     const leftItemParams = leftElement.getBoundingClientRect()
+    leftElement.style.left = `${leftPointToLeft}px`
     //абсолютная позиция
-    const leftItemPosition = leftItemParams.left + leftItemParams.width/2
+    // const leftItemPosition = leftItemParams.left + leftItemParams.width/2
     //расстояние до левого края слайдера
     // const leftPointToLeft = parseInt(leftElement.getBoundingClientRect().left) - parseInt(sliderFieldElement.getBoundingClientRect().left)
 
     // правая точка
     const rightItemParams = rightElement.getBoundingClientRect()
-    const rightItemPosition = rightItemParams.left + rightItemParams.width/2
+    rightElement.style.left = `${rightPointToLeft}px`
+    // const rightItemPosition = rightItemParams.left + rightItemParams.width/2
     // const rightPointToLeft = parseInt(rightElement.getBoundingClientRect().left) - parseInt(sliderFieldElement.getBoundingClientRect().left)
 
     // линия
     const lineParams = lineElement.getBoundingClientRect()
     lineElement.style.left = `${leftPointToLeft}px`
     lineElement.style.width = `${rightPointToLeft - leftPointToLeft}px`
-    leftElement.style.left = `${leftPointToLeft}px`
-    rightElement.style.left = `${rightPointToLeft}px`
+    
+    
 
     // console.log(lineParams)
 
@@ -334,6 +335,7 @@ function rangeSlider () {
       // const currentElement = this.element
       // console.log(currentElement)
       document.addEventListener('mousemove', mousemoveListener)
+      document.addEventListener('mouseup', mouseupListener)
       // document.addEventListener('mousemove', {handleEvent: mousemoveListener, element: currentElement})
       position.mouseX = event.pageX
       position.currentElement = this.element
@@ -355,23 +357,30 @@ function rangeSlider () {
         if (position.currentElement === leftElement) {
 
           let newleftItemPosition = position.leftPointPosition + delta
-          if ((newleftItemPosition >= (0 - leftItemParams.width/2)) && (newleftItemPosition < position.rightPointPosition)){
+          if ((newleftItemPosition >= 0) && (newleftItemPosition <= position.rightPointPosition)){
+            console.log(newleftItemPosition)
+            console.log(position.rightPointPosition)
             leftElement.style.left = `${newleftItemPosition}px`
             lineElement.style.left = `${newleftItemPosition}px`
             lineElement.style.width = `${position.rightPointPosition - newleftItemPosition}px`
+            showValue(newleftItemPosition, 'left', proportions)
           }
         }
         else if (position.currentElement === rightElement) {
 
           let newRightItemPosition = position.rightPointPosition + delta
-          if ((newRightItemPosition > position.leftPointPosition -2 ) && (newRightItemPosition < (sliderWidth - rightItemParams.width/2))){
+          if ((newRightItemPosition >= position.leftPointPosition ) && (newRightItemPosition < sliderWidth)){
+            console.log(newRightItemPosition)
+            console.log(position.leftPointPosition)
             rightElement.style.left = `${newRightItemPosition}px`
             lineElement.style.width = `${newRightItemPosition - parseInt(lineElement.style.left)}px`
+            showValue(newRightItemPosition, 'right', proportions)
+            
           }
         }
 
 
-        document.addEventListener('mouseup', mouseupListener)
+        // document.addEventListener('mouseup', mouseupListener)
         // document.addEventListener('mouseup', {handleEvent: mouseupListener, element: this.element})
       // }
     }
@@ -379,22 +388,19 @@ function rangeSlider () {
     function mouseupListener () {
       // console.log('mouseUP')
       if (position.currentElement === leftElement) {
-        position.mouseX = leftElement.getBoundingClientRect().x 
-        position.leftPointPosition = parseInt(leftElement.getBoundingClientRect().left) - parseInt(sliderFieldElement.getBoundingClientRect().left)
+        position.mouseX = leftElement.getBoundingClientRect().x
+        position.leftPointPosition = parseInt(leftElement.style.left)
+        console.log(position.leftPointPosition)
       }
       else if (position.currentElement === rightElement) {
-        position.mouseX = rightElement.getBoundingClientRect().x 
-        position.rightPointPosition = parseInt(rightElement.getBoundingClientRect().left) - parseInt(sliderFieldElement.getBoundingClientRect().left)
+        position.mouseX = rightElement.getBoundingClientRect().x
+        position.rightPointPosition = parseInt(rightElement.style.left)
+        console.log(position.rightPointPosition)
       }
-      // console.log({position})
       document.removeEventListener('mousemove', mousemoveListener)
-      // document.removeEventListener('mousemove', {handleEvent: mousemoveListener, element: this.element})
       document.removeEventListener('mouseup', mouseupListener)
     }
 
-
-    // leftElement.addEventListener('mousedown', mousedownLeftListener)
-    // rightElement.addEventListener('mousedown', mousedownRightListener)
     leftElement.addEventListener('mousedown', {handleEvent: mousedownListener, element: leftElement})
     rightElement.addEventListener('mousedown', {handleEvent: mousedownListener, element: rightElement})
 
@@ -405,6 +411,18 @@ function rangeSlider () {
 
 
 
+    function showValue (pixels, element, proportions) {
+      const calculatedValue = (proportions.mainProportion * pixels) + proportions.minRange
+      if (element === 'left') {
+        const minValueElement = rangeSliderList[i].querySelector('[data-min-value]')
+        minValueElement.innerHTML = formatValue(calculatedValue)
+        
+      }
+      else if (element === 'right') {
+        const maxValueElement = rangeSliderList[i].querySelector('[data-max-value]')
+        maxValueElement.innerHTML = formatValue(calculatedValue)
+      }
+    }
 
 
   }
@@ -419,6 +437,22 @@ function rangeSlider () {
     
     return parseInt(price.join(''))
   }
+
+  function formatValue (number) {
+    const value = [...Math.round(number).toString()].reverse()
+    const newValue = []
+
+    for( let i = 0; i < value.length; i++) {
+      if ((Math.floor(i/3) === i/3) && i !== 0) {
+        newValue.push(' ')
+        newValue.push(value[i])
+      } else {
+        newValue.push(value[i])
+      }
+    }
+    return newValue.reverse().join('')
+  }
+  
 
 
 }
