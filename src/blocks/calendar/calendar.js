@@ -14,18 +14,65 @@
 
     }
     // Добавляем стиль к текущей дате на календаре
-    today() {
+    showToday() {
       const nowDate = new Date()
-      const year = (this.year === nowDate.getFullYear() )
-      const month = (this.month === nowDate.getMonth() )
-      const day = (this.day === nowDate.getDate() )
-      if (year && month && day) {
+      const yearIsEqual = (this.year === nowDate.getFullYear() )
+      const monthIsEqual = (this.month === nowDate.getMonth() )
+      const dayIsEqual = (this.day === nowDate.getDate() )
+      if (yearIsEqual && monthIsEqual && dayIsEqual) {
         return true
       } else {
         return false
       }
     }
 
+    createDateElement(year, month, day, dateFieldElement) {
+      const calendarDay = document.createElement('div')
+      calendarDay.classList.add('calendar__day')
+      calendarDay.setAttribute('data-calendar-day', day)
+      calendarDay.setAttribute('data-month', month)
+      calendarDay.setAttribute('data-year', year)
+      calendarDay.innerHTML = `${day}`
+      dateFieldElement.appendChild(calendarDay)
+      return calendarDay
+    }
+
+    handler(event){
+      // console.log('click')
+      console.log(event.target)
+      // console.log(event.currentTarget)
+      const dayElement = event.currentTarget
+      console.log(dayElement.innerHTML)
+      const day = dayElement.getAttribute('data-calendar-day')
+      const month = dayElement.getAttribute('data-month')
+      const year = dayElement.getAttribute('data-year')
+      choosenDate.beginDate = new Date(year, month, day).getTime()
+      choosenDate.beginDay = day
+      choosenDate.beginMonth = month
+      choosenDate.beginYear = year
+      console.log(choosenDate)
+      calendar.render()
+    }
+
+
+  }
+
+  class Calendar {
+    constructor(){
+
+    }
+    render(){
+      const daysList = document.querySelectorAll('[data-calendar-day]')
+      for( let i = 0; i < daysList.length; i++) {
+        daysList[i].classList.remove('calendar__day_period')
+        const dayIsEqual = (choosenDate.beginDay === daysList[i].getAttribute('data-calendar-day'))
+        const monthIsEqual = (choosenDate.beginMonth === daysList[i].getAttribute('data-month'))
+        const yearIsEqual = (choosenDate.beginYear === daysList[i].getAttribute('data-year'))
+        if(dayIsEqual && monthIsEqual && yearIsEqual) {
+          daysList[i].classList.add('calendar__day_period')
+        }
+      }
+    }
   }
 
   const days = ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг","Пятница", "Суббота"];
@@ -51,6 +98,7 @@
     endYear: ''
   }
   
+  const calendar = new Calendar()
   
   const dropdownArrivalElement = document.querySelector("#arrival")
   const dropdownDepartureElement = document.querySelector("#departure")
@@ -153,19 +201,23 @@
     }
 
     for (let i = 1; i <= monthInfo.daysCount; i++) {
-      const calendarDay = document.createElement('div')
-      calendarDay.classList.add('calendar__day')
-      calendarDay.setAttribute('data-calendar-day', i)
-      calendarDay.setAttribute('data-month', month)
-      calendarDay.setAttribute('data-year', year)
-      calendarDay.innerHTML = `${i}`
-      dateFieldElement.appendChild(calendarDay)
+      // const calendarDay = document.createElement('div')
+      // calendarDay.classList.add('calendar__day')
+      // calendarDay.setAttribute('data-calendar-day', i)
+      // calendarDay.setAttribute('data-month', month)
+      // calendarDay.setAttribute('data-year', year)
+      // calendarDay.innerHTML = `${i}`
+      // dateFieldElement.appendChild(calendarDay)
 
-      const testDay = new Day(year, month , i)
+      
+      const newDay = new Day(year, month , i)
+      const calendarDay = newDay.createDateElement(year, month, i, dateFieldElement)
       // console.log(testDay.today())
-      if (testDay.today()) {
+      // newDay.today(newDay.createDateElement(year, month, i, dateFieldElement))
+      if (newDay.showToday()) {
         calendarDay.classList.add("calendar__day_today")
       }
+      calendarDay.addEventListener('click', newDay.handler)
     }
 
     for (let i = 1; i <= monthInfo.nextMonthViewedDays; i++) {
@@ -178,6 +230,8 @@
       calendarDay.innerHTML = `${i}`
       dateFieldElement.appendChild(calendarDay)
     }
+
+    calendar.render()
   
     // while(dayNumber <= monthInfo.daysCount){
     //   const weekLine = document.createElement('div')
@@ -223,14 +277,15 @@
     // for (let i = 0; i < calendarDay.length; i++){
     //   calendarDay[i].addEventListener('click', chooseDate)
     // }
+    
   
   }
 
 
 
   
-  const testDay = new Day(nowYear, nowMonthNum , new Date().getDate())
-  console.log(testDay.today())
+  // const testDay = new Day(nowYear, nowMonthNum , new Date().getDate())
+  // console.log(testDay.today())
 
 
 
