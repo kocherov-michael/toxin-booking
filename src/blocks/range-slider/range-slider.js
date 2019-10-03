@@ -1,7 +1,6 @@
 function rangeSlider () {
   const rangeSliderList = document.querySelectorAll('[data-range-slider]')
   for( let i = 0; i < rangeSliderList.length; i++) {
-
     const sliderFieldElement = rangeSliderList[i].querySelector('[data-range-slider-field]')
     const leftElement = rangeSliderList[i].querySelector('[data-range-slider-left-item]')
     const rightElement = rangeSliderList[i].querySelector('[data-range-slider-right-item]')
@@ -43,42 +42,90 @@ function rangeSlider () {
 
     function mousedownListener(event) {
       event.stopPropagation()
+      // console.log(event)
+      // if (event.touches) {
+      //   console.log("touches - mouse")
+      // }
 
       document.addEventListener('mousemove', mousemoveListener)
       document.addEventListener('mouseup', mouseupListener)
-      position.mouseX = event.pageX
+
+      if (event.touches) {
+        document.addEventListener('touchmove', mousemoveListener)
+        document.addEventListener('touchend', mouseupListener)
+        position.mouseX = event.touches[0].pageX
+      } else {
+        document.addEventListener('mousemove', mousemoveListener)
+        document.addEventListener('mouseup', mouseupListener)
+        position.mouseX = event.pageX
+      }
+
       position.currentElement = this.element
     }
 
+    // function touchstartListener(event) {
+    //   event.stopPropagation()
+    //   console.log(event)
+    //   if (event.touches) {
+    //     console.log("touches - touch")
+    //   }
+
+    //   document.addEventListener('touchmove', mousemoveListener)
+    //   document.addEventListener('touchend', mouseupListener)
+    //   // console.log(event.touches[0].pageX)
+
+    //   position.mouseX = event.touches[0].pageX
+    //   position.currentElement = this.element
+    // }
+
     function mousemoveListener (event) {
       event.stopPropagation()
-      event.preventDefault()
+      
+      //получаем путь, пройденный мышкой
+      let delta
+      if (event.touches) {
+        delta = event.touches[0].pageX - position.mouseX
+      } else {
+        event.preventDefault()
+        delta = event.pageX - position.mouseX
+      }
 
-        //получаем путь, пройденный мышкой
-        let delta = event.pageX - position.mouseX
+      //задаём позицию точки относительно слайдера
+      if (position.currentElement === leftElement) {
 
-        //задаём позицию точки относительно слайдера
-        if (position.currentElement === leftElement) {
+        let newleftItemPosition = position.leftPointPosition + delta
 
-          let newleftItemPosition = position.leftPointPosition + delta
-          if ((newleftItemPosition >= 0) && (newleftItemPosition <= position.rightPointPosition)){
-            leftElement.style.left = `${newleftItemPosition}px`
-            lineElement.style.left = `${newleftItemPosition}px`
-            lineElement.style.width = `${position.rightPointPosition - newleftItemPosition}px`
-            inputValues.minValue = Math.round(showValue(newleftItemPosition, 'left', proportions))
-            setInputValue(inputElement, inputValues)
-          }
+        if (newleftItemPosition < 0) {
+          newleftItemPosition = 0
         }
-        else if (position.currentElement === rightElement) {
-
-          let newRightItemPosition = position.rightPointPosition + delta
-          if ((newRightItemPosition >= position.leftPointPosition ) && (newRightItemPosition < sliderWidth)){
-            rightElement.style.left = `${newRightItemPosition}px`
-            lineElement.style.width = `${newRightItemPosition - parseInt(lineElement.style.left)}px`
-            inputValues.maxValue = Math.round(showValue(newRightItemPosition, 'right', proportions))
-            setInputValue (inputElement, inputValues)
-          }
+        if (newleftItemPosition > position.rightPointPosition) {
+          newleftItemPosition = position.rightPointPosition
         }
+        if ((newleftItemPosition >= 0) && (newleftItemPosition <= position.rightPointPosition)){
+          leftElement.style.left = `${newleftItemPosition}px`
+          lineElement.style.left = `${newleftItemPosition}px`
+          lineElement.style.width = `${position.rightPointPosition - newleftItemPosition}px`
+          inputValues.minValue = Math.round(showValue(newleftItemPosition, 'left', proportions))
+          setInputValue(inputElement, inputValues)
+        }
+      }
+      else if (position.currentElement === rightElement) {
+
+        let newRightItemPosition = position.rightPointPosition + delta
+
+        if (newRightItemPosition < position.leftPointPosition) {
+          newRightItemPosition = position.leftPointPosition
+        }
+        if (newRightItemPosition > sliderWidth) {
+          newRightItemPosition = sliderWidth
+        }
+        if ((newRightItemPosition >= position.leftPointPosition ) && (newRightItemPosition <= sliderWidth)){
+          rightElement.style.left = `${newRightItemPosition}px`
+          lineElement.style.width = `${newRightItemPosition - parseInt(lineElement.style.left)}px`
+          inputValues.maxValue = Math.round(showValue(newRightItemPosition, 'right', proportions))
+          setInputValue (inputElement, inputValues)
+        }
+      }
     }
 
     function mouseupListener () {
@@ -92,10 +139,16 @@ function rangeSlider () {
       }
       document.removeEventListener('mousemove', mousemoveListener)
       document.removeEventListener('mouseup', mouseupListener)
+
+      document.removeEventListener('touchmove', mousemoveListener)
+      document.removeEventListener('touchend', mouseupListener)
     }
 
     leftElement.addEventListener('mousedown', {handleEvent: mousedownListener, element: leftElement})
     rightElement.addEventListener('mousedown', {handleEvent: mousedownListener, element: rightElement})
+
+    leftElement.addEventListener('touchstart', {handleEvent: mousedownListener, element: leftElement})
+    rightElement.addEventListener('touchstart', {handleEvent: mousedownListener, element: rightElement})
 
 
     function showValue (pixels, element, proportions) {
