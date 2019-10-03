@@ -1,0 +1,17 @@
+extends ../layout/ui-layout/ui-layout.pug
+
+block variables
+  - var title = 'Headers and footers';
+
+block content
+
+  .page.page_theme_dark
+    .headers-and-footers
+      .headers-and-footers__guest-header
+        include ../../blocks/header/header.pug
+      .headers-and-footers__user-header
+        include ../../blocks/header/header.pug
+      .headers-and-footers__footer-desctop
+        include ../../blocks/footer/footer.pug
+      .headers-and-footers__footer-mobile
+        include ../../blocks/footer/footer.pug

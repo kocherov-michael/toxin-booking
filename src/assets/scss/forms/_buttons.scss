@@ -2,6 +2,7 @@
 	display: inline-block;
 	border-radius: 22px;
 	cursor: pointer;
+	text-decoration: none;
 
 	font-family: Montserrat;
 	font-style: normal;
@@ -90,7 +91,7 @@
 }
 .button-wide {
 	@extend .button-primary;
-	width: 100%;
+	// width: 100%;
 	display: block;
 	text-align: center;
 	position: relative;

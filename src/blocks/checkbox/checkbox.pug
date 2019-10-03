@@ -1,0 +1,39 @@
+mixin checkbox(text, name, value, checked)
+
+  if checked
+    label.checkbox&attributes(attributes)
+      input(type="checkbox" name="checkbox" value=value checked).checkbox__input
+      span.checkbox__new-input 
+        .checkbox__check-item
+      .checkbox__text #{text}
+  else
+    label.checkbox&attributes(attributes)
+      input(type="checkbox" name="checkbox" value=value).checkbox__input
+      span.checkbox__new-input 
+        .checkbox__check-item
+      .checkbox__text #{text}
+
+mixin checkboxList(header, name, list)
+  .expandable-checkbox&attributes(attributes)
+    .expandable-checkbox__header 
+      .expandable-checkbox__header-text #{header}
+      .expandable-checkbox__header-arrow
+        i.zmdi.zmdi-chevron-down
+    if list
+      .expandable-checkbox__list
+        each item in list
+          .expandable-checkbox__list-item
+            if item.checked === false
+              +checkbox(item.itemName, name, item.value)
+            else
+              +checkbox(item.itemName, name, item.value, "checked")
+    
+
+mixin checkboxRich(text, desc, name, value)
+  label.checkbox-rich&attributes(attributes)
+    input(type="checkbox" name=name value=value).checkbox-rich__input
+    span.checkbox-rich__new-input 
+      .checkbox__check-item
+    .checkbox-rich__text
+      .checkbox-rich__text-title #{text}
+      .checkbox-rich__text-description #{desc}

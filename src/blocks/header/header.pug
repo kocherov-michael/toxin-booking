@@ -1,0 +1,46 @@
+- if (!login) var login = "login"
+- if (!register) var register = "register"
+- if (userName) var loggedUser = "header_logged-user" 
+- var Services = ["first", "second", "third"]
+- if (!itemNumberActive) var itemNumberActive = "0";
+
+-
+  if (!headerMenu) var headerMenu = [
+    {title: "Home", url: "#", submenu: ""},
+    {title: "About Us", url: "#", submenu: ""},
+    {title: "Services", url: "#", submenu: Services},
+    {title: "Careers", url: "#", submenu: ""},
+    {title: "News", url: "#", submenu: ""},
+    {title: "Documentation", url: "#", submenu: ""}
+  ]
+
+
+header.header(class=loggedUser)
+  .header__container
+    .header__logo
+      include ../../blocks/logo/logo.pug
+    .header__nav
+      .navigation
+        .navigation__menu-bar(data-menu-bar)
+          i.fa.fa-bars(aria-hidden="true")
+        ul.navigation__list.navigation__list_hide(data-header-navigation)
+          each val in headerMenu
+            if (val.submenu != "")
+              li.navigation__item.navigation__item_chevron 
+                span.navigation__link(title=val.title) #{val.title}
+                i.zmdi.zmdi-chevron-down.navigation-chevron
+                ul.inner-list.hide
+                  each elem in val.submenu
+                    li.inner-list__item
+                      a.inner-list__link(href="404.html") #{elem}
+
+            else
+              li.navigation__item
+                a.navigation__link(href=val.url title=val.title) #{val.title}
+    .header__login
+      .header__button-login.header__button-login_logged-user
+        +button-link-secondary({text: login, small: true, link: "sign-in.html"})
+      .header__button-register.header__button-login_logged-user
+        +button-link-primary({text: register, small: true, link: "registration.html"})
+      .header__user.header__user-login_logged-user
+        .header__user-name Cosmin Negoita

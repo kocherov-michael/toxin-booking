@@ -1,0 +1,91 @@
+.diagramm {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.diagramm__acceptable {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-radius: 0 100% 0 0;
+  background: linear-gradient($primary-gradient);
+  width: 59px;
+  height: 59px;
+  box-sizing: border-box;
+
+  &:after {
+    display: block;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 0 100% 0 0;
+    background-color: $default-color;
+    width: 49px;
+    height: 49px;
+  }
+}
+.diagramm__good {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 0 0 100% 0;
+  background: linear-gradient($secondary-gradient);
+  width: 59px;
+  height: 59px;
+  box-sizing: border-box;
+
+  &:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 0 0 100% 0;
+    background-color: $default-color;
+    width: 55px;
+    height: 55px;
+  }
+}
+.diagramm__great {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 100% 0 0 100% / 50% 0 0 50%;
+  background: linear-gradient($beautiful-gradient);
+  width: 59px;
+  height: 120px;
+  box-sizing: border-box;
+
+  &:after {
+    display: block;
+    content: "";
+    position: absolute;
+    transform: translateY(-50%);
+    
+    top: 50%;
+    right: 0;
+    border-radius: 100% 0 0 100% / 50% 0 0 50%;
+    background-color: $default-color;
+    width: 55px;
+    height: 112px;
+  }
+}
+.diagramm__text {
+  position: relative;
+  z-index: 1;
+  color: $purple;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+.diagramm__text-title {
+  color: $purple;
+}

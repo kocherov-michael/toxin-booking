@@ -1,0 +1,60 @@
+- if (!footerDescText) var footerDescText = "Lorem ipsum dolor sit amet consectetur adipiscing elit aliquam eget nullam pellentesque aliquam curabitur cociis." 
+
+- if (!footerSubscribeHeader) var footerSubscribeHeader = "Subscribe to our newsletter" 
+
+- if (!footerSubscribeText) var footerSubscribeText = "Receive our latest news and promotions in your inbox!" 
+
+- if (!emailPlaceholder) var emailPlaceholder = "Your email address" 
+
+- if (!copyRights) var copyRights = "Copyright © 2018 Toxin UI Kit. All rights reserved." 
+
+-
+  if (!footerMenu) var footerMenu = [
+    {title: "Home", submenu: [
+      {title: "About Us", link: "#"},
+      {title: "News", link: "#"},
+      {title: "Support", link: "#"},
+      {title: "Products", link: "#"}
+    ]},
+    {title: "About Us", submenu: [
+      {title: "Who we are", link: "#"},
+      {title: "Our team", link: "#"},
+      {title: "Careers", link: "#"},
+      {title: "Investors", link: "#"}
+    ]},
+    {title: "Support", submenu: [
+      {title: "Documentation", link: "#"},
+      {title: "Community", link: "#"},
+      {title: "Get in Touch", link: "#"}
+    ]}
+  ]
+
+footer.footer
+  .footer__container
+    .footer__main
+      .footer__desc
+        .footer__desc-logo
+          include ../../blocks/logo/logo.pug
+        .footer__desc-text #{footerDescText}
+      .footer__navigation
+        each val in footerMenu
+          .footer__navigation-col
+            .title-3.footer__navigation-col-header #{val.title}
+            each subItem in val.submenu
+              a.footer__navigation-col-item(href=subItem.link) #{subItem.title}
+      .footer__subscribe
+        .title-3.footer__subscribe-header #{footerSubscribeHeader}
+        .footer__subscribe-text #{footerSubscribeText}
+        .footer__subscribe-input
+          +subscribe(emailPlaceholder)
+  .footer__bottom-wrapper
+    .footer__container
+      .footer__bottom
+        .footer__bottom-copyright #{copyRights}
+        .footer__bottom-socials
+          a.footer__social-link(link="#")
+            i.fa.fa-twitter.icon-color(aria-hidden="true")
+          a.footer__social-link(link="#")
+            i.fa.fa-facebook-square.icon-color(aria-hidden="true")
+          a.footer__social-link(link="#")
+            i.fa.fa-instagram.icon-color(aria-hidden="true")

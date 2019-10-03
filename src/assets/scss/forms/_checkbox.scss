@@ -85,16 +85,23 @@
 	&__list-item {
 		margin-bottom: 10px;
 	}
-	&--active {
-		.expandable-checkbox__list {
-			display: block;
-		}
-		.expandable-checkbox__arrow {
-			transform: rotate(180deg);
-		}
+	// &--active {
+	// 	.expandable-checkbox__list {
+	// 		display: block;
+	// 	}
+	// 	.expandable-checkbox__arrow {
+	// 		transform: rotate(180deg);
+	// 	}
+	// }
+}
+.expandable-checbox--active {
+	.expandable-checkbox__list {
+		display: block;
+	}
+	.expandable-checkbox__arrow {
+		transform: rotate(180deg);
 	}
 }
-
 .label-check-rich {
 	@extend .label-check;
 	font-weight: bold;

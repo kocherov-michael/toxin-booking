@@ -1,0 +1,38 @@
+.radio-button {
+  cursor: pointer;
+  position: relative;
+  font-size: 14px;
+  line-height: 24px;
+  color: $dark-shade-75;
+  display: flex;
+}
+
+.radio-button__check-outer {
+  display: flex;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border: 1px solid $dark-shade-25;
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding-top: 3px;
+  margin-top: 3px;
+}
+.radio-button__check-inner {
+  width: 12px;
+  height: 12px;
+  border-radius: 10px;
+  background: transparent;
+}
+.radio-button__input {
+  display: none;
+  &:checked + .radio-button__check-outer {
+    border: 1px solid $purple;
+  }
+  &:checked + .radio-button__check-outer .radio-button__check-inner {
+    background: linear-gradient($primary-gradient);
+  }
+}
+.radio-button__text {
+  padding-left: 10px;
+}

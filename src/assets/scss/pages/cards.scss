@@ -1,0 +1,22 @@
+.cards {
+  display: flex;
+  padding-top: 150px;
+  padding-bottom: 140px;
+
+  &__col {
+    max-width: 380px;
+    margin-right: 40px;
+  }
+  &__find-room-card {
+    margin-bottom: 40px;
+  }
+  &__room-price-card {
+    margin-bottom: 40px;
+  }
+  &__col-inner {
+    margin-right: 50px;
+  }
+  &__room-card-wrapper {
+    margin-bottom: 40px;
+  }
+}

@@ -25,15 +25,18 @@ module.exports = {
   externals: {
     paths: PATHS
   },
-  entry: {
-    app: PATHS.src,
+  entry: PATHS.src
+  // {
+    // app: PATHS.src,
     // module: `${PATHS.src}/your-module.js`,
-  },
+    // 'room-details': `${PATHS.src}/js/room-details.js`,
+  // }
+  ,
   output: {
     filename: `${PATHS.assets}js/[name].[hash].js`,
     // path: PATHS.dist,
     path: PATHS.docs,
-    publicPath: '/'
+    publicPath: ''
   },
   optimization: {
     splitChunks: {
@@ -50,7 +53,10 @@ module.exports = {
   module: {
     rules: [{
       test: /\.pug$/,
-      loader: 'pug-loader'
+      loader: 'pug-loader',
+      options: {
+        pretty: true // для читабельности (отменяет минификацию)
+      }
     }, {
       test: /\.js$/,
       loader: 'babel-loader',
@@ -73,7 +79,8 @@ module.exports = {
       test: /\.(png|jpg|gif|svg)$/,
       loader: 'file-loader',
       options: {
-        name: '[name].[ext]'
+        // name: '[name].[ext]'
+        name: 'assets/img/[name].[ext]'
       }
     }, {
       test: /\.scss$/,
@@ -108,7 +115,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      '~': PATHS.src,
+      '~': PATHS.src
       // 'vue$': 'vue/dist/vue.js',
     }
   },

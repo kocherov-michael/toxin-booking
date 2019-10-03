@@ -1,0 +1,28 @@
+.rate-button {
+  display: inline-block;
+  width: 121px;
+  display: flex;
+  justify-content: space-between;
+}
+.rate-button__star {
+  width: 24px;
+  height: 24px;
+  font-size: 24px;
+  line-height: 20px;
+  background-color: $default-color;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.rate-button__star-icon:before {
+  content: "\f27c";
+  display: block;
+  font-family: $iconicFont;
+  background-image: linear-gradient($primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.ratebutton__star_active {
+  .rate-button__star-icon:before {
+    content: "\f27d";
+  }
+}

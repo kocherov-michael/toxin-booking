@@ -1,0 +1,67 @@
+body {
+  // background: #e5e5e5;
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 24px;
+  color: rgba(31, 32, 65, 0.75);
+}
+.page {
+  background-color: $default-color;
+  position: relative;
+
+  &_theme_dark {
+    background-color: $secondary-page-color;
+  }
+
+  &:before {
+    display: block;
+    content: '';
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    background-image: url(../img/icons/logo-page.png);
+  }
+}
+h1, .title-1 {
+  font-family: $secondaryFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 30px;
+  color: $dark-shade;
+}
+h2, .title-2 {
+  font-family: $secondaryFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 19px;
+  line-height: 24px;
+  color: $dark-shade;
+}
+h3, .title-3 {
+  font-family: $mainFont;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $dark-shade;
+}
+.icon-color {
+  background-image: linear-gradient($primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  height: 100%;
+}
+.hide {
+  display: none;
+}
+

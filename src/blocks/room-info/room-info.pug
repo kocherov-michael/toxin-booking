@@ -1,0 +1,19 @@
+mixin roomInfo(options)
+  -
+    if (!options) {
+      options = {
+        num: "123", 
+        price: "9 990", 
+        lux: false,
+      }
+    }
+    const lux = options.lux ? "люкс" : ""
+  .room-heading-info&attributes(attributes)
+    .room-heading-info__room
+      span.room-heading-info__symbol №
+      span.room-heading-info__number #{options.num}
+      span.room-heading-info__type.room-number__type #{lux}
+    .room-heading-info__price-per-day
+      span.room-heading-info__price #{options.price}
+      span.room-heading-info__rub.rub P
+      span.room-heading-info__text в сутки

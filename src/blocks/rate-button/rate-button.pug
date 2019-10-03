@@ -1,0 +1,12 @@
+mixin ratebutton(activeStars)
+  - var starsCount = 5
+  - var i = 0
+  .rate-button&attributes(attributes)
+    while i < starsCount
+      if i < activeStars
+        .rate-button__star.ratebutton__star_active
+          i.zmdi.rate-button__star-icon
+      else
+        .rate-button__star
+          i.zmdi.rate-button__star-icon
+      - i++

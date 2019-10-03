@@ -1,50 +1,86 @@
 //Utils
-@import "utils/libs";
 @import "utils/vars";
 @import "utils/mixins";
 @import "utils/fonts";
-@import "utils/reset";
+// @import "utils/reset";
 @import "utils/paddings";
 @import "utils/margins";
 
 //Base
-@import "base/_base";
+@import "base/base";
 
 //Forms
-@import "forms/_textfields";
-@import "forms/_dropdowns";
-@import "forms/_toggle";
-@import "forms/_buttons";
-@import "forms/_checkbox";
-@import "forms/_radiobutton";
-@import "forms/_likebutton";
-@import "forms/_ratebutton";
-@import "forms/_rangeslider";
-@import "forms/_pagination";
-@import "forms/_bulletlist";
-@import "forms/_comfort";
-@import "forms/_comment";
+// @import "forms/_textfields";
+// @import "forms/_dropdowns";
+// @import "forms/_toggle";
+// @import "forms/_buttons";
+// @import "forms/_checkbox";
+// @import "forms/_radiobutton";
+// @import "forms/_likebutton";
+// @import "forms/_ratebutton";
+// @import "forms/_rangeslider";
+// @import "forms/_pagination";
+// @import "forms/_bulletlist";
+// @import "forms/_comfort";
+// @import "forms/_comment";
+
+//Blocks
+@import "../../blocks/palette/palette";
+@import "../../blocks/dropdown/dropdown";
+@import "../../blocks/date-dropdown/date-dropdown";
+@import "../../blocks/textfield/textfield";
+@import "../../blocks/subscribe/subscribe";
+@import "../../blocks/checkbox/checkbox";
+@import "../../blocks/radio-button/radio-button";
+@import "../../blocks/toggle/toggle";
+@import "../../blocks/like-button/like-button";
+@import "../../blocks/rate-button/rate-button";
+@import "../../blocks/range-slider/range-slider";
+@import "../../blocks/buttons/buttons";
+@import "../../blocks/pagination/pagination";
+@import "../../blocks/bullet-list/bullet-list";
+@import "../../blocks/comfort/comfort";
+@import "../../blocks/comment/comment";
+@import "../../blocks/find-room-card/find-room-card";
+@import "../../blocks/calendar/calendar";
+@import "../../blocks/registration-card/registration-card";
+@import "../../blocks/room-price-card/room-price-card";
+@import "../../blocks/login-card/login-card";
+@import "../../blocks/calendar/calendar";
+@import "../../blocks/room-card/room-card";
+@import "../../blocks/room-info/room-info";
+@import "../../blocks/logo/logo";
+@import "../../blocks/header/header";
+@import "../../blocks/footer/footer";
+@import "../../blocks/diagramm/diagramm";
+
 
 //UI-KIT
-@import "ui-kit/ui-kit";
+// @import "ui-kit/ui-kit";
 
 //Sections
-@import "sections/_find-room";
-@import "sections/_registration-card";
-@import "sections/_room-price";
-@import "sections/_login-card";
-@import "sections/_calendar";
-@import "sections/_room-card";
-@import "sections/_header";
-@import "sections/_footer";
+// @import "sections/_find-room";
+// @import "sections/_registration-card";
+// @import "sections/_room-price";
+// @import "sections/_login-card";
+// @import "sections/_calendar";
+// @import "sections/_room-card";
+// @import "sections/_header";
+// @import "sections/_footer";
 
 //Pages
 @import "pages/index";
 @import "pages/registration";
 @import "pages/sign-in";
 @import "pages/landing";
+@import "pages/main";
 @import "pages/search-room";
 @import "pages/room-details";
+@import "pages/colors-and-types";
+@import "pages/form-elements";
+@import "pages/cards";
+@import "pages/headers-and-footers";
+
 
 
 // html {

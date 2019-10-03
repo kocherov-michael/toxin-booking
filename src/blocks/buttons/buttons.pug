@@ -1,0 +1,140 @@
+mixin button-primary(text, link, small)
+  if small
+    a.button.button-primary.button-primary--small(href=link)&attributes(attributes) #{text}
+  else
+    a.button.button-primary(href=link)&attributes(attributes) #{text}
+
+mixin button-secondary(text, link, small)
+  if small
+    a.button.button-secondary(href=link)&attributes(attributes)
+      .button-secondary__inner.button-secondary__inner--small #{text}
+      .button-secondary__outer
+  else
+    a.button.button-secondary(href=link)&attributes(attributes)
+      .button-secondary__inner #{text}
+      .button-secondary__outer
+
+mixin button-single(text, link)
+  a.button.button-single(href=link)&attributes(attributes) #{text}
+  
+mixin button-single-dark(text, link)
+  a.button.button-single-dark(href=link)&attributes(attributes) #{text}
+
+
+mixin button-wide(text, link)
+    a.button.button-wide(href=link)&attributes(attributes) #{text}
+      .button-wide__arrow
+        i.zmdi.zmdi-arrow-right.zmdi-hc-2x
+
+//- mixin button-primary-options(options)
+//-   -
+//-     const text = options.text ? options.text : "button"
+//-     const sizeClass = options.small ? "button-primary_size_small" : ""
+//-     const typeClass = options.type ? "button-primary" : "button-secondary"
+//-     const name = options.name ? options.name : ""
+//-     const link = options.link?options.link:"#"
+
+
+
+//-   if options.submit === true
+//-     input.button.button-primary(type="submit" value=text name=name)&attributes(attributes)
+//-   else
+//-     a.button(class=(sizeClass+" "+typeClass) href=link)&attributes(attributes) #{text}
+
+mixin button-link-primary(options)
+  -
+    if (!options) {
+      options = {text: "button", small: false, link: "404.html"}
+    }
+    const text = options.text ? options.text : "button"
+    const sizeClass = options.small ? "button-primary_size_small" : ""
+    const link = options.link?options.link:"404.hmtl"
+  
+  a.button.button-primary(class=sizeClass href=link)&attributes(attributes) #{text}
+
+mixin button-form-primary(options)
+  -
+    if (!options) {
+      options = {text: "button", small: false, name: "name", type: "button"}
+    }
+    const text = options.text ? options.text : "button"
+    const sizeClass = options.small ? "button-primary_size_small" : ""
+    const buttonName = options.name ? options.name : "name"
+    const buttonType = options.type ? options.type : "button"
+  
+  button.button.button-primary(class=sizeClass type=buttonType name=buttonName)&attributes(attributes) #{text}
+
+mixin button-link-secondary(options)
+  -
+    if (!options) {
+      options = {text: "button", small: false, link: "404.html"}
+    }
+    const text = options.text ? options.text : "button"
+    const sizeClass = options.small ? "button-secondary__inner_size_small" : ""
+    const link = options.link?options.link:"404.hmtl"
+
+  a.button.button-secondary(href=link)&attributes(attributes)
+    .button-secondary__inner(class=sizeClass) #{text}
+    .button-secondary__outer
+
+mixin button-form-secondary(options)
+  -
+    if (!options) {
+      options = {text: "button", small: false, name: "name", type: "button"}
+    }
+    const text = options.text ? options.text : "button"
+    const sizeClass = options.small ? "button-primary_size_small" : ""
+    const buttonName = options.name ? options.name : "name"
+    const buttonType = options.type ? options.type : "button"
+
+  button.button.button-secondary(type=buttonType name=buttonName)&attributes(attributes)
+    .button-secondary__inner(class=sizeClass) #{text}
+    .button-secondary__outer
+
+mixin button-link-single(options)
+  -
+    if (!options) {
+      options = {text: "button", colorBlue: true, link: "404.html"}
+    }
+    const text = options.text ? options.text : "button"
+    const color = options.colorBlue ? "button_color_blue" : "button_color_dark"
+    const link = options.link ? options.link : "404.hmtl"
+
+  a.button(class=color href=link)&attributes(attributes) #{text}
+
+mixin button-form-single(options)
+  -
+    if (!options) {
+      options = {text: "button", colorBlue: true, name: "name", type: "button"}
+    }
+    const text = options.text ? options.text : "button"
+    const color = options.colorBlue ? "button_color_blue" : "button_color_dark"
+    const buttonName = options.name ? options.name : "name"
+    const buttonType = options.type ? options.type : "button"
+
+  button.button(class=color type=buttonType name=buttonName)&attributes(attributes) #{text}
+
+mixin button-link-wide(text, link)
+  -
+    if (!options) {
+      options = {text: "button", colorBlue: true, link: "404.html"}
+    }
+    const text = options.text ? options.text : "button"
+    const link = options.link ? options.link : "404.hmtl"
+
+  a.button.button-wide(href=link)&attributes(attributes) #{text}
+    .button-wide__arrow
+      i.zmdi.zmdi-arrow-right
+
+mixin button-form-wide(options)
+  -
+    if (!options) {
+      options = {text: "button", name: "name", type: "button"}
+    }
+    const text = options.text ? options.text : "button"
+    const buttonName = options.name ? options.name : "name"
+    const buttonType = options.type ? options.type : "button"
+
+  button.button.button-wide(type=buttonType name="name" value=buttonName)&attributes(attributes) #{text}
+    .button-wide__arrow
+      i.zmdi.zmdi-arrow-right

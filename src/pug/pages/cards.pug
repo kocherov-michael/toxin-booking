@@ -1,0 +1,49 @@
+extends ../layout/ui-layout/ui-layout.pug
+
+block variables
+  - var title = 'Cards';
+
+block content
+
+  .page.page_theme_dark
+    .container
+      .cards
+        .cards__col
+          .cards__find-room-card
+            include ../../blocks/find-room-card/find-room-card.pug
+          include ../../blocks/registration-card/registration-card.pug
+        .cards__col
+          .cards__room-price-card
+            include ../../blocks/room-price-card/room-price-card.pug
+          include ../../blocks/login-card/login-card.pug
+        .cards__col-narrow
+          include ../../blocks/calendar/calendar.pug
+          .cards__col-inner
+            .cards__room-card-wrapper
+              +roomCard({
+                  imgLink: [
+                    require('../../assets/img/images/image_888.jpg'),
+                    require('../../assets/img/images/image_888.jpg'),
+                    require('../../assets/img/images/image_888.jpg'),
+                    require('../../assets/img/images/image_888.jpg')
+                    ],
+                  num: "888", 
+                  price: "9 990", 
+                  stars: "5",
+                  comments: "145",
+                  lux: true
+                })
+            +roomCard({
+              imgLink: [
+                require('../../assets/img/images/image_840.jpg'),
+                require('../../assets/img/images/image_840.jpg'),
+                require('../../assets/img/images/image_840.jpg'),
+                require('../../assets/img/images/image_840.jpg')
+                ], 
+              num: "840",
+              price: "9 900", 
+              stars: "4",
+              comments: "65",
+              lux: false
+            })
+

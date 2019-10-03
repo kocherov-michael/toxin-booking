@@ -1,0 +1,25 @@
+.comfort {
+  padding-bottom: 20px;
+  font-size: 14px;
+  line-height: 24px;
+  position: relative;
+  border-bottom: 1px solid $dark-shade-10;
+  display: flex;
+
+  &__description {
+    padding-left: 8px;
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+  &__icon {
+    top: 0;
+    left: 0;
+    font-size: 48px;
+    line-height: 41px;
+    width: 50px;
+    display: flex;
+    justify-content: space-around;
+  }
+}

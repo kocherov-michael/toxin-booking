@@ -1,0 +1,37 @@
+extends ../layout/ui-layout/ui-layout.pug
+include ../../blocks/palette/palette.pug
+
+block variables
+  - var title = 'Colors & Type';
+  //- - var pageClass = 'body--dashboard';
+
+block content
+
+  .page
+    //- img.page-icon(src="./assets/img/icons/logo-page.png" alt="logo")
+    .container
+      .colors-and-types
+        .colors-and-types__colors 
+          .colors-and-types__colors-item
+            +palette("Dark Shade 100%", "#1F2041", "#1F2041")
+          .colors-and-types__colors-item
+            +palette("Dark Shade 75%", "#1F2041", "#1F2041BF")
+          .colors-and-types__colors-item
+            +palette("Dark Shade 50%", "#1F2041", "#1F204180")
+          .colors-and-types__colors-item
+            +palette("Dark Shade 25%", "#1F2041", "#1F204140")
+          .colors-and-types__colors-item
+            +palette("Dark Shade 5%", "#1F2041", "#1F20410D")
+          .colors-and-types__colors-item
+            +palette("Purple", "#BC9CFF", "#BC9CFF")
+          .colors-and-types__colors-item
+            +palette("Green", "#6FCF97", "#6FCF97")
+        .colors-and-types__titles
+          .colors-and-types__titles-item.colors-and-types__titles-item_size_h1
+            .title-1 This one is the sub-section or widget title
+          .colors-and-types__titles-item.colors-and-types__titles-item_size_h2
+            .title-2 Next one is the item title inside widgets
+          .colors-and-types__titles-item.colors-and-types__titles-item_size_h3
+            .title-3 This is a label or CTA text
+          .colors-and-types__titles-item.colors-and-types__titles-item_size_body
+            p This is the body text which is used for most of the design, like paragraphs, lists, etc.

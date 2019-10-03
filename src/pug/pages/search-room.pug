@@ -1,64 +1,272 @@
 extends ../layout/page.pug
 
 block variables
-	- var title = 'Поиск номера';
-	- var register = 'Зарегистрироваться';
-	- var login = 'Войти';
-	//- - var headerMenu = {"О нас":"", "Услуги":["first", "second", "third"], "Вакансии":"", "Новости":"", "Соглашения":["first", "second", "third"]};
-	- var Services = ["first", "second", "third"];
-	-
-		var headerMenu = [
-			{title: "О нас", url: "#", submenu: ""},
-			{title: "Услуги", url: "#", submenu: Services},
-			{title: "Вакансии", url: "#", submenu: ""},
-			{title: "Новости", url: "#", submenu: ""},
-			{title: "Соглашения", url: "#", submenu: Services}
-		];
+  - var pageClass = 'body'
+  - var title = 'Поиск номера';
+  - var register = 'Зарегистрироваться';
+  - var login = 'Войти';
+  - var Services = ["first", "second", "third"];
+  -
+    var headerMenu = [
+      {title: "О нас", url: "#", submenu: ""},
+      {title: "Услуги", url: "#", submenu: Services},
+      {title: "Вакансии", url: "#", submenu: ""},
+      {title: "Новости", url: "#", submenu: ""},
+      {title: "Соглашения", url: "#", submenu: Services}
+    ];
+  - var footerDescText = 'Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»';
+  - var footerSubscribeHeader = 'Подписка';
+  - var footerSubscribeText = 'Получайте специальные предложения и новости сервиса';
+  - var emailPlaceholder = 'Email';
+  - var copyRights = 'Copyright © 2018 Toxin отель. Все права зачищены.';
+  -
+    var footerMenu = [
+      {title: "навигация", submenu: [
+        {title: "О нас", link: "#"},
+        {title: "Новости", link: "#"},
+        {title: "Служба поддержки ", link: "#"},
+        {title: "Услуги", link: "#"}
+      ]},
+      {title: "О нас", submenu: [
+        {title: "О сервисе", link: "#"},
+        {title: "Наша команда", link: "#"},
+        {title: "Вакансии", link: "#"},
+        {title: "Инвесторы", link: "#"}
+      ]},
+      {title: "Служба поддержки", submenu: [
+        {title: "Соглашения", link: "#"},
+        {title: "Сообщества", link: "#"},
+        {title: "Связь с нами", link: "#"}
+      ]}
+    ];
+
 
 block content
-	.ui-wrapper
-		.section-wrapper
-			.container
-				include ../sections/header-guest.pug
-		.main-content.mt-30
-			.container.search-room-wrapper
-				.search-room-filter
-					h3 Даты пребывания в отеле
-					+filterDateDropdown("19 авг - 23 авг").mb-20
-					h3 Гости
-					+dropdown("3 гостя, 1 младенец", "room", ['взрослые', 'дети', 'младенцы'],"apply").mb-30
-					+rangeslider("Диапазон цены", "5 000", "10 000")
-					.slider-description Стоимость за сутки пребывания в номере
-					h3 checkbox buttons
-					.checkbox-column
-						+checkbox("Можно курить")
-						+checkbox("Можно с питомцами", "Check")
-						+checkbox("Можно пригласить гостей (до 10 человек)", "Check")
-					h3 Доступность
-					.checkbox-rich-wrapper
-						+checkboxRich('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.')
-					
-					+checkboxRich('Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.')
-					h3.mt-30 Удобства номера
-					+dropdown("2 спальни, 2 кровати...", "", "", "").mb-30
-					+checkboxList("Дополнительные удобства", [['Завтрак', '0'],['Письменный стол', '1'],['Стул для кормления', '1'],['Кроватка', '1'],['Телевизор', '0'],['Шампунь', '0'],['Телевизор', '0'],['Шампунь', '0']])(data-search-room-expand)
-				.search-room-main
-					h1.search-room-main__header Номера, которые мы для вас подобрали
-					.search-room-main__rooms
-						+roomCard("./assets/img/images/image_888.jpg", "888", "9 990", "5", "145", "люкс", "arrows").search-room-main__rooms-item
-						+roomCard("./assets/img/images/image_840.jpg", "840", "9 900", "4", "65").search-room-main__rooms-item
-						+roomCard("./assets/img/images/image_980.jpg", "980", "8 500", "3", "35", "люкс").search-room-main__rooms-item
-						+roomCard("./assets/img/images/image_856.jpg", "856", "7 300", "5", "19").search-room-main__rooms-item
-						+roomCard("./assets/img/images/image_740.jpg", "740", "6 000", "4", "44").search-room-main__rooms-item
-						+roomCard("./assets/img/images/image_982.jpg", "982", "5 800", "3", "56").search-room-main__rooms-item
-						+roomCard("./assets/img/images/image_678.jpg", "678", "5 500", "5", "45").search-room-main__rooms-item
-						+roomCard("./assets/img/images/image_450.jpg", "450", "5 300", "4", "39").search-room-main__rooms-item
-						+roomCard("./assets/img/images/image_350.jpg", "350", "5 000", "3", "77").search-room-main__rooms-item
-						+roomCard("./assets/img/images/image_666.jpg", "666", "5 000", "5", "25").search-room-main__rooms-item
-						+roomCard("./assets/img/images/image_444.jpg", "444", "5 000", "3", "15").search-room-main__rooms-item
-						+roomCard("./assets/img/images/image_352.jpg", "352", "5 000", "3", "55").search-room-main__rooms-item
-					.search-room-main__pagination
-						+pagination("1 – 12 из 100+ вариантов аренды")
 
-		.footer_border_top
-			include ../sections/footer.pug
+  .search-room
+    include ../../blocks/header/header.pug
+    .search-room__container
+      .search-room__filter-wrapper(data-filter-wrapper)
+        .search-room__filter-container(data-filter-container)
+          .search-room__filter-text(data-filter-text)
+            .title-2 Подбор номера
+            .search-room__filter-close(data-filter-close)
+              i.fa.fa-times(aria-hidden="true")
+          .search-room__filter.search-room__filter_hide(data-filter)
+            .search-room__filter-header
+              .title-3 Даты пребывания в отеле
+            .search-room__filter-date-dropdown
+              +filterDateDropdown("19 авг - 23 авг")
+            .search-room__filter-header
+              .title-3 Гости
+            .search-room__filter-guests-dropdown
+              +dropdown("Сколько гостей", ['взрослые', 'дети', 'младенцы'],"apply")
+            .search-room__filter-slider
+              +rangeslider("Диапазон цены", "5 000", "10 000", "0", "16000")
+            .search-room__filter-slider-description Стоимость за сутки пребывания в номере
+            .search-room__filter-checkbox
+              .title-3.search-room__filter-checkbox-title Checkbox buttons
+              .search-room__filter-checkbox-item
+                +checkbox("Можно курить", "checkboxName")
+              .search-room__filter-checkbox-item
+                +checkbox("Можно с питомцами", "checkboxName", "checked")
+              .search-room__filter-checkbox-item
+                +checkbox("Можно пригласить гостей (до 10 человек)", "checkboxName", "checked")
+            .search-room__filter-checkbox-rich
+              .title-3.search-room__filter-checkbox-rich-title Доступность
+              .search-room__filter-checkbox-rich-item.search-room__filter-checkbox-rich-item_narrow
+                +checkboxRich('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.', "wide-corridor", "wide-corridor")
+              .search-room__filter-checkbox-rich-item
+                +checkboxRich('Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.', "disable-assistant", "disable-assistant")
+            .search-room__filter-room-dropdown
+              .title-3.search-room__filter-header Удобства номера
+              +dropdown("Удобства номера", ['спальни', 'кровати', 'ванные комнаты'], "", "2 спальни, 2 кровати...")(id="dropdown-rooms")
+            .search-room__filter-expandable-checkbox
+              +checkboxList("Дополнительные удобства", "checkboxListName", [
+                {itemName: 'Завтрак', checked: false, value:"breakfast"}, 
+                {itemName: 'Письменный стол', checked: true, value:"desc"},
+                {itemName: 'Стул для кормления', checked: true, value:"chair"},
+                {itemName: 'Кроватка', checked: true, value:"bed"},
+                {itemName: 'Телевизор', checked: false, value:"tv"},
+                {itemName: 'Шампунь', checked: false, value:"shampoo"},
+                {itemName: 'Телевизор', checked: false, value:"tv"},
+                {itemName: 'Шампунь', checked: false, value:"shampoo"}
+              ])(data-search-room-expand)
+          .search-room__filter-button-wrapper(data-filter-button-wrapper)
+            +button-form-secondary({text: "Применить", small: false, name: "filter", type: "button"})(data-filter-button)
+      .search-room__main
+        .search-room__main-button-wrapper(data-main-button-wrapper)
+            +button-form-secondary({text: "Фильтр", small: false, name: "filter", type: "button"})(data-main-button)
+        .title-1.search-room__main-header Номера, которые мы для вас подобрали
+        .search-room__main-rooms
+          .search-room__main-rooms-item
+            +roomCard({
+              imgLink: [
+                require('../../assets/img/images/image_888.jpg'),
+                require('../../assets/img/images/image_888.jpg'),
+                require('../../assets/img/images/image_888.jpg'),
+                require('../../assets/img/images/image_888.jpg')
+                ],
+              num: "888", 
+              price: "9 990", 
+              stars: "5",
+              comments: "145",
+              lux: true
+              })
+          .search-room__main-rooms-item
+            +roomCard({
+              imgLink: [
+                require('../../assets/img/images/image_840.jpg'),
+                require('../../assets/img/images/image_840.jpg'),
+                require('../../assets/img/images/image_840.jpg'),
+                require('../../assets/img/images/image_840.jpg')
+                ],
+              num: "840", 
+              price: "8 500", 
+              stars: "3",
+              comments: "35",
+              lux: false
+              })
+          .search-room__main-rooms-item
+            +roomCard({
+              imgLink: [
+                require('../../assets/img/images/image_980.jpg'),
+                require('../../assets/img/images/image_980.jpg'),
+                require('../../assets/img/images/image_980.jpg'),
+                require('../../assets/img/images/image_980.jpg')
+                ],
+              num: "980", 
+              price: "9 990", 
+              stars: "5",
+              comments: "145",
+              lux: true
+              })
+          .search-room__main-rooms-item
+            +roomCard({
+              imgLink: [
+                require('../../assets/img/images/image_856.jpg'),
+                require('../../assets/img/images/image_856.jpg'),
+                require('../../assets/img/images/image_856.jpg'),
+                require('../../assets/img/images/image_856.jpg')
+                ],
+              num: "856", 
+              price: "7 300", 
+              stars: "5",
+              comments: "19",
+              lux: false
+              })
+          .search-room__main-rooms-item
+            +roomCard({
+              imgLink: [
+                require('../../assets/img/images/image_740.jpg'),
+                require('../../assets/img/images/image_740.jpg'),
+                require('../../assets/img/images/image_740.jpg'),
+                require('../../assets/img/images/image_740.jpg')
+                ],
+              num: "740", 
+              price: "6 000", 
+              stars: "4",
+              comments: "44",
+              lux: false
+              })
+          .search-room__main-rooms-item
+            +roomCard({
+              imgLink: [
+                require('../../assets/img/images/image_982.jpg'),
+                require('../../assets/img/images/image_982.jpg'),
+                require('../../assets/img/images/image_982.jpg'),
+                require('../../assets/img/images/image_982.jpg')
+                ],
+              num: "982", 
+              price: "5 800", 
+              stars: "3",
+              comments: "56",
+              lux: false
+              })
+          .search-room__main-rooms-item
+            +roomCard({
+              imgLink: [
+                require('../../assets/img/images/image_678.jpg'),
+                require('../../assets/img/images/image_678.jpg'),
+                require('../../assets/img/images/image_678.jpg'),
+                require('../../assets/img/images/image_678.jpg')
+                ],
+              num: "678", 
+              price: "5 500", 
+              stars: "5",
+              comments: "45",
+              lux: false
+              })
+          .search-room__main-rooms-item
+            +roomCard({
+              imgLink: [
+                require('../../assets/img/images/image_450.jpg'),
+                require('../../assets/img/images/image_450.jpg'),
+                require('../../assets/img/images/image_450.jpg'),
+                require('../../assets/img/images/image_450.jpg')
+                ],
+              num: "450", 
+              price: "5 300", 
+              stars: "4",
+              comments: "39",
+              lux: false
+              })
+          .search-room__main-rooms-item
+            +roomCard({
+              imgLink: [
+                require('../../assets/img/images/image_350.jpg'),
+                require('../../assets/img/images/image_350.jpg'),
+                require('../../assets/img/images/image_350.jpg'),
+                require('../../assets/img/images/image_350.jpg')
+                ],
+              num: "350", 
+              price: "5 000", 
+              stars: "3",
+              comments: "77",
+              lux: false
+              })
+          .search-room__main-rooms-item
+            +roomCard({
+              imgLink: [
+                require('../../assets/img/images/image_666.jpg'),
+                require('../../assets/img/images/image_666.jpg'),
+                require('../../assets/img/images/image_666.jpg'),
+                require('../../assets/img/images/image_666.jpg')
+                ],
+              num: "666", 
+              price: "5 000", 
+              stars: "5",
+              comments: "25",
+              lux: false
+              })
+          .search-room__main-rooms-item
+            +roomCard({
+              imgLink: [
+                require('../../assets/img/images/image_444.jpg'),
+                require('../../assets/img/images/image_444.jpg'),
+                require('../../assets/img/images/image_444.jpg'),
+                require('../../assets/img/images/image_444.jpg')
+                ],
+              num: "444", 
+              price: "5 000", 
+              stars: "3",
+              comments: "15",
+              lux: false
+              })
+          .search-room__main-rooms-item
+            +roomCard({
+              imgLink: [
+                require('../../assets/img/images/image_352.jpg'),
+                require('../../assets/img/images/image_352.jpg'),
+                require('../../assets/img/images/image_352.jpg'),
+                require('../../assets/img/images/image_352.jpg')
+                ],
+              num: "352", 
+              price: "5 000", 
+              stars: "3",
+              comments: "55",
+              lux: false
+              })
+        .search-room__main-pagination
+          +pagination("1 – 12 из 100+ вариантов аренды")
+  include ../../blocks/footer/footer.pug

@@ -1,0 +1,51 @@
+.toggle {
+  min-width: 200px;
+  cursor: pointer;
+  position: relative;
+
+  display: flex;
+}
+/* Cкрываем стандартный чекбокс */
+.toggle__input {
+  display: none;
+}
+
+.toggle__input-outer {
+  min-width: 40px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  height: 20px;
+  border: 1px solid $dark-shade-25;
+  box-sizing: border-box;
+  border-radius: 10px;
+  transition: all 0.4s ease;
+  padding-left: 3px;
+  display: flex;
+  padding-top: 3px;
+  margin-top: 2px;
+}
+
+.toggle__input-inner {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background: $dark-shade-25;
+  border-radius: 10px;
+  transition: right 0.4s ease;
+}
+
+/* Новый чекбокс при выборе */
+.toggle__input:checked + .toggle__input-outer {
+  border-color: $purple;
+  padding-left: 23px;
+  & .toggle__input-inner {
+    background: linear-gradient($primary-gradient);
+  }
+}
+
+.toggle__text {
+  padding-left: 10px;
+}
+.border {
+  border: 1px solid red;
+}

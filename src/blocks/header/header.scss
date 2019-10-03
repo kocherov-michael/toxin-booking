@@ -1,0 +1,239 @@
+.header {
+  background-color: $default-color;
+  display: flex;
+  box-shadow: 0px 10px 20px $dark-shade-5;
+  min-height: 70px;
+
+  &__logo {
+    display: flex;
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    .logo__text {
+      @media (max-width: 400px) {
+        display: none;
+      }
+    }
+  }
+  &__container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1160px;
+    margin: 0 auto;
+
+    @media (max-width: 1200px) {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+  }
+
+  &__login {
+    display: flex;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    
+    @media (max-width: 575px) {
+      .button {
+        font-size: 8px;
+      }
+      .button-secondary__inner_size_small {
+          padding: 3px 6px;
+      }
+      .button-primary_size_small {
+        padding: 5px 6px;
+      }
+    }
+  }
+  &__button-login {
+    align-self: center;
+    margin-right: 21px;
+
+    @media (max-width: 350px) {
+      margin-right: 2px;
+    }
+  }
+  &__button-register {
+    align-self: center;
+  }
+  &__user {
+    padding-left: 31px;
+    border-left: 1px solid $dark-shade-10;
+    color: $dark-shade-50;
+    height: 30px;
+    align-self: center;
+    display: none;
+  }
+  &__user-name {
+    align-self: center;
+  }
+  &_logged-user {
+    .header__button-login_logged-user {
+      display: none;
+    }
+    .header__user-login_logged-user {
+      display: flex;
+    }
+  }
+}
+.navigation {
+  display: flex;
+
+  &__menu-bar {
+    display: flex;
+    align-items: center;
+    padding-right: 24px;
+    padding-left: 10px;
+    color: $dark-shade-50;
+    font-size: 24px;
+    cursor: pointer;
+    position: relative;
+    z-index: 30;
+
+    @media (min-width: 961px) {
+      display: none;
+    }
+
+    &_position_top-left {
+      position: absolute;
+      top: 23px;
+      left: 15px;
+    }
+  }
+
+  &__list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    @media (max-width: 960px) {
+      padding-top: 70px;
+      position: absolute;
+      overflow: auto;
+      flex-direction: column;
+      align-items: center;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 10;
+      background-color: $default-color;
+    }
+  }
+
+  &__list_hide {
+
+    @media (max-width: 960px) {
+      display: none;
+    }
+  }
+
+  &__item {
+    display: flex;
+    margin: 0 27px 0 0;
+    padding: 0;
+    font-family: $mainFont;
+    font-weight: normal;
+    font-size: 14px;
+    color: $dark-shade-50;
+    cursor: pointer;
+
+    @media (max-width: 960px) {
+      padding-top: 20px;
+      font-size: 24px;
+    }
+    @media (max-width: 1200px) {
+      margin-right: 20px;
+    }
+    @media (max-width: 767px) {
+      margin-right: 10px;
+    }
+  }
+  &__item:last-child {
+    @media (max-width: 960px) {
+      margin-right: 0;
+    }
+  }
+  &__item:hover {
+    .navigation__link {
+      color: $dark-shade-75;
+      font-weight: bold;
+    }
+    .inner-list {
+      display: block;
+    }
+  }
+  &__item_active {
+    font-weight: bold;
+    color: $dark-shade-75;
+  }
+  &__item_chevron {
+    cursor: pointer;
+    @media (max-width: 960px) {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+  &__link {
+    align-self: center;
+    text-decoration: none;
+    color: $dark-shade-50;
+  }
+  &__link:after {
+    display: block;
+    content: attr(title);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+}
+
+.navigation-chevron {
+  align-self: center;
+  padding-left: 2px;
+  font-size: 24px;
+  line-height: 20px;
+  color: $dark-shade-50;
+  cursor: pointer;
+}
+.inner-list {
+  position: absolute;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 70px;
+  background-color: $default-color;
+  min-width: 120px;
+  z-index: 15;
+
+  @media (max-width: 960px) {
+    position: static;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__link {
+    font-weight: normal;
+    background-color: $default-color;
+    display: block;
+    padding: 10px;
+    color: $dark-shade-50;
+    text-decoration: none;
+    &:hover {
+      color: $dark-shade-75;
+      font-weight: bold;
+    }
+  }
+  
+}

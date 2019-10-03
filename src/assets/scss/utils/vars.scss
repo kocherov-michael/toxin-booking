@@ -1,40 +1,41 @@
 // Font
 // @import url(http://allfont.ru/allfont.css?fonts=open-sans);
-$mainFont                : 'Montserrat', sans-serif;
+$mainFont                : 'Montserrat', 'Open Sans', sans-serif;
 $secondaryFont           : 'Quicksand', 'Open Sans', sans-serif;
+$iconicFont              : 'Material-Design-Iconic-Font';
 
 // Size
 $mainFontColor           : #101010;
-$mainFontSize            : 18px;
-$mainFontWeight          : 400;
-$mainLineHeight          : 1.4;
+// $mainFontSize            : 18px;
+// $mainFontWeight          : normal;
+// $mainLineHeight          : 1.4;
 
-$desktopWidth            : 1280px;
-$smDesktopWidth          : 980px;
-$tableWidth              : 768px;
-$phoneWidth              : 480px;
-$smPhoneWidth            : 320px;
+// $desktopWidth            : 1280px;
+// $smDesktopWidth          : 980px;
+// $tableWidth              : 768px;
+// $phoneWidth              : 480px;
+// $smPhoneWidth            : 320px;
 
 // Main color
-$default-color           : #ffffff;
-$primary-color           : #444ce0;
-$success-color           : #26de81;
+// $default-color           : #ffffff;
+// $primary-color           : #444ce0;
+// $success-color           : #26de81;
 $danger-color            : #fc5c65;
-$warning-color           : #fed330;
-$light-color             : #999999;
-$purple-color            : #8854d0;
+// $warning-color           : #fed330;
+// $light-color             : #999999;
+// $purple-color            : #8854d0;
 
 // Neutral Color
-$neutral-primary         : #303133;
-$neutral-regular         : #606266;
-$neutral-secondary       : #909399;
-$neutral-placeholder     : #C0C4CC;
+// $neutral-primary         : #303133;
+// $neutral-regular         : #606266;
+// $neutral-secondary       : #909399;
+// $neutral-placeholder     : #C0C4CC;
 
 // Border Color
-$border-base             : #DCDFE6;
-$border-light            : #E4E7ED;
-$border-lighter          : #EBEEF5;
-$border-lightex          : #F2F6FC;
+// $border-base             : #DCDFE6;
+// $border-light            : #E4E7ED;
+// $border-lighter          : #EBEEF5;
+// $border-lightex          : #F2F6FC;
 
 // progect colors
 $dark-shade              : #1F2041;
@@ -46,8 +47,14 @@ $dark-shade-5            : #1F20410D;
 $purple                  : #BC9CFF;
 $green                   : #6FCF97;
 
+$default-color           : #ffffff;
+$secondary-page-color    : #F4F4F6;
+
+
 // gradient
 $primary-gradient        : 180deg, #BC9CFF 0%, #8BA4F9 100%;
 $primary-gradient-transp : 180deg, #BC9CFF40 0%, #8BA4F940 100%;
 $secondary-gradient      : 180deg, #6FCF97 0%, #66D2EA 100%;
+$dark-gradient           : 180deg, #8A8B8F 0%, #434E76 100%;
+$beautiful-gradient      : 180deg, #FFE29C 0%, #FFBA9C 100%;
 

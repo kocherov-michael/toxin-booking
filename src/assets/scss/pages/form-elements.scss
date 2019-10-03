@@ -1,0 +1,242 @@
+.border {
+  border: 1px solid red;
+  box-sizing: border-box;
+}
+.inputs-and-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.dropdowns {
+  display: flex;
+}
+
+.form-elements {
+  padding-top: 140px;
+  padding-bottom: 120px;
+}
+
+.row { 
+  display: flex;
+  justify-content: space-between;
+}
+.col {
+  // width: 27.6%;
+  width: 320px;
+  // height: 300px;
+  // background-color: #B5D3D6;
+}
+.col-small {
+  width: 82.8%;
+  // width: 265px;
+  // min-height: 30px;
+  // background-color: #C3E0D6;
+}
+
+.col-wide {
+  width: 61.57%;
+  // height: 300px;
+  // background-color: #D4C4D6;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+
+
+
+.form-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 5px;
+  margin-top: 20px;
+  &:first-child {
+    margin-top: 0;
+  }
+  &__state {
+    text-transform: uppercase;
+    font-size: 12px;
+    line-height: 15px;
+    color: $dark-shade-50;
+  }
+}
+.textfields-and-buttons {
+  padding-bottom: 100px;
+}
+
+.textfields-and-buttons__masked-textfield {
+  margin-top: 23px;
+}
+
+.textfields-and-buttons__date-dropdown-inputs {
+  display: flex;
+  margin-top: 40px;
+  &-begin-title {
+    margin-bottom: 5px;
+  }
+  &-end {
+    margin-left: 20px;
+    &-title {
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.textfields-and-buttons__filter-date-dropdown-title {
+  margin-top: 40px;
+  margin-bottom: 4px;
+}
+
+.textfields-and-buttons__subscribe-title {
+  margin-top: 42px;
+  margin-bottom: 4px;
+}
+
+.textfields-and-buttons__checkbox-buttons-title {
+  margin-bottom: 17px;
+}
+
+.textfields-and-buttons__checkbox-col {
+  max-width: 230px;
+}
+
+.textfields-and-buttons__checkbox-item {
+  margin-bottom: 10px;
+}
+
+.textfields-and-buttons__radio-title {
+  margin-bottom: 13px;
+  margin-top: 42px;
+}
+
+.textfields-and-buttons__radiobutton-first {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.textfields-and-buttons__radiobutton-second {
+  display: inline-block;
+}
+
+.textfields-and-buttons__togle-title {
+  margin-top: 38px;
+  margin-bottom: 13px;
+}
+
+.textfields-and-buttons__togle-item {
+  margin-bottom: 10px;
+}
+
+.textfields-and-buttons__like-button-title {
+  margin-top: 43px;
+  margin-bottom: 12px;
+}
+
+.textfields-and-buttons__like-button-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.textfields-and-buttons__rate-button-title {
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+.textfields-and-buttons__rate-button-elements {
+  display: flex;
+  justify-content: space-between;
+  max-width: 262px;
+}
+
+.textfields-and-buttons__buttons-title {
+  margin-top: 44px;
+  margin-bottom: 16px;
+}
+
+.textfields-and-buttons__primary-buttons {
+  margin-bottom: 30px;
+}
+
+.textfields-and-buttons__primary-buttons-item {
+  margin-right: 18px;
+  display: inline-block;
+}
+
+.textfields-and-buttons__secondary-buttons {
+  margin-bottom: 26px;
+}
+
+.textfields-and-buttons__secondary-buttons-item {
+  margin-right: 18px;
+  display: inline-block;
+}
+
+.textfields-and-buttons__single-buttons {
+  margin-bottom: 26px;
+}
+
+.textfields-and-buttons__single-buttons-item {
+  display: inline-block;
+  margin-right: 22px;
+}
+
+.textfields-and-buttons__pagination-title {
+  margin-top: 40px;
+  margin-bottom: 15px;
+}
+
+.textfields-and-buttons__pagination {
+  width: 240px;
+}
+.dropdowns {
+}
+.dropdowns__expanded-dropdown {
+  height: 212px;
+}
+
+.dropdowns__title {
+  margin-bottom: 5px;
+}
+
+.checkboxes {
+}
+
+.checkboxes__expandable-close {
+  margin-bottom: 39px;
+}
+.checkboxes__expandable-open {
+  margin-bottom: 40px;
+}
+
+.checkboxes__col-wide {
+  padding-top: 5px;
+}
+
+.checkboxes__rich-title {
+  margin-bottom: 16px;
+}
+
+.checkboxes__rich-narrow {
+  max-width: 220px;
+  margin-bottom: 9px;
+}
+
+.checkboxes__rich-middle {
+  max-width: 260px;
+}
+
+.checkboxes__bullet-title {
+  margin-bottom: 14px;
+}
+.comments__comfort {
+  max-width: 280px;
+}
+
+.comments__comfort-item {
+  margin-bottom: 20px;
+}
+
+.comments__user-comment {
+  margin-top: 10px;
+  max-width: 710px;
+}

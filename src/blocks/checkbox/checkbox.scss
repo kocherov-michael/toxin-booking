@@ -1,0 +1,138 @@
+.checkbox {
+  min-width: 200px;
+  cursor: pointer;
+  position: relative;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+
+  display: flex;
+}
+/* Cкрываем стандартный чекбокс */
+.checkbox__input {
+  display: none;
+}
+/* Новый чекбокс */
+.checkbox__new-input {
+  flex-shrink: 0;
+  // left: -30px;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 18px;
+  color: $dark-shade-50;
+  width: 20px;
+  height: 20px;
+  position: relative;
+
+  background: #FFFFFF;
+
+  border: 1px solid $dark-shade-25;
+  box-sizing: border-box;
+  border-radius: 4px;
+}
+/* Новый чекбокс при выборе */
+.checkbox__input:checked + .checkbox__new-input {
+  border-color: $purple;
+
+  .checkbox__check-item {
+    display: block;
+  }
+}
+.checkbox__check-item {
+  display: none;
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  width: 6px;
+  height: 8px;
+  transform: rotate(45deg);
+  background: linear-gradient($primary-gradient);
+ &:after {
+    position: absolute;
+    display: block;
+    content: '';
+    bottom: 2px;
+    right: 2px;
+    width: 5px;
+    height: 7px;
+    background-color:$default-color;
+ }
+}
+.checkbox__text {
+  padding-left: 10px;
+}
+
+.expandable-checkbox {
+  width: 100%;
+  min-width: 250px;
+  cursor: pointer;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__header-text {
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $dark-shade;
+  }
+  &__list {
+    margin-top: 13px;
+    display: none;
+    overflow: hidden;
+  }
+  &__header-arrow {
+    padding-right: 15px;
+    padding-left: 15px;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 24px;
+    color: $dark-shade-50;
+  }
+  &__list-item {
+    margin-bottom: 10px;
+  }
+}
+.expandable-checkbox_active {
+  .expandable-checkbox__list {
+    display: block;
+  }
+  .expandable-checkbox__header-arrow {
+    transform: rotate(180deg);
+  }
+}
+.checkbox-rich {
+  // min-width: 200px;
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  &__text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    font-family: $mainFont;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+    padding-top: 1px;
+  }
+  &__input {
+    @extend .checkbox__input;
+  }
+  &__new-input {
+    @extend .checkbox__new-input;
+  }
+
+  &__text-description {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
+    color: $dark-shade-50;
+    margin-top: 6px;
+  }
+}
