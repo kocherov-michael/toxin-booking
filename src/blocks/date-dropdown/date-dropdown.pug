@@ -2,5 +2,5 @@ mixin dateDropdown(placeholder, text)
   label.date-dropdown&attributes(attributes)
     //- .dropdown__label
     input.date-dropdown__text(type='text' placeholder= placeholder value=text)
-    .date-dropdown__text-arrow
+    .date-dropdown__text-arrow(data-dropdown-chevron)
       i.zmdi.zmdi-chevron-down

@@ -9,8 +9,8 @@ form.find-room
       .title-3.find-room__title Выезд
       .find-room__date-leave-input
         +dateDropdown("ДД.ММ.ГГГГ")(id="departure")
-    //- .calendar-wrapper.hide
-    //-   include ../calendar/calendar.pug
+    .calendar-wrapper.hide
+      include ../calendar/calendar.pug
   .find-room__men.mb-30
     .title-3.find-room__title Гости
     +dropdown("Сколько гостей", ['взрослые', 'дети', 'младенцы'],"apply")(id="dropdown-guests")

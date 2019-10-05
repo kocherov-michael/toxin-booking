@@ -1,4 +1,5 @@
-// if (window.location.pathname === '/landing.html') {
+console.log('calendar connect')
+
 function calendar(element) {
   class Day {
     constructor(year, month, day) {
@@ -340,6 +341,30 @@ function calendar(element) {
         dropdownDepartureElement.firstElementChild.classList.remove("form-focus");
       }
     }
+
+    // Открываем календарь
+    calendarToggle(event) {
+      event.preventDefault()
+      this.calendarWrapperElement.classList.toggle("hide");
+      if (calendar.beginDay && !calendar.endDay) {
+        this.dropdownDepartureElement.firstElementChild.classList.add("form-focus");
+      } else {
+        this.dropdownArrivalElement.firstElementChild.classList.add("form-focus");
+      }
+      if (this.calendarWrapperElement.classList.contains("hide")) {
+        this.dropdownArrivalElement.firstElementChild.classList.remove("form-focus");
+        this.dropdownDepartureElement.firstElementChild.classList.remove("form-focus");
+      }
+      
+    }
+
+    // Действие кнопки ПРИМЕНИТЬ
+    applyCalendarField() {
+      this.dropdownArrivalElement.firstElementChild.classList.remove("form-focus");
+      this.dropdownDepartureElement.firstElementChild.classList.remove("form-focus");
+      this.calendarWrapperElement.classList.add("hide");
+
+    }
   }
 
 
@@ -387,13 +412,13 @@ function calendar(element) {
   const arrowRightElement = calendarElement.querySelector(".calendar__header-right");
   const dateFieldElement = calendarElement.querySelector(".calendar__date");
   const clearFieldElement = calendarElement.querySelector(".calendar__action-clear");
-  const applyFieldElement = calendarElement.querySelector(".calendar__action-apply");
+  // const applyFieldElement = calendarElement.querySelector(".calendar__action-apply");
 
   const calendar = new Calendar();
 
-  const dropdownArrivalElement = document.querySelector("#arrival");
-  const dropdownDepartureElement = document.querySelector("#departure");
-  const calendarWrapperElement = document.querySelector(".calendar-wrapper");
+  // const dropdownArrivalElement = document.querySelector("#arrival");
+  // const dropdownDepartureElement = document.querySelector("#departure");
+  // const calendarWrapperElement = document.querySelector(".calendar-wrapper");
 
   const nowMonthNum = dateNow.getMonth();
   const nowMonth = months[nowMonthNum];
@@ -408,11 +433,11 @@ function calendar(element) {
   calendar.createDateField(calendar.nowMonthDisplay, calendar.nowYearDisplay);
 
   clearFieldElement.addEventListener("click", calendar.clearCalendarField);
-  applyFieldElement.addEventListener("click", applyCalendarField);
+  // applyFieldElement.addEventListener("click", calendar.applyCalendarField);
   arrowLeftElement.addEventListener("click", calendar.decreaseHeaderDate);
   arrowRightElement.addEventListener("click", calendar.increaseHeaderDate);
-  dropdownArrivalElement.addEventListener("click", calendarToggle);
-  dropdownDepartureElement.addEventListener("click", calendarToggle);
+  // dropdownArrivalElement.addEventListener("click", calendarToggle);
+  // dropdownDepartureElement.addEventListener("click", calendarToggle);
 
 
   // Отображаем дату прибытия и выезда в элементах форм
@@ -437,19 +462,6 @@ function calendar(element) {
 
   }
 
-  // Открываем календарь
-  function calendarToggle() {
-    // calendarWrapperElement.classList.toggle("hide");
-    // if (calendar.beginDay && !calendar.endDay) {
-    //   dropdownDepartureElement.firstElementChild.classList.add("form-focus");
-    // } else {
-    //   dropdownArrivalElement.firstElementChild.classList.add("form-focus");
-    // }
-    // if (calendarWrapperElement.classList.contains("hide")) {
-    //   dropdownArrivalElement.firstElementChild.classList.remove("form-focus");
-    //   dropdownDepartureElement.firstElementChild.classList.remove("form-focus");
-    // }
-  }
   return calendar
 }
 
