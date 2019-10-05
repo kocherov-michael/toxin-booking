@@ -4,19 +4,15 @@ function formatPrice(selector) {
   for (let i = 0; i < priceElement.length; i++) {
     const price = [...priceElement[i].innerHTML].reverse()
     const newPrice = []
+    
+    const priceArrayWithoutSpace = price.filter(letter => letter !== ' ')
 
-    for( let i = 0; i < price.length; i++) {
-      if (price[i] === ' ') {
-        price.splice(i, 1)
-      }
-    }
-
-    for( let i = 0; i < price.length; i++) {
+    for( let i = 0; i < priceArrayWithoutSpace.length; i++) {
       if ((Math.floor(i/3) === i/3) && i !== 0) {
         newPrice.push(' ')
-        newPrice.push(price[i])
+        newPrice.push(priceArrayWithoutSpace[i])
       } else {
-        newPrice.push(price[i])
+        newPrice.push(priceArrayWithoutSpace[i])
       }
     }
     priceElement[i].innerHTML = `${newPrice.reverse().join('')}`

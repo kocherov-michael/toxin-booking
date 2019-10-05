@@ -1,5 +1,8 @@
 
 // if (window.location.pathname === '/landing.html') {
+function calendar() {
+
+
   class Day {
     constructor(year, month, day) {
       this.year = year
@@ -577,3 +580,6 @@
   }
   
   // }
+}
+
+export default calendar

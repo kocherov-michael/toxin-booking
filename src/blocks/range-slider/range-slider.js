@@ -166,15 +166,7 @@ function rangeSlider () {
   }
 
   function removeSpaces (string) {
-    const price = [...string]
-
-    for( let i = 0; i < price.length; i++) {
-      if (price[i] === ' ') {
-        price.splice(i, 1)
-      }
-    }
-    
-    return parseInt(price.join(''))
+    return parseInt([...string].filter(letter => letter !== ' ').join(''))
   }
 
   function formatValue (number) {
