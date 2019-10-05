@@ -64,6 +64,10 @@
     background: linear-gradient($secondary-gradient);
     border-radius: 22px;
     color: $default-color;
+    &.calendar__day_previous-month,
+    &.calendar__day_next-month {
+      color: $default-color;
+    }
   }
   &_period {
     background: linear-gradient($primary-gradient);
@@ -71,6 +75,10 @@
     color: $default-color;
     position: relative;
     z-index: 2;
+    &.calendar__day_previous-month,
+    &.calendar__day_next-month {
+      color: $default-color;
+    }
   }
   &_period_begin, 
   &_period_end {
@@ -100,8 +108,14 @@
     background: $danger-color;
     border-radius: 22px;
     color: $default-color;
+    &.calendar__day_previous-month,
+    &.calendar__day_next-month {
+      color: $default-color;
+    }
   }
-  &_another-month {
+  &_another-month,
+  &_previous-month,
+  &_next-month {
     color: $dark-shade-25;
   }
 }

@@ -15,7 +15,7 @@
 // const dateFieldElement = document.querySelector(".calendar__date")
 // const clearFieldElement = document.querySelector(".calendar__action-clear")
 
-// const choosenDate = {
+// const calendar = {
 // 	beginDay: '',
 // 	endDay: '',
 // 	beginMonth: '',
@@ -33,7 +33,6 @@
 // headerCalenderElement.innerHTML = `${nowMonth} ${nowYear}`
 
 // clearFieldElement.style.display = "none"
-
 
 // clearFieldElement.addEventListener('click', clearCalendarField)
 // arrowLeftElement.addEventListener('click', decreaseHeaderDate)
@@ -121,12 +120,12 @@
 // 				nextMonthDayBegin += 1
 // 			}
 // 			weekLine.appendChild(monthDay)
-	
+
 // 		}
 // 	}
 // 	const calendarDay = document.querySelectorAll("[data-calendar-day]")
 // 	displayToday()
-// 	showChoosenDates()
+// 	showcalendars()
 
 // 	for (let i = 0; i < calendarDay.length; i++){
 // 		calendarDay[i].addEventListener('click', chooseDate)
@@ -143,7 +142,7 @@
 // 	if ((nowMonthDisplay === dateNow.getMonth()) && (nowYearDisplay === dateNow.getFullYear())) {
 // 		for (let i = 0; i < calendarDay.length; i++){
 // 			if (calendarDay[i].innerText == dateNow.getDate()){
-				
+
 // 				calendarDay[i].classList.add("calendar__day--today")
 // 			}
 // 		}
@@ -177,66 +176,65 @@
 // 	// const currentMonth = getMonthInfo(month, year)
 
 // 	const notAllowedDate = (
-// 		parseInt(this.innerText) < parseInt(dateNow.getDate()) 
-// 		&& (nowMonthDisplay <= dateNow.getMonth()) 
+// 		parseInt(this.innerText) < parseInt(dateNow.getDate())
+// 		&& (nowMonthDisplay <= dateNow.getMonth())
 // 		|| (nowMonthDisplay < dateNow.getMonth()) )
 
-// 	if (choosenDate.beginDay === '') {
+// 	if (calendar.beginDay === '') {
 
 // 		if (!notAllowedDate) {
-// 			choosenDate.beginDay = this.innerText
-// 			choosenDate.beginMonth = nowMonthDisplay
-// 			choosenDate.beginYear = nowYearDisplay
+// 			calendar.beginDay = this.innerText
+// 			calendar.beginMonth = nowMonthDisplay
+// 			calendar.beginYear = nowYearDisplay
 // 		}
 // 	}
-// 	else if (choosenDate.endDay === '') {
+// 	else if (calendar.endDay === '') {
 
 // 		if (!notAllowedDate) {
-// 			choosenDate.endDay = this.innerText
-// 			choosenDate.endMonth = nowMonthDisplay
-// 			choosenDate.endYear = nowYearDisplay
-// 		}
-		
-// 		if ((parseInt(choosenDate.beginDay) > parseInt(choosenDate.endDay)) && (choosenDate.beginMonth === choosenDate.endMonth)) {
-// 			const toggleDate = choosenDate.endDay
-// 			choosenDate.endDay = choosenDate.beginDay
-// 			choosenDate.beginDay = toggleDate
-			
+// 			calendar.endDay = this.innerText
+// 			calendar.endMonth = nowMonthDisplay
+// 			calendar.endYear = nowYearDisplay
 // 		}
 
+// 		if ((parseInt(calendar.beginDay) > parseInt(calendar.endDay)) && (calendar.beginMonth === calendar.endMonth)) {
+// 			const toggleDate = calendar.endDay
+// 			calendar.endDay = calendar.beginDay
+// 			calendar.beginDay = toggleDate
+
+// 		}
 
 // 	}
-// 	showChoosenDates()
-// 	if ((choosenDate.beginDay !== '') || (choosenDate.endDay !== '')) {
+// 	showcalendars()
+// 	if ((calendar.beginDay !== '') || (calendar.endDay !== '')) {
 // 		clearFieldElement.style.display = "block"
 // 	}
 
-// 	console.log(choosenDate)
+// 	console.log(calendar)
 // }
-// function showChoosenDates(){
+// function showcalendars(){
 // 	const calendarDay = document.querySelectorAll("[data-calendar-day]")
 // 	let between = false
 // 		for (let i = 0; i < calendarDay.length; i++) {
 
-// 			if ((parseInt(calendarDay[i].innerText) === parseInt(choosenDate.endDay)) 
-// 				&& (parseInt(choosenDate.beginDay) != parseInt(choosenDate.endDay)) 
-// 				&& (choosenDate.endMonth === nowMonthDisplay) 
-// 				&& (choosenDate.endYear === nowYearDisplay)
+// 			if ((parseInt(calendarDay[i].innerText) === parseInt(calendar.endDay))
+// 				&& (parseInt(calendar.beginDay) != parseInt(calendar.endDay))
+// 				&& (calendar.endMonth === nowMonthDisplay)
+// 				&& (calendar.endYear === nowYearDisplay)
 // 				) {
 // 				calendarDay[i].classList.add("calendar__day--period")
 // 				calendarDay[i].classList.add("calendar__day--period-end")
 // 				between = false
 // 			}
-// 			if ((between === true) && (choosenDate.beginDay != choosenDate.endDay) && (choosenDate.endDay !== '') ) {
+// 			if ((between === true) && (calendar.beginDay != calendar.endDay) && (calendar.endDay !== '') ) {
 // 				calendarDay[i].classList.add("calendar__day--period-between")
 // 			}
-// 			if ((calendarDay[i].innerText === choosenDate.beginDay) 
-// 				&& (choosenDate.beginDay != choosenDate.endDay) 
-// 				&& (choosenDate.beginMonth === nowMonthDisplay) 
-// 				&& (choosenDate.beginYear === nowYearDisplay)
+// 			if ((calendarDay[i].innerText === calendar.beginDay)
+// 				&& (calendar.beginDay != calendar.endDay)
+// 				&& (calendar.beginMonth === nowMonthDisplay)
+// 				&& (calendar.beginYear === nowYearDisplay)
 // 				) {
 // 				calendarDay[i].classList.add("calendar__day--period")
-// 				if(choosenDate.endDay !== ''){
+// 				if(calendar.endDay !== ''){
 // 					calendarDay[i].classList.add("calendar__day--period-begin")
 // 				}
 // 				between = true
@@ -255,11 +253,11 @@
 // 			calendarDay[i].classList.remove("calendar__day--period-end")
 // 		}
 // 		if (calendarDay[i].classList.contains("calendar__day--period-between") ) {
-			
+
 // 			calendarDay[i].classList.remove("calendar__day--period-between")
 // 		}
 // 	}
-// 	choosenDate.beginDay = ''
-// 	choosenDate.endDay = ''
+// 	calendar.beginDay = ''
+// 	calendar.endDay = ''
 // 	clearFieldElement.style.display = "none"
 // }
