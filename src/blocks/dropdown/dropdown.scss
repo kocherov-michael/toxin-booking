@@ -148,6 +148,9 @@
 .form-focus {
   border-color: $dark-shade-50;
 }
+.form-warning {
+  border-color: $danger-color;
+}
 .hide {
   display: none;
 }

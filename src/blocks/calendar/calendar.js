@@ -1,12 +1,9 @@
 console.log('calendar connect')
 
-function calendar(element) {
+function calendar(selector) {
   class Day {
     constructor(year, month, day) {
       this.date = new Date(year, month, day);
-      // this.year = year
-      // this.month = month
-      // this.day = day
       this.year = new Date(year, month, day).getFullYear();
       this.month = new Date(year, month, day).getMonth();
       this.day = new Date(year, month, day).getDate();
@@ -17,6 +14,7 @@ function calendar(element) {
       this.nextYear = new Date(year + 1, month, day).getFullYear();
       this.milliseconds = new Date(year, month, day).getTime();
     }
+
     // Добавляем стиль к текущей дате на календаре
     showToday() {
       const nowDate = new Date();
@@ -59,9 +57,6 @@ function calendar(element) {
       const year = dayElement.getAttribute("data-year");
       const date = new Date(year, month, day).getTime();
 
-      // console.log(date)
-      // console.log(calendar.nowDate)
-
       if (date < calendar.nowDate) {
         dayElement.classList.add("calendar__day_error");
         setTimeout(() => {
@@ -101,14 +96,14 @@ function calendar(element) {
         calendar.beginMonth = month;
         calendar.beginYear = year;
       }
-      // console.log(calendar)
+      
       if (dayElement.classList.contains("calendar__day_previous-month")) {
         calendar.decreaseHeaderDate();
       } else if (dayElement.classList.contains("calendar__day_next-month")) {
         calendar.increaseHeaderDate();
       }
 
-      calendar.showChoosenDays();
+      calendar.showChoosenDays(this.calendarElement);
     }
   }
 
@@ -126,58 +121,61 @@ function calendar(element) {
       this.endYear = ""
     }
 
-    // Отмесаем даты приезда и выезда
-    showChoosenDays() {
-      const daysList = document.querySelectorAll("[data-calendar-day]");
+    // Отмечаем даты приезда и выезда
+    showChoosenDays(calendarElement) {
+      if (calendarElement) {
+        const daysList = calendarElement.querySelectorAll("[data-calendar-day]");
+      
 
-      for (let i = 0; i < daysList.length; i++) {
-        daysList[i].classList.remove("calendar__day_period");
-        daysList[i].classList.remove("calendar__day_period_between");
-        daysList[i].classList.remove("calendar__day_period_begin");
-        daysList[i].classList.remove("calendar__day_period_end");
+        for (let i = 0; i < daysList.length; i++) {
+          daysList[i].classList.remove("calendar__day_period");
+          daysList[i].classList.remove("calendar__day_period_between");
+          daysList[i].classList.remove("calendar__day_period_begin");
+          daysList[i].classList.remove("calendar__day_period_end");
 
-        const iterationDay = daysList[i].getAttribute("data-calendar-day");
-        const iterationMonth = daysList[i].getAttribute("data-month");
-        const iterationYear = daysList[i].getAttribute("data-year");
+          const iterationDay = daysList[i].getAttribute("data-calendar-day");
+          const iterationMonth = daysList[i].getAttribute("data-month");
+          const iterationYear = daysList[i].getAttribute("data-year");
 
-        const dayBeginIsEqual = calendar.beginDay === iterationDay;
-        const dayEndIsEqual = calendar.endDay === iterationDay;
-        const monthBeginIsEqual = calendar.beginMonth === iterationMonth;
-        const monthEndIsEqual = calendar.endMonth === iterationMonth;
-        const yearBeginIsEqual = calendar.beginYear === iterationYear;
-        const yearEndIsEqual = calendar.endYear === iterationYear;
+          const dayBeginIsEqual = calendar.beginDay === iterationDay;
+          const dayEndIsEqual = calendar.endDay === iterationDay;
+          const monthBeginIsEqual = calendar.beginMonth === iterationMonth;
+          const monthEndIsEqual = calendar.endMonth === iterationMonth;
+          const yearBeginIsEqual = calendar.beginYear === iterationYear;
+          const yearEndIsEqual = calendar.endYear === iterationYear;
 
-        if (dayBeginIsEqual && monthBeginIsEqual && yearBeginIsEqual) {
-          daysList[i].classList.add("calendar__day_period");
+          if (dayBeginIsEqual && monthBeginIsEqual && yearBeginIsEqual) {
+            daysList[i].classList.add("calendar__day_period");
 
-          if (calendar.endDay && calendar.endDate !== calendar.beginDate) {
-            daysList[i].classList.add("calendar__day_period_begin");
+            if (calendar.endDay && calendar.endDate !== calendar.beginDate) {
+              daysList[i].classList.add("calendar__day_period_begin");
+            }
           }
-        }
 
-        if (dayEndIsEqual && monthEndIsEqual && yearEndIsEqual) {
-          daysList[i].classList.add("calendar__day_period");
+          if (dayEndIsEqual && monthEndIsEqual && yearEndIsEqual) {
+            daysList[i].classList.add("calendar__day_period");
 
-          if (calendar.endDay && calendar.endDate !== calendar.beginDate) {
-            daysList[i].classList.add("calendar__day_period_end");
+            if (calendar.endDay && calendar.endDate !== calendar.beginDate) {
+              daysList[i].classList.add("calendar__day_period_end");
+            }
           }
-        }
 
-        const iterationDate = new Date(
-          iterationYear,
-          iterationMonth,
-          iterationDay
-        ).getTime();
+          const iterationDate = new Date(
+            iterationYear,
+            iterationMonth,
+            iterationDay
+          ).getTime();
 
-        if (
-          iterationDate > calendar.beginDate &&
-          iterationDate < calendar.endDate
-        ) {
-          daysList[i].classList.add("calendar__day_period_between");
-        }
+          if (
+            iterationDate > calendar.beginDate &&
+            iterationDate < calendar.endDate
+          ) {
+            daysList[i].classList.add("calendar__day_period_between");
+          }
 
-        if (calendar.beginDay !== "" || calendar.endDay !== "") {
-          clearFieldElement.style.display = "block";
+          if (calendar.beginDay !== "" || calendar.endDay !== "") {
+            clearFieldElement.style.display = "block";
+          }
         }
       }
     }
@@ -185,9 +183,8 @@ function calendar(element) {
     
 
     // Отрисовываем календарь
-    createDateField(month, year) {
+    createDateField(month, year, calendarElement) {
       const monthInfo = this.getMonthInfo(month, year);
-
       let previosMonthDayBegin = monthInfo.previosMonthLastWeekDayBegin;
 
       dateFieldElement.innerHTML = "";
@@ -207,7 +204,7 @@ function calendar(element) {
           );
           calendarDay.classList.add("calendar__day_another-month");
           calendarDay.classList.add("calendar__day_previous-month");
-          calendarDay.addEventListener("click", newDay.handler);
+          calendarDay.addEventListener("click", {handleEvent: newDay.handler, calendarElement});
         }
       }
 
@@ -220,7 +217,7 @@ function calendar(element) {
           dateFieldElement
         );
 
-        calendarDay.addEventListener("click", newDay.handler);
+        calendarDay.addEventListener("click", {handleEvent: newDay.handler, calendarElement});
       }
 
       for (let i = 1; i <= monthInfo.nextMonthViewedDays; i++) {
@@ -233,33 +230,35 @@ function calendar(element) {
         );
         calendarDay.classList.add("calendar__day_another-month");
         calendarDay.classList.add("calendar__day_next-month");
-        calendarDay.addEventListener("click", newDay.handler);
+        calendarDay.addEventListener("click", {handleEvent: newDay.handler, calendarElement});
       }
 
-      this.showChoosenDays();
+      this.showChoosenDays(calendarElement);
 
     }
 
     // Перелисываем календарь на предыдущий месяц
     decreaseHeaderDate() {
+      
       calendar.nowMonthDisplay -= 1;
       if (calendar.nowMonthDisplay < 0) {
         calendar.nowMonthDisplay = 11;
         calendar.nowYearDisplay -= 1;
       }
       headerCalenderElement.innerHTML = `${months[calendar.nowMonthDisplay]} ${calendar.nowYearDisplay}`;
-      calendar.createDateField(calendar.nowMonthDisplay, calendar.nowYearDisplay);
+      calendar.createDateField(calendar.nowMonthDisplay, calendar.nowYearDisplay, this.calendarElement);
     }
 
     // Перелистываем календарь на следующий месяц
     increaseHeaderDate() {
+      // console.log(this.calendarElement)
       calendar.nowMonthDisplay += 1;
       if (calendar.nowMonthDisplay > 11) {
         calendar.nowMonthDisplay = 0;
         calendar.nowYearDisplay += 1;
       }
       headerCalenderElement.innerHTML = `${months[calendar.nowMonthDisplay]} ${calendar.nowYearDisplay}`;
-      calendar.createDateField(calendar.nowMonthDisplay, calendar.nowYearDisplay);
+      calendar.createDateField(calendar.nowMonthDisplay, calendar.nowYearDisplay, this.calendarElement);
     }
 
     // Получаем данные о текущей дате
@@ -332,13 +331,11 @@ function calendar(element) {
       calendar.endYear = ""
       
       clearFieldElement.style.display = "none";
-      calendar.showChoosenDays()
+      calendar.showChoosenDays(this.calendarElement)
 
-      if (dropdownArrivalElement) {
-        dropdownArrivalElement.firstElementChild.innerHTML = "ДД.ММ.ГГГГ";
-        dropdownDepartureElement.firstElementChild.innerHTML = "ДД.ММ.ГГГГ";
-        dropdownArrivalElement.firstElementChild.classList.add("form-focus");
-        dropdownDepartureElement.firstElementChild.classList.remove("form-focus");
+      if (this.dropdownArrivalInputElement) {
+        this.dropdownArrivalInputElement.value = '';
+        this.dropdownDepartureInputElement.value = '';
       }
     }
 
@@ -346,24 +343,11 @@ function calendar(element) {
     calendarToggle(event) {
       event.preventDefault()
       this.calendarWrapperElement.classList.toggle("hide");
-      if (calendar.beginDay && !calendar.endDay) {
-        this.dropdownDepartureElement.firstElementChild.classList.add("form-focus");
-      } else {
-        this.dropdownArrivalElement.firstElementChild.classList.add("form-focus");
-      }
-      if (this.calendarWrapperElement.classList.contains("hide")) {
-        this.dropdownArrivalElement.firstElementChild.classList.remove("form-focus");
-        this.dropdownDepartureElement.firstElementChild.classList.remove("form-focus");
-      }
-      
     }
 
     // Действие кнопки ПРИМЕНИТЬ
     applyCalendarField() {
-      this.dropdownArrivalElement.firstElementChild.classList.remove("form-focus");
-      this.dropdownDepartureElement.firstElementChild.classList.remove("form-focus");
       this.calendarWrapperElement.classList.add("hide");
-
     }
   }
 
@@ -393,32 +377,17 @@ function calendar(element) {
     "Декабрь"
   ];
 
-  const dateNow = new Date();
-
-  // console.log("calendar.js подключен");
-
-  // const teatYear =2019
-  // const testMonth = -1
-  // const testDay = 20
-
-  // const testDate = new Date(teatYear, testMonth, testDay)
-  // console.log(testDate)
-
-
-  const calendarElement = document.querySelector("[data-calendar]");
+  
+  const calendarElement = document.querySelector(selector);
   const headerCalenderElement = calendarElement.querySelector(".calendar__header-date");
-
+  
   const arrowLeftElement = calendarElement.querySelector(".calendar__header-left");
   const arrowRightElement = calendarElement.querySelector(".calendar__header-right");
   const dateFieldElement = calendarElement.querySelector(".calendar__date");
   const clearFieldElement = calendarElement.querySelector(".calendar__action-clear");
-  // const applyFieldElement = calendarElement.querySelector(".calendar__action-apply");
-
+  
+  const dateNow = new Date();
   const calendar = new Calendar();
-
-  // const dropdownArrivalElement = document.querySelector("#arrival");
-  // const dropdownDepartureElement = document.querySelector("#departure");
-  // const calendarWrapperElement = document.querySelector(".calendar-wrapper");
 
   const nowMonthNum = dateNow.getMonth();
   const nowMonth = months[nowMonthNum];
@@ -430,37 +399,11 @@ function calendar(element) {
 
   clearFieldElement.style.display = "none";
 
-  calendar.createDateField(calendar.nowMonthDisplay, calendar.nowYearDisplay);
+  calendar.createDateField(calendar.nowMonthDisplay, calendar.nowYearDisplay, calendarElement);
 
-  clearFieldElement.addEventListener("click", calendar.clearCalendarField);
-  // applyFieldElement.addEventListener("click", calendar.applyCalendarField);
-  arrowLeftElement.addEventListener("click", calendar.decreaseHeaderDate);
-  arrowRightElement.addEventListener("click", calendar.increaseHeaderDate);
-  // dropdownArrivalElement.addEventListener("click", calendarToggle);
-  // dropdownDepartureElement.addEventListener("click", calendarToggle);
-
-
-  // Отображаем дату прибытия и выезда в элементах форм
-  function showDatesInForm(day, month, year) {
-    let dayDisplay = day.toString();
-    let monthDisplay = (month + 1).toString();
-    if (dayDisplay.length === 1) {
-      dayDisplay = "0" + dayDisplay;
-    }
-    if (monthDisplay.length === 1) {
-      monthDisplay = "0" + monthDisplay;
-    }
-    return `${dayDisplay}.${monthDisplay}.${year.toString()}`;
-  }
-
-
-  // Действие кнопки ПРИМЕНИТЬ
-  function applyCalendarField() {
-    // dropdownArrivalElement.firstElementChild.classList.remove("form-focus");
-    // dropdownDepartureElement.firstElementChild.classList.remove("form-focus");
-    // calendarWrapperElement.classList.add("hide");
-
-  }
+  clearFieldElement.addEventListener("click", {handleEvent:calendar.clearCalendarField, calendarElement});
+  arrowLeftElement.addEventListener("click", {handleEvent: calendar.decreaseHeaderDate, calendarElement});
+  arrowRightElement.addEventListener("click", {handleEvent: calendar.increaseHeaderDate, calendarElement});
 
   return calendar
 }

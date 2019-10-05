@@ -1,42 +1,61 @@
 import calendar from '../calendar/calendar.js'
 
-console.log('frc')
-const calendarElement = document.querySelector('[data-calendar]')
-if (calendarElement) {
-  const datesData = calendar('[data-calendar]')
-}
 
-const dropdownArrivalElement = document.querySelector('#arrival')
-const dropdownDepartureElement = document.querySelector('#departure')
+// const aloneCalendarElement = document.querySelector('[data-calendar="cards"]')
+const calendarElement = document.querySelector('[data-calendar="find-room"]')
+// if (calendarElement) {
+//   const datesData = calendar('[data-calendar]')
+// }
+
+const dropdownArrivalElement = document.querySelector('[data-find-room-arrival]')
+const dropdownDepartureElement = document.querySelector('[data-find-room-departure]')
 const dropdownArrivalChevronElement = dropdownArrivalElement.querySelector('[data-dropdown-chevron]')
 const dropdownDepartureChevronElement = dropdownDepartureElement.querySelector('[data-dropdown-chevron]')
 const dropdownArrivalInputElement = dropdownArrivalElement.querySelector('input')
 const dropdownDepartureInputElement = dropdownDepartureElement.querySelector('input')
 
-// const dropdownChevronElement = document.querySelector('[data-dropdown-chevron]');
 const calendarWrapperElement = document.querySelector('.calendar-wrapper')
-const applyFieldElement = calendarElement.querySelector(".calendar__action-apply");
-// console.log(calendarWrapperElement)
-const datesData = calendar('[data-calendar]')
+const applyFieldElement = calendarElement.querySelector(".calendar__action-apply")
+const clearFieldElement = calendarElement.querySelector(".calendar__action-clear")
+const datesData = calendar('[data-calendar="find-room"]')
 
-// dropdownChevronElement.addEventListener('click', calendarToggle)
-// dropdownArrivalChevronElement.addEventListener("click", calendarToggle);
-dropdownArrivalChevronElement.addEventListener("click", {handleEvent: datesData.calendarToggle, calendarWrapperElement, dropdownArrivalElement, dropdownDepartureElement})
+dropdownArrivalChevronElement.addEventListener("click", {handleEvent: datesData.calendarToggle, calendarWrapperElement})
 
-dropdownDepartureChevronElement.addEventListener("click", {handleEvent: datesData.calendarToggle, calendarWrapperElement, dropdownArrivalElement, dropdownDepartureElement})
+dropdownDepartureChevronElement.addEventListener("click", {handleEvent: datesData.calendarToggle, calendarWrapperElement})
 
-// dropdownDepartureChevronElement.addEventListener("click", calendarToggle);
 calendarWrapperElement.addEventListener("click", getCalendarData, false)
-applyFieldElement.addEventListener("click", {handleEvent: datesData.applyCalendarField, calendarWrapperElement, dropdownArrivalElement, dropdownDepartureElement})
+applyFieldElement.addEventListener("click", {handleEvent: datesData.applyCalendarField, calendarWrapperElement})
+
+clearFieldElement.addEventListener("click", {handleEvent: datesData.clearCalendarField, dropdownArrivalInputElement, dropdownDepartureInputElement})
 
 
-function getCalendarData (event) {
-  const date = [
+function getCalendarData () {
+
+  const dateBegin = [
     getDoubleNumber(datesData.beginDay), 
     getDoubleNumber(String(parseInt(datesData.beginMonth) + 1)), 
     datesData.beginYear
   ].join('.')
-  console.log(date)
+
+  const dateEnd = [
+    getDoubleNumber(datesData.endDay), 
+    getDoubleNumber(String(parseInt(datesData.endMonth) + 1)), 
+    datesData.endYear
+  ].join('.')
+
+  if ( dropdownArrivalInputElement.value !== dateBegin && datesData.beginDate !== '') {
+
+    dropdownArrivalInputElement.value = dateBegin
+
+    if (dropdownDepartureInputElement.value !== dateEnd && datesData.endDate !== '') {
+      dropdownDepartureInputElement.value = dateEnd
+    } else if (datesData.endDate === '') {
+      dropdownDepartureInputElement.value = ''
+    }
+  }
+  else if (dropdownDepartureInputElement.value !== dateEnd && datesData.endDate !== '') {
+    dropdownDepartureInputElement.value = dateEnd
+  }
 }
 
 function getDoubleNumber (string) {
