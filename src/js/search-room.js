@@ -10,5 +10,5 @@ formatPrice('[data-price-format]')
 
 const calendarElement = document.querySelector('[data-calendar]')
 if (calendarElement) {
-  const datesData = calendar('[data-calendar]')
+  // const datesData = calendar('[data-calendar]')
 }
