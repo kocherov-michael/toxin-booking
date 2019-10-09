@@ -10,11 +10,13 @@ form.room-price-card
     .room-price-card__date-arrival
       .title-3.room-price-card__title Прибытие
       .room-price-card__date-arrival-input
-        +dateDropdown("19.08.2019")
+        +dateDropdown("19.08.2019")(data-find-room-arrival="room-price")
     .room-price-card__date-leave
       .title-3.room-price-card__title Выезд
       .room-price-card__date-leave-input
-        +dateDropdown("23.08.2019")
+        +dateDropdown("23.08.2019")(data-find-room-departure="room-price")
+    .calendar-wrapper.hide
+      +calendar("room-price")
   .room-price-card__men
     .title-3.room-price-card__title Гости
     +dropdown("Сколько гостей", ['взрослые', 'дети', 'младенцы'],"apply", "3 гостя")(id="dropdown-calculator")

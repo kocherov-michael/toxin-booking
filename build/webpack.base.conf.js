@@ -27,13 +27,23 @@ module.exports = {
     paths: PATHS
   },
   entry: PATHS.src
-  // {
+  // entry:{
+    // index: `${PATHS.src}/js/index.js`,
     // app: PATHS.src,
     // module: `${PATHS.src}/your-module.js`,
     // 'room-details': `${PATHS.src}/js/room-details.js`,
+    // 'cards': `${PATHS.src}/js/cards.js`,
+    // 'color-and-types': `${PATHS.src}/js/color-and-types.js`,
+    // 'form-elements': `${PATHS.src}/js/form-elements.js`,
+    // 'headers-and-footers': `${PATHS.src}/js/headers-and-footers.js`,
+    // 'main': `${PATHS.src}/js/main.js`,
+    // 'registration': `${PATHS.src}/js/registration.js`,
+    // 'search-room': `${PATHS.src}/js/search-room.js`,
+    // 'sign-in': `${PATHS.src}/js/sign-in.js`
   // }
   ,
   output: {
+    // filename: `${PATHS.assets}js/[name].[hash].js`,
     filename: `${PATHS.assets}js/[name].[hash].js`,
     // path: PATHS.dist,
     path: PATHS.docs,
@@ -41,6 +51,9 @@ module.exports = {
   },
   optimization: {
     splitChunks: {
+      // chunks: 'all',
+      // minSize: 1,
+      // minChunks: 2
       cacheGroups: {
         vendor: {
           name: 'vendors',
