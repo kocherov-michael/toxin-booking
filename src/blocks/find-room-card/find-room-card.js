@@ -1,5 +1,5 @@
 import calendar from '../calendar/calendar.js'
-import inputDate from '../../js/input-date'
+import inputDate from '../dropdown/input-date'
 
 if (document.querySelector('[data-calendar="find-room"]')){
 

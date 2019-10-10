@@ -56,7 +56,11 @@ block content
             .search-room__filter-header
               .title-3 Даты пребывания в отеле
             .search-room__filter-date-dropdown
-              +filterDateDropdown("19 авг - 23 авг")
+              //- +filterDateDropdown("19 авг - 23 авг")(data-input-filter-date)
+              .search-room__filter-date-input
+                +dateDropdown("19 авг - 23 авг")(data-input-filter-date="search-room")
+              .search-room__calendar-wrapper.hide
+                +calendar("search-room")
             .search-room__filter-header
               .title-3 Гости
             .search-room__filter-guests-dropdown

@@ -156,8 +156,15 @@
     margin-bottom: 5px;
   }
 
+  &__calendar-wrapper {
+    position: absolute;
+    z-index: 10;
+    top: 50px;
+  }
+
   &__filter-date-dropdown {
     margin-bottom: 20px;
+    position: relative;
   }
 
   &__filter-guests-dropdown {

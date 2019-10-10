@@ -8,7 +8,11 @@ rangeSlider()
 formatPrice('[data-price-format]')
 
 
-const calendarElement = document.querySelector('[data-calendar]')
-if (calendarElement) {
-  // const datesData = calendar('[data-calendar]')
+// const calendarElement = document.querySelector('[data-calendar]')
+// if (calendarElement) {
+//   // const datesData = calendar('[data-calendar]')
+// }
+if (document.querySelector('[data-calendar="search-room"]')){
+  // console.log('ok')
+  calendar('[data-calendar="search-room"]','[data-input-filter-date="search-room"]')
 }

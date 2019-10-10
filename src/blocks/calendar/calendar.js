@@ -358,6 +358,7 @@ function calendar(calendarSelector, firstDateSelector, secondDateSelector) {
       }
     }
 
+    // Вывод даты в инпут при выборе дат в календаре
     getCalendarData () {
       const dateBegin = [
         this.calendar.getDoubleNumber(this.calendar.beginDay), 
@@ -371,7 +372,7 @@ function calendar(calendarSelector, firstDateSelector, secondDateSelector) {
         this.calendar.endYear
       ].join('.')
 
-    
+
       if (this.dropdownArrivalInputElement && this.dropdownArrivalInputElement.value !== dateBegin && this.calendar.beginDate !== '') {
     
         this.dropdownArrivalInputElement.value = dateBegin
@@ -384,6 +385,34 @@ function calendar(calendarSelector, firstDateSelector, secondDateSelector) {
       }
       else if (this.dropdownDepartureInputElement && this.dropdownDepartureInputElement.value !== dateEnd && this.calendar.endDate !== '') {
         this.dropdownDepartureInputElement.value = dateEnd
+      }
+    }
+
+    // Вывод диапазона дат в инпут
+    getCalendarRangeData () {
+      const monthsShort = [
+        "янв",
+        "февр",
+        "март",
+        "апр",
+        "май",
+        "июнь",
+        "июль",
+        "авг",
+        "сент",
+        "окт",
+        "нояб",
+        "дек"
+      ]
+
+      const firstDate = `${this.calendar.beginDay} ${monthsShort[this.calendar.beginMonth]}`
+
+      if (this.calendar.endDay) {
+        const secondDate = `${this.calendar.endDay} ${monthsShort[this.calendar.endMonth]}`
+
+        this.dropdownArrivalInputElement.value = `${firstDate} - ${secondDate}`
+      } else {
+        this.dropdownArrivalInputElement.value = firstDate
       }
     }
 
@@ -437,17 +466,15 @@ function calendar(calendarSelector, firstDateSelector, secondDateSelector) {
     const dateFieldElement = calendarElement.querySelector(".calendar__date");
     const clearFieldElement = calendarElement.querySelector(".calendar__action-clear")
     const applyFieldElement = calendarElement.querySelector(".calendar__action-apply")
-    // clearFieldElement.setAttribute('data-clear-calendar', `${calendarElement.getAttribute('data-calendar')}`)
     let calendarWrapperElement
 
-  
     const dateNow = new Date()
     const calendar = new Calendar()
 
-    // calendar.clearAttribute = calendarElement.getAttribute('data-calendar')
-  
     let dropdownArrivalInputElement
     let dropdownDepartureInputElement
+
+    calendar.rangeDateInput = false
   
     if (firstDateSelector) {
       const dropdownArrivalElement = document.querySelector(firstDateSelector)
@@ -456,7 +483,11 @@ function calendar(calendarSelector, firstDateSelector, secondDateSelector) {
       calendarWrapperElement = calendarElement.parentElement
       
       dropdownArrivalChevronElement.addEventListener('click', {handleEvent: calendar.calendarToggle, calendarWrapperElement})
-      
+
+      if (dropdownArrivalElement.hasAttribute('data-input-filter-date')) {
+        calendar.rangeDateInput = true
+      }
+
       if (secondDateSelector) {
         const dropdownDepartureElement = document.querySelector(secondDateSelector)
         const dropdownDepartureChevronElement = dropdownDepartureElement.querySelector('[data-dropdown-chevron]')
@@ -464,12 +495,14 @@ function calendar(calendarSelector, firstDateSelector, secondDateSelector) {
         
         dropdownDepartureChevronElement.addEventListener('click', {handleEvent: calendar.calendarToggle, calendarWrapperElement})
       }
-      
-      calendarWrapperElement.addEventListener("click", {handleEvent:calendar.getCalendarData, calendarElement, dropdownArrivalInputElement, dropdownDepartureInputElement, calendar}, false)
+
+      if (calendar.rangeDateInput === true) {
+        calendarWrapperElement.addEventListener("click", {handleEvent:calendar.getCalendarRangeData, calendarElement, dropdownArrivalInputElement, dropdownDepartureInputElement, calendar}, false)
+      } else {
+        calendarWrapperElement.addEventListener("click", {handleEvent:calendar.getCalendarData, calendarElement, dropdownArrivalInputElement, dropdownDepartureInputElement, calendar}, false)
+      }
     }
     
-    
-  
     const nowMonthNum = dateNow.getMonth();
     const nowMonth = months[nowMonthNum];
   
