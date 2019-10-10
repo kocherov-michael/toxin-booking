@@ -12,7 +12,7 @@
 // import './js/dropdown'
 // import './js/search-room'
 // import './js/room-details'
-// import './js/form-elements'
+import './js/form-elements'
 import './js/cards'
 // import './blocks/header/header.js'
 

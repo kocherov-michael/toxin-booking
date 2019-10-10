@@ -29,14 +29,14 @@ block content
           .form-header.textfields-and-buttons__masked-textfield
             .title-3 Masked text field
             .form-header__state Default
-          +inputText("ДД.ММ.ГГГГ")
+          +inputText("ДД.ММ.ГГГГ")(data-input-date)
           .textfields-and-buttons__date-dropdown-inputs
             .textfields-and-buttons__date-dropdown-inputs-begin
               .title-3.textfields-and-buttons__date-dropdown-inputs-begin-title Date dropdown
-              +dateDropdown("ДД.ММ.ГГГГ")
+              +dateDropdown("ДД.ММ.ГГГГ")(data-input-date)
             .textfields-and-buttons__date-dropdown-inputs-end
               .title-3.textfields-and-buttons__date-dropdown-inputs-end-title Date dropdown
-              +dateDropdown("ДД.ММ.ГГГГ", "19.08.2019")
+              +dateDropdown("ДД.ММ.ГГГГ", "19.08.2019")(data-input-date)
           .col-small
             .title-3.textfields-and-buttons__filter-date-dropdown-title Filter date dropdown
             +dateDropdown("19 авг - 23 авг")

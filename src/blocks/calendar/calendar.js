@@ -1,4 +1,4 @@
-console.log('calendar connect')
+// console.log('calendar connect')
 
 function calendar(calendarSelector, firstDateSelector, secondDateSelector) {
   class Day {

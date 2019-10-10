@@ -1,4 +1,4 @@
-console.log('cards connect')
+// console.log('cards connect')
 import calendar from './../blocks/calendar/calendar.js'
 import './../blocks/find-room-card/find-room-card.js'
 import './../blocks/room-price-card/room-price-card.js'
