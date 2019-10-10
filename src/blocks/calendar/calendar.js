@@ -402,45 +402,47 @@ function calendar(calendarSelector, firstDateSelector, secondDateSelector) {
 
 
 
-  const days = [
-    "Воскресенье",
-    "Понедельник",
-    "Вторник",
-    "Среда",
-    "Четверг",
-    "Пятница",
-    "Суббота"
-  ];
-  const months = [
-    "Январь",
-    "Февраль",
-    "Март",
-    "Апрель",
-    "Май",
-    "Июнь",
-    "Июль",
-    "Август",
-    "Сентябрь",
-    "Октябрь",
-    "Ноябрь",
-    "Декабрь"
-  ];
+  // const days = [
+  //   "Воскресенье",
+  //   "Понедельник",
+  //   "Вторник",
+  //   "Среда",
+  //   "Четверг",
+  //   "Пятница",
+  //   "Суббота"
+  // ];
+
 
   
   const calendarElement = document.querySelector(calendarSelector);
   if(calendarElement) {
-    const headerCalenderElement = calendarElement.querySelector(".calendar__header-date");
+    const headerCalenderElement = calendarElement.querySelector(".calendar__header-date")
     
-    const arrowLeftElement = calendarElement.querySelector(".calendar__header-left");
-    const arrowRightElement = calendarElement.querySelector(".calendar__header-right");
+    const arrowLeftElement = calendarElement.querySelector(".calendar__header-left")
+    const arrowRightElement = calendarElement.querySelector(".calendar__header-right")
     const dateFieldElement = calendarElement.querySelector(".calendar__date");
-    const clearFieldElement = calendarElement.querySelector(".calendar__action-clear");
+    const clearFieldElement = calendarElement.querySelector(".calendar__action-clear")
     const applyFieldElement = calendarElement.querySelector(".calendar__action-apply")
     // clearFieldElement.setAttribute('data-clear-calendar', `${calendarElement.getAttribute('data-calendar')}`)
     let calendarWrapperElement
+
+    const months = [
+      "Январь",
+      "Февраль",
+      "Март",
+      "Апрель",
+      "Май",
+      "Июнь",
+      "Июль",
+      "Август",
+      "Сентябрь",
+      "Октябрь",
+      "Ноябрь",
+      "Декабрь"
+    ]
   
-    const dateNow = new Date();
-    const calendar = new Calendar();
+    const dateNow = new Date()
+    const calendar = new Calendar()
 
     // calendar.clearAttribute = calendarElement.getAttribute('data-calendar')
   
@@ -489,4 +491,4 @@ function calendar(calendarSelector, firstDateSelector, secondDateSelector) {
   return calendar
 }
 
-export default calendar;
+export default calendar

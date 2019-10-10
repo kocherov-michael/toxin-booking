@@ -4,11 +4,11 @@ form.find-room
     .find-room__date-arrival
       .title-3.find-room__title Прибытие
       .find-room__date-arrival-input
-        +dateDropdown("ДД.ММ.ГГГГ")(data-find-room-arrival="find-room")
+        +dateDropdown("ДД.ММ.ГГГГ")(data-find-room-arrival="find-room" data-input-date)
     .find-room__date-leave
       .title-3.find-room__title Выезд
       .find-room__date-leave-input
-        +dateDropdown("ДД.ММ.ГГГГ")(data-find-room-departure="find-room")
+        +dateDropdown("ДД.ММ.ГГГГ")(data-find-room-departure="find-room" data-input-date)
     .calendar-wrapper.hide
       +calendar("find-room")
   .find-room__men.mb-30

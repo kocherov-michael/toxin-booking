@@ -20,7 +20,7 @@ mixin dropdown(placeholder, list, apply, dropdownValue)
               .dropdown-list__item-number(data-dropdown-count) 0
               .dropdown-list__item-plus(data-dropdown-plus) +
         .dropdown-list__action(class=(apply?"":"hide"))
-          .dropdown-list__action-apply
+          .dropdown-list__action-apply(data-dropdown-apply)
             +button-form-single({text: "применить", colorBlue: true, name: "name", type: "button"})
           .dropdown-list__action-clear.hide(data-dropdown-clear)
             +button-form-single({text: "очистить", colorBlue: false, name: "name", type: "button"})

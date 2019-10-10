@@ -1,10 +1,9 @@
-;(function(){
-  'use strict'
-  // console.log("is on")
+// ;(function(){
+//   'use strict'
 
-  dropdown("#dropdown-rooms")
-  dropdown("#dropdown-guests")
-  dropdown("#dropdown-calculator")
+  // dropdown("#dropdown-rooms")
+  // dropdown("#dropdown-guests")
+  // dropdown("#dropdown-calculator")
   
   function dropdown(elementSelector) {
 
@@ -14,10 +13,15 @@
         const listItemElements = dropdownElement.querySelectorAll(".dropdown-list__item")
         const inputElement = dropdownElement.querySelector("[data-dropdown-input]")
         const clearButtonElement = dropdownElement.querySelector("[data-dropdown-clear]")
+        const applyButtonElement = dropdownElement.querySelector("[data-dropdown-apply]")
     
         const listArray = {}
         
         dropdownArrowElement.addEventListener("click", () => {
+          dropdownElement.classList.toggle("dropdown_active")
+        })
+
+        applyButtonElement.addEventListener('click', () => {
           dropdownElement.classList.toggle("dropdown_active")
         })
     
@@ -141,23 +145,23 @@
         }
       }
 
+      function makeWordsEnds( number, array) {
+        let string = ""
+        const lastNum = String(number)[String(number).length-1]
+        const previosNum = String(number)[String(number).length-2]
+    
+        if (lastNum === "1" && previosNum !== "1") {
+          string = array[0]
+        } else if ((lastNum === "2" || lastNum === "3" || lastNum === "4") && previosNum !== "1") {
+          string = array[1]
+        } else if (number === 0) {
+          string = ""
+        } else {
+          string = array[2]
+        }
+        return string
+      }
     }
 
-  function makeWordsEnds( number, array) {
-    let string = ""
-    const lastNum = String(number)[String(number).length-1]
-    const previosNum = String(number)[String(number).length-2]
-
-    if (lastNum === "1" && previosNum !== "1") {
-      string = array[0]
-    } else if ((lastNum === "2" || lastNum === "3" || lastNum === "4") && previosNum !== "1") {
-      string = array[1]
-    } else if (number === 0) {
-      string = ""
-    } else {
-      string = array[2]
-    }
-    return string
-  }
-
-})()
+    export default dropdown
+// })()
