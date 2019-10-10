@@ -413,6 +413,20 @@ function calendar(calendarSelector, firstDateSelector, secondDateSelector) {
   // ];
 
 
+  const months = [
+    "Январь",
+    "Февраль",
+    "Март",
+    "Апрель",
+    "Май",
+    "Июнь",
+    "Июль",
+    "Август",
+    "Сентябрь",
+    "Октябрь",
+    "Ноябрь",
+    "Декабрь"
+  ]
   
   const calendarElement = document.querySelector(calendarSelector);
   if(calendarElement) {
@@ -426,20 +440,6 @@ function calendar(calendarSelector, firstDateSelector, secondDateSelector) {
     // clearFieldElement.setAttribute('data-clear-calendar', `${calendarElement.getAttribute('data-calendar')}`)
     let calendarWrapperElement
 
-    const months = [
-      "Январь",
-      "Февраль",
-      "Март",
-      "Апрель",
-      "Май",
-      "Июнь",
-      "Июль",
-      "Август",
-      "Сентябрь",
-      "Октябрь",
-      "Ноябрь",
-      "Декабрь"
-    ]
   
     const dateNow = new Date()
     const calendar = new Calendar()
