@@ -2,7 +2,7 @@ form.room-price-card
   .room-price-card__header-title
     +roomInfo({
           num: "888", 
-          price: "9 990", 
+          price: "9990", 
           lux: true,
         })
     
@@ -23,27 +23,35 @@ form.room-price-card
   ul.room-price-card-list
     li.room-price-card-list__item
       .room-price-card-list__item-text
-        span.room-price-card-list__price 9 990
+        span.room-price-card-list__price(data-calculator-price) 9990
         span ₽ х 
-        span.room-price-card-list__days 4
+        span.room-price-card-list__days(data-calculator-price="days-count") 4
         span суток
-      .room-price-card-list__item-price 39 960₽
+      .room-price-card-list__item-price
+        span(data-calculator-price="all-days") 39960
+        span ₽
     li.room-price-card-list__item
       .room-price-card-list__item-text
         span Сбор за услуги: скидка 
-        span.room-price-card-list__discount 2 179
+        span.room-price-card-list__discount(data-calculator-price) 2179
         span ₽
         .service-info i
-      .room-price-card-list__item-price 0₽
+      .room-price-card-list__item-price 
+        span(data-calculator-price) 0
+        span ₽
     li.room-price-card-list__item
       .room-price-card-list__item-text
         p Сбор за дополнительные услуги
         .service-info i
-      .room-price-card-list__item-price 300₽
+      .room-price-card-list__item-price
+        span(data-calculator-price) 300
+        span ₽
   .room-price-card__total
     .title-2.room-price-card__total-text Итого
     .room-price-card__total-between
-    .title-2.room-price-card__total-price 38 081₽
+    .title-2.room-price-card__total-price
+      span(data-calculator-price="total") 38081
+      span ₽
 
   .room-price-card__button
     +button-form-wide({text: "Забронировать", name: "book-room", type: "submit"})

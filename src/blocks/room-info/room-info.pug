@@ -3,7 +3,7 @@ mixin roomInfo(options)
     if (!options) {
       options = {
         num: "123", 
-        price: "9 990", 
+        price: "9990", 
         lux: false,
       }
     }
@@ -14,6 +14,6 @@ mixin roomInfo(options)
       span.room-heading-info__number #{options.num}
       span.room-heading-info__type.room-number__type #{lux}
     .room-heading-info__price-per-day
-      span.room-heading-info__price #{options.price}
+      span.room-heading-info__price(data-room-price-per-day=options.price) #{options.price}
       span.room-heading-info__rub.rub P
       span.room-heading-info__text в сутки

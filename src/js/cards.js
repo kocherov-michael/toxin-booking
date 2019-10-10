@@ -8,4 +8,3 @@ const calendarElement = document.querySelector('[data-calendar="cards"]')
 if (calendarElement) {
   calendar('[data-calendar="cards"]')
 }
-dropdown("#dropdown-guests")
