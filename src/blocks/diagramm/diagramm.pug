@@ -1,7 +1,27 @@
+//- .diagramm
+//-   .diagramm__great
+//-   .diagramm__acceptable
+//-   .diagramm__good
+//-   .diagramm__text 
+//-     .title-1.diagramm__text-title 260
+//-     span голосов
 .diagramm
-  .diagramm__great
-  .diagramm__acceptable
-  .diagramm__good
-  .diagramm__text 
-    .title-1.diagramm__text-title 260
-    span голосов
+  svg.donut(width="100%" height="100%" viewBox="0 0 42 42")
+    defs
+      linearGradient(id='great')
+        stop(offset="0%" stop-color="#FFE29C")
+        stop(offset="100%" stop-color="#FFBA9C")
+      linearGradient(id='good')
+        stop(offset="0%" stop-color="#6FCF97")
+        stop(offset="100%" stop-color="#66D2EA")
+      linearGradient(id='acceptable')
+        stop(offset="0%" stop-color="#BC9CFF")
+        stop(offset="100%" stop-color="#8BA4F9")
+      linearGradient(id='disappointed')
+        stop(offset="0%" stop-color="#8A8B8F")
+        stop(offset="100%" stop-color="#434E76")
+    circle.donut-segment(cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#disappointed)" stroke-width="3" stroke-dasharray="15 85" stroke-dashoffset="24.5")
+    circle.donut-segment(cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#acceptable)" stroke-width="5" stroke-dasharray="15 85" stroke-dashoffset="9")
+    circle.donut-segment(cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#good)" stroke-width="3" stroke-dasharray="30 70" stroke-dashoffset="-6.5")
+    circle.donut-segment(cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#great)" stroke-width="3" stroke-dasharray="38 62" stroke-dashoffset="-37")
+    circle.donut-segment(cx="21" cy="21" r="17.91549430918954" fill="transparent" stroke="#fff" stroke-width="4" stroke-dasharray="100 0" stroke-dashoffset="0")
