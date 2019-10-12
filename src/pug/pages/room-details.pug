@@ -69,14 +69,14 @@ block content
             .room-comfort__item
               +comfort("Уют", "Номер оснащён камином", "zmdi zmdi-fire")
           .room-voites
-            .title-2 Впечатления от номера
+            .room-voites__header.title-2 Впечатления от номера
             .room-voites__diagramm
               include ../../blocks/diagramm/diagramm.pug
               ul.diagramm-types
-                li.diagramm-types__item.diagramm-types__item_color_orange Великолепно
-                li.diagramm-types__item.diagramm-types__item_color_green Хорошо
-                li.diagramm-types__item.diagramm-types__item_color_violet Удовлетворительно
-                li.diagramm-types__item.diagramm-types__item_color_dark Разочарован
+                li.diagramm-types__item.diagramm-types__item_color_orange(data-diagramm-great) Великолепно
+                li.diagramm-types__item.diagramm-types__item_color_green(data-diagramm-good) Хорошо
+                li.diagramm-types__item.diagramm-types__item_color_violet(data-diagramm-acceptable) Удовлетворительно
+                li.diagramm-types__item.diagramm-types__item_color_dark(data-diagramm-disappointed) Разочарован
         .room-details__comments
           .room-comments
             .room-comments__header

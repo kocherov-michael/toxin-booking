@@ -1,6 +1,8 @@
 .diagramm {
-  width: 120px;
-  height: 120px;
+  // width: 120px;
+  // height: 120px;
+  width: 158px;
+  height: 158px;
   position: relative;
   display: flex;
   justify-content: space-around;
@@ -88,4 +90,26 @@
 
 .diagramm__text-title {
   color: $purple;
+}
+.chart-text {
+  // font-family: $mainFont;
+  fill: $purple;
+  transform: translateY(0.15em);
+}
+.chart-number {
+  font-family: $secondaryFont;
+  font-size: 0.45em;
+  font-weight: bold;
+  line-height: 1;
+  text-anchor: middle;
+  transform: translateY(-0.37em);
+}
+.chart-label {
+  font-family: $mainFont;
+  font-weight: bold;
+  line-height: 0.9;
+  font-size: 0.23em;
+  text-transform: uppercase;
+  text-anchor: middle;
+  transform: translateY(0.7em);
 }
