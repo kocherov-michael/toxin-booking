@@ -1,4 +1,4 @@
-form.room-price-card
+form.room-price-card(data-calculator-card)
   .room-price-card__header-title
     +roomInfo({
           num: "888", 
@@ -23,35 +23,34 @@ form.room-price-card
   ul.room-price-card-list
     li.room-price-card-list__item
       .room-price-card-list__item-text
-        span.room-price-card-list__price(data-calculator-price) 9990
+        span.room-price-card-list__price(data-calculator-price data-calc-price) 9990
         span ₽ х 
-        span.room-price-card-list__days(data-calculator-price="days-count") 4
+        span.room-price-card-list__days(data-calculator-days-count) 4
         span суток
       .room-price-card-list__item-price
-        span(data-calculator-price="all-days") 39960
+        span(data-calculator-all-days data-calc-price) 39960
         span ₽
     li.room-price-card-list__item
       .room-price-card-list__item-text
         span Сбор за услуги: скидка 
-        span.room-price-card-list__discount(data-calculator-price) 2179
+        span.room-price-card-list__discount(data-calculator-discount="2179" data-calc-price) 2179
         span ₽
         .service-info i
       .room-price-card-list__item-price 
-        span(data-calculator-price) 0
+        span(data-calculator-fee="0" data-calc-price) 0
         span ₽
     li.room-price-card-list__item
       .room-price-card-list__item-text
         p Сбор за дополнительные услуги
         .service-info i
       .room-price-card-list__item-price
-        span(data-calculator-price) 300
+        span(data-calculator-add-fee="300" data-calc-price) 300
         span ₽
   .room-price-card__total
     .title-2.room-price-card__total-text Итого
     .room-price-card__total-between
     .title-2.room-price-card__total-price
-      span(data-calculator-price="total") 38081
+      span(data-calculator-total data-calc-price) 38081
       span ₽
-
   .room-price-card__button
     +button-form-wide({text: "Забронировать", name: "book-room", type: "submit"})
