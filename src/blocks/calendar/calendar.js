@@ -1,9 +1,11 @@
 import DatePicker from './DatePicker.js'
 
 function calendar(calendarSelector, firstDateSelector, secondDateSelector) {
-  
-  const calendarElement = document.querySelector(calendarSelector)
-  if(calendarElement) {
+
+  const calendarList = document.querySelectorAll(calendarSelector)
+  for (let i = 0; i < calendarList.length; i++) {
+
+    const calendarElement = calendarList[i]
     const headerCalenderElement = calendarElement.querySelector(".calendar__header-date")
     
     const arrowLeftElement = calendarElement.querySelector(".calendar__header-left")
