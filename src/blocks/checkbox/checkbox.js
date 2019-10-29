@@ -1,12 +1,8 @@
-
-  // if (window.location.pathname === '/search-room.html'
-  // || window.location.pathname === '/form-elements.html')
 function checkbox (selector) {
   const checkboxList = document.querySelectorAll(selector)
   for (let i = 0; i < checkboxList.length; i++) {
 
     const expandCheckboxElement = checkboxList[i]
-    // const expandCheckboxElement = document.querySelector("[data-search-room-expand]")
     const expandHeaderElement = expandCheckboxElement.querySelector(".expandable-checkbox__header")
     const expandListElement = expandCheckboxElement.querySelector(".expandable-checkbox__list")
     let listHeight = parseFloat(getComputedStyle(expandListElement, null).height.replace("px", ""))
