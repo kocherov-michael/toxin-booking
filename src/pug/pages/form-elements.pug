@@ -1,16 +1,12 @@
 extends ../layout/ui-layout/ui-layout.pug
-//- include ../../blocks/textfield/textfield.pug
-//- include ../../blocks/dropdown/dropdown.pug
-//- include ../../blocks/date-dropdown/date-dropdown.pug
-//- include ../../blocks/radiobutton/radiobutton.pug
 
 block variables
   - var title = 'Form elements';
-  //- - var pageClass = 'body--dashboard';
 
 block content
 
   .page
+    img.page__icon(src=require('../../assets/img/icons/logo-page.png') alt="logo")
     .container.form-elements
       .row.textfields-and-buttons
         .col.textfields-and-buttons__textfields

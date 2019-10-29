@@ -56,7 +56,6 @@ block content
             .search-room__filter-header
               .title-3 Даты пребывания в отеле
             .search-room__filter-date-dropdown
-              //- +filterDateDropdown("19 авг - 23 авг")(data-input-filter-date)
               .search-room__filter-date-input
                 +dateDropdown("19 авг - 23 авг")(data-input-filter-date="search-room")
               .search-room__calendar-wrapper.hide
@@ -69,7 +68,7 @@ block content
               +rangeslider("Диапазон цены", "5000", "10000", "0", "16000")
             .search-room__filter-slider-description Стоимость за сутки пребывания в номере
             .search-room__filter-checkbox
-              .title-3.search-room__filter-checkbox-title Checkbox buttons
+              .title-3.search-room__filter-checkbox-title Возможности
               .search-room__filter-checkbox-item
                 +checkbox("Можно курить", "checkboxName")
               .search-room__filter-checkbox-item
