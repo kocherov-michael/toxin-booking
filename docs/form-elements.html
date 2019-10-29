@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+<meta name="viewport" content="width=device-width,initial-scale=1, shrink-to-fit=no">
+<meta charset="utf-8">
+<title></title>
+<meta name="description">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="stylesheet" href="assets/fonts/quicksand/quicksand.css">
+<link rel="stylesheet" href="assets/fonts/montserrat/montserrat.css">
+<link rel="stylesheet" href="assets/fonts/opensans/opensans.css">
+<link rel="stylesheet" href="assets/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+<link rel="stylesheet" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="shortcut icon" href="favicon.ico" type="image/png">
+  <link href="assets/css/main.b31f6a0124fc72710dce.css" rel="stylesheet"></head>
+  <body>
+    <div class="page"><img class="page__icon" src="assets/img/logo-page.png" alt="logo">
+      <div class="container form-elements">
+        <div class="row textfields-and-buttons">
+          <div class="col textfields-and-buttons__textfields">
+            <div class="form-header">
+              <div class="title-3">Text field</div>
+              <div class="form-header__state">Default</div>
+            </div>
+            <input class="input-text" placeholder="Email">
+            <div class="form-header textfields-and-buttons__focused-textfield">
+              <div class="title-3">Text field</div>
+              <div class="form-header__state">Hover / Focus</div>
+            </div>
+            <input class="input-text" placeholder="This is pretty awesome">
+            <div class="form-header">
+              <div class="title-3">Dropdown</div>
+              <div class="form-header__state">Default</div>
+            </div>
+            <div class="dropdown">
+              <label class="dropdown__textfield">
+                <input class="dropdown__text" type="text" placeholder="Сколько гостей" data-dropdown-input name="dropdown">
+                <div class="dropdown__text-arrow"><i class="zmdi zmdi-chevron-down"></i></div>
+              </label>
+              <div class="dropdown-list">
+                <div class="dropdown-list__item">
+                  <div class="dropdown-list__item-text" data-dropdown-text>l</div>
+                  <div class="dropdown-list__item-count">
+                    <div class="dropdown-list__item-minus dropdown-list__item-minus_unavailable" data-dropdown-minus>-</div>
+                    <div class="dropdown-list__item-number" data-dropdown-count>0</div>
+                    <div class="dropdown-list__item-plus" data-dropdown-plus>+</div>
+                  </div>
+                </div>
+                <div class="dropdown-list__item">
+                  <div class="dropdown-list__item-text" data-dropdown-text>i</div>
+                  <div class="dropdown-list__item-count">
+                    <div class="dropdown-list__item-minus dropdown-list__item-minus_unavailable" data-dropdown-minus>-</div>
+                    <div class="dropdown-list__item-number" data-dropdown-count>0</div>
+                    <div class="dropdown-list__item-plus" data-dropdown-plus>+</div>
+                  </div>
+                </div>
+                <div class="dropdown-list__item">
+                  <div class="dropdown-list__item-text" data-dropdown-text>s</div>
+                  <div class="dropdown-list__item-count">
+                    <div class="dropdown-list__item-minus dropdown-list__item-minus_unavailable" data-dropdown-minus>-</div>
+                    <div class="dropdown-list__item-number" data-dropdown-count>0</div>
+                    <div class="dropdown-list__item-plus" data-dropdown-plus>+</div>
+                  </div>
+                </div>
+                <div class="dropdown-list__item">
+                  <div class="dropdown-list__item-text" data-dropdown-text>t</div>
+                  <div class="dropdown-list__item-count">
+                    <div class="dropdown-list__item-minus dropdown-list__item-minus_unavailable" data-dropdown-minus>-</div>
+                    <div class="dropdown-list__item-number" data-dropdown-count>0</div>
+                    <div class="dropdown-list__item-plus" data-dropdown-plus>+</div>
+                  </div>
+                </div>
+                <div class="dropdown-list__action">
+                  <div class="dropdown-list__action-apply" data-dropdown-apply>
+                    <button class="button button_color_blue" type="button" name="name">применить</button>
+                  </div>
+                  <div class="dropdown-list__action-clear hide" data-dropdown-clear>
+                    <button class="button button_color_dark" type="button" name="name">очистить</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="form-header textfields-and-buttons__masked-textfield">
+              <div class="title-3">Masked text field</div>
+              <div class="form-header__state">Default</div>
+            </div>
+            <input class="input-text" placeholder="ДД.ММ.ГГГГ" data-input-date>
+            <div class="textfields-and-buttons__date-dropdown-inputs">
+              <div class="textfields-and-buttons__date-dropdown-inputs-begin">
+                <div class="title-3 textfields-and-buttons__date-dropdown-inputs-begin-title">Date dropdown</div>
+                <label class="date-dropdown" data-input-date>
+                  <input class="date-dropdown__text" type="text" placeholder="ДД.ММ.ГГГГ">
+                  <div class="date-dropdown__text-arrow" data-dropdown-chevron><i class="zmdi zmdi-chevron-down"></i></div>
+                </label>
+              </div>
+              <div class="textfields-and-buttons__date-dropdown-inputs-end">
+                <div class="title-3 textfields-and-buttons__date-dropdown-inputs-end-title">Date dropdown</div>
+                <label class="date-dropdown" data-input-date>
+                  <input class="date-dropdown__text" type="text" placeholder="ДД.ММ.ГГГГ" value="19.08.2019">
+                  <div class="date-dropdown__text-arrow" data-dropdown-chevron><i class="zmdi zmdi-chevron-down"></i></div>
+                </label>
+              </div>
+            </div>
+            <div class="col-small">
+              <div class="title-3 textfields-and-buttons__filter-date-dropdown-title">Filter date dropdown</div>
+              <label class="date-dropdown" data-input-filter-date>
+                <input class="date-dropdown__text" type="text" placeholder="19 авг - 23 авг">
+                <div class="date-dropdown__text-arrow" data-dropdown-chevron><i class="zmdi zmdi-chevron-down"></i></div>
+              </label>
+              <div class="title-3 textfields-and-buttons__subscribe-title">Subscription text field</div>
+              <label class="subscribe label--arrow">
+                <input class="subscribe__input" type="email" placeholder="Email">
+                <div class="subscribe__arrow"><i class="zmdi zmdi-arrow-right subscribe__icon"></i></div>
+              </label>
+            </div>
+          </div>
+          <div class="col-wide">
+            <div class="col">
+              <div class="textfields-and-buttons__checkbox-col">
+                <div class="title-3 textfields-and-buttons__checkbox-buttons-title">Checkbox buttons</div>
+                <div class="textfields-and-buttons__checkbox-item">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox" name="checkbox"><span class="checkbox__new-input"> 
+                      <div class="checkbox__check-item"></div></span>
+                    <div class="checkbox__text">Можно курить</div>
+                  </label>
+                </div>
+                <div class="textfields-and-buttons__checkbox-item">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox" name="checkbox" value="checked"><span class="checkbox__new-input"> 
+                      <div class="checkbox__check-item"></div></span>
+                    <div class="checkbox__text">Можно с питомцами</div>
+                  </label>
+                </div>
+                <div class="textfields-and-buttons__checkbox-item">
+                  <label class="checkbox">
+                    <input class="checkbox__input" type="checkbox" name="checkbox" value="checked"><span class="checkbox__new-input"> 
+                      <div class="checkbox__check-item"></div></span>
+                    <div class="checkbox__text">Можно пригласить гостей (до 10 человек)</div>
+                  </label>
+                </div>
+                <div class="title-3 textfields-and-buttons__radio-title">Radio buttons</div>
+                <div class="textfields-and-buttons__radiobutton-first">
+                  <label class="radio-button"> 
+                    <input class="radio-button__input" type="radio" name="male" value="man" checked>
+                    <div class="radio-button__check-outer">
+                      <div class="radio-button__check-inner"></div>
+                    </div>
+                    <div class="radio-button__text">Мужчина</div>
+                  </label>
+                </div>
+                <div class="textfields-and-buttons__radiobutton-second">
+                  <label class="radio-button">
+                    <input class="radio-button__input" type="radio" name="male" value="woman">
+                    <div class="radio-button__check-outer">
+                      <div class="radio-button__check-inner"></div>
+                    </div>
+                    <div class="radio-button__text">Женщина</div>
+                  </label>
+                </div>
+              </div>
+              <div class="title-3 textfields-and-buttons__togle-title">Toggle</div>
+              <div class="textfields-and-buttons__togle-item">
+                <label class="toggle">
+                  <input class="toggle__input" type="checkbox" name="checkbox" checked>
+                  <div class="toggle__input-outer">
+                    <div class="toggle__input-inner"></div>
+                  </div>
+                  <div class="toggle__text">Получать спецпредложения</div>
+                </label>
+              </div>
+              <div class="textfields-and-buttons__togle-item">
+                <label class="toggle">
+                  <input class="toggle__input" type="checkbox" name="checkbox">
+                  <div class="toggle__input-outer">
+                    <div class="toggle__input-inner"></div>
+                  </div>
+                  <div class="toggle__text">Получать спецпредложения</div>
+                </label>
+              </div>
+              <div class="title-3 textfields-and-buttons__like-button-title">Like button</div>
+              <div class="textfields-and-buttons__like-button-item">
+                <div class="like-button"><i class="like-button__heart zmdi"></i>
+                  <div class="like-button__number">2</div>
+                </div>
+              </div>
+              <div class="textfields-and-buttons__like-button-item">
+                <div class="like-button like-button_checked"><i class="like-button__heart zmdi"></i>
+                  <div class="like-button__number">12</div>
+                </div>
+              </div>
+              <div class="title-3 textfields-and-buttons__rate-button-title">Rate button</div>
+              <div class="textfields-and-buttons__rate-button-elements">
+                <div class="rate-button">
+                  <div class="rate-button__star ratebutton__star_active"><i class="zmdi rate-button__star-icon"></i></div>
+                  <div class="rate-button__star ratebutton__star_active"><i class="zmdi rate-button__star-icon"></i></div>
+                  <div class="rate-button__star ratebutton__star_active"><i class="zmdi rate-button__star-icon"></i></div>
+                  <div class="rate-button__star ratebutton__star_active"><i class="zmdi rate-button__star-icon"></i></div>
+                  <div class="rate-button__star"><i class="zmdi rate-button__star-icon"></i></div>
+                </div>
+                <div class="rate-button">
+                  <div class="rate-button__star ratebutton__star_active"><i class="zmdi rate-button__star-icon"></i></div>
+                  <div class="rate-button__star ratebutton__star_active"><i class="zmdi rate-button__star-icon"></i></div>
+                  <div class="rate-button__star ratebutton__star_active"><i class="zmdi rate-button__star-icon"></i></div>
+                  <div class="rate-button__star ratebutton__star_active"><i class="zmdi rate-button__star-icon"></i></div>
+                  <div class="rate-button__star ratebutton__star_active"><i class="zmdi rate-button__star-icon"></i></div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="col">
+                <div class="col-small">
+                  <div class="range-slider" data-range-slider data-min-range="0" data-max-range="16000">
+                    <div class="range-slider__header-wrapper">
+                      <div class="range-slider__header">range slider</div>
+                      <div class="range-slider__range"> <span data-min-value data-price-format>5000</span><span class="rub">Р</span>&nbsp; - <span data-max-value data-price-format>10000</span><span class="rub">Р</span></div>
+                    </div>
+                    <div class="range-slider__slider" data-range-slider-field>
+                      <div class="range-slider__slider-circle range-slider__slider-circle_left" data-range-slider-left-item></div>
+                      <div class="range-slider__slider-line" data-range-slider-line></div>
+                      <div class="range-slider__slider-circle range-slider__slider-circle_right" data-range-slider-right-item></div>
+                    </div>
+                    <input class="input-range-slider" type="text" name="my_range" value="" data-input-range-slider>
+                  </div>
+                </div>
+                <div class="title-3 textfields-and-buttons__buttons-title">Buttons</div>
+                <div class="textfields-and-buttons__primary-buttons">
+                  <div class="textfields-and-buttons__primary-buttons-item">
+                    <button class="button button-primary" type="button" name="name">click me</button>
+                  </div>
+                  <button class="button button-primary button-primary_clicked" type="button" name="name">click me</button>
+                </div>
+                <div class="textfields-and-buttons__secondary-buttons">
+                  <div class="textfields-and-buttons__secondary-buttons-item">
+                    <button class="button button-secondary" type="button" name="name">
+                      <div class="button-secondary__inner">click me</div>
+                      <div class="button-secondary__outer"></div>
+                    </button>
+                  </div>
+                  <button class="button button-secondary button-secondary_clicked" type="button" name="name">
+                    <div class="button-secondary__inner">click me</div>
+                    <div class="button-secondary__outer"></div>
+                  </button>
+                </div>
+                <div class="textfields-and-buttons__single-buttons">
+                  <div class="textfields-and-buttons__single-buttons-item">
+                    <button class="button button_color_blue" type="button" name="name">click me</button>
+                  </div>
+                  <button class="button button_color_dark" type="button" name="name">click me</button>
+                </div>
+                <div class="textfields-and-buttons__wide-button">
+                  <button class="button button-wide" type="button" name="name" value="name">Перейти к оплате
+                    <div class="button-wide__arrow"><i class="zmdi zmdi-arrow-right"></i></div>
+                  </button>
+                </div>
+                <div class="title-3 textfields-and-buttons__pagination-title">pagination</div>
+                <div class="textfields-and-buttons__pagination">
+                  <div class="pagination">
+                    <div class="pagination__pages">
+                      <div class="pagination__pages-item pagination__pages-item_active">1</div>
+                      <div class="pagination__pages-item">2</div>
+                      <div class="pagination__pages-item">3</div>
+                      <div class="pagination__pages-item">...</div>
+                      <div class="pagination__pages-item">15</div>
+                      <div class="pagination__pages-item pagination__pages-item_arrow"><i class="zmdi zmdi-arrow-right"></i></div>
+                    </div>
+                    <div class="pagination__description">1 – 12 из 100+ вариантов аренды</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row dropdowns">
+          <div class="col">
+            <div class="col-small">
+              <div class="form-header">
+                <div class="title-3 form-header__title">Dropdown</div>
+                <div class="form-header__state">Default</div>
+              </div>
+              <div class="dropdown">
+                <label class="dropdown__textfield">
+                  <input class="dropdown__text" type="text" placeholder="Удобства в номере" data-dropdown-input name="dropdown" value="2 спальни, 2 кровати...">
+                  <div class="dropdown__text-arrow"><i class="zmdi zmdi-chevron-down"></i></div>
+                </label>
+              </div>
+              <div class="form-header">
+                <div class="title-3 form-header__title">Dropdown</div>
+                <div class="form-header__state">Expanded</div>
+              </div>
+              <div class="dropdowns__expanded-dropdown">
+                <div class="dropdown dropdown_active" id="dropdown-rooms">
+                  <label class="dropdown__textfield">
+                    <input class="dropdown__text" type="text" placeholder="Удобства в номере" data-dropdown-input name="dropdown" value="2 спальни, 2 кровати...">
+                    <div class="dropdown__text-arrow"><i class="zmdi zmdi-chevron-down"></i></div>
+                  </label>
+                  <div class="dropdown-list">
+                    <div class="dropdown-list__item">
+                      <div class="dropdown-list__item-text" data-dropdown-text>спальни</div>
+                      <div class="dropdown-list__item-count">
+                        <div class="dropdown-list__item-minus dropdown-list__item-minus_unavailable" data-dropdown-minus>-</div>
+                        <div class="dropdown-list__item-number" data-dropdown-count>0</div>
+                        <div class="dropdown-list__item-plus" data-dropdown-plus>+</div>
+                      </div>
+                    </div>
+                    <div class="dropdown-list__item">
+                      <div class="dropdown-list__item-text" data-dropdown-text>кровати</div>
+                      <div class="dropdown-list__item-count">
+                        <div class="dropdown-list__item-minus dropdown-list__item-minus_unavailable" data-dropdown-minus>-</div>
+                        <div class="dropdown-list__item-number" data-dropdown-count>0</div>
+                        <div class="dropdown-list__item-plus" data-dropdown-plus>+</div>
+                      </div>
+                    </div>
+                    <div class="dropdown-list__item">
+                      <div class="dropdown-list__item-text" data-dropdown-text>ванные комнаты</div>
+                      <div class="dropdown-list__item-count">
+                        <div class="dropdown-list__item-minus dropdown-list__item-minus_unavailable" data-dropdown-minus>-</div>
+                        <div class="dropdown-list__item-number" data-dropdown-count>0</div>
+                        <div class="dropdown-list__item-plus" data-dropdown-plus>+</div>
+                      </div>
+                    </div>
+                    <div class="dropdown-list__action hide">
+                      <div class="dropdown-list__action-apply" data-dropdown-apply>
+                        <button class="button button_color_blue" type="button" name="name">применить</button>
+                      </div>
+                      <div class="dropdown-list__action-clear hide" data-dropdown-clear>
+                        <button class="button button_color_dark" type="button" name="name">очистить</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-wide">
+            <div class="col">
+              <div class="title-3 dropdowns__title">Dropdown</div>
+              <div class="dropdown dropdown_active">
+                <label class="dropdown__textfield">
+                  <input class="dropdown__text" type="text" placeholder="Сколько гостей" data-dropdown-input name="dropdown">
+                  <div class="dropdown__text-arrow"><i class="zmdi zmdi-chevron-down"></i></div>
+                </label>
+                <div class="dropdown-list">
+                  <div class="dropdown-list__item">
+                    <div class="dropdown-list__item-text" data-dropdown-text>взрослые</div>
+                    <div class="dropdown-list__item-count">
+                      <div class="dropdown-list__item-minus dropdown-list__item-minus_unavailable" data-dropdown-minus>-</div>
+                      <div class="dropdown-list__item-number" data-dropdown-count>0</div>
+                      <div class="dropdown-list__item-plus" data-dropdown-plus>+</div>
+                    </div>
+                  </div>
+                  <div class="dropdown-list__item">
+                    <div class="dropdown-list__item-text" data-dropdown-text>дети</div>
+                    <div class="dropdown-list__item-count">
+                      <div class="dropdown-list__item-minus dropdown-list__item-minus_unavailable" data-dropdown-minus>-</div>
+                      <div class="dropdown-list__item-number" data-dropdown-count>0</div>
+                      <div class="dropdown-list__item-plus" data-dropdown-plus>+</div>
+                    </div>
+                  </div>
+                  <div class="dropdown-list__item">
+                    <div class="dropdown-list__item-text" data-dropdown-text>младенцы</div>
+                    <div class="dropdown-list__item-count">
+                      <div class="dropdown-list__item-minus dropdown-list__item-minus_unavailable" data-dropdown-minus>-</div>
+                      <div class="dropdown-list__item-number" data-dropdown-count>0</div>
+                      <div class="dropdown-list__item-plus" data-dropdown-plus>+</div>
+                    </div>
+                  </div>
+                  <div class="dropdown-list__action">
+                    <div class="dropdown-list__action-apply" data-dropdown-apply>
+                      <button class="button button_color_blue" type="button" name="name">применить</button>
+                    </div>
+                    <div class="dropdown-list__action-clear hide" data-dropdown-clear>
+                      <button class="button button_color_dark" type="button" name="name">очистить</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="title-3 dropdowns__title">Dropdown</div>
+              <div class="dropdown dropdown_active" id="dropdown-calculator">
+                <label class="dropdown__textfield">
+                  <input class="dropdown__text" type="text" placeholder="Сколько гостей" data-dropdown-input name="dropdown" value="3 гостя">
+                  <div class="dropdown__text-arrow"><i class="zmdi zmdi-chevron-down"></i></div>
+                </label>
+                <div class="dropdown-list">
+                  <div class="dropdown-list__item">
+                    <div class="dropdown-list__item-text" data-dropdown-text>взрослые</div>
+                    <div class="dropdown-list__item-count">
+                      <div class="dropdown-list__item-minus dropdown-list__item-minus_unavailable" data-dropdown-minus>-</div>
+                      <div class="dropdown-list__item-number" data-dropdown-count>0</div>
+                      <div class="dropdown-list__item-plus" data-dropdown-plus>+</div>
+                    </div>
+                  </div>
+                  <div class="dropdown-list__item">
+                    <div class="dropdown-list__item-text" data-dropdown-text>дети</div>
+                    <div class="dropdown-list__item-count">
+                      <div class="dropdown-list__item-minus dropdown-list__item-minus_unavailable" data-dropdown-minus>-</div>
+                      <div class="dropdown-list__item-number" data-dropdown-count>0</div>
+                      <div class="dropdown-list__item-plus" data-dropdown-plus>+</div>
+                    </div>
+                  </div>
+                  <div class="dropdown-list__item">
+                    <div class="dropdown-list__item-text" data-dropdown-text>младенцы</div>
+                    <div class="dropdown-list__item-count">
+                      <div class="dropdown-list__item-minus dropdown-list__item-minus_unavailable" data-dropdown-minus>-</div>
+                      <div class="dropdown-list__item-number" data-dropdown-count>0</div>
+                      <div class="dropdown-list__item-plus" data-dropdown-plus>+</div>
+                    </div>
+                  </div>
+                  <div class="dropdown-list__action">
+                    <div class="dropdown-list__action-apply" data-dropdown-apply>
+                      <button class="button button_color_blue" type="button" name="name">применить</button>
+                    </div>
+                    <div class="dropdown-list__action-clear hide" data-dropdown-clear>
+                      <button class="button button_color_dark" type="button" name="name">очистить</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row checkboxes">
+          <div class="col">
+            <div class="col-small">
+              <div class="checkboxes__expandable-close">
+                <div class="expandable-checkbox">
+                  <div class="expandable-checkbox__header"> 
+                    <div class="expandable-checkbox__header-text">expandable checkbox list</div>
+                    <div class="expandable-checkbox__header-arrow"><i class="zmdi zmdi-chevron-down"></i></div>
+                  </div>
+                </div>
+              </div>
+              <div class="checkboxes__expandable-open">
+                <div class="expandable-checkbox expandable-checkbox_active" data-search-room-expand>
+                  <div class="expandable-checkbox__header"> 
+                    <div class="expandable-checkbox__header-text">expandable checkbox list</div>
+                    <div class="expandable-checkbox__header-arrow"><i class="zmdi zmdi-chevron-down"></i></div>
+                  </div>
+                  <div class="expandable-checkbox__list">
+                    <div class="expandable-checkbox__list-item">
+                      <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox" name="checkbox" value="breakfast"><span class="checkbox__new-input"> 
+                          <div class="checkbox__check-item"></div></span>
+                        <div class="checkbox__text">Завтрак</div>
+                      </label>
+                    </div>
+                    <div class="expandable-checkbox__list-item">
+                      <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox" name="checkbox" value="desc" checked><span class="checkbox__new-input"> 
+                          <div class="checkbox__check-item"></div></span>
+                        <div class="checkbox__text">Письменный стол</div>
+                      </label>
+                    </div>
+                    <div class="expandable-checkbox__list-item">
+                      <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox" name="checkbox" value="chair" checked><span class="checkbox__new-input"> 
+                          <div class="checkbox__check-item"></div></span>
+                        <div class="checkbox__text">Стул для кормления</div>
+                      </label>
+                    </div>
+                    <div class="expandable-checkbox__list-item">
+                      <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox" name="checkbox" value="bed" checked><span class="checkbox__new-input"> 
+                          <div class="checkbox__check-item"></div></span>
+                        <div class="checkbox__text">Кроватка</div>
+                      </label>
+                    </div>
+                    <div class="expandable-checkbox__list-item">
+                      <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox" name="checkbox" value="tv"><span class="checkbox__new-input"> 
+                          <div class="checkbox__check-item"></div></span>
+                        <div class="checkbox__text">Телевизор</div>
+                      </label>
+                    </div>
+                    <div class="expandable-checkbox__list-item">
+                      <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox" name="checkbox" value="shampoo"><span class="checkbox__new-input"> 
+                          <div class="checkbox__check-item"></div></span>
+                        <div class="checkbox__text">Шампунь</div>
+                      </label>
+                    </div>
+                    <div class="expandable-checkbox__list-item">
+                      <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox" name="checkbox" value="tv"><span class="checkbox__new-input"> 
+                          <div class="checkbox__check-item"></div></span>
+                        <div class="checkbox__text">Телевизор</div>
+                      </label>
+                    </div>
+                    <div class="expandable-checkbox__list-item">
+                      <label class="checkbox">
+                        <input class="checkbox__input" type="checkbox" name="checkbox" value="shampoo"><span class="checkbox__new-input"> 
+                          <div class="checkbox__check-item"></div></span>
+                        <div class="checkbox__text">Шампунь</div>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-wide checkboxes__col-wide">
+            <div class="col">
+              <div class="col-small">
+                <div class="title-3 checkboxes__rich-title">rich checkbox buttons</div>
+                <div class="checkboxes__rich-narrow">
+                  <label class="checkbox-rich">
+                    <input class="checkbox-rich__input" type="checkbox" name="wide-corridor" value="wide-corridor"><span class="checkbox-rich__new-input"> 
+                      <div class="checkbox__check-item"></div></span>
+                    <div class="checkbox-rich__text">
+                      <div class="checkbox-rich__text-title">Широкий коридор</div>
+                      <div class="checkbox-rich__text-description">Ширина коридоров в номере не менее 91 см.</div>
+                    </div>
+                  </label>
+                </div>
+                <div class="checkboxes__rich-middle">
+                  <label class="checkbox-rich">
+                    <input class="checkbox-rich__input" type="checkbox" name="disable-assistant" value="disable-assistant"><span class="checkbox-rich__new-input"> 
+                      <div class="checkbox__check-item"></div></span>
+                    <div class="checkbox-rich__text">
+                      <div class="checkbox-rich__text-title">Помощник для инвалидов</div>
+                      <div class="checkbox-rich__text-description">На 1 этаже вас встретит специалист и проводит до номера.</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="col-small">
+                <div class="title-3 checkboxes__bullet-title">bullet list</div>
+                <div class="bulletlist">
+                  <div class="bulletlist__item">Нельзя с питомцами</div>
+                  <div class="bulletlist__item">Без вечеринок и мероприятий</div>
+                  <div class="bulletlist__item">Время прибытия — после 13:00, а выезд до 12:00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row comments">
+          <div class="col">
+            <div class="comments__comfort">
+              <div class="comments__comfort-item">
+                <div class="comfort">
+                  <div class="comfort__icon"><i class="zmdi zmdi-mood icon-color"></i></div>
+                  <div class="comfort__description">
+                    <div class="comfort__title">Комфорт</div>
+                    <div class="comfort__text">Шумопоглощающие стены</div>
+                  </div>
+                </div>
+              </div>
+              <div class="comments__comfort-item">
+                <div class="comfort">
+                  <div class="comfort__icon"><i class="zmdi zmdi-city icon-color"></i></div>
+                  <div class="comfort__description">
+                    <div class="comfort__title">Удобство</div>
+                    <div class="comfort__text">Окно в каждой из спален</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-wide">
+            <div class="comments__user-comment">
+              <div class="comment">
+                <div class="comment__left-side">
+                  <div class="comment__avatar"><img class="comment__img" src="./assets/img/avatar/avatar.png" alt="avatar"></div>
+                  <div class="comment__likebutton">
+                    <div class="like-button like-button_checked"><i class="like-button__heart zmdi"></i>
+                      <div class="like-button__number">12</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="comment__rigth-side">
+                  <div class="comment__author">Мурад Сарафанов</div>
+                  <div class="comment__time">5 дней назад</div>
+                  <div class="comment__text">Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<script src="assets/js/main.js"></script>
+  <script type="text/javascript" src="assets/js/vendors.b31f6a0124fc72710dce.js"></script><script type="text/javascript" src="assets/js/main.b31f6a0124fc72710dce.js"></script></body>
+</html>
