@@ -40,7 +40,6 @@
 }
 
 .calendar__week-item {
-  // width: 40px;
   display: inline-block;
   text-align: center;
   color: $purple;
@@ -127,5 +126,10 @@
   margin: 15px 0 5px -2px;
 }
 
+.calendar-wrapper {
+  position: absolute;
+  z-index: 15;
+  top: 70px;
+}
 
 

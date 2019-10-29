@@ -23,8 +23,7 @@ module.exports = {
   externals: {
     paths: PATHS
   },
-  entry: PATHS.src
-  ,
+  entry: PATHS.src,
   output: {
     // filename: `${PATHS.assets}js/[name].[hash].js`,
     filename: `${PATHS.assets}js/[name].[hash].js`,
