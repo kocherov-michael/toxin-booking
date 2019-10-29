@@ -1,10 +1,10 @@
-function slider(element) {
-  console.log()
-  // const sliderElement = document.querySelector(element)
-  const sliderElement = element
-  if (sliderElement) {
+function sliderImg(elementSelector) {
 
-  
+  const sliderEmementList = document.querySelectorAll(elementSelector)
+
+  for (let i = 0; i < sliderEmementList.length; i++) {
+
+    const sliderElement = sliderEmementList[i]
     const sliderContainerElement = sliderElement.querySelector('[data-slider-container]')
     const sliderItems = sliderElement.querySelectorAll('[data-slider-item]')
     const leftArrowElement = sliderElement.querySelector('[data-slider-left-arrow]')
@@ -69,4 +69,4 @@ function slider(element) {
 }
 
 
-export default slider
+export default sliderImg

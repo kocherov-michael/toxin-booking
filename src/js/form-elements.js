@@ -1,3 +1,4 @@
+
 import formatPrice from './format-price'
 import inputDate from './../blocks/dropdown/input-date'
 import rangeSlider from './../blocks/range-slider/range-slider.js'
