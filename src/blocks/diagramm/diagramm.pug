@@ -1,7 +1,31 @@
-.diagramm
-  .diagramm__great
-  .diagramm__acceptable
-  .diagramm__good
-  .diagramm__text 
-    .title-1.diagramm__text-title 260
-    span голосов
+//- .diagramm
+//-   .diagramm__great
+//-   .diagramm__acceptable
+//-   .diagramm__good
+//-   .diagramm__text 
+//-     .title-1.diagramm__text-title 260
+//-     span голосов
+.diagramm(data-diagramm)
+  svg.donut(width="100%" height="100%" viewBox="0 0 42 42")
+    defs
+      linearGradient(id='great' x1="0" x2="0" y1="0" y2="1")
+        stop(offset="0%" stop-color="#FFE29C")
+        stop(offset="100%" stop-color="#FFBA9C")
+      linearGradient(id='good')
+        stop(offset="0%" stop-color="#66D2EA")
+        stop(offset="100%" stop-color="#6FCF97")
+      linearGradient(id='acceptable' x1="0" x2="0" y1="0" y2="1")
+        stop(offset="0%" stop-color="#BC9CFF")
+        stop(offset="100%" stop-color="#8BA4F9")
+      linearGradient(id='disappointed' x1="0" x2="0" y1="0" y2="1")
+        stop(offset="0%" stop-color="#8A8B8F")
+        stop(offset="100%" stop-color="#434E76")
+    circle.donut-segment(data-active-circle="0" data-color="#626981" data-circle-disappointed cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#disappointed)" stroke-width="2" stroke-dasharray="0 100" stroke-dashoffset="24.5")
+    circle.donut-segment(data-active-circle="260" data-color="#BC9CFF" data-circle-acceptable cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#acceptable)" stroke-width="5" stroke-dasharray="24 76" stroke-dashoffset="24.5")
+    circle.donut-segment(data-active-circle="259" data-color="#69D1C9" data-circle-good cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#good)" stroke-width="2" stroke-dasharray="24 76" stroke-dashoffset="-0.3")
+    circle.donut-segment(data-active-circle="520" data-color="#FFCB9C" data-circle-great cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#great)" stroke-width="2" stroke-dasharray="49.5 50.5" stroke-dashoffset="-25.3")
+    //- circle.donut-segment(cx="21" cy="21" r="17.91549430918954" fill="transparent" stroke="#fff" stroke-width="4" stroke-dasharray="100 0" stroke-dashoffset="0")
+    circle.donut-segment(cx="21" cy="21" r="18" fill="transparent" stroke="#fff" stroke-width="4" stroke-dasharray="100 0" stroke-dashoffset="0")
+    g.chart-text
+      text.chart-number(data-chart-number x="50%" y="50%") 260
+      text.chart-label(x="50%" y="50%") Голосов

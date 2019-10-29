@@ -4,11 +4,12 @@ include ../../blocks/palette/palette.pug
 block variables
   - var title = 'Colors & Type';
   //- - var pageClass = 'body--dashboard';
+  - var pageClass = 'body_logo';
 
 block content
 
   .page
-    //- img.page-icon(src="./assets/img/icons/logo-page.png" alt="logo")
+    img.page__icon(src=require('../../assets/img/icons/logo-page.png') alt="logo")
     .container
       .colors-and-types
         .colors-and-types__colors 

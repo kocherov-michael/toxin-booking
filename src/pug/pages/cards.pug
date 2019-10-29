@@ -6,6 +6,7 @@ block variables
 block content
 
   .page.page_theme_dark
+    img.page__icon(src=require('../../assets/img/icons/logo-page.png') alt="logo")
     .container
       .cards
         .cards__col
@@ -16,8 +17,8 @@ block content
           .cards__room-price-card
             include ../../blocks/room-price-card/room-price-card.pug
           include ../../blocks/login-card/login-card.pug
-        .cards__col-narrow
-          include ../../blocks/calendar/calendar.pug
+        .cards__col-calendar
+          +calendar("cards")
           .cards__col-inner
             .cards__room-card-wrapper
               +roomCard({
@@ -28,7 +29,7 @@ block content
                     require('../../assets/img/images/image_888.jpg')
                     ],
                   num: "888", 
-                  price: "9 990", 
+                  price: "9990", 
                   stars: "5",
                   comments: "145",
                   lux: true
@@ -41,7 +42,7 @@ block content
                 require('../../assets/img/images/image_840.jpg')
                 ], 
               num: "840",
-              price: "9 900", 
+              price: "9900", 
               stars: "4",
               comments: "65",
               lux: false

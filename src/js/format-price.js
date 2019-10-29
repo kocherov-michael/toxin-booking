@@ -1,25 +1,33 @@
 function formatPrice(selector) {
-  const priceElement = document.querySelectorAll(selector)
+  if (typeof(selector) === 'string') {
 
-  for (let i = 0; i < priceElement.length; i++) {
-    const price = [...priceElement[i].innerHTML].reverse()
-    const newPrice = []
-
-    for( let i = 0; i < price.length; i++) {
-      if (price[i] === ' ') {
-        price.splice(i, 1)
-      }
+    const priceElement = document.querySelectorAll(selector)
+    for (let i = 0; i < priceElement.length; i++) {
+      // удаляем пробелы, если есть
+      const price = parseInt([...priceElement[i].innerHTML].filter(letter => letter !== ' ').join(''))
+      // Добавляем пробелы куда нужно
+      priceElement[i].innerHTML = addSpaces(price)
     }
+  }
+  else if (typeof(selector) === 'number') {
+    return addSpaces(selector)
+  }
 
-    for( let i = 0; i < price.length; i++) {
+  function addSpaces ( number) {
+    const price = [...number.toString()].reverse()
+    const newPrice = []
+    
+    const priceArrayWithoutSpace = price.filter(letter => letter !== ' ')
+
+    for( let i = 0; i < priceArrayWithoutSpace.length; i++) {
       if ((Math.floor(i/3) === i/3) && i !== 0) {
         newPrice.push(' ')
-        newPrice.push(price[i])
+        newPrice.push(priceArrayWithoutSpace[i])
       } else {
-        newPrice.push(price[i])
+        newPrice.push(priceArrayWithoutSpace[i])
       }
     }
-    priceElement[i].innerHTML = `${newPrice.reverse().join('')}`
+    return `${newPrice.reverse().join('')}`
   }
 }
 

@@ -163,7 +163,7 @@
 }
 
 .room-voites {
-  width: 49%;
+  width: 52%;
   padding-left: 15px;
 
   @media (max-width: 767px) {
@@ -171,9 +171,13 @@
   }
 }
 
+.room-voites__header {
+  padding-left: 21px;
+}
+
 .room-voites__diagramm {
   display: flex;
-  margin-top: 21px;
+  // margin-top: 21px;
   flex-wrap: wrap;
 
   @media (max-width: 767px) {
@@ -260,11 +264,17 @@
 }
 
 .diagramm-types {
-  padding-top: 13px;
-  width: 52.5%;
+  padding-top: 32px;
+  // width: 52.5%;
+  padding-inline-start: 29px;
 
   &__item {
     position: relative;
+
+    &:hover {
+      cursor: pointer;
+      font-weight: bold;
+    }
 
     &:before {
       display: block;

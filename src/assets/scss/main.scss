@@ -2,27 +2,11 @@
 @import "utils/vars";
 @import "utils/mixins";
 @import "utils/fonts";
-// @import "utils/reset";
 @import "utils/paddings";
 @import "utils/margins";
 
 //Base
 @import "base/base";
-
-//Forms
-// @import "forms/_textfields";
-// @import "forms/_dropdowns";
-// @import "forms/_toggle";
-// @import "forms/_buttons";
-// @import "forms/_checkbox";
-// @import "forms/_radiobutton";
-// @import "forms/_likebutton";
-// @import "forms/_ratebutton";
-// @import "forms/_rangeslider";
-// @import "forms/_pagination";
-// @import "forms/_bulletlist";
-// @import "forms/_comfort";
-// @import "forms/_comment";
 
 //Blocks
 @import "../../blocks/palette/palette";
@@ -54,116 +38,18 @@
 @import "../../blocks/footer/footer";
 @import "../../blocks/diagramm/diagramm";
 
-
 //UI-KIT
-// @import "ui-kit/ui-kit";
-
-//Sections
-// @import "sections/_find-room";
-// @import "sections/_registration-card";
-// @import "sections/_room-price";
-// @import "sections/_login-card";
-// @import "sections/_calendar";
-// @import "sections/_room-card";
-// @import "sections/_header";
-// @import "sections/_footer";
-
-//Pages
 @import "pages/index";
-@import "pages/registration";
-@import "pages/sign-in";
-@import "pages/landing";
-@import "pages/main";
-@import "pages/search-room";
-@import "pages/room-details";
 @import "pages/colors-and-types";
 @import "pages/form-elements";
 @import "pages/cards";
 @import "pages/headers-and-footers";
 
+//Pages
+@import "pages/registration";
+@import "pages/sign-in";
+@import "pages/main";
+@import "pages/search-room";
+@import "pages/room-details";
 
 
-// html {
-//   line-height: $mainLineHeight;
-// 	font-size: $mainFontSize;
-// 	color: $mainFontColor;
-//   height: 100%;
-//   @media screen and (max-width: $desktopWidth) {
-// 		font-size: 16px;
-//   }
-//   @media screen and (max-width: $tableWidth) {
-// 		font-size: 15px;
-//   }
-//   @media screen and (max-width: $phoneWidth) {
-// 		font-size: 14px;
-//   }
-// }
-
-// body {
-//   margin: 0;
-//   padding: 0;
-//   font-family: $mainFont;
-// 	font-size: $mainFontSize;
-//   font-weight: $mainFontWeight;
-//   -webkit-font-smoothing: antialiased;
-//   -moz-osx-font-smoothing: grayscale;
-// }
-
-// *, *:before, *:after { box-sizing: border-box; }
-
-// h1, h2, h3, h4, h5, h6 { margin: 0; }
-
-// a { text-decoration: none; }
-
-// ul, li {
-//   margin: 0;
-//   padding: 0;
-//   list-style-type: none;
-// }
-
-// section, .section {
-//   position: relative;
-//   padding: 40px 0;
-//   @media screen and (max-width: $desktopWidth) {
-//     padding: 36px 0;
-//   }
-//   @media screen and (max-width: $desktopWidth) {
-//     padding: 28px 0;
-//   }
-//   @media screen and (max-width: $desktopWidth) {
-//     padding: 20px 0;
-//   }
-// }
-
-// .wrapper {
-//   display: flex;
-//   flex-direction: column;
-//   margin: 0 auto;
-//   min-height: 100vh;
-// }
-
-// .content-wrapper {
-//   display: flex;
-//   flex-direction: column;
-//   min-height: 100vh;
-// }
-
-// .container {
-//   width: 100%;
-//   flex: 0 0 auto;
-//   position: relative;
-//   margin: 0 auto;
-//   max-width: $desktopWidth;
-//   @media screen and (max-width: $smDesktopWidth) {
-//     max-width: tableWidth;
-//   }
-//   @media screen and (max-width: $tableWidth) {
-//     max-width: phoneWidth;
-//   }
-//   @media screen and (max-width: $phoneWidth) {
-//     max-width: smPhoneWidth;
-//   }
-// }
-
-// Modules
-// @import "modules/my-module.scss";

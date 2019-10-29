@@ -1,15 +1,17 @@
-;(function () {
-  'use strict'
-  const headerNavBarElement = document.querySelector('[data-menu-bar]')
-  const headerNavElement = document.querySelector('[data-header-navigation]')
-  const bodyElement = document.querySelector('body')
+// открываем/закрываем меню гамбургер
+export default function headerMenuToggle () {
 
-  if (headerNavBarElement) {
-
-    headerNavBarElement.addEventListener('click', () => {
+  const headerNavBarElementList = document.querySelectorAll('[data-menu-bar]')
+  
+  for (let i = 0; i < headerNavBarElementList.length; i++) {
+    const headerNavElement = document.querySelector('[data-header-navigation]')
+    const bodyElement = document.querySelector('body')
+  
+    headerNavBarElementList[i].addEventListener('click', () => {
   
         headerNavElement.classList.toggle('navigation__list_hide')
-        headerNavBarElement.classList.toggle('navigation__menu-bar_position_top-left')
+        headerNavBarElementList[i].classList.toggle('navigation__menu-bar_position_top-left')
+
         if (bodyElement.style.overflow === 'hidden') {
           bodyElement.style.overflow = ''
         } else {
@@ -17,4 +19,5 @@
         }
     })
   }
-})()
+
+}

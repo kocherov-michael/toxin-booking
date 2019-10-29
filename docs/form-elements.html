@@ -12,9 +12,9 @@
 <link rel="stylesheet" href="assets/fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
 <link rel="stylesheet" href="assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="shortcut icon" href="favicon.ico" type="image/png">
-  <link href="assets/css/main.dfc601c330f588c5e2a2.css" rel="stylesheet"></head>
+  <link href="assets/css/main.b31f6a0124fc72710dce.css" rel="stylesheet"></head>
   <body>
-    <div class="page">
+    <div class="page"><img class="page__icon" src="assets/img/logo-page.png" alt="logo">
       <div class="container form-elements">
         <div class="row textfields-and-buttons">
           <div class="col textfields-and-buttons__textfields">
@@ -71,7 +71,7 @@
                   </div>
                 </div>
                 <div class="dropdown-list__action">
-                  <div class="dropdown-list__action-apply">
+                  <div class="dropdown-list__action-apply" data-dropdown-apply>
                     <button class="button button_color_blue" type="button" name="name">применить</button>
                   </div>
                   <div class="dropdown-list__action-clear hide" data-dropdown-clear>
@@ -84,28 +84,28 @@
               <div class="title-3">Masked text field</div>
               <div class="form-header__state">Default</div>
             </div>
-            <input class="input-text" placeholder="ДД.ММ.ГГГГ">
+            <input class="input-text" placeholder="ДД.ММ.ГГГГ" data-input-date>
             <div class="textfields-and-buttons__date-dropdown-inputs">
               <div class="textfields-and-buttons__date-dropdown-inputs-begin">
                 <div class="title-3 textfields-and-buttons__date-dropdown-inputs-begin-title">Date dropdown</div>
-                <label class="date-dropdown">
+                <label class="date-dropdown" data-input-date>
                   <input class="date-dropdown__text" type="text" placeholder="ДД.ММ.ГГГГ">
-                  <div class="date-dropdown__text-arrow"><i class="zmdi zmdi-chevron-down"></i></div>
+                  <div class="date-dropdown__text-arrow" data-dropdown-chevron><i class="zmdi zmdi-chevron-down"></i></div>
                 </label>
               </div>
               <div class="textfields-and-buttons__date-dropdown-inputs-end">
                 <div class="title-3 textfields-and-buttons__date-dropdown-inputs-end-title">Date dropdown</div>
-                <label class="date-dropdown">
+                <label class="date-dropdown" data-input-date>
                   <input class="date-dropdown__text" type="text" placeholder="ДД.ММ.ГГГГ" value="19.08.2019">
-                  <div class="date-dropdown__text-arrow"><i class="zmdi zmdi-chevron-down"></i></div>
+                  <div class="date-dropdown__text-arrow" data-dropdown-chevron><i class="zmdi zmdi-chevron-down"></i></div>
                 </label>
               </div>
             </div>
             <div class="col-small">
               <div class="title-3 textfields-and-buttons__filter-date-dropdown-title">Filter date dropdown</div>
-              <label class="date-dropdown">
+              <label class="date-dropdown" data-input-filter-date>
                 <input class="date-dropdown__text" type="text" placeholder="19 авг - 23 авг">
-                <div class="date-dropdown__text-arrow"><i class="zmdi zmdi-chevron-down"></i></div>
+                <div class="date-dropdown__text-arrow" data-dropdown-chevron><i class="zmdi zmdi-chevron-down"></i></div>
               </label>
               <div class="title-3 textfields-and-buttons__subscribe-title">Subscription text field</div>
               <label class="subscribe label--arrow">
@@ -320,7 +320,7 @@
                       </div>
                     </div>
                     <div class="dropdown-list__action hide">
-                      <div class="dropdown-list__action-apply">
+                      <div class="dropdown-list__action-apply" data-dropdown-apply>
                         <button class="button button_color_blue" type="button" name="name">применить</button>
                       </div>
                       <div class="dropdown-list__action-clear hide" data-dropdown-clear>
@@ -366,7 +366,7 @@
                     </div>
                   </div>
                   <div class="dropdown-list__action">
-                    <div class="dropdown-list__action-apply">
+                    <div class="dropdown-list__action-apply" data-dropdown-apply>
                       <button class="button button_color_blue" type="button" name="name">применить</button>
                     </div>
                     <div class="dropdown-list__action-clear hide" data-dropdown-clear>
@@ -409,7 +409,7 @@
                     </div>
                   </div>
                   <div class="dropdown-list__action">
-                    <div class="dropdown-list__action-apply">
+                    <div class="dropdown-list__action-apply" data-dropdown-apply>
                       <button class="button button_color_blue" type="button" name="name">применить</button>
                     </div>
                     <div class="dropdown-list__action-clear hide" data-dropdown-clear>
@@ -584,5 +584,5 @@
       </div>
     </div>
 <script src="assets/js/main.js"></script>
-  <script type="text/javascript" src="assets/js/vendors.dfc601c330f588c5e2a2.js"></script><script type="text/javascript" src="assets/js/main.dfc601c330f588c5e2a2.js"></script></body>
+  <script type="text/javascript" src="assets/js/vendors.b31f6a0124fc72710dce.js"></script><script type="text/javascript" src="assets/js/main.b31f6a0124fc72710dce.js"></script></body>
 </html>

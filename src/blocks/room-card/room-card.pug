@@ -20,7 +20,7 @@ mixin roomCard(options)
     //- options.imgLink = options.imgLink ? options.imgLink : require('../../blocks/room-card/no-photo.jpg')
 
   .room-card&attributes(attributes)
-    .room-card__header(data-slider)
+    .room-card__header(data-slider="room-card")
       .room-card__header-wrapper(data-slider-container)
         each item in options.imgLink
           img(src=item alt="room photo" class="room-card__header-img" data-slider-item)

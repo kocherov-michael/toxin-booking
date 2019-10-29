@@ -1,16 +1,12 @@
 extends ../layout/ui-layout/ui-layout.pug
-//- include ../../blocks/textfield/textfield.pug
-//- include ../../blocks/dropdown/dropdown.pug
-//- include ../../blocks/date-dropdown/date-dropdown.pug
-//- include ../../blocks/radiobutton/radiobutton.pug
 
 block variables
   - var title = 'Form elements';
-  //- - var pageClass = 'body--dashboard';
 
 block content
 
   .page
+    img.page__icon(src=require('../../assets/img/icons/logo-page.png') alt="logo")
     .container.form-elements
       .row.textfields-and-buttons
         .col.textfields-and-buttons__textfields
@@ -29,17 +25,17 @@ block content
           .form-header.textfields-and-buttons__masked-textfield
             .title-3 Masked text field
             .form-header__state Default
-          +inputText("ДД.ММ.ГГГГ")
+          +inputText("ДД.ММ.ГГГГ")(data-input-date)
           .textfields-and-buttons__date-dropdown-inputs
             .textfields-and-buttons__date-dropdown-inputs-begin
               .title-3.textfields-and-buttons__date-dropdown-inputs-begin-title Date dropdown
-              +dateDropdown("ДД.ММ.ГГГГ")
+              +dateDropdown("ДД.ММ.ГГГГ")(data-input-date)
             .textfields-and-buttons__date-dropdown-inputs-end
               .title-3.textfields-and-buttons__date-dropdown-inputs-end-title Date dropdown
-              +dateDropdown("ДД.ММ.ГГГГ", "19.08.2019")
+              +dateDropdown("ДД.ММ.ГГГГ", "19.08.2019")(data-input-date)
           .col-small
             .title-3.textfields-and-buttons__filter-date-dropdown-title Filter date dropdown
-            +dateDropdown("19 авг - 23 авг")
+            +dateDropdown("19 авг - 23 авг")(data-input-filter-date)
             .title-3.textfields-and-buttons__subscribe-title Subscription text field
             +subscribe("Email")
           

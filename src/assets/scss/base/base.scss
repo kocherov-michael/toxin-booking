@@ -1,5 +1,4 @@
 body {
-  // background: #e5e5e5;
   font-family: $mainFont;
   font-style: normal;
   font-weight: normal;
@@ -15,15 +14,12 @@ body {
     background-color: $secondary-page-color;
   }
 
-  &:before {
-    display: block;
-    content: '';
-    width: 48px;
-    height: 48px;
+  &__icon {
     position: absolute;
     top: 30px;
     left: 30px;
-    background-image: url(../img/icons/logo-page.png);
+    width: 48px;
+    height: 48px;
   }
 }
 h1, .title-1 {
