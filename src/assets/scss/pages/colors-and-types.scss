@@ -1,52 +1,40 @@
-// @import "../../../blocks/palette/palette.scss";
-body {
-  padding: 0;
-  margin: 0;
-}
-
-h1, h2, h3, p {
-  margin: 0;
-}
-
-// .page {
-//   background-color: $default-color;
-//   position: relative;
-//   &:before {
-//     display: block;
-//     content: '';
-//     width: 48px;
-//     height: 48px;
-//     position: absolute;
-//     top: 30px;
-//     left: 30px;
-//     background-image: url(../img/icons/logo-page.png);
-//   }
-// }
-
-// .page-icon {
-//   position: absolute;
-//   top: 30px;
-//   left: 30px;
-// }
-
-// .container {
-//   max-width: 1160px;
-// }
-
 .colors-and-types {
-  // padding: 150px;
   padding-top: 145px;
   padding-bottom: 145px;
   display: flex;
-  // justify-content: space-between;
+  @media (min-width: 351px) and (max-width: 1199px) {
+    justify-content: space-between;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 350px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .colors-and-types__colors {
   width: 60%;
+  min-width: 270px;
+
+  @media (max-width: 1199px) {
+    width: auto;
+    margin-right: 30px;
+    margin-bottom: 40px;
+  }
 }
 
 .colors-and-types__titles {
   width: 40%;
+
+  @media (max-width: 1199px) {
+    width: auto;
+  }
 }
 
 .colors-and-types__colors-item {
@@ -55,7 +43,7 @@ h1, h2, h3, p {
 
 .colors-and-types__titles-item {
   display: flex;
-  width: 355px;
+  max-width: 355px;
   margin-bottom: 50px;
   margin-left: 65px;
   position: relative;
