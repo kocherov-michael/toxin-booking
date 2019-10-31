@@ -40,7 +40,7 @@ block content
             +subscribe("Email")
           
         .col-wide
-          .col
+          .col-inner
             .textfields-and-buttons__checkbox-col
               .title-3.textfields-and-buttons__checkbox-buttons-title Checkbox buttons
               .textfields-and-buttons__checkbox-item
@@ -68,28 +68,27 @@ block content
             .textfields-and-buttons__rate-button-elements
               +ratebutton("4")
               +ratebutton("5")
-          .col
-            .col
-              .col-small
-                +rangeslider("range slider", "5000", "10000", "0", "16000")
-              .title-3.textfields-and-buttons__buttons-title Buttons
-              .textfields-and-buttons__primary-buttons
-                .textfields-and-buttons__primary-buttons-item
-                  +button-form-primary({text: "click me", small: false, name: "name", type: "button"})
-                +button-form-primary({text: "click me", small: false, name: "name", type: "button"}).button-primary_clicked
-              .textfields-and-buttons__secondary-buttons
-                .textfields-and-buttons__secondary-buttons-item
-                  +button-form-secondary({text: "click me", small: false, name: "name", type: "button"})
-                +button-form-secondary({text: "click me", small: false, name: "name", type: "button"}).button-secondary_clicked
-              .textfields-and-buttons__single-buttons
-                .textfields-and-buttons__single-buttons-item
-                  +button-form-single({text: "click me", colorBlue: true, name: "name", type: "button"})
-                +button-form-single({text: "click me", colorBlue: false, name: "name", type: "button"})
-              .textfields-and-buttons__wide-button
-                +button-form-wide({text: "Перейти к оплате", name: "name", type: "button"})
-              .title-3.textfields-and-buttons__pagination-title pagination
-              .textfields-and-buttons__pagination
-                +pagination("1 – 12 из 100+ вариантов аренды")
+          .col-inner
+            .col-small
+              +rangeslider("range slider", "5000", "10000", "0", "16000")
+            .title-3.textfields-and-buttons__buttons-title Buttons
+            .textfields-and-buttons__primary-buttons
+              .textfields-and-buttons__primary-buttons-item
+                +button-form-primary({text: "click me", small: false, name: "name", type: "button"})
+              +button-form-primary({text: "click me", small: false, name: "name", type: "button"}).button-primary_clicked
+            .textfields-and-buttons__secondary-buttons
+              .textfields-and-buttons__secondary-buttons-item
+                +button-form-secondary({text: "click me", small: false, name: "name", type: "button"})
+              +button-form-secondary({text: "click me", small: false, name: "name", type: "button"}).button-secondary_clicked
+            .textfields-and-buttons__single-buttons
+              .textfields-and-buttons__single-buttons-item
+                +button-form-single({text: "click me", colorBlue: true, name: "name", type: "button"})
+              +button-form-single({text: "click me", colorBlue: false, name: "name", type: "button"})
+            .textfields-and-buttons__wide-button
+              +button-form-wide({text: "Перейти к оплате", name: "name", type: "button"})
+            .title-3.textfields-and-buttons__pagination-title pagination
+            .textfields-and-buttons__pagination
+              +pagination("1 – 12 из 100+ вариантов аренды")
       .row.dropdowns
         .col
           .col-small
@@ -103,10 +102,10 @@ block content
             .dropdowns__expanded-dropdown
               +dropdown("Удобства в номере", ['спальни', 'кровати', 'ванные комнаты'], "", "2 спальни, 2 кровати...").dropdown_active(id="dropdown-rooms")
         .col-wide
-          .col
+          .col-inner.dropdowns__open
             .title-3.dropdowns__title Dropdown
             +dropdown("Сколько гостей", ['взрослые', 'дети', 'младенцы'],"apply").dropdown_active
-          .col
+          .col-inner.dropdowns__open
             .title-3.dropdowns__title Dropdown
             +dropdown("Сколько гостей", ['взрослые', 'дети', 'младенцы'],"apply", "3 гостя").dropdown_active(id="dropdown-calculator")
       .row.checkboxes
@@ -126,14 +125,14 @@ block content
                 {itemName: 'Шампунь', checked: false, value:"shampoo"}
                 ]).expandable-checkbox_active(data-search-room-expand)
         .col-wide.checkboxes__col-wide
-          .col
+          .col-inner
             .col-small
               .title-3.checkboxes__rich-title rich checkbox buttons
               .checkboxes__rich-narrow
                 +checkboxRich('Широкий коридор', 'Ширина коридоров в номере не менее 91 см.', "wide-corridor", "wide-corridor")
               .checkboxes__rich-middle
                 +checkboxRich('Помощник для инвалидов', 'На 1 этаже вас встретит специалист и проводит до номера.', "disable-assistant", "disable-assistant")
-          .col
+          .col-inner
             .col-small
               .title-3.checkboxes__bullet-title bullet list
               +bulletList(['Нельзя с питомцами', 'Без вечеринок и мероприятий', 'Время прибытия — после 13:00, а выезд до 12:00'])

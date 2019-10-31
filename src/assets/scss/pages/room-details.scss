@@ -131,7 +131,7 @@
     padding-bottom: 0;
   }
 
-  @media (min-width: 768px) and (max-width: 1200px) {
+  @media (min-width: 768px) and (max-width: 1199px) {
     flex-direction: column;
     margin-bottom: 60px;
   }
@@ -265,7 +265,6 @@
 
 .diagramm-types {
   padding-top: 32px;
-  // width: 52.5%;
   padding-inline-start: 29px;
 
   &__item {

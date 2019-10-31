@@ -1,6 +1,6 @@
 import Day from './Day.js'
 
-class DatePicker {
+export default class DatePicker {
   constructor(calendarElement, headerCalenderElement, dateFieldElement, clearFieldElement) {
     this.beginDate = "",
     this.endDate = "",
@@ -13,7 +13,7 @@ class DatePicker {
     this.calendarElement = calendarElement,
     this.dateFieldElement = dateFieldElement,
     this.clearFieldElement = clearFieldElement,
-    this.headerCalenderElement = headerCalenderElement
+    this.headerCalenderElement = headerCalenderElement,
     this.months = [
       "Январь",
       "Февраль",
@@ -33,11 +33,8 @@ class DatePicker {
 
   // Отмечаем даты приезда и выезда
   showChoosenDays(calendarElement, clearFieldElement) {
-    // console.log('showChoosen: ', this)
     if (calendarElement) {
       const daysList = calendarElement.querySelectorAll("[data-calendar-day]");
-      // console.log(daysList)
-    
 
       for (let i = 0; i < daysList.length; i++) {
         daysList[i].classList.remove("calendar__day_period");
@@ -95,78 +92,63 @@ class DatePicker {
   
 
   // Отрисовываем календарь
-  createDateField(month, year, calendarElement, dateFieldElement, clearFieldElement) {
+  createDateField() {
     
-    const monthInfo = DatePicker.getMonthInfo(month, year);
+    const monthInfo = DatePicker.getMonthInfo(this.nowMonthDisplay, this.nowYearDisplay);
     let previosMonthDayBegin = monthInfo.previosMonthLastWeekDayBegin;
 
-    dateFieldElement.innerHTML = "";
+    this.dateFieldElement.innerHTML = "";
 
     if (previosMonthDayBegin) {
-      for (
-        let i = previosMonthDayBegin;
-        i <= monthInfo.previosMonthDaysCount;
-        i++
-      ) {
-        const newDay = new Day(year, month - 1, i);
-        const calendarDay = newDay.createDateElement(newDay.year, newDay.month, i, dateFieldElement, this);
+      for (let i = previosMonthDayBegin; i <= monthInfo.previosMonthDaysCount; i++) {
+        const newDay = new Day(this.nowYearDisplay, this.nowMonthDisplay - 1, i);
+        const calendarDay = newDay.createDateElement(newDay.year, newDay.month, i, this.dateFieldElement, this);
         calendarDay.classList.add("calendar__day_another-month");
         calendarDay.classList.add("calendar__day_previous-month");
-        calendarDay.addEventListener("click", {handleEvent: newDay.handler, calendarElement, clearFieldElement, calendar: this});
+        calendarDay.addEventListener("click", {handleEvent: newDay.handler, calendarElement: this.calendarElement, clearFieldElement: this.clearFieldElement, calendar: this});
       }
     }
 
     for (let i = 1; i <= monthInfo.daysCount; i++) {
-      const newDay = new Day(year, month, i);
-      const calendarDay = newDay.createDateElement(year, month, i, dateFieldElement, this);
+      const newDay = new Day(this.nowYearDisplay, this.nowMonthDisplay, i);
+      const calendarDay = newDay.createDateElement(this.nowYearDisplay, this.nowMonthDisplay, i, this.dateFieldElement, this);
 
-      calendarDay.addEventListener("click", {handleEvent: newDay.handler, calendarElement, clearFieldElement, calendar: this});
+      calendarDay.addEventListener("click", {handleEvent: newDay.handler, calendarElement: this.calendarElement, clearFieldElement: this.clearFieldElement, calendar: this});
     }
 
     for (let i = 1; i <= monthInfo.nextMonthViewedDays; i++) {
-      const newDay = new Day(year, month + 1, i);
-      const calendarDay = newDay.createDateElement(newDay.year, newDay.month, i, dateFieldElement, this);
+      const newDay = new Day(this.nowYearDisplay, this.nowMonthDisplay + 1, i);
+      const calendarDay = newDay.createDateElement(newDay.year, newDay.month, i, this.dateFieldElement, this);
       calendarDay.classList.add("calendar__day_another-month");
       calendarDay.classList.add("calendar__day_next-month");
-      calendarDay.addEventListener("click", {handleEvent: newDay.handler, calendarElement, clearFieldElement, calendar: this});
+      calendarDay.addEventListener("click", {handleEvent: newDay.handler, calendarElement: this.calendarElement, clearFieldElement: this.clearFieldElement, calendar: this});
     }
-    this.showChoosenDays(calendarElement, clearFieldElement);
+    this.showChoosenDays(this.calendarElement, this.clearFieldElement);
 
   }
 
   // Перелисываем календарь на предыдущий месяц
   decreaseHeaderDate() {
-    let calendar
-    if (this.calendar) {
-      calendar = this.calendar
-    } else {
-      calendar = this
-    }
-    calendar.nowMonthDisplay -= 1;
-    if (calendar.nowMonthDisplay < 0) {
-      calendar.nowMonthDisplay = 11;
-      calendar.nowYearDisplay -= 1;
-    }
-    calendar.headerCalenderElement.innerHTML = `${calendar.months[calendar.nowMonthDisplay]} ${calendar.nowYearDisplay}`;
-    calendar.createDateField(calendar.nowMonthDisplay, calendar.nowYearDisplay, calendar.calendarElement, calendar.dateFieldElement, calendar.clearFieldElement)
 
+    this.nowMonthDisplay -= 1;
+    if (this.nowMonthDisplay < 0) {
+      this.nowMonthDisplay = 11;
+      this.nowYearDisplay -= 1;
+    }
+    this.headerCalenderElement.innerHTML = `${this.months[this.nowMonthDisplay]} ${this.nowYearDisplay}`;
+    this.createDateField()
   }
 
   // Перелистываем календарь на следующий месяц
   increaseHeaderDate() {
-    let calendar
-    if (this.calendar) {
-      calendar = this.calendar
-    } else {
-      calendar = this
+
+    this.nowMonthDisplay += 1
+    if (this.nowMonthDisplay > 11) {
+      this.nowMonthDisplay = 0
+      this.nowYearDisplay += 1
     }
-    calendar.nowMonthDisplay += 1;
-    if (calendar.nowMonthDisplay > 11) {
-      calendar.nowMonthDisplay = 0;
-      calendar.nowYearDisplay += 1;
-    }
-    calendar.headerCalenderElement.innerHTML = `${calendar.months[calendar.nowMonthDisplay]} ${calendar.nowYearDisplay}`;
-    calendar.createDateField(calendar.nowMonthDisplay, calendar.nowYearDisplay, calendar.calendarElement, calendar.dateFieldElement, calendar.clearFieldElement);
+    this.headerCalenderElement.innerHTML = `${this.months[this.nowMonthDisplay]} ${this.nowYearDisplay}`
+    this.createDateField()
   }
 
 
@@ -265,7 +247,7 @@ class DatePicker {
     }
   }
 
-  // Вывод даты в инпут при выборе дат в календаре
+  // Вывод даты в отдельный инпут при выборе дат в календаре
   getCalendarData () {
     const dateBegin = [
       DatePicker.getDoubleNumber(this.calendar.beginDay), 
@@ -295,7 +277,7 @@ class DatePicker {
     }
   }
 
-  // Вывод диапазона дат в инпут
+  // Вывод совмещённого диапазона дат в инпут
   getCalendarRangeData () {
     const monthsShort = [
       "янв",
@@ -311,6 +293,8 @@ class DatePicker {
       "нояб",
       "дек"
     ]
+    // запоминаем чтобыло записано в инпуте
+    const inpetDefaultValue = this.dropdownArrivalInputElement.value
 
     const firstDate = `${this.calendar.beginDay} ${monthsShort[this.calendar.beginMonth]}`
 
@@ -321,9 +305,13 @@ class DatePicker {
     } else {
       this.dropdownArrivalInputElement.value = firstDate
     }
+    // если дата не выбрана, то возвращаем значение по умолчанию
+    if (this.calendar.beginMonth === '') {
+      this.dropdownArrivalInputElement.value = inpetDefaultValue
+    }
   }
 
-  // создаём доту для инпутов прибытия - отправления
+  // создаём доту для отдельных инпутов прибытия - отправления
   static getDoubleNumber (string) {
     const newArray = []
     for(let i=0; i < 2; i++) {
@@ -336,5 +324,3 @@ class DatePicker {
     return newArray.reverse().join('')
   }
 }
-
-export default DatePicker

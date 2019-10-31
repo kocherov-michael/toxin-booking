@@ -5,7 +5,14 @@ body {
   font-size: 14px;
   line-height: 24px;
   color: rgba(31, 32, 65, 0.75);
+  padding: 0;
+  margin: 0;
 }
+
+h1, h2, h3, p {
+  margin: 0;
+}
+
 .page {
   background-color: $default-color;
   position: relative;
