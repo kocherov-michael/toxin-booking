@@ -6,15 +6,23 @@
   }
   &__content {
     display: flex;
+
+    @media (max-width: 575px) {
+      flex-direction: column;
+    }
   }
   &__subtitle {
     margin-bottom: 20px;
   }
   &__col {
-    width: 50%;
+    width: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
+
+    @media (max-width: 575px) {
+      margin-bottom: 40px;
+    }
   }
   &__col-item {
     width: 200px;
