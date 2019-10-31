@@ -17,8 +17,9 @@ block content
           .cards__room-price-card
             include ../../blocks/room-price-card/room-price-card.pug
           include ../../blocks/login-card/login-card.pug
-        .cards__col-calendar
-          +calendar("cards")
+        .cards__col-special
+          .cards__col-calendar
+            +calendar("cards")
           .cards__col-inner
             .cards__room-card-wrapper
               +roomCard({
