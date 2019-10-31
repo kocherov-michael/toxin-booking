@@ -1,6 +1,6 @@
 import DatePicker from './DatePicker.js'
 
-function calendar(calendarSelector, firstDateSelector, secondDateSelector) {
+export default function calendar(calendarSelector, firstDateSelector, secondDateSelector) {
 
   const calendarList = document.querySelectorAll(calendarSelector)
   for (let i = 0; i < calendarList.length; i++) {
@@ -27,6 +27,7 @@ function calendar(calendarSelector, firstDateSelector, secondDateSelector) {
       const dropdownArrivalElement = document.querySelector(firstDateSelector)
       const dropdownArrivalChevronElement = dropdownArrivalElement.querySelector('[data-dropdown-chevron]')
       dropdownArrivalInputElement = dropdownArrivalElement.querySelector('input')
+      calendar.dropdownArrivalInputElement = dropdownArrivalInputElement
       calendarWrapperElement = calendarElement.parentElement
       
       dropdownArrivalChevronElement.addEventListener('click', {handleEvent: calendar.calendarToggle, calendarWrapperElement})
@@ -50,25 +51,23 @@ function calendar(calendarSelector, firstDateSelector, secondDateSelector) {
       }
     }
     
-    const nowMonthNum = dateNow.getMonth();
-    const nowMonth = calendar.months[nowMonthNum];
+    const nowMonthNum = dateNow.getMonth()
+    const nowMonth = calendar.months[nowMonthNum]
   
-    calendar.nowMonthDisplay = dateNow.getMonth();
-    const nowYear = dateNow.getFullYear();
-    calendar.nowYearDisplay = dateNow.getFullYear();
-    headerCalenderElement.innerHTML = `${nowMonth} ${nowYear}`;
+    calendar.nowMonthDisplay = dateNow.getMonth()
+    const nowYear = dateNow.getFullYear()
+    calendar.nowYearDisplay = dateNow.getFullYear()
+    headerCalenderElement.innerHTML = `${nowMonth} ${nowYear}`
   
-    clearFieldElement.style.display = "none";
-  
-    calendar.createDateField(calendar.nowMonthDisplay, calendar.nowYearDisplay, calendarElement, dateFieldElement, clearFieldElement);
+    clearFieldElement.style.display = "none"
 
-    clearFieldElement.addEventListener("click", {handleEvent:calendar.clearCalendarField, calendarElement, dropdownArrivalInputElement, dropdownDepartureInputElement, calendar, clearFieldElement});
-    arrowLeftElement.addEventListener("click", {handleEvent: calendar.decreaseHeaderDate, calendarElement, calendar, headerCalenderElement, dateFieldElement, clearFieldElement});
-    arrowRightElement.addEventListener("click", {handleEvent: calendar.increaseHeaderDate, calendarElement, calendar, headerCalenderElement, dateFieldElement, clearFieldElement});
+    calendar.createDateField()
+
+    clearFieldElement.addEventListener("click", {handleEvent:calendar.clearCalendarField, calendarElement, dropdownArrivalInputElement, dropdownDepartureInputElement, calendar, clearFieldElement})
+    arrowLeftElement.addEventListener("click", calendar.decreaseHeaderDate.bind(calendar))
+    arrowRightElement.addEventListener("click", calendar.increaseHeaderDate.bind(calendar))
     applyFieldElement.addEventListener("click", {handleEvent: calendar.applyCalendarField, calendarWrapperElement})
   
   }
   return calendar
 }
-
-export default calendar
