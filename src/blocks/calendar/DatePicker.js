@@ -30,7 +30,6 @@ export default class DatePicker {
     ]
   }
 
-
   // Отмечаем даты приезда и выезда
   showChoosenDays(calendarElement, clearFieldElement) {
     if (calendarElement) {
@@ -129,7 +128,6 @@ export default class DatePicker {
 
   // Перелисываем календарь на предыдущий месяц
   decreaseHeaderDate() {
-
     this.nowMonthDisplay -= 1;
     if (this.nowMonthDisplay < 0) {
       this.nowMonthDisplay = 11;
@@ -141,7 +139,6 @@ export default class DatePicker {
 
   // Перелистываем календарь на следующий месяц
   increaseHeaderDate() {
-
     this.nowMonthDisplay += 1
     if (this.nowMonthDisplay > 11) {
       this.nowMonthDisplay = 0
