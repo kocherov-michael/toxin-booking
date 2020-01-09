@@ -105,6 +105,7 @@ module.exports = {
   },
   plugins: [
     new MiniCssExtractPlugin({
+      // куда записываются стили
       filename: `${PATHS.assets}css/[name].[hash].css`,
     //   filename: `${PATHS.assets}css/main.css`,
     }),

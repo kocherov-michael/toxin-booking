@@ -1,7 +1,7 @@
 - if (!login) var login = "login"
 - if (!register) var register = "register"
 - if (userName) var loggedUser = "header_logged-user" 
-- var Services = ["first", "second", "third"]
+- var Services = ["Upgrade options", "Manage your booking", "Cancellation and refund"]
 - if (!itemNumberActive) var itemNumberActive = "0";
 
 -
@@ -32,7 +32,7 @@ header.header(class=loggedUser)
                 ul.inner-list.hide
                   each elem in val.submenu
                     li.inner-list__item
-                      a.inner-list__link(href="404.html") #{elem}
+                      a.inner-list__link(href="#" title=elem) #{elem}
 
             else
               li.navigation__item
